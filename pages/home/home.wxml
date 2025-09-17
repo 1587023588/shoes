@@ -3,7 +3,7 @@
   <video
     id="home-top-video"
     class="home-video"
-    src="{{videoSrc}}"
+    src="https://shoes-1379330878.cos.ap-beijing.myqcloud.com/index_video.mp4?q-sign-algorithm=sha1&q-ak=AKIDRKVGE94E4JfNhL5CBhPaHw38Ct8CwnXGiVlkTNRSbRiX4P1TnIYwOpLdinJ0y9dp&q-sign-time=1758126034;1758129634&q-key-time=1758126034;1758129634&q-header-list=host&q-url-param-list=&q-signature=26892be59d053bfe911a0ea3274d0bf8009f6f4f&x-cos-security-token=hA04c0ge9LELd1kgqGu1RSFsYI3Flfya371d6c7ad845427b2077839443d2f77d0ojd6jMvwNmfHnqd0RIWxlDHj6QyO3mlGLo447kzscdtMVRp3U_-R7Sk8O7J3_ChB8s1A9HWmgikgOWKjcMuSGxCGagdVH5deCGeNGfSaazjhnKWV0fzc56o4k_SEZrJqcdB9fakY0gNSzV_dKQdian0N7fivguuwDumO9q_zaKvQ6YSfiQz6WVhXBLbr8pk&"
     object-fit="cover"
     controls
     show-center-play-btn
