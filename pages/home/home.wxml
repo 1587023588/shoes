@@ -1,0 +1,105 @@
+<!-- 顶部：搜索 + 轮播（已上移到最顶部） -->
+<view class="home-page-header">
+  <view class="search" bind:tap="navToSearchPage">
+    <t-search
+      t-class-input="t-search__input"
+      t-class-input-container="t-search__input-container"
+      placeholder="手工布鞋 新品上架"
+      leftIcon=""
+      disabled
+    >
+      <t-icon slot="left-icon" prefix="wr" name="search" size="40rpx" color="#bbb" />
+    </t-search>
+  </view>
+  <view class="swiper-wrap">
+    <t-swiper
+      wx:if="{{imgSrcs.length > 0}}"
+      current="{{current}}"
+      autoplay="{{autoplay}}"
+      duration="{{duration}}"
+      interval="{{interval}}"
+      navigation="{{navigation}}"
+      imageProps="{{swiperImageProps}}"
+      list="{{imgSrcs}}"
+      bind:click="navToActivityDetail"
+    />
+  </view>
+</view>
+<view class="rural-brand-banner rural-section-card" style="margin:16rpx 24rpx 0; padding:24rpx 32rpx; display:flex; flex-direction:column; gap:10rpx;">
+  <view class="rural-text-title" style="font-size:34rpx;">{{slogan}}</view>
+  <view class="rural-text-sub" style="font-size:24rpx;">一双手工布鞋 · 一份乡村力量</view>
+  <button class="rural-button-primary" style="margin-top:4rpx; padding:16rpx 0;" bindtap="supportRural">{{ctaText}}</button>
+</view>
+<view style="text-align: center; color: #b9b9b9" wx:if="{{pageLoading}}">
+  <t-loading theme="circular" size="40rpx" text="加载中..." inherit-color />
+</view>
+<view wx:if="{{loadError}}" style="margin:32rpx auto; text-align:center; color:#b0491b;">
+  <view style="margin-bottom:12rpx; font-size:28rpx;">{{errorMsg}}</view>
+  <button size="mini" class="rural-button-primary" style="padding:12rpx 28rpx;" bindtap="loadHomePage">重试</button>
+</view>
+
+<!-- 快捷分类导航模块已移除：如需恢复，请使用 git 历史或再次告知生成 -->
+
+<!-- 品牌故事 -->
+<view class="rural-section-card rural-brand-story" wx:if="{{brandStory}}">
+  <view class="rural-brand-story__content">
+    <view class="rural-brand-story__title">{{brandStory.title}}</view>
+    <view class="rural-brand-story__desc">{{brandStory.desc}}</view>
+  </view>
+  <image class="rural-brand-story__image" mode="aspectFill" src="{{brandStory.image}}" />
+</view>
+
+<!-- 工艺流程 -->
+<view class="rural-section-card rural-craft" wx:if="{{craftSteps.length}}">
+  <view class="rural-craft__header">手工工艺</view>
+  <view class="rural-craft__steps">
+    <view class="rural-craft__step" wx:for="{{craftSteps}}" wx:key="index">
+      <view class="rural-craft__step-name">{{item.step}}</view>
+      <view class="rural-craft__step-desc">{{item.desc}}</view>
+    </view>
+  </view>
+</view>
+
+<!-- 助农项目高亮 -->
+<view class="rural-section-card rural-project" wx:if="{{projectHighlight}}">
+  <image class="rural-project__image" mode="aspectFill" src="{{projectHighlight.image}}" />
+  <view class="rural-project__info">
+    <view class="rural-project__title">{{projectHighlight.title}}</view>
+    <view class="rural-project__sub">{{projectHighlight.sub}}</view>
+    <view class="rural-project__stat">{{projectHighlight.stat.value}}{{projectHighlight.stat.unit}}</view>
+  </view>
+</view>
+
+<!-- 精选推荐横滑切片 -->
+<!-- 精选推荐横滑切片（下方模块去重后保留此标记） -->
+
+<!-- 原位置的搜索头部已移动到文件顶部 -->
+<view class="home-page-container rural-bg">
+  <view class="home-page-tabs">
+    <t-tabs
+      t-class="t-tabs"
+      t-class-active="tabs-external__active"
+      t-class-item="tabs-external__item"
+      defaultValue="{{0}}"
+      space-evenly="{{false}}"
+      bind:change="tabChangeHandle"
+    >
+      <t-tab-panel
+        wx:for="{{tabList}}"
+        wx:for-index="index"
+        wx:key="index"
+        label="{{item.text}}"
+        value="{{item.key}}"
+      />
+    </t-tabs>
+  </view>
+
+  <goods-list
+    wr-class="goods-list-container"
+    goodsList="{{goodsList}}"
+    bind:click="goodListClickHandle"
+    bind:addcart="goodListAddCartHandle"
+  />
+  <load-more list-is-empty="{{!goodsList.length}}" status="{{goodsListLoadStatus}}" bind:retry="onReTry" />
+  <t-toast id="t-toast" />
+</view>
