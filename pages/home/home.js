@@ -1,41 +1,40 @@
 import { fetchHome } from '../../services/home/home';
-import { fetchGoodsList } from '../../services/good/fetchGoods';
 import Toast from 'tdesign-miniprogram/toast/index';
-import { getRandomSlogan, brandCTA } from '../../config/brand';
 
 Page({
   data: {
-    imgSrcs: [],
-    tabList: [],
-    goodsList: [],
-    goodsListLoadStatus: 0,
-    pageLoading: false,
-    loadError: false,
-    errorMsg: '',
-    current: 1,
-    autoplay: true,
-    duration: '500',
-    interval: 5000,
-    navigation: { type: 'dots' },
-    swiperImageProps: { mode: 'scaleToFill' },
-    slogan: '',
-    ctaText: brandCTA,
-    // 新增模块数据
-    quickNavList: [],
-    brandStory: null,
-    craftSteps: [],
-    projectHighlight: null,
-    recommendSlice: [],
+  // 页面基础状态
+  pageLoading: false,
+  loadError: false,
+  errorMsg: '',
+    // 顶部视频
+    videoSrc: '/pages/images/index_video.mp4',
+    videoAutoplay: true,
+    videoMuted: true,
+    videoLoop: true,
+    // 英雄图
+    heroImage: '/pages/images/test.jpg',
+    // 功能宫格（2x4）
+    defaultFuncIcon: '/pages/images/test.jpg',
+    funcList: [
+      { iconUrl: '/pages/images/test.jpg', text: '公告通知', url: '/pages/notice/index' },
+      { iconUrl: '/pages/images/test.jpg', text: '本馆介绍', url: '/pages/about/index' },
+      { iconUrl: '/pages/images/test.jpg', text: '非遗之窗', url: '/pages/heritage/index' },
+      { iconUrl: '/pages/images/test.jpg', text: '培训风采', url: '/pages/training/showcase/index' },
+      { iconUrl: '/pages/images/test.jpg', text: '青少年培训', url: '/pages/training/teen/index' },
+      { iconUrl: '/pages/images/test.jpg', text: '成人培训', url: '/pages/training/adult/index' },
+      { iconUrl: '/pages/images/test.jpg', text: '老年人培训', url: '/pages/training/senior/index' },
+      { iconUrl: '/pages/images/test.jpg', text: '文艺团队招募', url: '/pages/recruit/index' },
+    ],
+    // 资讯列表
+    newsList: [
+      { id: 1, title: '国庆假期开馆公告', desc: '盛世华诞，举国同庆。南昌市文化馆国庆期间（10月1日——7...）', cover: '/pages/images/test.jpg', tag: '公告通知' },
+      { id: 2, title: '文化馆通知', desc: '关于加强“48小时常态化核酸检测”场所码联动查验通知...', cover: '/pages/images/test.jpg', tag: '公告通知' },
+    ],
   },
 
-  goodListPagination: {
-    index: 0,
-    num: 20,
-  },
-
-  privateData: {
-    tabIndex: 0,
-  },
+  // 兼容保留：如后续有分页需求可在此扩展
+  privateData: {},
 
   onShow() {
     const bar = this.getTabBar && this.getTabBar();
@@ -44,10 +43,7 @@ Page({
 
   onLoad() {
     this.init();
-    this.setData({
-      slogan: getRandomSlogan(),
-    });
-    this.bootstrapLocalModules();
+    // 若需从服务端拉取英雄图/宫格/资讯，可在此请求
   },
 
   onReachBottom() {
@@ -67,41 +63,8 @@ Page({
     this.loadHomePage();
   },
 
-  /** 本地静态模块初始化 */
-  bootstrapLocalModules() {
-    this.setData({
-      quickNavList: [
-  { icon: '/pages/images/test.jpg', text: '新品' },
-  { icon: '/pages/images/test.jpg', text: '热卖' },
-  { icon: '/pages/images/test.jpg', text: '助农' },
-  { icon: '/pages/images/test.jpg', text: '童鞋' },
-  { icon: '/pages/images/test.jpg', text: '养生' },
-      ],
-      brandStory: {
-        title: '百年布鞋 · 乡土匠心',
-        desc: '源自北方乡村的手工布鞋，坚持棉麻天然材质与千层纳底工法，每一针脚都承载乡亲的朴实生活与新农村振兴的希望。',
-  image: '/pages/images/test.jpg',
-      },
-      craftSteps: [
-        { step: '选布', desc: '甄选本地棉麻' },
-        { step: '裁片', desc: '手工裁剪版型' },
-        { step: '纳底', desc: '千层棉线加固' },
-        { step: '成型', desc: '贴合脚型走线' },
-        { step: '晾晒', desc: '自然风干收型' },
-      ],
-      projectHighlight: {
-        title: '助农计划',
-        sub: '每卖出一双布鞋 · 返助乡村种植基金',
-        stat: { value: 3287, unit: '双已助力' },
-  image: '/pages/images/test.jpg',
-      },
-      recommendSlice: [
-  { title: '四季透气款', tag: '热卖', cover: '/pages/images/test.jpg' },
-  { title: '加绒养生鞋', tag: '保暖', cover: '/pages/images/test.jpg' },
-  { title: '儿童软底', tag: '童款', cover: '/pages/images/test.jpg' },
-      ],
-    });
-  },
+  /** 若后续需要本地初始化可在此扩展 */
+  bootstrapLocalModules() {},
 
   loadHomePage() {
     wx.stopPullDownRefresh();
@@ -124,13 +87,8 @@ Page({
     Promise.race([fetchHome(), timeoutPromise])
       .then((res) => {
         if (reqId !== this._homeReqId) return; // 过期结果忽略
-        const { swiper = [], tabList = [] } = (res && typeof res === 'object') ? res : {};
-        this.setData({
-          tabList,
-          imgSrcs: swiper,
-          pageLoading: false,
-        });
-        this.loadGoodsList(true);
+        // 可在此用远端数据填充 heroImage/funcList/newsList
+        this.setData({ pageLoading: false });
       })
       .catch((err) => {
         if (reqId !== this._homeReqId) return;
@@ -151,43 +109,20 @@ Page({
       });
   },
 
-  tabChangeHandle(e) {
-    if (!this.privateData) { this.privateData = { tabIndex: 0 }; }
-    const nextIndex = e && typeof e.detail === 'number' ? e.detail : 0;
-    this.privateData.tabIndex = nextIndex;
-    this.loadGoodsList(true);
+  // 资讯点击
+  onNewsTap(e) {
+    const { id } = e.currentTarget.dataset;
+    wx.navigateTo({ url: `/pages/notice/detail/index?id=${id}` });
   },
-
-  onReTry() {
-    this.loadGoodsList();
-  },
-
-  async loadGoodsList(fresh = false) {
-    if (fresh) {
-      wx.pageScrollTo({
-        scrollTop: 0,
-      });
-    }
-
-    this.setData({ goodsListLoadStatus: 1 });
-
-    const pageSize = this.goodListPagination.num;
-    let pageIndex = this.privateData.tabIndex * pageSize + this.goodListPagination.index + 1;
-    if (fresh) {
-      pageIndex = 0;
-    }
-
-    try {
-      const nextList = await fetchGoodsList(pageIndex, pageSize);
-      this.setData({
-        goodsList: fresh ? nextList : this.data.goodsList.concat(nextList),
-        goodsListLoadStatus: 0,
-      });
-
-      this.goodListPagination.index = pageIndex;
-      this.goodListPagination.num = pageSize;
-    } catch (err) {
-      this.setData({ goodsListLoadStatus: 3 });
+  // 宫格点击
+  onFuncTap(e) {
+    const { index } = e.currentTarget.dataset;
+    const item = this.data.funcList[index];
+    if (!item) return;
+    if (item.url) {
+      wx.navigateTo({ url: item.url });
+    } else {
+      Toast({ context: this, selector: '#t-toast', message: item.text });
     }
   },
 
@@ -224,5 +159,13 @@ Page({
       selector: '#t-toast',
       message: '感谢支持乡村振兴！',
     });
+  },
+
+  onVideoError(e) {
+    console.error('[home] video error:', e && e.detail);
+    // 出错时回退为不自动播放，避免反复报错（可选）
+    this.setData({ videoAutoplay: false });
+    // 如果资源不支持，给出提示
+    Toast({ context: this, selector: '#t-toast', message: '视频加载失败，稍后重试' });
   },
 });

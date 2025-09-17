@@ -9,7 +9,8 @@ export function getPromotion(baseID = 0, length = 10) {
         title: item.title,
         price: item.minSalePrice,
         originPrice: item.maxLinePrice,
-        tags: item.spuTagList.map((tag) => ({ title: tag.title })),
+        // 使用字符串数组，避免模板中渲染为 [object Object]
+        tags: item.spuTagList.map((tag) => tag.title),
       };
     }),
   banner: '/pages/images/test.jpg',

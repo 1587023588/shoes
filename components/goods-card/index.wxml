@@ -47,15 +47,14 @@
           price="{{goods.originPrice}}"
           type="delthrough"
         />
-        <t-icon
+        <image
           class="goods-card__add-cart"
-          prefix="wr"
-          name="cartAdd"
           id="{{independentID}}-cart"
           data-id="{{independentID}}"
           catchtap="addCartHandle"
-          size="48rpx"
-          color="var(--brand-price)"
+          src="/pages/images/test.jpg"
+          mode="aspectFill"
+          style="width:48rpx;height:48rpx;border-radius:12rpx;"
         />
       </view>
     </view>

@@ -1,31 +1,23 @@
-<!-- 分层购物车 -->
-<block wx:if="{{cartGroupData.isNotEmpty}}">
-  <cart-group
-    store-goods="{{ cartGroupData.storeGoods }}"
-    invalid-good-items="{{ cartGroupData.invalidGoodItems }}"
-    bindselectgoods="onGoodsSelect"
-    bindselectstore="onStoreSelect"
-    bindchangequantity="onQuantityChange"
-    bindgocollect="goCollect"
-    bindgoodsclick="goGoodsDetail"
-    bindclearinvalidgoods="clearInvalidGoods"
-    binddelete="onGoodsDelete"
+<!-- 商品选购列表（复用组件） -->
+<view class="select-page">
+  <!-- 顶部分类筛选条 -->
+  <scroll-view class="category-bar" scroll-x>
+    <view class="cat-item {{activeCat==='全部'?'active':''}}" data-cat="全部" bindtap="onCatTap">全部</view>
+    <view wx:for="{{categories}}" wx:key="*this" class="cat-item {{activeCat===item?'active':''}}" data-cat="{{item}}" bindtap="onCatTap">{{item}}</view>
+  </scroll-view>
+
+  <goods-list
+    id="select-goods-list"
+    goods-list="{{filteredList}}"
+    bind:click="onGoodsCardClick"
+    bind:addcart="onGoodsAddCart"
   />
 
-  <view class="gap" />
-  <!-- 商品小计以及结算按钮 -->
-  <cart-bar
-    is-all-selected="{{cartGroupData.isAllSelected}}"
-    total-amount="{{cartGroupData.totalAmount}}"
-    total-goods-num="{{cartGroupData.selectedGoodsCount}}"
-    total-discount-amount="{{cartGroupData.totalDiscountAmount}}"
-    fixed="{{true}}"
-    bottomHeight="{{110}}"
-    bindhandleSelectAll="onSelectAll"
-    bindhandleToSettle="onToSettle"
-  />
-</block>
-<!-- 购物车空态 -->
-<cart-empty wx:else bind:handleClick="onGotoHome" />
+  <!-- 悬浮购物车按钮（圆形FAB+数量徽标） -->
+  <view class="floating-cart-btn" bindtap="onToSettle">
+    <image class="fab-icon" src="/pages/images/test.jpg" mode="aspectFill" />
+    <view wx:if="{{cartCount>0}}" class="fab-badge">{{cartCount}}</view>
+  </view>
+</view>
+
 <t-toast id="t-toast" />
-<t-dialog id="t-dialog" />

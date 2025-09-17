@@ -1,109 +1,75 @@
-import Dialog from 'tdesign-miniprogram/dialog/index';
 import Toast from 'tdesign-miniprogram/toast/index';
-import { fetchLocalCartGroupData } from '../../services/cart/cart';
-import { updateQuantity, removeItem, getCartItems, asCartGroupData } from '../../services/cart/localCart';
+import { getPromotion } from '../../model/promotion';
+import { addItem, getCartItems } from '../../services/cart/localCart';
 
 Page({
   data: {
-    cartGroupData: null,
+    goodsList: [],
+    filteredList: [],
+    categories: [],
+    activeCat: '全部',
+    cartCount: 0,
   },
 
   onShow() {
     this.getTabBar().init?.();
-    this.refreshData();
+    this.refreshCartCount();
   },
 
   onLoad() {
-    this.refreshData();
+    // 使用本地模型生成的布鞋商品作为选购列表
+    const promo = getPromotion(0, 20);
+    const goodsList = promo.list;
+    const categories = Array.from(new Set(goodsList.flatMap(g => g.tags || [])));
+    this.setData({ goodsList, filteredList: goodsList, categories, activeCat: '全部' });
+    this.refreshCartCount();
   },
 
-  refreshData() {
-    this.getCartGroupData().then((res) => {
-      const cartGroupData = res.data;
-      // 简化：本地数据结构已经是规整的，只补充缺失字段
-      cartGroupData.storeGoods.forEach((store) => {
-        store.isSelected = true;
-        store.storeStockShortage = false;
-        if (!store.shortageGoodsList) store.shortageGoodsList = [];
-        store.promotionGoodsList.forEach((act) => {
-          act.goodsPromotionList.forEach((g) => {
-            g.originPrice = undefined;
-          });
-        });
-      });
-      this.setData({ cartGroupData });
+  refreshCartCount() {
+    const count = (getCartItems() || []).reduce((sum, i) => sum + (i.quantity || 0), 0);
+    this.setData({ cartCount: count });
+  },
+
+  onGoodsCardClick(e) {
+    const { index } = e.detail;
+    const item = this.data.goodsList[index];
+    if (!item) return;
+    wx.navigateTo({ url: `/pages/goods/details/index?spuId=${item.spuId}` });
+  },
+
+  onGoodsAddCart(e) {
+    const { index } = e.detail;
+    const item = this.data.goodsList[index];
+    if (!item) return;
+    // 简化：默认添加一个基础 sku（用 spuId 结合一个默认 skuId）
+    const skuId = `${item.spuId}-default`;
+    addItem({
+      spuId: item.spuId,
+      skuId,
+      title: item.title,
+      primaryImage: item.thumb,
+      quantity: 1,
+      price: parseInt(item.price, 10) || 0,
+      linePrice: parseInt(item.originPrice, 10) || undefined,
+      specInfo: [],
+      available: 1,
+      storeId: '1000',
     });
+    Toast({ context: this, selector: '#t-toast', message: '已加入购物车' });
+    this.refreshCartCount();
   },
 
-  // 改写：总是从本地重新封装
-  getCartGroupData() {
-    return fetchLocalCartGroupData();
-  },
-
-  // 选择商品（本地版本：保持接口但不做单选逻辑，可扩展）
-  selectGoodsService({ spuId, skuId, isSelected }) {
-    // 预留：本地全选逻辑暂忽略
-    return Promise.resolve();
-  },
-
-  selectStoreService({ storeId, isSelected }) { return Promise.resolve(); },
-
-  changeQuantityService({ spuId, skuId, quantity }) {
-    updateQuantity(spuId, skuId, quantity);
-    return Promise.resolve();
-  },
-
-  deleteGoodsService({ spuId, skuId }) {
-    removeItem(spuId, skuId);
-    return Promise.resolve();
-  },
-
-  clearInvalidGoodsService() { return Promise.resolve(); },
-
-  findGoods(spuId, skuId) {
-    const data = asCartGroupData();
-    for (const store of data.storeGoods) {
-      for (const act of store.promotionGoodsList) {
-        for (const g of act.goodsPromotionList) {
-          if (g.spuId === spuId && g.skuId === skuId) {
-            return { currentStore: store, currentActivity: act, currentGoods: g };
-          }
-        }
-      }
-    }
-    return { currentStore: null, currentActivity: null, currentGoods: null };
-  },
-
-  onGoodsSelect(e) {
-    const { goods: { spuId, skuId }, isSelected } = e.detail;
-    const { currentGoods } = this.findGoods(spuId, skuId);
-    if (!currentGoods) return;
-    Toast({ context: this, selector: '#t-toast', message: `${isSelected ? '选择' : '取消'}"${currentGoods.title}"` });
-  },
-
-  onQuantityChange(e) {
-    const { goods: { spuId, skuId }, quantity } = e.detail;
-    this.changeQuantityService({ spuId, skuId, quantity }).then(() => this.refreshData());
-  },
-
-  onGoodsDelete(e) {
-    const { goods: { spuId, skuId } } = e.detail;
-    Dialog.confirm({ content: '确认删除该商品吗?', confirmBtn: '确定', cancelBtn: '取消' })
-      .then(() => {
-        this.deleteGoodsService({ spuId, skuId }).then(() => {
-          Toast({ context: this, selector: '#t-toast', message: '已删除' });
-          this.refreshData();
-        });
-      });
-  },
-
-  onSelectAll() {
-    Toast({ context: this, selector: '#t-toast', message: '全选(本地示例)' });
+  onCatTap(e) {
+    const cat = e.currentTarget.dataset.cat;
+    const { goodsList } = this.data;
+    const filtered = cat === '全部' ? goodsList : goodsList.filter(g => (g.tags || []).includes(cat));
+    this.setData({ activeCat: cat, filteredList: filtered });
   },
 
   onToSettle() {
+    // 结算前写入结算所需结构（与原购物车一致）
     const items = getCartItems();
-    wx.setStorageSync('order.goodsRequestList', JSON.stringify(items.map(i => ({
+    const payload = items.map((i) => ({
       goodsName: i.title,
       spuId: i.spuId,
       skuId: i.skuId,
@@ -113,14 +79,8 @@ Page({
       specInfo: i.specInfo,
       available: i.available,
       storeId: i.storeId,
-    }))));
+    }));
+    wx.setStorageSync('order.goodsRequestList', JSON.stringify(payload));
     wx.navigateTo({ url: '/pages/order/order-confirm/index?type=cart' });
   },
-
-  goGoodsDetail(e) {
-    const { spuId } = e.detail.goods;
-    wx.navigateTo({ url: `/pages/goods/details/index?spuId=${spuId}` });
-  },
-
-  onGotoHome() { wx.switchTab({ url: '/pages/home/home' }); },
 });
