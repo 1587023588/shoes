@@ -1,0 +1,50 @@
+<!-- 顶部：视频播放区块（新增，改为闭合标签修复渲染错误） -->
+<view class="home-video-wrap">
+  <video
+    id="home-top-video"
+    class="home-video"
+    src="{{videoSrc}}"
+    object-fit="cover"
+    controls
+    show-center-play-btn
+    enable-progress-gesture
+    autoplay="{{videoAutoplay}}"
+    muted="{{videoMuted}}"
+    loop="{{videoLoop}}"
+    binderror="onVideoError"
+  ></video>
+</view>
+
+<!-- 英雄大图（按截图样式，文字覆盖） -->
+<view class="hero">
+  <image class="hero__img" src="{{heroImage}}" mode="aspectFill" />
+  <view class="hero__title">文化馆小程序</view>
+  <view class="hero__overlay-bottom"></view>
+  <!-- 白底圆角功能卡片上边缘视觉贴合 -->
+</view>
+
+<!-- 白底圆角功能宫格（2x4） -->
+<view class="func-card">
+  <view class="func-grid">
+    <view class="func-item" wx:for="{{funcList}}" wx:key="index" data-index="{{index}}" bindtap="onFuncTap">
+      <view class="func-icon">
+        <image class="func-icon-img" src="{{item.iconUrl || defaultFuncIcon}}" mode="aspectFit" />
+      </view>
+      <view class="func-text">{{item.text}}</view>
+    </view>
+  </view>
+</view>
+
+<!-- 资讯列表（左图右文卡片） -->
+<view class="news-list">
+  <view class="news-card" wx:for="{{newsList}}" wx:key="id" data-id="{{item.id}}" bindtap="onNewsTap">
+    <image class="news-card__thumb" src="{{item.cover}}" mode="aspectFill" />
+    <view class="news-card__body">
+      <view class="news-card__title">{{item.title}}</view>
+      <view class="news-card__desc">{{item.desc}}</view>
+      <view class="news-card__tag">{{item.tag}}</view>
+    </view>
+  </view>
+</view>
+
+<t-toast id="t-toast" />
