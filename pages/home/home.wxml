@@ -14,7 +14,7 @@
     binderror="onVideoError"
   ></video>
 </view>
-
+<!-- 测试信息 -->
 <!-- 英雄大图（按截图样式，文字覆盖） -->
 <view class="hero">
   <image class="hero__img" src="{{heroImage}}" mode="aspectFill" />
