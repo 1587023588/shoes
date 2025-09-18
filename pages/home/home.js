@@ -42,15 +42,8 @@ Page({
   },
 
   onLoad() {
-    console.log("实际视频路径:", this.data.videoSrc);
-    // 额外检查文件是否存在（仅本地视频有效）
-    if (this.data.videoSrc.startsWith('/')) {
-      wx.getFileSystemManager().access({
-        path: this.data.videoSrc,
-        success: () => console.log('文件存在'),
-        fail: () => console.log('文件不存在或路径错误')
-      });
-    }
+    this.init();
+    // 若需从服务端拉取英雄图/宫格/资讯，可在此请求
   },
 
   onReachBottom() {

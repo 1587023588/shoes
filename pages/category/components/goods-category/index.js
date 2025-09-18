@@ -4,6 +4,7 @@ Component({
   properties: {
     category: {
       type: Array,
+      value: []
     },
     initActive: {
       type: Array,
@@ -28,10 +29,16 @@ Component({
     subActiveKey: 0,
   },
   attached() {
+    // 确保初始化时数据安全
     if (this.properties.initActive && this.properties.initActive.length > 0) {
       this.setData({
         activeKey: this.properties.initActive[0],
         subActiveKey: this.properties.initActive[1] || 0,
+      });
+    } else if (this.properties.category.length > 0) {
+      this.setData({
+        activeKey: 0,
+        subActiveKey: 0
       });
     }
   },
@@ -48,9 +55,12 @@ Component({
     },
     changCategory(event) {
       const { item } = event.currentTarget.dataset;
-      this.triggerEvent('changeCategory', {
-        item,
-      });
+      // 确保item存在
+      if (item) {
+        this.triggerEvent('changeCategory', {
+          item,
+        });
+      }
     },
     setActiveKey(key, subKey) {
       return new Promise((resolve) => {

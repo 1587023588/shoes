@@ -1,5 +1,5 @@
 {
-  "navigationBarTitleText": "分类",
+  "navigationBarTitleText": "博物馆预约",
   "usingComponents": {
     "goods-category": "./components/goods-category/index"
   }

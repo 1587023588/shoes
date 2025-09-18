@@ -1,55 +1,26 @@
 {
-  "pages": ["pages/home/home", "pages/category/index", "pages/cart/index", "pages/usercenter/index"],
+  "pages": [
+    "pages/home/home",
+    "pages/category/index",
+    "pages/reservation/form/index",
+    "pages/usercenter/index",
+    "pages/cart/index"
+  ],
   "subpackages": [
     {
       "root": "pages/user",
       "name": "user",
-      "pages": ["person-info/index", "address/list/index", "address/edit/index", "name-edit/index"]
-    },
-    {
-      "root": "pages/goods",
-      "name": "goods",
       "pages": [
-        "list/index",
-        "details/index",
-        "search/index",
-        "result/index",
-        "comments/index",
-        "comments/create/index"
+        "person-info/index",
+        "address/list/index",
+        "address/edit/index"
       ]
-    },
-    {
-      "root": "pages/order",
-      "name": "order",
-      "pages": [
-        "order-confirm/index",
-        "receipt/index",
-        "pay-result/index",
-        "order-list/index",
-        "order-detail/index",
-        "apply-service/index",
-        "after-service-list/index",
-        "after-service-detail/index",
-        "fill-tracking-no/index",
-        "delivery-detail/index",
-        "invoice/index"
-      ]
-    },
-    {
-      "root": "pages/coupon",
-      "name": "coupon",
-      "pages": ["coupon-list/index", "coupon-detail/index", "coupon-activity-goods/index"]
-    },
-    {
-      "root": "pages/promotion",
-      "name": "promotion",
-      "pages": ["promotion-detail/index"]
     }
   ],
   "tabBar": {
     "custom": true,
     "color": "#666666",
-    "selectedColor": "#FF5F15",
+    "selectedColor": "#0071ce",
     "backgroundColor": "#ffffff",
     "borderStyle": "black",
     "list": [
@@ -59,11 +30,11 @@
       },
       {
         "pagePath": "pages/category/index",
-        "text": "分类"
+        "text": "展览预约"
       },
       {
         "pagePath": "pages/cart/index",
-        "text": "购物车"
+        "text": "我的预约"
       },
       {
         "pagePath": "pages/usercenter/index",
@@ -77,13 +48,14 @@
   "window": {
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#fff",
-    "navigationBarTitleText": "北庄布鞋 · 乡村振兴",
+    "navigationBarTitleText": "博物馆预约系统",
     "navigationBarTextStyle": "black"
   },
   "sitemapLocation": "sitemap.json",
   "permission": {
     "scope.userLocation": {
-      "desc": "你的位置信息将用于小程序位置接口的效果展示"
+      "desc": "你的位置信息将用于博物馆位置导航"
     }
   }
 }
+    
