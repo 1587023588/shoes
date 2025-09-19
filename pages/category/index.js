@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 Page({
   data: {
     // 博物馆预约数据（展览类型→具体展览→场次）
@@ -115,4 +116,33 @@ Page({
       url: `/pages/reservation/form/index?item=${encodeURIComponent(JSON.stringify(item))}`
     });
   }
+=======
+import { getCategoryList } from '../../services/good/fetchCategoryList';
+Page({
+  data: {
+    list: [],
+  },
+  async init() {
+    try {
+      const result = await getCategoryList();
+      this.setData({
+        list: result,
+      });
+    } catch (error) {
+      console.error('err:', error);
+    }
+  },
+
+  onShow() {
+    this.getTabBar().init();
+  },
+  onChange() {
+    wx.navigateTo({
+      url: '/pages/goods/list/index',
+    });
+  },
+  onLoad() {
+    this.init(true);
+  },
+>>>>>>> 8a4f608c58ff387d6453daf1e3f9e1e5f76f2f7f
 });
