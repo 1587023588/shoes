@@ -22,7 +22,7 @@ Component({
     },
     classPrefix: {
       type: String,
-      value: 'wr',
+      value: 't',
     },
   },
   methods: {

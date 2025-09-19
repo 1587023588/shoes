@@ -1,5 +1,6 @@
 import { fetchUserCenter } from '../../services/usercenter/fetchUsercenter';
 import Toast from 'tdesign-miniprogram/toast/index';
+import { listOrders } from '../../services/order/localOrder';
 
 const menuData = [
   [
@@ -49,30 +50,16 @@ const orderTagInfos = [
   },
   {
     title: '待发货',
-    iconName: 'deliver',
+    iconName: 'send',
     orderNum: 0,
     tabType: 10,
     status: 1,
   },
   {
     title: '待收货',
-    iconName: 'package',
+    iconName: 'outbox',
     orderNum: 0,
     tabType: 40,
-    status: 1,
-  },
-  {
-    title: '待评价',
-    iconName: 'comment',
-    orderNum: 0,
-    tabType: 60,
-    status: 1,
-  },
-  {
-    title: '退款/售后',
-    iconName: 'exchang',
-    orderNum: 0,
-    tabType: 0,
     status: 1,
   },
 ];
@@ -100,9 +87,28 @@ Page({
     this.getVersionInfo();
   },
 
+  // 计算各状态真实数量并设置“小红点”
+  refreshOrderBadges() {
+    try {
+      const local = listOrders ? (listOrders() || []) : [];
+      const counts = { pending_pay: 0, paid: 0, shipped: 0, completed: 0 };
+      local.forEach((o) => {
+        if (o && typeof o.status === 'string' && counts.hasOwnProperty(o.status)) counts[o.status]++;
+      });
+      const mappingByTitle = {
+        '待付款': counts.pending_pay,
+        '待发货': counts.paid,
+        '待收货': counts.shipped,
+      };
+      const next = (this.data.orderTagInfos || []).map((it) => ({ ...it, orderNum: mappingByTitle[it.title] || 0 }));
+      this.setData({ orderTagInfos: next });
+    } catch (e) { /* ignore */ }
+  },
+
   onShow() {
     this.getTabBar().init();
     this.init();
+    this.refreshOrderBadges();
   },
   onPullDownRefresh() {
     this.init();
@@ -111,6 +117,7 @@ Page({
   init() {
     this.fetUseriInfoHandle();
     this.computeUserStats();
+    this.refreshOrderBadges();
   },
 
   fetUseriInfoHandle() {
@@ -135,6 +142,8 @@ Page({
         customerServiceInfo,
         currAuthStep: 2,
       });
+      // 覆盖徽标为真实订单统计
+      this.refreshOrderBadges();
       wx.stopPullDownRefresh();
     });
   },
@@ -189,13 +198,9 @@ Page({
   },
 
   jumpNav(e) {
-    const status = e.detail.tabType;
-
-    if (status === 0) {
-      wx.navigateTo({ url: '/pages/order/after-service-list/index' });
-    } else {
-      wx.navigateTo({ url: `/pages/order/order-list/index?status=${status}` });
-    }
+    const item = e.detail || {};
+    const status = item.tabType;
+    wx.navigateTo({ url: `/pages/order/order-list/index?status=${status}` });
   },
 
   jumpAllOrder() {

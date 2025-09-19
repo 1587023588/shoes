@@ -15,16 +15,15 @@ Page({
     // 英雄图
     heroImage: '/pages/images/test.jpg',
     // 功能宫格（2x4）
-    defaultFuncIcon: '/pages/images/test.jpg',
     funcList: [
-      { iconUrl: '/pages/images/test.jpg', text: '公告通知', url: '/pages/notice/index' },
-      { iconUrl: '/pages/images/test.jpg', text: '本馆介绍', url: '/pages/about/index' },
-      { iconUrl: '/pages/images/test.jpg', text: '非遗之窗', url: '/pages/heritage/index' },
-      { iconUrl: '/pages/images/test.jpg', text: '培训风采', url: '/pages/training/showcase/index' },
-      { iconUrl: '/pages/images/test.jpg', text: '青少年培训', url: '/pages/training/teen/index' },
-      { iconUrl: '/pages/images/test.jpg', text: '成人培训', url: '/pages/training/adult/index' },
-      { iconUrl: '/pages/images/test.jpg', text: '老年人培训', url: '/pages/training/senior/index' },
-      { iconUrl: '/pages/images/test.jpg', text: '文艺团队招募', url: '/pages/recruit/index' },
+      { iconName: 'image', text: '云游展馆', url: '/pages/tour/index' },
+      { iconName: 'info-circle', text: '本馆介绍', url: '/pages/about/index' },
+      { iconName: 'star', text: '非遗之窗', url: '/pages/heritage/index' },
+      { iconName: 'image', text: '培训风采', url: '/pages/training/showcase/index' },
+      { iconName: 'usergroup', text: '青少年培训', url: '/pages/training/teen/index' },
+      { iconName: 'user', text: '成人培训', url: '/pages/training/adult/index' },
+      { iconName: 'user-circle', text: '老年人培训', url: '/pages/training/senior/index' },
+      { iconName: 'usergroup-add', text: '文艺团队招募', url: '/pages/recruit/index' },
     ],
     // 资讯列表已移除
   },

@@ -27,8 +27,17 @@
               bindtap="changCategory"
               data-item="{{subItem}}"
             >
-              <t-image src="{{subItem.thumbnail}}" t-class="image" />
+              <view class="image-container">
+                <t-image src="{{subItem.thumbnail}}" t-class="image" />
+              </view>
               <view class="flex goods-category-normal-item-container-item-title"> {{subItem.name}} </view>
+              <view wx:if="{{subItem.date || subItem.time}}" class="reservation-time">
+                {{subItem.date}} {{subItem.time}}
+              </view>
+              <view wx:if="{{subItem.quota || subItem.enrolled}}" class="reservation-quota {{ ((subItem.quota || 0) - (subItem.enrolled || 0)) <= 0 ? 'full' : '' }}">
+                {{ ((subItem.quota || 0) - (subItem.enrolled || 0)) <= 0 ? '已约满' : ('余 ' + ((subItem.quota || 0) - (subItem.enrolled || 0)) + ' / 总 ' + (subItem.quota || 0)) }}
+              </view>
+              <view wx:if="{{subItem.location}}" class="reservation-location">{{subItem.location}}</view>
             </view>
           </view>
         </block>
@@ -40,8 +49,17 @@
               bindtap="changCategory"
               data-item="{{item}}"
             >
-              <t-image src="{{item.thumbnail}}" t-class="image" />
+              <view class="image-container">
+                <t-image src="{{item.thumbnail}}" t-class="image" />
+              </view>
               <view class="flex goods-category-normal-item-container-item-title"> {{item.name}} </view>
+              <view wx:if="{{item.date || item.time}}" class="reservation-time">
+                {{item.date}} {{item.time}}
+              </view>
+              <view wx:if="{{item.quota || item.enrolled}}" class="reservation-quota {{ ((item.quota || 0) - (item.enrolled || 0)) <= 0 ? 'full' : '' }}">
+                {{ ((item.quota || 0) - (item.enrolled || 0)) <= 0 ? '已约满' : ('余 ' + ((item.quota || 0) - (item.enrolled || 0)) + ' / 总 ' + (item.quota || 0)) }}
+              </view>
+              <view wx:if="{{item.location}}" class="reservation-location">{{item.location}}</view>
             </view>
           </block>
         </view>

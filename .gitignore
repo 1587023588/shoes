@@ -1,3 +1,6 @@
+# Ignore nested duplicate project under pages/images
+pages/images/*
+!pages/images/test.jpg
 # Node & Logs
 node_modules/
 npm-debug.log*

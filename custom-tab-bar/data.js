@@ -23,11 +23,5 @@ export default [
     url: 'pages/usercenter/index',
     isTab: true,
   },
-  {
-    icon: 'home',
-    text: '云游展馆',
-    url: 'pages/tour/index',
-    isTab: false,
-  },
   // rural-theme: 后续可替换图标为手绘风格
 ];

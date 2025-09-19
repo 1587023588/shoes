@@ -1,8 +1,12 @@
 {
   "description": "项目配置文件，详见文档：https://developers.weixin.qq.com/miniprogram/dev/devtools/projectconfig.html",
   "packOptions": {
-    "ignore": [],
-    "include": []
+    "ignore": [
+      { "type": "glob", "value": "pages/images/**" }
+    ],
+    "include": [
+      { "type": "file", "value": "pages/images/test.jpg" }
+    ]
   },
   "setting": {
     "urlCheck": true,
@@ -52,7 +56,7 @@
   },
   "compileType": "miniprogram",
   "libVersion": "3.8.0",
-  "appid": "wx342b2af70f88dd27",
+  "appid": "wx22bed46c4a49aea5",
   "projectname": "tdesign-miniprogram-starter-retail",
   "simulatorType": "wechat",
   "simulatorPluginLibVersion": {},

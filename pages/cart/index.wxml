@@ -15,7 +15,7 @@
 
   <!-- 悬浮购物车按钮（圆形FAB+数量徽标） -->
   <view class="floating-cart-btn" bindtap="onToSettle">
-    <image class="fab-icon" src="/pages/images/test.jpg" mode="aspectFill" />
+    <t-icon name="cart" size="48rpx" color="#333" />
     <view wx:if="{{cartCount>0}}" class="fab-badge">{{cartCount}}</view>
   </view>
 </view>

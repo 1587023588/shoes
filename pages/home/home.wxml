@@ -28,7 +28,7 @@
   <view class="func-grid">
     <view class="func-item" wx:for="{{funcList}}" wx:key="index" data-index="{{index}}" bindtap="onFuncTap">
       <view class="func-icon">
-        <image class="func-icon-img" src="{{item.iconUrl || defaultFuncIcon}}" mode="aspectFit" />
+        <t-icon name="{{item.iconName || 'apps'}}" size="48rpx" color="#fff" />
       </view>
       <view class="func-text">{{item.text}}</view>
     </view>
