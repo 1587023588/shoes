@@ -1,0 +1,21 @@
+.tabbar-position {
+  position: fixed !important;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+}
+
+.wrap {
+  height: 100vh;
+  overflow: hidden;
+  background-color: #f6f6f6;
+}
+
+.goods-category-class {
+  height: 100%;
+}
+
+page {
+  min-height: 100%;
+  background-color: #f6f6f6;
+}

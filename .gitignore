@@ -1,0 +1,29 @@
+# Ignore nested duplicate project under pages/images
+pages/images/*
+!pages/images/test.jpg
+# Node & Logs
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# WeChat Dev Tools temp
+./miniprogram_dist/
+
+# Mac OS resource forks (avoid AppleDouble files)
+__MACOSX/
+._*
+
+# Editor
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db
+
+# Build artifacts
+/dist/
+/tmp/
+
+# Env
+.env.local
+.env.*.local

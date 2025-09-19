@@ -1,0 +1,108 @@
+<view class="page-container">
+  <!-- 顶部导航 -->
+  <view class="nav-bar">
+    <view class="back-btn" bindtap="onNavigateBack">
+      <icon type="arrowleft" size="24" color="#333" />
+    </view>
+    <view class="nav-title">展览预约</view>
+    <view class="nav-empty"></view>
+  </view>
+
+  <!-- 展览信息卡片 -->
+  <view class="exhibition-card">
+    <view class="card-header">
+      <image src="{{item.thumbnail}}" class="card-img" mode="cover" />
+      <view class="card-info">
+        <view class="card-title">{{item.name}}</view>
+        <view class="card-meta">
+          <view class="meta-item">
+            <icon type="calendar" size="16" color="#666" />
+            <text>{{item.date}}</text>
+          </view>
+          <view class="meta-item">
+            <icon type="clock" size="16" color="#666" />
+            <text>{{item.time}}</text>
+          </view>
+        </view>
+        <view class="location-tag">
+          <icon type="location" size="14" color="#0071ce" />
+          <text>{{item.location}}</text>
+        </view>
+      </view>
+    </view>
+    
+    <view class="card-notice" wx:if="{{item.notice}}">
+      <icon type="info" size="16" color="#fa4343" />
+      <text>{{item.notice}}</text>
+    </view>
+  </view>
+
+  <!-- 预约表单 -->
+  <view class="form-container">
+    <view class="form-title">预约信息</view>
+    
+    <view class="form-group">
+      <view class="form-item">
+        <view class="item-label required">姓名</view>
+        <input 
+          class="item-input" 
+          placeholder="请输入真实姓名" 
+          bindinput="onNameChange" 
+          value="{{name}}"
+          maxlength="10"
+        />
+      </view>
+      
+      <view class="form-item">
+        <view class="item-label required">身份证号</view>
+        <input 
+          class="item-input" 
+          placeholder="用于入场核验" 
+          bindinput="onIdCardChange" 
+          value="{{idCard}}"
+          maxlength="18"
+        />
+      </view>
+      
+      <view class="form-item">
+        <view class="item-label required">联系电话</view>
+        <input 
+          class="item-input" 
+          placeholder="用于接收预约提醒" 
+          bindinput="onPhoneChange" 
+          value="{{phone}}"
+          type="number"
+          maxlength="11"
+        />
+      </view>
+      
+      <view class="form-item">
+        <view class="item-label">预约人数</view>
+        <picker 
+          class="item-picker"
+          mode="number" 
+          range="{{[1,2,3,4,5]}}" 
+          bindchange="onPeopleChange" 
+          value="{{peopleIndex}}"
+        >
+          <view class="picker-text">{{peopleCount}}人</view>
+        </picker>
+      </view>
+    </view>
+    
+    <!-- 提交按钮 -->
+    <button 
+      class="submit-btn {{!name || !idCard || !phone ? 'btn-disabled' : ''}}" 
+      bindtap="submitReservation" 
+      disabled="{{!name || !idCard || !phone}}"
+    >
+      确认预约
+    </button>
+    
+    <!-- 温馨提示 -->
+    <view class="tip-text">
+      温馨提示：预约成功后，请在参观当日携带身份证原件入场
+    </view>
+  </view>
+</view>
+    
