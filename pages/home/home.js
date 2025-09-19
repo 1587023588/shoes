@@ -7,8 +7,8 @@ Page({
   pageLoading: false,
   loadError: false,
   errorMsg: '',
-    // 顶部视频
-    videoSrc: '/pages/images/index_video.mp4',
+  // 顶部视频（改为使用 HTTPS 远程资源，避免本地大文件冲突）
+  videoSrc: 'https://shoes-1379330878.cos.ap-beijing.myqcloud.com/index_video.mp4',
     videoAutoplay: true,
     videoMuted: true,
     videoLoop: true,
