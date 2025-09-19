@@ -1,0 +1,23 @@
+<t-tab-bar
+ value="{{active}}"
+ bindchange="onChange"
+ split="{{false}}"
+>
+	<t-tab-bar-item
+	 wx:for="{{list}}"
+	 wx:for-item="item"
+	 wx:for-index="index"
+	 wx:key="index"
+	>
+		<view class="custom-tab-bar-wrapper">
+			<t-icon prefix="wr" name="{{item.icon}}" size="48rpx" />
+			<view class="text">
+				{{ item.text }}
+				<block wx:if="{{item.icon==='cart' && cartCount>0}}">
+					<view class="cart-badge">{{ cartCount }}</view>
+				</block>
+			</view>
+		</view>
+	</t-tab-bar-item>
+</t-tab-bar>
+

@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "选购",
+  "usingComponents": {
+    "goods-list": "/components/goods-list/index",
+    "t-toast": "tdesign-miniprogram/toast/toast"
+  }
+}

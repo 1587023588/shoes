@@ -1,0 +1,7 @@
+.goods-list-wrap {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16rpx;
+  padding: 0 16rpx 16rpx;
+  background: transparent;
+}
