@@ -54,6 +54,14 @@
       "root": "pages/tour",
       "pages": ["index"]
     }
+    ,
+    {
+      "root": "pages/reservation",
+      "name": "reservation",
+      "pages": [
+        "form/index"
+      ]
+    }
   ],
   "tabBar": {
     "custom": true,
