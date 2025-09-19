@@ -35,16 +35,4 @@
   </view>
 </view>
 
-<!-- 资讯列表（左图右文卡片） -->
-<view class="news-list">
-  <view class="news-card" wx:for="{{newsList}}" wx:key="id" data-id="{{item.id}}" bindtap="onNewsTap">
-    <image class="news-card__thumb" src="{{item.cover}}" mode="aspectFill" />
-    <view class="news-card__body">
-      <view class="news-card__title">{{item.title}}</view>
-      <view class="news-card__desc">{{item.desc}}</view>
-      <view class="news-card__tag">{{item.tag}}</view>
-    </view>
-  </view>
-</view>
-
 <t-toast id="t-toast" />

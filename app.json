@@ -45,6 +45,13 @@
       "name": "promotion",
       "pages": ["promotion-detail/index"]
     }
+    ,
+    {
+      "root": "pages/tour",
+      "pages": [
+        "index"
+      ]
+    }
   ],
   "tabBar": {
     "custom": true,

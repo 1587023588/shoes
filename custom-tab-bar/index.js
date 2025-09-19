@@ -9,11 +9,13 @@ Component({
   methods: {
     onChange(event) {
       this.setData({ active: event.detail.value });
-      wx.switchTab({
-        url: this.data.list[event.detail.value].url.startsWith('/')
-          ? this.data.list[event.detail.value].url
-          : `/${this.data.list[event.detail.value].url}`,
-      });
+      const item = this.data.list[event.detail.value];
+      const url = item.url.startsWith('/') ? item.url : `/${item.url}`;
+      if (item.isTab) {
+        wx.switchTab({ url });
+      } else {
+        wx.navigateTo({ url });
+      }
     },
 
     init() {

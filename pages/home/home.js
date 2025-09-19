@@ -26,11 +26,7 @@ Page({
       { iconUrl: '/pages/images/test.jpg', text: '老年人培训', url: '/pages/training/senior/index' },
       { iconUrl: '/pages/images/test.jpg', text: '文艺团队招募', url: '/pages/recruit/index' },
     ],
-    // 资讯列表
-    newsList: [
-      { id: 1, title: '国庆假期开馆公告', desc: '盛世华诞，举国同庆。南昌市文化馆国庆期间（10月1日——7...）', cover: '/pages/images/test.jpg', tag: '公告通知' },
-      { id: 2, title: '文化馆通知', desc: '关于加强“48小时常态化核酸检测”场所码联动查验通知...', cover: '/pages/images/test.jpg', tag: '公告通知' },
-    ],
+    // 资讯列表已移除
   },
 
   // 兼容保留：如后续有分页需求可在此扩展
@@ -109,11 +105,6 @@ Page({
       });
   },
 
-  // 资讯点击
-  onNewsTap(e) {
-    const { id } = e.currentTarget.dataset;
-    wx.navigateTo({ url: `/pages/notice/detail/index?id=${id}` });
-  },
   // 宫格点击
   onFuncTap(e) {
     const { index } = e.currentTarget.dataset;

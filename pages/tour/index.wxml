@@ -1,0 +1,27 @@
+<view class="tour-page">
+  <view class="viewer">
+  <swiper class="swiper" current="{{current}}" circular="false" autoplay="false" indicator-dots="false" duration="500" easing-function="easeInOutCubic" disable-touch="true" bindchange="onSwiperChange">
+      <block wx:for="{{slides}}" wx:key="id" wx:for-index="index">
+        <swiper-item>
+          <image class="slide-img {{current === index ? 'kenburns' : ''}}" src="{{item.image}}" mode="aspectFill" />
+        </swiper-item>
+      </block>
+    </swiper>
+    <!-- 兜底：透明手势拦截层，防止低版本基础库仍可滑动 -->
+    <view class="touch-guard" catchtouchstart="noop" catchtouchmove="noop" catchtouchend="noop" />
+    <view class="vignette" />
+    <view class="caption">
+      <view class="title">{{title}}</view>
+      <view class="desc">{{desc}}</view>
+    </view>
+  </view>
+
+  <!-- 底部控制条：放在图片区域下方红色背景区域 -->
+  <view class="controls-bar">
+    <view class="ctrl-btn left" bindtap="prev">‹</view>
+    <view class="ctrl-btn audio {{!currentHasAudio ? 'disabled' : (audioPlaying ? 'playing' : '')}}" bindtap="toggleAudio">
+      {{ audioPlaying ? '⏸' : '▶' }}
+    </view>
+    <view class="ctrl-btn right" bindtap="next">›</view>
+  </view>
+</view>
