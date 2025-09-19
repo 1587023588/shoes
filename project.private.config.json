@@ -20,6 +20,9 @@
     "useIsolateContext": true,
     "ignoreDevUnusedFiles": false
   },
+<<<<<<< HEAD
+  "condition": {},
+=======
   "condition": {
     "miniprogram": {
       "list": [
@@ -118,5 +121,6 @@
       ]
     }
   },
+>>>>>>> 8a4f608c58ff387d6453daf1e3f9e1e5f76f2f7f
   "libVersion": "3.8.0"
 }

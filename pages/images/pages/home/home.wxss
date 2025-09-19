@@ -1,0 +1,217 @@
+/*
+ * 首页样式（含布鞋品牌化模块）
+ * 调试间距时主要关注：各模块 margin-top / 内部 gap / 统一工具类（rural-space-*）
+ * 建议：
+ *  - 将所有区块包裹在一个容器并使用 .rural-space-stack 统一垂直节奏
+ *  - 如需临时快速观察，可给 body 加辅助类描边（调试后删除）
+ */
+page {
+  box-sizing: border-box;
+  /* 页面底部预留给自定义 tab-bar 的空间（含安全区） */
+  padding-bottom: calc(env(safe-area-inset-bottom) + 96rpx);
+  background: #8c1d15; /* 深红底衬 */
+}
+
+.t-tabs.t-tabs--top .t-tabs__scroll {
+  border-bottom: none !important;
+}
+
+/* 顶部头部区域不再使用渐变背景 */
+.home-page-header { background: transparent; }
+
+/* 顶部视频区域 */
+.home-video-wrap { padding: 0 24rpx; background: #8c1d15;margin: 30rpx 0rpx}
+.home-video { width: 100%; height: 380rpx; border-radius: 16rpx; overflow: hidden; }
+.home-video + .home-page-header { margin-top: 16rpx; }
+
+.home-page-container { background: transparent; }
+
+/* 英雄大图 */
+.hero { position: relative; margin: 16rpx 24rpx 0; }
+.hero__img { width: 100%; height: 420rpx; border-radius: 24rpx; object-fit: cover; display: block; }
+.hero__title { position: absolute; left: 50%; bottom: 24rpx; transform: translateX(-50%); color: #fff; font-size: 40rpx; font-weight: 700; text-shadow: 0 2rpx 8rpx rgba(0,0,0,.4); }
+.hero__overlay-bottom { position:absolute; left:0; right:0; bottom:-24rpx; height: 24rpx; background: #8c1d15; border-bottom-left-radius: 24rpx; border-bottom-right-radius: 24rpx; z-index:-1; }
+
+/* 白底圆角功能卡片 */
+.func-card { margin: 0 24rpx; background:#fff; border-radius: 28rpx; padding: 24rpx 24rpx 16rpx; box-shadow: 0 8rpx 24rpx rgba(0,0,0,0.08); }
+.func-grid { display: grid; grid-template-columns: repeat(4, 1fr); row-gap: 24rpx; column-gap: 0; }
+.func-item { display:flex; flex-direction:column; align-items:center; justify-content:center; color:#7a5a35; }
+.func-icon { width: 96rpx; height: 96rpx; border-radius: 50%; background: #a87748; display:flex; align-items:center; justify-content:center; }
+.func-icon-img { width: 48rpx; height: 48rpx; filter: brightness(100%) contrast(110%); }
+.func-text { margin-top: 12rpx; font-size: 24rpx; color: #666; }
+
+/* 资讯列表 */
+.news-list { margin: 24rpx 24rpx 0; padding-bottom: 24rpx; }
+.news-card { display:flex; background:#fff; border-radius: 24rpx; padding: 16rpx; box-shadow: 0 6rpx 18rpx rgba(0,0,0,.08); align-items: center; }
+.news-card + .news-card { margin-top: 16rpx; }
+.news-card__thumb { width: 180rpx; height: 140rpx; border-radius: 16rpx; object-fit: cover; flex-shrink: 0; }
+.news-card__body { margin-left: 16rpx; display:flex; flex-direction:column; gap: 8rpx; }
+.news-card__title { font-size: 30rpx; font-weight: 700; color: #111; }
+.news-card__desc { font-size: 24rpx; color: #666; }
+.news-card__tag { font-size: 20rpx; color: #a87748; }
+
+/* 页面主容器左右统一 24rpx 内边距，避免内容贴边 */
+.home-page-container,
+.home-page-header { display:block; padding:0 24rpx; }
+
+.home-page-header .t-search__input-container {
+  border-radius: 32rpx !important;
+  height: 64rpx !important;
+}
+
+.home-page-header .t-search__input {
+  font-size: 28rpx !important;
+  color: rgb(116, 116, 116) !important;
+}
+
+/* 搜索下方轮播与搜索框垂直间距 */
+.home-page-header .swiper-wrap { margin-top:20rpx; }
+
+.home-page-header .t-image__swiper {
+  width: 100%;
+  height: 300rpx;
+  border-radius: 10rpx;
+}
+
+.home-page-container .t-tabs {
+  background: #f5f5f5 !important;
+}
+
+.home-page-container .t-tabs .t-tabs-nav {
+  background-color: transparent;
+  line-height: 80rpx;
+  font-size: 28rpx;
+  color: #333;
+}
+
+.home-page-container .t-tabs .t-tabs-scroll {
+  border: none !important;
+}
+
+/* 半个字 */
+.home-page-container .tab.order-nav .order-nav-item.scroll-width {
+  min-width: 165rpx;
+}
+.home-page-container .tab .order-nav-item.active {
+  color: #fa550f !important;
+}
+
+.home-page-container .tab .bottom-line {
+  border-radius: 4rpx;
+}
+
+.home-page-container .tab .order-nav-item.active .bottom-line {
+  background-color: #fa550f !important;
+}
+
+.home-page-container .tabs-external__item {
+  /* color: #666 !important; */
+  font-size: 28rpx;
+}
+
+.home-page-container .tabs-external__active {
+  color: #333333 !important;
+  font-size: 32rpx;
+}
+
+.home-page-container .tabs-external__track {
+  /* background-color: #fa4126 !important; */
+  height: 6rpx !important;
+  border-radius: 4rpx !important;
+  width: 48rpx !important;
+}
+
+.t-tabs.t-tabs--top .t-tabs__item,
+.t-tabs.t-tabs--bottom .t-tabs__item {
+  height: 86rpx !important;
+}
+
+/* 商品列表整体与 Tabs 间垂直间距 */
+.home-page-container .goods-list-container { background:#f5f5f5 !important; margin-top:16rpx; }
+
+.home-page-tabs {
+  --td-tab-nav-bg-color: transparent;
+  --td-tab-border-color: transparent;
+  --td-tab-item-color: #666;
+  --td-tab-track-color: red;
+}
+
+/* ===================== 品牌化新增模块 ===================== */
+/* 快捷分类导航已移除（保留下面注释作为未来恢复参考）
+ .rural-quick-nav { white-space:nowrap; margin:16rpx 0 8rpx; }
+ .rural-quick-nav--compact { margin:6rpx 0 2rpx !important; }
+ .rural-quick-nav--compact .rural-quick-nav__icon { width:72rpx; height:72rpx; }
+ .rural-quick-nav--compact .rural-quick-nav__text { margin-top:6rpx; font-size:20rpx; line-height:22rpx; }
+ .rural-quick-nav--ultra { margin:4rpx 0 0 !important; }
+ .rural-quick-nav--ultra .rural-quick-nav__icon { width:64rpx; height:64rpx; }
+ .rural-quick-nav--ultra .rural-quick-nav__text { margin-top:4rpx; font-size:20rpx; line-height:20rpx; }
+*/
+.rural-quick-nav__wrap { display: flex; }
+.rural-quick-nav__item {
+  width: 120rpx;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-right: 24rpx;
+}
+.rural-quick-nav__icon {
+  width: 100rpx;
+  height: 100rpx;
+  border-radius: 50%;
+  background: #eee;
+  box-shadow: 0 4rpx 8rpx rgba(0,0,0,0.06);
+}
+.rural-quick-nav__text { margin-top: 12rpx; font-size: 24rpx; color: #444; }
+
+/* 品牌故事卡：margin-top 控制与上一个模块的间距；gap 控制图片与文字块横向距离 */
+.rural-brand-story { display:flex; gap:20rpx; margin-top:20rpx; }
+.rural-brand-story__content { flex: 1; }
+.rural-brand-story__title { font-size: 30rpx; color: #362e20; font-weight: 600; margin-bottom: 8rpx; }
+.rural-brand-story__desc { font-size: 24rpx; line-height: 1.5; color: #5a4d39; }
+.rural-brand-story__image { width: 180rpx; height: 180rpx; border-radius: 12rpx; object-fit: cover; }
+
+/* 手工工艺模块整体与前一模块间距 */
+.rural-craft { margin-top:20rpx; }
+.rural-craft__header { font-size: 30rpx; font-weight: 600; color: #362e20; margin-bottom: 16rpx; }
+.rural-craft__steps { display: flex; justify-content: space-between; }
+.rural-craft__step { flex: 1; text-align: center; }
+.rural-craft__step-name { font-size: 26rpx; color: #3f3525; font-weight: 600; }
+.rural-craft__step-desc { font-size: 22rpx; color: #7a6d5a; margin-top: 4rpx; }
+
+/* 助农项目高亮卡：含图 + 说明区域，gap 控制左右块距离 */
+.rural-project { display:flex; margin-top:20rpx; gap:20rpx; align-items:center; }
+.rural-project__image { width: 200rpx; height: 160rpx; border-radius: 16rpx; object-fit: cover; }
+.rural-project__info { flex: 1; }
+.rural-project__title { font-size: 30rpx; font-weight: 600; color: #553d1e; }
+.rural-project__sub { font-size: 22rpx; color: #7a674f; margin: 6rpx 0 10rpx; }
+.rural-project__stat { font-size: 26rpx; color: var(--brand-accent, #c17f37); font-weight: 600; }
+
+/*
+.rural-recommend { margin:20rpx 0 12rpx; white-space:nowrap; }
+.rural-recommend__wrap { display: flex; }
+单个推荐卡片：右侧 24rpx 间距，最后一项置 0 
+.rural-recommend__item { width:260rpx; flex-shrink:0; margin-right:24rpx; position:relative; }
+.rural-recommend__item:last-child { margin-right:0; }
+.rural-recommend__cover { width: 260rpx; height: 180rpx; border-radius: 20rpx; object-fit: cover; box-shadow: 0 6rpx 14rpx rgba(0,0,0,0.08); }
+.rural-recommend__meta { position: absolute; left: 0; bottom: 0; right: 0; padding: 12rpx 16rpx; background: linear-gradient(rgba(0,0,0,0), rgba(0,0,0,0.55)); border-radius: 0 0 20rpx 20rpx; }
+.rural-recommend__title { font-size: 26rpx; color: #fff; display: block; }
+.rural-recommend__tag { font-size: 20rpx; color: #ffe9c2; margin-top: 4rpx; display: inline-block; }
+*/
+/* 公共卡片：增加轻微背景模糊，保持材质感（低端机若出现性能问题可去掉） */
+.rural-section-card { backdrop-filter:blur(2px); }
+
+/* ========== 间距工具类（用于统一调节节奏） ========== */
+/* 标准节奏：20rpx；如果想全局再紧凑，可一次性搜索 20rpx 改成 16rpx */
+.rural-space-top { margin-top:20rpx !important; }
+/* 次要更小间距：用于卡片内部分段 */
+.rural-space-top-sm { margin-top:12rpx !important; }
+/* 栈式垂直分布：给父容器加 .rural-space-stack 即可让直接子元素自动产生 20rpx 间距 */
+/* 若某个子元素不需要间距，可额外加类 .no-stack-spacing 覆盖 margin-top:0 */
+.rural-space-stack > view + view,
+.rural-space-stack > view + scroll-view,
+.rural-space-stack > scroll-view + view,
+.rural-space-stack > scroll-view + scroll-view { margin-top:20rpx; }
+.rural-space-stack > .no-stack-spacing { margin-top:0 !important; }
+/* 调试辅助：开发时可打开描边方便观察 block 范围（完成后删除或注释） */
+/* .rural-debug-outline > * { outline:1px dashed rgba(200,120,40,.4); } */

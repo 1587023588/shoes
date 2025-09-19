@@ -1,5 +1,9 @@
 {
+<<<<<<< HEAD
+  "navigationBarTitleText": "博物馆预约",
+=======
   "navigationBarTitleText": "分类",
+>>>>>>> 8a4f608c58ff387d6453daf1e3f9e1e5f76f2f7f
   "usingComponents": {
     "goods-category": "./components/goods-category/index"
   }

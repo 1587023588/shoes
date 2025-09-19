@@ -1,0 +1,53 @@
+:host { padding-bottom: 120rpx; }
+.select-page { padding: 24rpx; }
+
+/* 顶部分类条 */
+.category-bar {
+  white-space: nowrap;
+  display: block;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 8rpx 0 16rpx;
+}
+.cat-item {
+  display: inline-block;
+  padding: 10rpx 20rpx;
+  margin-right: 12rpx;
+  border-radius: 999rpx;
+  background: #f5f5f5;
+  color: #666;
+  font-size: 24rpx;
+}
+.cat-item.active {
+  background: var(--brand-primary, #6b8e23);
+  color: #fff;
+}
+
+/* 悬浮购物车按钮 */
+.floating-cart-btn {
+  position: fixed;
+  right: 24rpx;
+  bottom: 160rpx;
+  z-index: 1000;
+  width: 96rpx;
+  height: 96rpx;
+  border-radius: 50%;
+  background: #fff;
+  box-shadow: 0 8rpx 24rpx rgba(0,0,0,0.18);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.fab-icon { width: 60rpx; height: 60rpx; border-radius: 12rpx; }
+.fab-badge {
+  position: absolute;
+  right: -6rpx;
+  top: -6rpx;
+  background: #ff4d4f;
+  color: #fff;
+  font-size: 20rpx;
+  border-radius: 999rpx;
+  padding: 2rpx 8rpx;
+  min-width: 32rpx;
+  text-align: center;
+}

@@ -1,0 +1,23 @@
+<!-- 商品选购列表（复用组件） -->
+<view class="select-page">
+  <!-- 顶部分类筛选条 -->
+  <scroll-view class="category-bar" scroll-x>
+    <view class="cat-item {{activeCat==='全部'?'active':''}}" data-cat="全部" bindtap="onCatTap">全部</view>
+    <view wx:for="{{categories}}" wx:key="*this" class="cat-item {{activeCat===item?'active':''}}" data-cat="{{item}}" bindtap="onCatTap">{{item}}</view>
+  </scroll-view>
+
+  <goods-list
+    id="select-goods-list"
+    goods-list="{{filteredList}}"
+    bind:click="onGoodsCardClick"
+    bind:addcart="onGoodsAddCart"
+  />
+
+  <!-- 悬浮购物车按钮（圆形FAB+数量徽标） -->
+  <view class="floating-cart-btn" bindtap="onToSettle">
+    <image class="fab-icon" src="/pages/images/test.jpg" mode="aspectFill" />
+    <view wx:if="{{cartCount>0}}" class="fab-badge">{{cartCount}}</view>
+  </view>
+</view>
+
+<t-toast id="t-toast" />
