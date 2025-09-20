@@ -6,25 +6,25 @@ Page({
       {
         text: '首页',
         icon: 'home',
-        imgUrl: '/static/tabbar/首页.png', // 首页图片路径
+        imgUrl: '/static/tabbar/北.png', // 首页图片路径
         pagePath: '/pages/home/home'
       },
       {
-        text: '布鞋分类',
+        text: '精神谱系',
         icon: 'sort',
-        imgUrl: '/static/tabbar/帆布鞋-copy.png', // 分类图片路径
+        imgUrl: '/static/tabbar/庄.png', // 分类图片路径
         pagePath: '/pages/category/index'
       },
       {
         text: '购物车',
         icon: 'cart',
-        imgUrl: '/static/tabbar/购物车.png', // 购物车图片路径
+        imgUrl: '/static/tabbar/布.png', // 购物车图片路径
         pagePath: '/pages/cart/index'
       },
       {
         text: '我的',
         icon: 'user',
-        imgUrl: '/static/tabbar/用户中心-copy.png', // 我的页面图片路径
+        imgUrl: '/static/tabbar/鞋.png', // 我的页面图片路径
         pagePath: '/pages/usercenter/index'
       }
     ]

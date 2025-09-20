@@ -1,5 +1,5 @@
 {
-  "pages": ["pages/home/home", "pages/category/index", "pages/cart/index", "pages/usercenter/index"],
+  "pages": ["pages/home/home", "pages/category/index", "pages/cart/index", "pages/usercenter/index","pages/museum/index", "pages/about/index"],
   "subpackages": [
     {
       "root": "pages/user",
@@ -61,7 +61,7 @@
       },
       {
         "pagePath": "pages/category/index",
-        "text": "分类",
+        "text": "精神谱系",
         "iconPath": "/static/tabbar/帆布鞋-copy.png",
       "selectedIconPath": "/static/tabbar/帆布鞋-copy.png"
       },

@@ -3,7 +3,7 @@
   <video
     id="home-top-video"
     class="home-video"
-    src="https://shoes-1379330878.cos.ap-beijing.myqcloud.com/index_video.mp4"
+    src="https://shoes-1379330878.cos.ap-beijing.myqcloud.com/9%E6%9C%8820%E6%97%A5.mp4"
     object-fit="cover"
     controls
     show-center-play-btn

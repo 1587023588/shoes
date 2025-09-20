@@ -1,69 +1,35 @@
-<view class="goods-category custom-class">
-  <c-sidebar custom-class="custom-sidebar" bindchange="onParentChange" activeKey="{{activeKey}}">
-    <c-sidebar-item wx:for="{{ category }}" wx:key="index" title="{{ item.name }}" disabled="{{ item.disabled }}" />
-  </c-sidebar>
-  <view class="goods-category__right">
-    <c-tabbar wx:if="{{isSlotRight}}" activeKey="{{subActiveKey}}" bindchange="onChildChange" showMore>
-      <slot />
-    </c-tabbar>
-    <view wx:if="{{!isSlotRight}}" class="goods-category-normal">
-      <view
-        class="goods-category-normal-item"
-        wx:if="{{category[activeKey].children && category[activeKey].children.length > 0}}"
-      >
-        <block
-          wx:for="{{category[activeKey].children}}"
-          wx:key="index"
-          wx:if="{{level === 3 && item.children && item.children.length > 0}}"
-        >
-          <view class="flex goods-category-normal-item-title"> {{item.name}} </view>
-          <view class="goods-category-normal-item-container">
-            <view
-              class="goods-category-normal-item-container-item"
-              wx:for="{{item.children}}"
-              wx:for-index="subIndex"
-              wx:key="subIndex"
-              wx:for-item="subItem"
-              bindtap="changCategory"
-              data-item="{{subItem}}"
-            >
-              <view class="image-container">
-                <t-image src="{{subItem.thumbnail}}" t-class="image" />
-              </view>
-              <view class="flex goods-category-normal-item-container-item-title"> {{subItem.name}} </view>
-              <view wx:if="{{subItem.date || subItem.time}}" class="reservation-time">
-                {{subItem.date}} {{subItem.time}}
-              </view>
-              <view wx:if="{{subItem.quota || subItem.enrolled}}" class="reservation-quota {{ ((subItem.quota || 0) - (subItem.enrolled || 0)) <= 0 ? 'full' : '' }}">
-                {{ ((subItem.quota || 0) - (subItem.enrolled || 0)) <= 0 ? '已约满' : ('余 ' + ((subItem.quota || 0) - (subItem.enrolled || 0)) + ' / 总 ' + (subItem.quota || 0)) }}
-              </view>
-              <view wx:if="{{subItem.location}}" class="reservation-location">{{subItem.location}}</view>
-            </view>
-          </view>
-        </block>
-        <view class="goods-category-normal-item-second-container" wx:if="{{level === 2}}">
-          <block wx:for="{{category[activeKey].children}}" wx:key="index">
-            <view
-              class="goods-category-normal-item-second-container-item"
-              wx:for-key="index"
-              bindtap="changCategory"
-              data-item="{{item}}"
-            >
-              <view class="image-container">
-                <t-image src="{{item.thumbnail}}" t-class="image" />
-              </view>
-              <view class="flex goods-category-normal-item-container-item-title"> {{item.name}} </view>
-              <view wx:if="{{item.date || item.time}}" class="reservation-time">
-                {{item.date}} {{item.time}}
-              </view>
-              <view wx:if="{{item.quota || item.enrolled}}" class="reservation-quota {{ ((item.quota || 0) - (item.enrolled || 0)) <= 0 ? 'full' : '' }}">
-                {{ ((item.quota || 0) - (item.enrolled || 0)) <= 0 ? '已约满' : ('余 ' + ((item.quota || 0) - (item.enrolled || 0)) + ' / 总 ' + (item.quota || 0)) }}
-              </view>
-              <view wx:if="{{item.location}}" class="reservation-location">{{item.location}}</view>
-            </view>
-          </block>
-        </view>
-      </view>
-    </view>
+<view class="container">
+  <!-- 页面标题 -->
+  <view class="page-title">红色精神介绍</view>
+  
+  <!-- 标签页组件（用于切换不同精神） -->
+  <t-tabs 
+    value="{{activeTab}}" 
+    bindchange="onTabChange" 
+    class="tabs-container"
+  >
+    <!-- 标签项：西柏坡精神、团结精神、北庄故事、拥军记忆 -->
+    <t-tab-panel label="西柏坡精神" value="xibaipo" />
+    <t-tab-panel label="团结精神" value="unity" />
+    <t-tab-panel label="北庄故事" value="beizhuang" />
+    <t-tab-panel label="拥军记忆" value="support-army" />
+  </t-tabs>
+  
+  <!-- 内容区域：根据选中的标签显示对应精神的介绍 -->
+  <view class="spirit-card">
+    <!-- 精神标题 -->
+    <view class="spirit-title">{{spiritDetails[activeTab].title}}</view>
+    
+    <!-- 精神摘要 -->
+    <view class="spirit-desc">{{spiritDetails[activeTab].desc}}</view>
+    
+    <!-- 历史背景 -->
+    <view class="content-title">历史背景</view>
+    <view class="content-text">{{spiritDetails[activeTab].background}}</view>
+    
+    <!-- 精神内涵 -->
+    <view class="content-title">精神内涵</view>
+    <view class="content-text">{{spiritDetails[activeTab].content}}</view>
   </view>
 </view>
+    

@@ -1,8 +1,58 @@
-<view class="wrap">
-  <goods-category
-    level="{{3}}"
-    custom-class="goods-category-class"
-    category="{{list}}"
-    bind:changeCategory="onChange"
-  />
+<view class="container">
+  <!-- 背景图（使用CDN地址） -->
+  <image 
+    class="bg-image" 
+    src="https://shoes-1379330878.cos.ap-beijing.myqcloud.com/xibaipo-spirit.jpg" 
+    mode="widthFix"
+  ></image>
+
+  <!-- 悬浮返回按钮 -->
+  <view class="back-home" bindtap="navToHome">
+    <icon name="back" size="24" color="#fff" />
+    <text class="back-text">返回首页</text>
+  </view>
+
+  <!-- 分类标签栏 -->
+  <t-tabs 
+    class="category-tabs" 
+    value="{{activeCategory}}" 
+    bindchange="onChangeCategory"
+    theme="primary"
+    active-color="#b31217"
+    layout="flex"
+  >
+    <t-tab-panel 
+      wx:for="{{categories}}" 
+      wx:key="id" 
+      label="{{item.name}}"
+    ></t-tab-panel>
+  </t-tabs>
+
+  <!-- 精神详情容器 -->
+  <view class="spirit-detail">
+    <view class="spirit-title">{{spiritDetails[activeCategory].title}}</view>
+    
+    <!-- 核心要点 -->
+    <view class="core-points">
+      <view class="core-item" wx:for="{{spiritDetails[activeCategory].corePoints}}" wx:key="index">
+        <icon name="checkcircle" size="24" color="#b31217" />
+        <text class="core-text">{{item}}</text>
+      </view>
+    </view>
+    
+    <!-- 历史背景章节 -->
+    <view class="section">
+      <view class="section-title">历史背景</view>
+      <view class="section-content">{{spiritDetails[activeCategory].historicalBackground}}</view>
+    </view>
+    
+    <!-- 精神内涵章节 -->
+    <view class="section">
+      <view class="section-title">精神内涵</view>
+      <view class="section-content">{{spiritDetails[activeCategory].content}}</view>
+    </view>
+  </view>
+
+  <!-- 提示组件 -->
+  <t-toast id="t-toast" />
 </view>

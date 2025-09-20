@@ -7,7 +7,7 @@ export default [
   },
   {
     icon: 'sort',
-    text: '布鞋分类',
+    text: '精神谱系',
     url: 'pages/category/index',
     isTab: true,
   },

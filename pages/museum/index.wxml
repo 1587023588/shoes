@@ -1,0 +1,28 @@
+<view class="carousel-container" bindtap="toggleAutoplay">
+  <!-- 轮播图片区域：平滑    注意：WXML中注释只能写在标签外，不能在标签属性后添加注释 -->
+  <view class="carousel-wrapper" 
+        style="transition-duration: {{transitionDuration}}ms; transform: translateX(-{{currentIndex * 100}}%)">
+    <view class="carousel-slide" wx:for="{{photos}}" wx:key="id">
+      <image 
+        src="{{item.url}}" 
+        mode="widthFix" 
+        class="slide-image"
+        lazy-load="true"
+      ></image>
+    </view>
+  </view>
+  
+  <!-- 底部指示器 -->
+  <view class="indicators">
+    <view class="indicator" 
+          wx:for="{{photos}}" 
+          wx:key="id"
+          data-index="{{index}}"
+          bindtap="switchSlide"
+          class="{{index === currentIndex ? 'active' : ''}}"></view>
+  </view>
+  
+  <!-- 左右切换按钮 -->
+  <view class="control-btn prev" bindtap="prevSlide">❮</view>
+  <view class="control-btn next" bindtap="nextSlide">❯</view>
+</view>

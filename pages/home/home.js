@@ -3,12 +3,12 @@ import Toast from 'tdesign-miniprogram/toast/index';
 
 Page({
   data: {
-  // 页面基础状态
-  pageLoading: false,
-  loadError: false,
-  errorMsg: '',
-  // 顶部视频（改为使用 HTTPS 远程资源，避免本地大文件冲突）
-  videoSrc: 'https://shoes-1379330878.cos.ap-beijing.myqcloud.com/index_video.mp4',
+    // 页面基础状态
+    pageLoading: false,
+    loadError: false,
+    errorMsg: '',
+    // 顶部视频（改为使用 HTTPS 远程资源，避免本地大文件冲突）
+    videoSrc: 'https://shoes-1379330878.cos.ap-beijing.myqcloud.com/shoes.mp4',
     videoAutoplay: true,
     videoMuted: true,
     videoLoop: true,
@@ -16,14 +16,14 @@ Page({
     heroImage: '/pages/images/test.jpg',
     // 功能宫格（2x4）
     funcList: [
-      { iconName: 'image', text: '云游展馆', url: '/pages/tour/index' },
-      { iconName: 'info-circle', text: '本馆介绍', url: '/pages/about/index' },
-      { iconName: 'star', text: '非遗之窗', url: '/pages/heritage/index' },
-      { iconName: 'image', text: '培训风采', url: '/pages/training/showcase/index' },
-      { iconName: 'usergroup', text: '青少年培训', url: '/pages/training/teen/index' },
-      { iconName: 'user', text: '成人培训', url: '/pages/training/adult/index' },
-      { iconName: 'user-circle', text: '老年人培训', url: '/pages/training/senior/index' },
-      { iconName: 'usergroup-add', text: '文艺团队招募', url: '/pages/recruit/index' },
+      { iconName: 'image', text: '红色底蕴', url: '/pages/category/index' },
+      { iconName: 'info-circle', text: '北庄宣传片', url: '/pages/about/index' },
+      { iconName: 'star', text: '云游村史馆', url: '/pages/museum/index' },
+      { iconName: 'image', text: '在线讲解', url: '/pages/training/online/index' },
+      { iconName: 'usergroup', text: '手工坊介绍', url: '/pages/training/diy/index' },
+      { iconName: 'user', text: '非遗之窗', url: '/pages/training/win/index' },
+      { iconName: 'user-circle', text: '拥军记忆', url: '/pages/training/mar/index' },
+      { iconName: 'usergroup-add', text: '布鞋展示', url: '/pages/show/index' },
     ],
     // 资讯列表已移除
   },
@@ -49,9 +49,8 @@ Page({
 
   onPullDownRefresh() {
     this.init();
-    this.setData({
-      slogan: getRandomSlogan(),
-    });
+    // 注意：原代码中 getRandomSlogan 未定义，暂时注释避免报错
+    // this.setData({ slogan: getRandomSlogan() });
   },
 
   init() {
@@ -104,13 +103,27 @@ Page({
       });
   },
 
-  // 宫格点击
+  // 宫格点击（修复跳转逻辑）
   onFuncTap(e) {
     const { index } = e.currentTarget.dataset;
     const item = this.data.funcList[index];
     if (!item) return;
+    
     if (item.url) {
-      wx.navigateTo({ url: item.url });
+      // 定义所有 tabBar 页面路径（与app.json中的tabBar配置保持一致）
+      const tabBarPages = [
+        '/pages/home/home',
+        '/pages/category/index',
+        '/pages/cart/index',
+        '/pages/usercenter/index'
+      ];
+      
+      // 判断是否为 tabBar 页面，使用对应的跳转方法
+      if (tabBarPages.includes(item.url)) {
+        wx.switchTab({ url: item.url });
+      } else {
+        wx.navigateTo({ url: item.url });
+      }
     } else {
       Toast({ context: this, selector: '#t-toast', message: item.text });
     }
