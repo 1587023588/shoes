@@ -1,0 +1,3 @@
+<view class="heritage-fullpage">
+  <image class="full-image" src="/pages/heritage/pages_5.jpg" mode="widthFix" lazy-load="true" />
+</view>

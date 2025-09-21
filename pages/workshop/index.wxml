@@ -1,0 +1,3 @@
+<view class="workshop-fullpage">
+  <image class="full-image" src="/pages/workshop/pages_4.jpg" mode="widthFix" lazy-load="true" />
+</view>

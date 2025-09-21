@@ -20,9 +20,9 @@ Page({
       { iconName: 'info-circle', text: '北庄宣传片', url: '/pages/about/index' },
       { iconName: 'star', text: '云游村史馆', url: '/pages/museum/index' },
       { iconName: 'image', text: '在线讲解', url: '/pages/training/online/index' },
-      { iconName: 'usergroup', text: '手工坊介绍', url: '/pages/training/diy/index' },
-      { iconName: 'user', text: '非遗之窗', url: '/pages/training/win/index' },
-      { iconName: 'user-circle', text: '拥军记忆', url: '/pages/training/mar/index' },
+  { iconName: 'usergroup', text: '手工坊介绍', url: '/pages/workshop/index' },
+  { iconName: 'user', text: '非遗之窗', url: '/pages/heritage/index' },
+  { iconName: 'user-circle', text: '拥军记忆', url: '/pages/military/index' },
       { iconName: 'usergroup-add', text: '布鞋展示', url: '/pages/show/index' },
     ],
     // 资讯列表已移除
