@@ -25,6 +25,7 @@ Component({
           isValidityLinePrice = false;
         }
         this.setData({ goods: data, isValidityLinePrice });
+        this.updateThumbSrc(data);
       },
     },
     currency: {
@@ -49,6 +50,8 @@ Component({
     independentID: '',
     goods: { id: '' },
     isValidityLinePrice: false,
+    // 计算后的缩略图地址（含兜底）
+  thumbSrc: '/test.jpg',
   },
 
   lifetimes: {
@@ -98,6 +101,8 @@ Component({
       if (thresholds && thresholds.length) {
         this.createIntersectionObserverHandle();
       }
+      // 初始化缩略图
+      this.updateThumbSrc(this.data.goods);
     },
 
     clear() {
@@ -135,6 +140,23 @@ Component({
           this.intersectionObserverContext.disconnect();
         } catch (e) {}
         this.intersectionObserverContext = null;
+      }
+    },
+
+    // 根据传入的 goods 计算缩略图地址，提供兜底
+    updateThumbSrc(goods = {}) {
+      const candidate = goods.thumb || goods.primaryImage || '';
+      // 若为空或明显非法，则使用兜底
+  const fallback = '/test.jpg';
+      const use = candidate && typeof candidate === 'string' ? candidate : fallback;
+      this.setData({ thumbSrc: use });
+    },
+
+    onThumbError() {
+      // 图片加载失败时回退到兜底图，避免小 X
+  const fallback = '/test.jpg';
+      if (this.data.thumbSrc !== fallback) {
+        this.setData({ thumbSrc: fallback });
       }
     },
   },

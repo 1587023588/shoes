@@ -47,7 +47,7 @@ Page({
       },
     ],
     storeLogo: `${imgPrefix}common/store-logo.png`,
-    storeName: '云mall标准版旗舰店',
+    storeName: '北庄布鞋旗舰店',
     jumpArray: [
       {
         title: '首页',
@@ -87,12 +87,27 @@ Page({
     duration: 500,
     interval: 5000,
     soldNum: 0, // 已售数量
+    // 简介：从详情数据派生，便于在模板中使用 {{intro}}
+    intro: '',
+    // 详情图加载失败时的兜底图
+    descFallback: '/test.jpg',
   },
 
   handlePopupHide() {
     this.setData({
       isSpuSelectPopupShow: false,
     });
+  },
+
+  // 详情图加载失败兜底：将对应项替换为 fallback，避免空白
+  onDescImageError(e) {
+    const { index } = e.currentTarget.dataset;
+    const { details, descFallback } = this.data;
+    const desc = (details.desc || []).slice();
+    if (typeof index === 'number' && desc[index] !== descFallback) {
+      desc[index] = descFallback;
+      this.setData({ 'details.desc': desc });
+    }
   },
 
   showSkuSelectPopup(type) {
@@ -365,6 +380,8 @@ Page({
         primaryImage,
         soldout: isPutOnSale === 0,
         soldNum,
+        // 将简介写入 data，优先用详情里的 intro；没有则回落为标题
+        intro: details.intro || details.title || '',
       });
     });
   },

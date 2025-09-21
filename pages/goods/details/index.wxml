@@ -93,7 +93,13 @@
       <t-image t-class="img" src="{{recRightImg}}" />
     </view>
     <view wx:if="{{details.desc.length > 0}}" wx:for="{{details.desc}}" wx:key="index">
-      <t-image t-class="desc-content__img" src="{{item}}" mode="widthFix" />
+      <t-image
+        t-class="desc-content__img"
+        src="{{item}}"
+        mode="widthFix"
+        data-index="{{index}}"
+        bind:error="onDescImageError"
+      />
     </view>
   </view>
   <view class="goods-bottom-operation">
