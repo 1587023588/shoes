@@ -1,3 +1,3 @@
 <view class="workshop-fullpage">
-  <image class="full-image" src="/pages/workshop/pages_4.jpg" mode="widthFix" lazy-load="true" />
+  <image class="full-image" src="https://shoes-1379330878.cos.ap-beijing.myqcloud.com/pages_4.jpg" mode="widthFix" lazy-load="true" />
 </view>

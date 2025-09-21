@@ -7,21 +7,21 @@ const defaultDesc = ['/pages/images/test.jpg'];
 // 本地主图资源清单（与商品编号一一对应）
 // 注意：文件名与扩展名需与实际文件一致
 const goodsPrimaryList = [
-  '/goods_primaryImage/goods_1.png',
-  '/goods_primaryImage/goods_2.jpg',
-  '/goods_primaryImage/goods_3.jpg',
-  '/goods_primaryImage/goods_4.jpg',
-  '/goods_primaryImage/goods_5.jpg',
-  '/goods_primaryImage/goods_6.jpg',
-  '/goods_primaryImage/goods_7.jpg',
-  '/goods_primaryImage/goods_8.jpg',
-  '/goods_primaryImage/goods_9.jpg',
-  '/goods_primaryImage/goods_10.jpg',
+  'https://shoes-1379330878.cos.ap-beijing.myqcloud.com/goods_primaryImage/goods_1.jpg',
+  'https://shoes-1379330878.cos.ap-beijing.myqcloud.com/goods_primaryImage/goods_2.jpg',
+  'https://shoes-1379330878.cos.ap-beijing.myqcloud.com/goods_primaryImage/goods_3.jpg',
+  'https://shoes-1379330878.cos.ap-beijing.myqcloud.com/goods_primaryImage/goods_4.jpg',
+  'https://shoes-1379330878.cos.ap-beijing.myqcloud.com/goods_primaryImage/goods_5.jpg',
+  'https://shoes-1379330878.cos.ap-beijing.myqcloud.com/goods_primaryImage/goods_6.jpg',
+  'https://shoes-1379330878.cos.ap-beijing.myqcloud.com/goods_primaryImage/goods_7.jpg',
+  'https://shoes-1379330878.cos.ap-beijing.myqcloud.com/goods_primaryImage/goods_8.jpg',
+  'https://shoes-1379330878.cos.ap-beijing.myqcloud.com/goods_primaryImage/goods_9.jpg',
+  'https://shoes-1379330878.cos.ap-beijing.myqcloud.com/goods_primaryImage/goods_10.jpg',
 ];
 
 // 统一的详情图（若不存在，将在页面层面回退到 test.jpg）
 // 已按你的新目录调整到 goods_primaryImage/goods_datail/goods_detail.jpg
-const unifiedDetailImage = '/goods_primaryImage/goods_datail/goods_detail.jpg';
+const unifiedDetailImage = 'https://shoes-1379330878.cos.ap-beijing.myqcloud.com/goods_primaryImage/goods_datail/goods_detail.jpg';
 
 /*
   说明：
@@ -86,8 +86,8 @@ const baseGoodsMeta = [
   {
     spuId: '10001',
     title: '男款布鞋 手工真千层底 加棉加厚',
-  primaryImage: '/pages/images/test.jpg',
-  images: ['/pages/images/test.jpg'],
+    primaryImage: '/pages/images/test.jpg',
+    images: ['/pages/images/test.jpg'],
     // 商品简介（可自行修改）
     intro: '经典款式兼具传统工艺与保暖实用性',
     // 详情图（可替换为你的商品详情长图列表）
@@ -95,49 +95,49 @@ const baseGoodsMeta = [
     salePrice: 12900,
     linePrice: 16900,
     soldNum: 1880,
-    tags: ['加棉', '加厚','保暖'],
+    tags: ['加棉', '加厚', '保暖'],
   },
   {
     spuId: '10002',
     title: '女款布鞋 荷花印花浅口款式',
-  primaryImage: '/pages/images/test.jpg',
-  images: ['/pages/images/test.jpg'],
+    primaryImage: '/pages/images/test.jpg',
+    images: ['/pages/images/test.jpg'],
     intro: '传统工艺打造 尽显国风雅致',
     desc: ['/pages/images/test.jpg'],
     salePrice: 9900,
     linePrice: 13900,
     soldNum: 920,
-    tags: ['荷花','雅致'],
+    tags: ['荷花', '雅致'],
   },
   {
     spuId: '10003',
     title: '孩童款布鞋 虎头刺绣搭系带设计',
-  primaryImage: '/pages/images/test.jpg',
-  images: ['/pages/images/test.jpg'],
+    primaryImage: '/pages/images/test.jpg',
+    images: ['/pages/images/test.jpg'],
     intro: '传统民俗元素融合童趣风格 尽显萌趣',
     desc: ['/pages/images/test.jpg'],
     salePrice: 15900,
     linePrice: 19900,
     soldNum: 610,
-    tags: ['虎头','童趣'],
+    tags: ['虎头', '童趣'],
   },
   {
     spuId: '10004',
     title: '女款布鞋 亮黄色提花面料搭配棕色系带蝴蝶结设计',
-  primaryImage: '/pages/images/test.jpg',
-  images: ['/pages/images/test.jpg'],
+    primaryImage: '/pages/images/test.jpg',
+    images: ['/pages/images/test.jpg'],
     intro: '复古风格中尽显俏皮时尚 传统工艺融合个性穿搭感',
     desc: ['/pages/images/test.jpg'],
     salePrice: 8900,
     linePrice: 10900,
     soldNum: 420,
-    tags: ['亮色','蝴蝶结','时尚'],
+    tags: ['亮色', '蝴蝶结', '时尚'],
   },
   {
     spuId: '10005',
     title: '女款布鞋 网纱刺绣花卉搭配浅口设计',
-  primaryImage: '/pages/images/test.jpg',
-  images: ['/pages/images/test.jpg'],
+    primaryImage: '/pages/images/test.jpg',
+    images: ['/pages/images/test.jpg'],
     intro: '红饰点缀尽显婉约 传统工艺融合清新雅致风格',
     desc: ['/pages/images/test.jpg'],
     salePrice: 18900,
@@ -148,8 +148,8 @@ const baseGoodsMeta = [
   {
     spuId: '10006',
     title: '女款布鞋 紫色布艺浅口款式',
-  primaryImage: '/pages/images/test.jpg',
-  images: ['/pages/images/test.jpg'],
+    primaryImage: '/pages/images/test.jpg',
+    images: ['/pages/images/test.jpg'],
     intro: '传统工艺打造 典雅舒适',
     desc: ['/pages/images/test.jpg'],
     salePrice: 18900,
@@ -160,8 +160,8 @@ const baseGoodsMeta = [
   {
     spuId: '10007',
     title: '男款布鞋 经典黑色一脚蹬款式',
-  primaryImage: '/pages/images/test.jpg',
-  images: ['/pages/images/test.jpg'],
+    primaryImage: '/pages/images/test.jpg',
+    images: ['/pages/images/test.jpg'],
     intro: '尽显传统布鞋的简约大气与舒适质感',
     desc: ['/pages/images/test.jpg'],
     salePrice: 18900,
@@ -172,8 +172,8 @@ const baseGoodsMeta = [
   {
     spuId: '10008',
     title: '女款布鞋 多色浅口传统款式',
-  primaryImage: '/pages/images/test.jpg',
-  images: ['/pages/images/test.jpg'],
+    primaryImage: '/pages/images/test.jpg',
+    images: ['/pages/images/test.jpg'],
     intro: '多样选择 便于搭配 传统工艺与丰富选择兼具',
     desc: ['/pages/images/test.jpg'],
     salePrice: 18900,
@@ -184,8 +184,8 @@ const baseGoodsMeta = [
   {
     spuId: '10009',
     title: '男款布鞋 纯手工千层底亚麻材质',
-  primaryImage: '/pages/images/test.jpg',
-  images: ['/pages/images/test.jpg'],
+    primaryImage: '/pages/images/test.jpg',
+    images: ['/pages/images/test.jpg'],
     intro: '经典浅口款式 吸汗透气',
     desc: ['/pages/images/test.jpg'],
     salePrice: 18900,
@@ -196,8 +196,8 @@ const baseGoodsMeta = [
   {
     spuId: '10010',
     title: '女款布鞋 刺绣花卉搭配浅口设计',
-  primaryImage: '/pages/images/test.jpg',
-  images: ['/pages/images/test.jpg'],
+    primaryImage: '/pages/images/test.jpg',
+    images: ['/pages/images/test.jpg'],
     intro: '网纱材质透气舒适',
     desc: ['/pages/images/test.jpg'],
     salePrice: 18900,

@@ -51,7 +51,7 @@ Component({
     goods: { id: '' },
     isValidityLinePrice: false,
     // 计算后的缩略图地址（含兜底）
-  thumbSrc: '/test.jpg',
+    thumbSrc: 'https://shoes-1379330878.cos.ap-beijing.myqcloud.com/img/1.png',
   },
 
   lifetimes: {
@@ -138,7 +138,7 @@ Component({
       if (this.intersectionObserverContext) {
         try {
           this.intersectionObserverContext.disconnect();
-        } catch (e) {}
+        } catch (e) { }
         this.intersectionObserverContext = null;
       }
     },
@@ -147,16 +147,33 @@ Component({
     updateThumbSrc(goods = {}) {
       const candidate = goods.thumb || goods.primaryImage || '';
       // 若为空或明显非法，则使用兜底
-  const fallback = '/test.jpg';
+      const fallback = 'https://shoes-1379330878.cos.ap-beijing.myqcloud.com/img/1.png';
+      const localFallback = '/static/tabbar/帆布鞋-copy.png';
       const use = candidate && typeof candidate === 'string' ? candidate : fallback;
-      this.setData({ thumbSrc: use });
+      this.setData({ thumbSrc: use, _fallbackTried: false, _localFallback: localFallback });
     },
 
     onThumbError() {
-      // 图片加载失败时回退到兜底图，避免小 X
-  const fallback = '/test.jpg';
-      if (this.data.thumbSrc !== fallback) {
-        this.setData({ thumbSrc: fallback });
+      // 1) 优先尝试在 jpg/png 之间切换一次
+      const { thumbSrc, _triedAltExt } = this.data;
+      const isJpg = /\.jpg(\?.*)?$/i.test(thumbSrc);
+      const isPng = /\.png(\?.*)?$/i.test(thumbSrc);
+      if (!_triedAltExt && (isJpg || isPng)) {
+        const alt = isJpg ? thumbSrc.replace(/\.jpg(\?.*)?$/i, '.png$1') : thumbSrc.replace(/\.png(\?.*)?$/i, '.jpg$1');
+        if (alt && alt !== thumbSrc) {
+          this.setData({ thumbSrc: alt, _triedAltExt: true });
+          return;
+        }
+      }
+
+      // 2) 兜底：CDN 小图 -> 本地小图
+      const fallback = 'https://shoes-1379330878.cos.ap-beijing.myqcloud.com/img/1.png';
+      const localFallback = this.data._localFallback || '/static/tabbar/帆布鞋-copy.png';
+      const { _fallbackTried } = this.data;
+      if (thumbSrc !== fallback && !_fallbackTried) {
+        this.setData({ thumbSrc: fallback, _fallbackTried: true });
+      } else if (thumbSrc !== localFallback) {
+        this.setData({ thumbSrc: localFallback });
       }
     },
   },

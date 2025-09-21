@@ -7,16 +7,18 @@
     "pages/museum/index",
     "pages/about/index",
     "pages/workshop/index",
-    "pages/heritage/index",
-    "pages/military/index",
-    "pages/show/index",
-    "pages/training/online/index"
+    "pages/heritage/index"
   ],
   "subpackages": [
     {
       "root": "pages/user",
       "name": "user",
-      "pages": ["person-info/index", "address/list/index", "address/edit/index", "name-edit/index"]
+      "pages": [
+        "person-info/index",
+        "address/list/index",
+        "address/edit/index",
+        "name-edit/index"
+      ]
     },
     {
       "root": "pages/goods",
@@ -50,12 +52,42 @@
     {
       "root": "pages/coupon",
       "name": "coupon",
-      "pages": ["coupon-list/index", "coupon-detail/index", "coupon-activity-goods/index"]
+      "pages": [
+        "coupon-list/index",
+        "coupon-detail/index",
+        "coupon-activity-goods/index"
+      ]
     },
     {
       "root": "pages/promotion",
       "name": "promotion",
-      "pages": ["promotion-detail/index"]
+      "pages": [
+        "promotion-detail/index"
+      ]
+    },
+    {
+      "root": "pages/military",
+      "name": "military",
+      "pages": [
+        "index"
+      ],
+      "independent": true
+    },
+    {
+      "root": "pages/training/online",
+      "name": "trainingOnline",
+      "pages": [
+        "index"
+      ],
+      "independent": true
+    },
+    {
+      "root": "pages/show",
+      "name": "show",
+      "pages": [
+        "index"
+      ],
+      "independent": true
     }
   ],
   "tabBar": {
@@ -68,14 +100,14 @@
       {
         "pagePath": "pages/home/home",
         "text": "首页",
-        "iconPath": "/static/tabbar/首页.png",  
-      "selectedIconPath": "/static/tabbar/首页.png"  
+        "iconPath": "/static/tabbar/首页.png",
+        "selectedIconPath": "/static/tabbar/首页.png"
       },
       {
         "pagePath": "pages/category/index",
         "text": "精神谱系",
         "iconPath": "/static/tabbar/帆布鞋-copy.png",
-      "selectedIconPath": "/static/tabbar/帆布鞋-copy.png"
+        "selectedIconPath": "/static/tabbar/帆布鞋-copy.png"
       },
       {
         "pagePath": "pages/cart/index",
@@ -91,7 +123,9 @@
       }
     ]
   },
-  "requiredPrivateInfos": ["chooseAddress"],
+  "requiredPrivateInfos": [
+    "chooseAddress"
+  ],
   "lazyCodeLoading": "requiredComponents",
   "usingComponents": {},
   "window": {

@@ -1,6 +1,0 @@
-@import 'style/theme.wxss';
-@import 'style/global.wxss';
-
-.cell--noborder .t-cell::after {
-  border-bottom: none !important;
-}

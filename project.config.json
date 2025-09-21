@@ -5,14 +5,33 @@
       {
         "value": "pages/images/**",
         "type": "glob"
+      },
+      {
+        "value": "goods_primaryImage/**",
+        "type": "glob"
+      },
+      {
+        "value": "pages/shoes/**",
+        "type": "glob"
+      },
+      {
+        "value": "**/*.mp4",
+        "type": "glob"
+      },
+      {
+        "value": "**/*.MP4",
+        "type": "glob"
+      },
+      {
+        "value": "**/*.mp3",
+        "type": "glob"
+      },
+      {
+        "value": "**/*.MP3",
+        "type": "glob"
       }
     ],
-    "include": [
-      {
-        "value": "pages/images/test.jpg",
-        "type": "file"
-      }
-    ]
+    "include": []
   },
   "setting": {
     "urlCheck": true,
@@ -52,7 +71,7 @@
     "minifyWXML": true,
     "showES6CompileOption": false,
     "useCompilerPlugins": false,
-    "ignoreUploadUnusedFiles": true,
+  "ignoreUploadUnusedFiles": true,
     "useStaticServer": true,
     "compileWorklet": false,
     "localPlugins": false,

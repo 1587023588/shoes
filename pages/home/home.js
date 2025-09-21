@@ -12,18 +12,18 @@ Page({
     videoAutoplay: true,
     videoMuted: true,
     videoLoop: true,
-    // 英雄图
-    heroImage: '/pages/images/test.jpg',
+    // 英雄图（来自用户提供的 CDN）
+    heroImage: 'https://shoes-1379330878.cos.ap-beijing.myqcloud.com/hero.jpg',
     // 功能宫格（2x4）
     funcList: [
-      { iconName: 'image', text: '红色底蕴', url: '/pages/category/index' },
-      { iconName: 'info-circle', text: '北庄宣传片', url: '/pages/about/index' },
-      { iconName: 'star', text: '云游村史馆', url: '/pages/museum/index' },
-      { iconName: 'image', text: '在线讲解', url: '/pages/training/online/index' },
-  { iconName: 'usergroup', text: '手工坊介绍', url: '/pages/workshop/index' },
-  { iconName: 'user', text: '非遗之窗', url: '/pages/heritage/index' },
-  { iconName: 'user-circle', text: '拥军记忆', url: '/pages/military/index' },
-      { iconName: 'usergroup-add', text: '布鞋展示', url: '/pages/show/index' },
+      { iconName: 'image', text: '红色底蕴', url: '/pages/category/index', iconUrl: 'https://shoes-1379330878.cos.ap-beijing.myqcloud.com/img/1.png' },
+      { iconName: 'info-circle', text: '北庄宣传片', url: '/pages/about/index', iconUrl: 'https://shoes-1379330878.cos.ap-beijing.myqcloud.com/img/2.png' },
+      { iconName: 'star', text: '云游村史馆', url: '/pages/museum/index', iconUrl: 'https://shoes-1379330878.cos.ap-beijing.myqcloud.com/img/3.png' },
+      { iconName: 'image', text: '在线讲解', url: '/pages/training/online/index', iconUrl: 'https://shoes-1379330878.cos.ap-beijing.myqcloud.com/img/4.png' },
+      { iconName: 'usergroup', text: '手工坊介绍', url: '/pages/workshop/index', iconUrl: 'https://shoes-1379330878.cos.ap-beijing.myqcloud.com/img/5.png' },
+      { iconName: 'user', text: '非遗之窗', url: '/pages/heritage/index', iconUrl: 'https://shoes-1379330878.cos.ap-beijing.myqcloud.com/img/6.png' },
+      { iconName: 'user-circle', text: '拥军记忆', url: '/pages/military/index', iconUrl: 'https://shoes-1379330878.cos.ap-beijing.myqcloud.com/img/7.png' },
+      { iconName: 'usergroup-add', text: '布鞋展示', url: '/pages/show/index', iconUrl: 'https://shoes-1379330878.cos.ap-beijing.myqcloud.com/img/8.png' },
     ],
     // 资讯列表已移除
   },
@@ -58,7 +58,7 @@ Page({
   },
 
   /** 若后续需要本地初始化可在此扩展 */
-  bootstrapLocalModules() {},
+  bootstrapLocalModules() { },
 
   loadHomePage() {
     wx.stopPullDownRefresh();
@@ -108,7 +108,7 @@ Page({
     const { index } = e.currentTarget.dataset;
     const item = this.data.funcList[index];
     if (!item) return;
-    
+
     if (item.url) {
       // 定义所有 tabBar 页面路径（与app.json中的tabBar配置保持一致）
       const tabBarPages = [
@@ -117,7 +117,7 @@ Page({
         '/pages/cart/index',
         '/pages/usercenter/index'
       ];
-      
+
       // 判断是否为 tabBar 页面，使用对应的跳转方法
       if (tabBarPages.includes(item.url)) {
         wx.switchTab({ url: item.url });
