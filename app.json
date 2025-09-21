@@ -1,5 +1,5 @@
 {
-  "pages": ["pages/home/home", "pages/category/index", "pages/cart/index", "pages/usercenter/index","pages/museum/index", "pages/about/index"],
+  "pages": ["pages/home/home", "pages/category/index", "pages/cart/index", "pages/usercenter/index","pages/museum/index", "pages/about/index","pages/training/online/index"],
   "subpackages": [
     {
       "root": "pages/user",
