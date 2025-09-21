@@ -18,7 +18,7 @@
 <!-- 英雄大图（按截图样式，文字覆盖） -->
 <view class="hero">
   <image class="hero__img" src="{{heroImage}}" mode="aspectFill" />
-  <view class="hero__title">文化馆小程序</view>
+  <view class="hero__title">一履山河情</view>
   <view class="hero__overlay-bottom"></view>
   <!-- 白底圆角功能卡片上边缘视觉贴合 -->
 </view>
