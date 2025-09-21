@@ -66,4 +66,29 @@ Page({
   toggleAutoplay() {
     // 预留：如需自动播放可在此开启
   },
+
+  // 图片加载失败兜底：切换扩展名或替换为本地占位，防止空白
+  onImgError(e) {
+    const idx = e.currentTarget.dataset.index;
+    if (idx === undefined || idx === null) return;
+    const photos = this.data.photos.slice();
+    const failed = photos[idx];
+    if (!failed) return;
+    if (failed._errorHandled) return;
+
+    const originalUrl = failed.url || '';
+    let alt = '';
+    if (/\.jpg$/i.test(originalUrl)) {
+      alt = originalUrl.replace(/\.jpg$/i, '.png');
+    } else if (/\.png$/i.test(originalUrl)) {
+      alt = originalUrl.replace(/\.png$/i, '.jpg');
+    }
+
+    // 本地占位：项目根已有 test.jpg，可确保离线也能显示
+    const localFallback = '/test.jpg';
+    const nextUrl = alt || localFallback;
+
+    photos[idx] = { ...failed, url: nextUrl, _errorHandled: true };
+    this.setData({ photos });
+  }
 });

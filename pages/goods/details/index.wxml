@@ -1,15 +1,26 @@
 <view class="goods-detail-page">
   <view class="goods-head">
-    <t-swiper
+    <swiper
       wx:if="{{details.images.length > 0}}"
-      height="750rpx"
-      current="{{current}}"
+      class="goods-swiper"
+      indicator-dots
       autoplay="{{autoplay}}"
-      duration="{{duration}}"
+      current="{{current}}"
       interval="{{interval}}"
-      navigation="{{navigation}}"
-      list="{{details.images}}"
-    ></t-swiper>
+      duration="{{duration}}"
+    >
+      <block wx:for="{{details.images}}" wx:key="index">
+        <swiper-item>
+          <image
+            class="swipe-img"
+            src="{{item}}"
+            mode="aspectFill"
+            data-index="{{index}}"
+            binderror="onTopImageError"
+          />
+        </swiper-item>
+      </block>
+    </swiper>
     <view class="goods-info">
       <view class="goods-number">
         <view class="goods-price">
@@ -98,6 +109,7 @@
         src="{{item}}"
         mode="widthFix"
         data-index="{{index}}"
+        webp="{{false}}"
         bind:error="onDescImageError"
       />
     </view>

@@ -1,12 +1,15 @@
 <view class="carousel-container" bindtap="toggleAutoplay">
-  <view class="carousel-wrapper" style="transition-duration: {{transitionDuration}}ms; transform: translateX(-{{currentIndex * 100}}%)">
+  <view class="carousel-wrapper"
+    style="transition-duration: {{transitionDuration}}ms; transform: translateX(-{{currentIndex * 100}}%)">
     <view class="carousel-slide" wx:for="{{photos}}" wx:key="id">
-      <image src="{{item.url}}" mode="widthFix" class="slide-image" lazy-load="true"></image>
+      <image src="{{item.url}}" mode="widthFix" class="slide-image" lazy-load="true" data-index="{{index}}"
+        binderror="onImgError"></image>
     </view>
   </view>
 
   <view class="indicators">
-    <view class="indicator" wx:for="{{photos}}" wx:key="id" data-index="{{index}}" bindtap="switchSlide" class="{{index === currentIndex ? 'active' : ''}}"></view>
+    <view class="indicator" wx:for="{{photos}}" wx:key="id" data-index="{{index}}" bindtap="switchSlide"
+      class="{{index === currentIndex ? 'active' : ''}}"></view>
   </view>
 
   <view class="control-btn prev" bindtap="prevSlide">❮</view>

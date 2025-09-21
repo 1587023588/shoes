@@ -156,11 +156,22 @@ Component({
     onThumbError() {
       // 1) 优先尝试在 jpg/png 之间切换一次
       const { thumbSrc, _triedAltExt } = this.data;
+      console.warn('[goods-card] image error, src =', thumbSrc);
+      // 如果 URL 上带了处理参数（如 imageMogr2），先尝试去掉参数重试一次
+      if (!_triedAltExt && /\?/.test(thumbSrc)) {
+        const clean = thumbSrc.split('?')[0];
+        if (clean) {
+          console.warn('[goods-card] try clean url:', clean);
+          this.setData({ thumbSrc: clean, _triedAltExt: true });
+          return;
+        }
+      }
       const isJpg = /\.jpg(\?.*)?$/i.test(thumbSrc);
       const isPng = /\.png(\?.*)?$/i.test(thumbSrc);
       if (!_triedAltExt && (isJpg || isPng)) {
         const alt = isJpg ? thumbSrc.replace(/\.jpg(\?.*)?$/i, '.png$1') : thumbSrc.replace(/\.png(\?.*)?$/i, '.jpg$1');
         if (alt && alt !== thumbSrc) {
+          console.warn('[goods-card] try alt ext:', alt);
           this.setData({ thumbSrc: alt, _triedAltExt: true });
           return;
         }
@@ -171,8 +182,10 @@ Component({
       const localFallback = this.data._localFallback || '/static/tabbar/帆布鞋-copy.png';
       const { _fallbackTried } = this.data;
       if (thumbSrc !== fallback && !_fallbackTried) {
+        console.warn('[goods-card] fallback to cdn small:', fallback);
         this.setData({ thumbSrc: fallback, _fallbackTried: true });
       } else if (thumbSrc !== localFallback) {
+        console.warn('[goods-card] fallback to local:', localFallback);
         this.setData({ thumbSrc: localFallback });
       }
     },

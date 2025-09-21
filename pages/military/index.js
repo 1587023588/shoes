@@ -2,7 +2,7 @@ Page({
   data: {
     // 与页面同目录，使用相对路径更稳妥
     videoUrl: 'https://shoes-1379330878.cos.ap-beijing.myqcloud.com/video_yongjun.mp4',
-    posterUrl: '/pages/images/test.jpg',
+  posterUrl: '/test.jpg',
     isLoading: true,
     isError: false,
     errorMsg: ''
