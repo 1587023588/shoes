@@ -17,12 +17,12 @@
 <view class="func-card">
   <view class="func-grid func-grid--balance">
     <view class="func-item" wx:for="{{funcList}}" wx:key="index" data-index="{{index}}" bindtap="onFuncTap">
-        <view class="func-icon func-icon--lg">
-          <image src="{{item.iconUrl}}" class="func-icon-img" mode="aspectFill" />
-        </view>
-        <view class="func-chip">{{item.text}}</view>
+      <view class="func-icon func-icon--lg">
+        <image src="{{item.iconUrl}}" class="func-icon-img" mode="aspectFill" />
+        <view class="func-icon-label">{{item.text}}</view>
       </view>
     </view>
   </view>
+</view>
 
 <t-toast id="t-toast" />

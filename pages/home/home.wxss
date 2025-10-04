@@ -132,24 +132,6 @@ page {
   display: block;
 }
 
-/* 黄色胶囊文字标签（下方） */
-.func-chip {
-  margin: 12rpx auto 0;        /* 与图标间距，水平居中 */
-  padding: 8rpx 16rpx;         /* 上下留空 + 左右内边距 */
-  background: #f4cf6a;         /* 暖黄 */
-  color: #6a4a16;              /* 深棕文字 */
-  font-size: 26rpx;            /* 更易读 */
-  line-height: 34rpx;          /* 多行时的行高 */
-  border-radius: 999rpx;       /* 胶囊圆角 */
-  display: inline-block;
-  box-shadow: 0 6rpx 16rpx rgba(0,0,0,0.12);
-  border: 1rpx solid #e6c25d;
-  white-space: normal;         /* 允许换行，完整显示 */
-  word-break: break-word;      /* 长词在边界换行 */
-  max-width: 240rpx;           /* 防止过长撑破；可按需调大 */
-  text-align: center;
-}
-
 /* 文案放在圆圈内的底部渐变条，更清晰 */
 .func-icon-label {
   position: absolute;

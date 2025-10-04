@@ -13,7 +13,7 @@ export function getPromotion(baseID = 0, length = 10) {
         tags: item.spuTagList.map((tag) => tag.title),
       };
     }),
-  banner: '/test.jpg',
+    banner: '/pages/images/test.jpg',
     time: 1000 * 60 * 60 * 20,
     showBannerDesc: true,
     statusTag: 'running',

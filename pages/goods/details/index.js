@@ -91,8 +91,6 @@ Page({
     intro: '',
     // 详情图加载失败时的兜底图
     descFallback: '/test.jpg',
-    topFallback: '/test.jpg',
-    topRetryCounts: {},
   },
 
   handlePopupHide() {
@@ -109,32 +107,6 @@ Page({
     if (typeof index === 'number' && desc[index] !== descFallback) {
       desc[index] = descFallback;
       this.setData({ 'details.desc': desc });
-    }
-  },
-
-  // 顶部轮播图加载失败兜底
-  onTopImageError(e) {
-    const { index } = e.currentTarget.dataset;
-    const { details, topFallback, topRetryCounts } = this.data;
-    const imgs = (details.images || []).slice();
-    const failed = imgs[index];
-    if (failed == null) return;
-    const count = topRetryCounts[index] || 0;
-    try { console.warn('[details] top image error', { index, failed, retryCount: count }); } catch (_) {}
-    if (count === 0) {
-      let next = failed;
-      // 1) 先去掉查询参数（处理 webp/裁剪参数导致的 500）
-      if (typeof next === 'string' && next.indexOf('?') > -1) next = next.split('?')[0];
-      // 2) 再尝试 jpg/png 互换一次
-      if (/\.jpg$/i.test(next)) next = next.replace(/\.jpg$/i, '.png');
-      else if (/\.png$/i.test(next)) next = next.replace(/\.png$/i, '.jpg');
-      try { console.warn('[details] top image retry ->', next); } catch (_) {}
-      imgs[index] = next;
-      this.setData({ 'details.images': imgs, [`topRetryCounts.${index}`]: 1 });
-    } else {
-      try { console.warn('[details] top image fallback to local', { index }); } catch (_) {}
-      imgs[index] = topFallback;
-      this.setData({ 'details.images': imgs, [`topRetryCounts.${index}`]: 2 });
     }
   },
 

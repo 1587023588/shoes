@@ -6,12 +6,12 @@
 >
   <view class="goods-card__main">
     <view class="goods-card__thumb" bind:tap="clickThumbHandle">
-      <image
-        class="goods-card__img"
+      <t-image
+        t-class="goods-card__img"
         src="{{ thumbSrc }}"
         mode="aspectFill"
         lazy-load
-        binderror="onThumbError"
+        bind:error="onThumbError"
       />
       <view wx:if="{{goods.ruralSupport}}" class="rural-support-badge">助农</view>
     </view>

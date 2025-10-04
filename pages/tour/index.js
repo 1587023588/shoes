@@ -2,9 +2,9 @@ Page({
   data: {
     current: 0,
     slides: [
-      { id: 1, image: '/test.jpg', title: '展品一', desc: '介绍文案示例', audio: '' },
-      { id: 2, image: '/test.jpg', title: '展品二', desc: '介绍文案示例', audio: '' },
-      { id: 3, image: '/test.jpg', title: '展品三', desc: '介绍文案示例', audio: '' }
+      { id: 1, image: '/pages/images/test.jpg', title: '展品一', desc: '介绍文案示例', audio: '' },
+      { id: 2, image: '/pages/images/test.jpg', title: '展品二', desc: '介绍文案示例', audio: '' },
+      { id: 3, image: '/pages/images/test.jpg', title: '展品三', desc: '介绍文案示例', audio: '' }
     ],
     title: '',
     desc: '',
@@ -85,5 +85,5 @@ Page({
     }
   },
   // 用于 touch-guard 兜底拦截
-  noop() {},
+  noop() { },
 });
