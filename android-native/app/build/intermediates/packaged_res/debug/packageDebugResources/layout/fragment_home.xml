@@ -21,36 +21,34 @@
             android:paddingTop="10dp"
             android:paddingBottom="8dp">
 
-            <!-- 位置与天气两行 -->
-            <LinearLayout
-                android:layout_width="match_parent"
+            <!-- 顶部两行：第一行位置；第二行 天气 + 搜索输入框 + 相机 + 搜索按钮 同行 -->
+            <TextView
+                android:id="@+id/tv_location"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:paddingBottom="6dp">
-                <TextView
-                    android:id="@+id/tv_location"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="秦皇岛"
-                    android:textColor="#8A6D3B"
-                    android:textSize="14sp"
-                    android:textStyle="bold"/>
-                <TextView
-                    android:id="@+id/tv_weather"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="晴 21℃"
-                    android:textColor="#8A6D3B"
-                    android:textSize="12sp"/>
-            </LinearLayout>
+                android:text="秦皇岛"
+                android:textColor="#8A6D3B"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                android:paddingBottom="6dp"/>
 
-            <!-- 搜索行：左边描边输入框，右侧相机与搜索胶囊按钮 -->
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="40dp"
                 android:orientation="horizontal"
                 android:gravity="center_vertical">
 
+                <!-- 天气 -->
+                <TextView
+                    android:id="@+id/tv_weather"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="晴 21℃"
+                    android:textColor="#8A6D3B"
+                    android:textSize="12sp"
+                    android:layout_marginEnd="8dp"/>
+
+                <!-- 搜索框 占满剩余空间 -->
                 <LinearLayout
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
@@ -71,16 +69,18 @@
                         android:singleLine="true"/>
                 </LinearLayout>
 
+                <!-- 相机按钮 -->
                 <ImageView
                     android:id="@+id/btn_camera"
                     android:layout_width="36dp"
                     android:layout_height="36dp"
                     android:layout_marginStart="10dp"
                     android:background="@drawable/bg_red_circle"
-                    android:padding="8dp"
-                    android:src="@drawable/tab_message"
-                    android:tint="@android:color/white"/>
+                    android:padding="6dp"
+                    android:src="@drawable/camera_top"
+                    android:tint="@null"/>
 
+                <!-- 搜索胶囊 -->
                 <TextView
                     android:id="@+id/btn_search"
                     android:layout_width="64dp"
@@ -94,42 +94,179 @@
             </LinearLayout>
         </LinearLayout>
 
-        <!-- 功能宫格（示意） -->
+        <!-- 首页功能：6 个图标 + 文案，背景同顶部浅绿 -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:gravity="center"
-            android:weightSum="4"
-            android:padding="8dp">
+            android:orientation="vertical"
+            android:background="@color/top_bg"
+            android:paddingTop="8dp"
+            android:paddingBottom="4dp">
 
-            <TextView
-                android:layout_width="0dp"
+            <LinearLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
+                android:orientation="horizontal"
                 android:gravity="center"
-                android:text="非遗馆"/>
+                android:weightSum="6"
+                android:paddingStart="12dp"
+                android:paddingEnd="12dp">
 
-            <TextView
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:gravity="center"
-                android:text="红色馆"/>
+                <!-- 扫一扫 -->
+                <LinearLayout
+                    android:id="@+id/action_scan"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:padding="6dp">
+                    <ImageView
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:src="@drawable/home_action_scan"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="扫一扫"
+                        android:textSize="12sp"
+                        android:textColor="#7A4B3A"
+                        android:layout_marginTop="4dp"/>
+                </LinearLayout>
 
-            <TextView
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:gravity="center"
-                android:text="预约"/>
+                <!-- 我的快递 -->
+                <LinearLayout
+                    android:id="@+id/action_express"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:padding="6dp">
+                    <ImageView
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:src="@drawable/home_action_express"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="我的快递"
+                        android:textSize="12sp"
+                        android:textColor="#7A4B3A"
+                        android:layout_marginTop="4dp"/>
+                </LinearLayout>
 
-            <TextView
-                android:layout_width="0dp"
+                <!-- 预约日历 -->
+                <LinearLayout
+                    android:id="@+id/action_calendar"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:padding="6dp">
+                    <ImageView
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:src="@drawable/home_action_calendar"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="预约日历"
+                        android:textSize="12sp"
+                        android:textColor="#7A4B3A"
+                        android:layout_marginTop="4dp"/>
+                </LinearLayout>
+
+                <!-- 红色场馆 -->
+                <LinearLayout
+                    android:id="@+id/action_museum"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:padding="6dp">
+                    <ImageView
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:src="@drawable/home_action_museum"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="红色场馆"
+                        android:textSize="12sp"
+                        android:textColor="#7A4B3A"
+                        android:layout_marginTop="4dp"/>
+                </LinearLayout>
+
+                <!-- 非遗体验 -->
+                <LinearLayout
+                    android:id="@+id/action_intangible"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:padding="6dp">
+                    <ImageView
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:src="@drawable/home_action_intangible"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="非遗体验"
+                        android:textSize="12sp"
+                        android:textColor="#7A4B3A"
+                        android:layout_marginTop="4dp"/>
+                </LinearLayout>
+
+                <!-- 搭配时刻 -->
+                <LinearLayout
+                    android:id="@+id/action_match"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:padding="6dp">
+                    <ImageView
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:src="@drawable/home_action_match"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="搭配时刻"
+                        android:textSize="12sp"
+                        android:textColor="#7A4B3A"
+                        android:layout_marginTop="4dp"/>
+                </LinearLayout>
+            </LinearLayout>
+
+            <!-- 中心红色指示条 -->
+            <LinearLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
                 android:gravity="center"
-                android:text="体验课"/>
+                android:paddingTop="4dp"
+                android:paddingBottom="8dp">
+                <FrameLayout
+                    android:layout_width="80dp"
+                    android:layout_height="10dp">
+                    <View
+                        android:layout_width="64dp"
+                        android:layout_height="2dp"
+                        android:layout_gravity="center"
+                        android:background="@color/brand_red"/>
+                    <View
+                        android:layout_width="8dp"
+                        android:layout_height="8dp"
+                        android:layout_gravity="center"
+                        android:background="@drawable/bg_red_circle"/>
+                </FrameLayout>
+            </LinearLayout>
         </LinearLayout>
 
         <!-- Banner/视频区域：用 FrameLayout 包含 VideoView 和占位图 -->

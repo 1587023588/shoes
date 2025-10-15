@@ -10,6 +10,13 @@ color white
 drawable bg_red_circle
 drawable bg_red_pill
 drawable bg_search_box
+drawable camera_top
+drawable home_action_calendar
+drawable home_action_express
+drawable home_action_intangible
+drawable home_action_match
+drawable home_action_museum
+drawable home_action_scan
 drawable home_banner
 drawable home_banner_img
 drawable ic_launcher_foreground
@@ -33,6 +40,12 @@ drawable tab_home
 drawable tab_message
 drawable tab_mine
 drawable tab_plus
+id action_calendar
+id action_express
+id action_intangible
+id action_match
+id action_museum
+id action_scan
 id banner
 id bottom_nav
 id btnAdd

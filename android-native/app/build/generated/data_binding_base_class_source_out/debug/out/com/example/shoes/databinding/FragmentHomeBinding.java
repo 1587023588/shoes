@@ -6,6 +6,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.ScrollView;
 import android.widget.TextView;
 import android.widget.VideoView;
@@ -22,6 +23,24 @@ import java.lang.String;
 public final class FragmentHomeBinding implements ViewBinding {
   @NonNull
   private final ScrollView rootView;
+
+  @NonNull
+  public final LinearLayout actionCalendar;
+
+  @NonNull
+  public final LinearLayout actionExpress;
+
+  @NonNull
+  public final LinearLayout actionIntangible;
+
+  @NonNull
+  public final LinearLayout actionMatch;
+
+  @NonNull
+  public final LinearLayout actionMuseum;
+
+  @NonNull
+  public final LinearLayout actionScan;
 
   @NonNull
   public final ImageView banner;
@@ -47,11 +66,19 @@ public final class FragmentHomeBinding implements ViewBinding {
   @NonNull
   public final TextView tvWeather;
 
-  private FragmentHomeBinding(@NonNull ScrollView rootView, @NonNull ImageView banner,
-      @NonNull ImageView btnCamera, @NonNull TextView btnSearch, @NonNull EditText etSearch,
-      @NonNull VideoView homeVideo, @NonNull RecyclerView list, @NonNull TextView tvLocation,
-      @NonNull TextView tvWeather) {
+  private FragmentHomeBinding(@NonNull ScrollView rootView, @NonNull LinearLayout actionCalendar,
+      @NonNull LinearLayout actionExpress, @NonNull LinearLayout actionIntangible,
+      @NonNull LinearLayout actionMatch, @NonNull LinearLayout actionMuseum,
+      @NonNull LinearLayout actionScan, @NonNull ImageView banner, @NonNull ImageView btnCamera,
+      @NonNull TextView btnSearch, @NonNull EditText etSearch, @NonNull VideoView homeVideo,
+      @NonNull RecyclerView list, @NonNull TextView tvLocation, @NonNull TextView tvWeather) {
     this.rootView = rootView;
+    this.actionCalendar = actionCalendar;
+    this.actionExpress = actionExpress;
+    this.actionIntangible = actionIntangible;
+    this.actionMatch = actionMatch;
+    this.actionMuseum = actionMuseum;
+    this.actionScan = actionScan;
     this.banner = banner;
     this.btnCamera = btnCamera;
     this.btnSearch = btnSearch;
@@ -89,6 +116,42 @@ public final class FragmentHomeBinding implements ViewBinding {
     // This is done to optimize the compiled bytecode for size and performance.
     int id;
     missingId: {
+      id = R.id.action_calendar;
+      LinearLayout actionCalendar = ViewBindings.findChildViewById(rootView, id);
+      if (actionCalendar == null) {
+        break missingId;
+      }
+
+      id = R.id.action_express;
+      LinearLayout actionExpress = ViewBindings.findChildViewById(rootView, id);
+      if (actionExpress == null) {
+        break missingId;
+      }
+
+      id = R.id.action_intangible;
+      LinearLayout actionIntangible = ViewBindings.findChildViewById(rootView, id);
+      if (actionIntangible == null) {
+        break missingId;
+      }
+
+      id = R.id.action_match;
+      LinearLayout actionMatch = ViewBindings.findChildViewById(rootView, id);
+      if (actionMatch == null) {
+        break missingId;
+      }
+
+      id = R.id.action_museum;
+      LinearLayout actionMuseum = ViewBindings.findChildViewById(rootView, id);
+      if (actionMuseum == null) {
+        break missingId;
+      }
+
+      id = R.id.action_scan;
+      LinearLayout actionScan = ViewBindings.findChildViewById(rootView, id);
+      if (actionScan == null) {
+        break missingId;
+      }
+
       id = R.id.banner;
       ImageView banner = ViewBindings.findChildViewById(rootView, id);
       if (banner == null) {
@@ -137,8 +200,9 @@ public final class FragmentHomeBinding implements ViewBinding {
         break missingId;
       }
 
-      return new FragmentHomeBinding((ScrollView) rootView, banner, btnCamera, btnSearch, etSearch,
-          homeVideo, list, tvLocation, tvWeather);
+      return new FragmentHomeBinding((ScrollView) rootView, actionCalendar, actionExpress,
+          actionIntangible, actionMatch, actionMuseum, actionScan, banner, btnCamera, btnSearch,
+          etSearch, homeVideo, list, tvLocation, tvWeather);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));
