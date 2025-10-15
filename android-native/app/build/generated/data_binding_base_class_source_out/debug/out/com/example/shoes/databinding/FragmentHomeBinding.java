@@ -9,9 +9,9 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ScrollView;
 import android.widget.TextView;
-import android.widget.VideoView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.media3.ui.PlayerView;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
@@ -55,7 +55,7 @@ public final class FragmentHomeBinding implements ViewBinding {
   public final EditText etSearch;
 
   @NonNull
-  public final VideoView homeVideo;
+  public final PlayerView homeVideo;
 
   @NonNull
   public final RecyclerView list;
@@ -70,7 +70,7 @@ public final class FragmentHomeBinding implements ViewBinding {
       @NonNull LinearLayout actionExpress, @NonNull LinearLayout actionIntangible,
       @NonNull LinearLayout actionMatch, @NonNull LinearLayout actionMuseum,
       @NonNull LinearLayout actionScan, @NonNull ImageView banner, @NonNull ImageView btnCamera,
-      @NonNull TextView btnSearch, @NonNull EditText etSearch, @NonNull VideoView homeVideo,
+      @NonNull TextView btnSearch, @NonNull EditText etSearch, @NonNull PlayerView homeVideo,
       @NonNull RecyclerView list, @NonNull TextView tvLocation, @NonNull TextView tvWeather) {
     this.rootView = rootView;
     this.actionCalendar = actionCalendar;
@@ -177,7 +177,7 @@ public final class FragmentHomeBinding implements ViewBinding {
       }
 
       id = R.id.homeVideo;
-      VideoView homeVideo = ViewBindings.findChildViewById(rootView, id);
+      PlayerView homeVideo = ViewBindings.findChildViewById(rootView, id);
       if (homeVideo == null) {
         break missingId;
       }

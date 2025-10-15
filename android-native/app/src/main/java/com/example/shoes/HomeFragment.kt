@@ -12,6 +12,9 @@ import coil.load
 import com.example.shoes.databinding.FragmentHomeBinding
 import com.example.shoes.ui.home.ProductAdapter
 import android.widget.Toast
+import androidx.media3.common.MediaItem
+import androidx.media3.common.Player
+import androidx.media3.exoplayer.ExoPlayer
 
 class HomeFragment : Fragment() {
     private var _binding: FragmentHomeBinding? = null
@@ -29,14 +32,27 @@ class HomeFragment : Fragment() {
             placeholder(R.drawable.tab_mine)
             error(R.drawable.tab_mine)
         }
-        // 播放首页视频（COS）
-        binding.homeVideo.setVideoURI(Uri.parse(RemoteConfig.homeVideoUrl))
-        binding.homeVideo.setOnPreparedListener { mp ->
-            mp.isLooping = true
-            // 准备好后隐藏海报
-            binding.banner.animate().alpha(0f).setDuration(200).start()
-            binding.homeVideo.start()
-        }
+        // 播放首页视频（COS），使用 Media3 ExoPlayer 适配更多模拟器
+        val player = ExoPlayer.Builder(requireContext()).build()
+        binding.homeVideo.player = player
+        val item = MediaItem.fromUri(RemoteConfig.homeVideoUrl)
+        player.setMediaItem(item)
+        player.repeatMode = Player.REPEAT_MODE_ONE
+        player.prepare()
+        player.playWhenReady = true
+
+        // 缓冲完成后淡出海报；错误时保留海报并提示
+        player.addListener(object : Player.Listener {
+            override fun onPlaybackStateChanged(playbackState: Int) {
+                if (playbackState == Player.STATE_READY) {
+                    binding.banner.animate().alpha(0f).setDuration(200).start()
+                }
+            }
+            override fun onPlayerError(error: androidx.media3.common.PlaybackException) {
+                Toast.makeText(requireContext(), "视频播放失败：" + error.errorCodeName, Toast.LENGTH_SHORT).show()
+                binding.banner.alpha = 1f
+            }
+        })
         setupList()
 
         // 顶部搜索与相机点击占位
@@ -60,9 +76,11 @@ class HomeFragment : Fragment() {
 
     override fun onDestroyView() {
         super.onDestroyView()
-        // 释放视频
+        // 释放播放器
         try {
-            binding.homeVideo.stopPlayback()
+            val player = binding.homeVideo.player as? ExoPlayer
+            player?.release()
+            binding.homeVideo.player = null
         } catch (_: Throwable) {}
         _binding = null
     }
