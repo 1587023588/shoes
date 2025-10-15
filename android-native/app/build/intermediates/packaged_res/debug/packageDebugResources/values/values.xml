@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:ns1="http://schemas.android.com/tools">
+    <color name="black">#FF000000</color>
+    <color name="brand_red">#B83C2A</color>
+    <color name="primary">#FF5F15</color>
+    <color name="tab_inactive">#666666</color>
+    <color name="top_bg">#EEF5E8</color>
+    <color name="white">#FFFFFFFF</color>
+    <style name="BottomNavIndicator">
+            <item name="color">@android:color/transparent</item>
+        </style>
+    <style name="BottomNavIndicator.None">
+            <item name="color">@android:color/transparent</item>
+        </style>
+    <style name="Theme.ShoesNative" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <item name="colorPrimary">@color/primary</item>
+        <item name="android:statusBarColor" ns1:targetApi="l">@color/primary</item>
+    </style>
+</resources>
