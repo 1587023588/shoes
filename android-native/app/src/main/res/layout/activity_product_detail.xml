@@ -1,44 +1,227 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+    <ScrollView
+        android:id="@+id/scroll"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true"
+        android:layout_above="@+id/buy_bar">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <!-- 图片轮播（简单横向ViewPager替代：用水平LinearLayout+固定高度，后续可换ViewPager2） -->
+            <HorizontalScrollView
+                android:layout_width="match_parent"
+                android:layout_height="240dp"
+                android:overScrollMode="never"
+                android:fillViewport="true"
+                android:scrollbars="none">
+                <LinearLayout
+                    android:id="@+id/gallery"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal" />
+            </HorizontalScrollView>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="16dp">
+
+                <!-- 价格与销量 -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical">
+                    <TextView
+                        android:id="@+id/price"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="¥0.00"
+                        android:textColor="@color/primary"
+                        android:textStyle="bold"
+                        android:textSize="22sp" />
+                    <TextView
+                        android:id="@+id/oldPrice"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="¥0.00"
+                        android:textColor="#999999"
+                        android:textSize="14sp"
+                        android:layout_marginStart="8dp" />
+                    <TextView
+                        android:id="@+id/soldNum"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="已售0"
+                        android:textColor="#888888"
+                        android:textSize="12sp"
+                        android:layout_marginStart="12dp" />
+                </LinearLayout>
+
+                <!-- 标题 + 分享占位 -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:layout_marginTop="8dp">
+                    <TextView
+                        android:id="@+id/title"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="布鞋标题"
+                        android:textSize="20sp"
+                        android:textStyle="bold" />
+                    <TextView
+                        android:id="@+id/btnShare"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="分享"
+                        android:textColor="#333333"
+                        android:padding="6dp" />
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/intro"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text=""
+                    android:textColor="#666666"
+                    android:layout_marginTop="4dp" />
+
+                <!-- 已选规格/数量（点击弹出规格选择） -->
+                <LinearLayout
+                    android:id="@+id/rowSelected"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:paddingTop="12dp"
+                    android:paddingBottom="12dp">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="已选"
+                        android:textColor="#333333" />
+                    <TextView
+                        android:id="@+id/selectedText"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:layout_marginStart="12dp"
+                        android:text="请选择"
+                        android:textColor="#999999" />
+                </LinearLayout>
+
+                <!-- 详情标题 -->
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="详情介绍"
+                    android:textStyle="bold"
+                    android:textColor="#333333"
+                    android:layout_marginTop="8dp" />
+
+                <!-- 详情图片流 -->
+                <LinearLayout
+                    android:id="@+id/descList"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_marginTop="8dp" />
+
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
+    <!-- 底部购买栏 -->
     <LinearLayout
+        android:id="@+id/buy_bar"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:background="#FFFFFF"
+        android:paddingStart="12dp"
+        android:paddingEnd="12dp"
+        android:gravity="center_vertical"
+        android:layout_alignParentBottom="true">
+        <Button
+            android:id="@+id/btnAdd"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:layout_weight="1"
+            android:text="加入购物车" />
+        <Space
+            android:layout_width="8dp"
+            android:layout_height="0dp" />
+        <Button
+            android:id="@+id/btnBuy"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:layout_weight="1"
+            android:text="立即购买" />
+    </LinearLayout>
+
+    <!-- 规格选择BottomSheet（简单替代：底部面板） -->
+    <LinearLayout
+        android:id="@+id/specSheet"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:padding="16dp">
-
+        android:padding="16dp"
+        android:background="#FFFFFFFF"
+        android:visibility="gone"
+        android:layout_alignParentBottom="true">
         <TextView
-            android:id="@+id/title"
+            android:id="@+id/specTitle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="布鞋标题"
-            android:textSize="20sp"
+            android:text="选择规格"
             android:textStyle="bold" />
-
         <TextView
-            android:id="@+id/price"
-            android:layout_width="wrap_content"
+            android:id="@+id/specHint"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="¥0.00"
-            android:textColor="@color/primary"
-            android:textSize="18sp"
+            android:text="尺码：35-44"
             android:layout_marginTop="8dp" />
-
-        <TextView
-            android:id="@+id/desc"
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="工艺/材质/尺码"
-            android:layout_marginTop="12dp" />
-
+            android:orientation="horizontal"
+            android:layout_marginTop="12dp">
+            <Button
+                android:id="@+id/btnSpecMinus"
+                android:layout_width="48dp"
+                android:layout_height="40dp"
+                android:text="-" />
+            <TextView
+                android:id="@+id/specCount"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="1"
+                android:textSize="18sp" />
+            <Button
+                android:id="@+id/btnSpecPlus"
+                android:layout_width="48dp"
+                android:layout_height="40dp"
+                android:text="+" />
+        </LinearLayout>
         <Button
-            android:id="@+id/btnAdd"
+            android:id="@+id/btnSpecConfirm"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="加入购物车"
-            android:layout_marginTop="16dp" />
-
+            android:layout_height="44dp"
+            android:text="确定" />
     </LinearLayout>
-</ScrollView>
+
+</RelativeLayout>

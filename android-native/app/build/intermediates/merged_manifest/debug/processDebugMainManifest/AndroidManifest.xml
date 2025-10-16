@@ -42,6 +42,9 @@
             android:name="com.example.shoes.MainActivity"
             android:exported="false" />
         <activity android:name="com.example.shoes.ProductDetailActivity" />
+        <activity android:name="com.example.shoes.XibaopoActivity" />
+        <activity android:name="com.example.shoes.PosterActivity" />
+        <activity android:name="com.example.shoes.OnlineSalesActivity" />
 
         <provider
             android:name="androidx.startup.InitializationProvider"

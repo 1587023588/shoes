@@ -5,6 +5,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 import android.widget.ScrollView;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
@@ -18,32 +20,106 @@ import java.lang.String;
 
 public final class ActivityProductDetailBinding implements ViewBinding {
   @NonNull
-  private final ScrollView rootView;
+  private final RelativeLayout rootView;
 
   @NonNull
   public final Button btnAdd;
 
   @NonNull
-  public final TextView desc;
+  public final Button btnBuy;
+
+  @NonNull
+  public final TextView btnShare;
+
+  @NonNull
+  public final Button btnSpecConfirm;
+
+  @NonNull
+  public final Button btnSpecMinus;
+
+  @NonNull
+  public final Button btnSpecPlus;
+
+  @NonNull
+  public final LinearLayout buyBar;
+
+  @NonNull
+  public final LinearLayout descList;
+
+  @NonNull
+  public final LinearLayout gallery;
+
+  @NonNull
+  public final TextView intro;
+
+  @NonNull
+  public final TextView oldPrice;
 
   @NonNull
   public final TextView price;
 
   @NonNull
+  public final LinearLayout rowSelected;
+
+  @NonNull
+  public final ScrollView scroll;
+
+  @NonNull
+  public final TextView selectedText;
+
+  @NonNull
+  public final TextView soldNum;
+
+  @NonNull
+  public final TextView specCount;
+
+  @NonNull
+  public final TextView specHint;
+
+  @NonNull
+  public final LinearLayout specSheet;
+
+  @NonNull
+  public final TextView specTitle;
+
+  @NonNull
   public final TextView title;
 
-  private ActivityProductDetailBinding(@NonNull ScrollView rootView, @NonNull Button btnAdd,
-      @NonNull TextView desc, @NonNull TextView price, @NonNull TextView title) {
+  private ActivityProductDetailBinding(@NonNull RelativeLayout rootView, @NonNull Button btnAdd,
+      @NonNull Button btnBuy, @NonNull TextView btnShare, @NonNull Button btnSpecConfirm,
+      @NonNull Button btnSpecMinus, @NonNull Button btnSpecPlus, @NonNull LinearLayout buyBar,
+      @NonNull LinearLayout descList, @NonNull LinearLayout gallery, @NonNull TextView intro,
+      @NonNull TextView oldPrice, @NonNull TextView price, @NonNull LinearLayout rowSelected,
+      @NonNull ScrollView scroll, @NonNull TextView selectedText, @NonNull TextView soldNum,
+      @NonNull TextView specCount, @NonNull TextView specHint, @NonNull LinearLayout specSheet,
+      @NonNull TextView specTitle, @NonNull TextView title) {
     this.rootView = rootView;
     this.btnAdd = btnAdd;
-    this.desc = desc;
+    this.btnBuy = btnBuy;
+    this.btnShare = btnShare;
+    this.btnSpecConfirm = btnSpecConfirm;
+    this.btnSpecMinus = btnSpecMinus;
+    this.btnSpecPlus = btnSpecPlus;
+    this.buyBar = buyBar;
+    this.descList = descList;
+    this.gallery = gallery;
+    this.intro = intro;
+    this.oldPrice = oldPrice;
     this.price = price;
+    this.rowSelected = rowSelected;
+    this.scroll = scroll;
+    this.selectedText = selectedText;
+    this.soldNum = soldNum;
+    this.specCount = specCount;
+    this.specHint = specHint;
+    this.specSheet = specSheet;
+    this.specTitle = specTitle;
     this.title = title;
   }
 
   @Override
   @NonNull
-  public ScrollView getRoot() {
+  public RelativeLayout getRoot() {
     return rootView;
   }
 
@@ -74,9 +150,63 @@ public final class ActivityProductDetailBinding implements ViewBinding {
         break missingId;
       }
 
-      id = R.id.desc;
-      TextView desc = ViewBindings.findChildViewById(rootView, id);
-      if (desc == null) {
+      id = R.id.btnBuy;
+      Button btnBuy = ViewBindings.findChildViewById(rootView, id);
+      if (btnBuy == null) {
+        break missingId;
+      }
+
+      id = R.id.btnShare;
+      TextView btnShare = ViewBindings.findChildViewById(rootView, id);
+      if (btnShare == null) {
+        break missingId;
+      }
+
+      id = R.id.btnSpecConfirm;
+      Button btnSpecConfirm = ViewBindings.findChildViewById(rootView, id);
+      if (btnSpecConfirm == null) {
+        break missingId;
+      }
+
+      id = R.id.btnSpecMinus;
+      Button btnSpecMinus = ViewBindings.findChildViewById(rootView, id);
+      if (btnSpecMinus == null) {
+        break missingId;
+      }
+
+      id = R.id.btnSpecPlus;
+      Button btnSpecPlus = ViewBindings.findChildViewById(rootView, id);
+      if (btnSpecPlus == null) {
+        break missingId;
+      }
+
+      id = R.id.buy_bar;
+      LinearLayout buyBar = ViewBindings.findChildViewById(rootView, id);
+      if (buyBar == null) {
+        break missingId;
+      }
+
+      id = R.id.descList;
+      LinearLayout descList = ViewBindings.findChildViewById(rootView, id);
+      if (descList == null) {
+        break missingId;
+      }
+
+      id = R.id.gallery;
+      LinearLayout gallery = ViewBindings.findChildViewById(rootView, id);
+      if (gallery == null) {
+        break missingId;
+      }
+
+      id = R.id.intro;
+      TextView intro = ViewBindings.findChildViewById(rootView, id);
+      if (intro == null) {
+        break missingId;
+      }
+
+      id = R.id.oldPrice;
+      TextView oldPrice = ViewBindings.findChildViewById(rootView, id);
+      if (oldPrice == null) {
         break missingId;
       }
 
@@ -86,13 +216,64 @@ public final class ActivityProductDetailBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.rowSelected;
+      LinearLayout rowSelected = ViewBindings.findChildViewById(rootView, id);
+      if (rowSelected == null) {
+        break missingId;
+      }
+
+      id = R.id.scroll;
+      ScrollView scroll = ViewBindings.findChildViewById(rootView, id);
+      if (scroll == null) {
+        break missingId;
+      }
+
+      id = R.id.selectedText;
+      TextView selectedText = ViewBindings.findChildViewById(rootView, id);
+      if (selectedText == null) {
+        break missingId;
+      }
+
+      id = R.id.soldNum;
+      TextView soldNum = ViewBindings.findChildViewById(rootView, id);
+      if (soldNum == null) {
+        break missingId;
+      }
+
+      id = R.id.specCount;
+      TextView specCount = ViewBindings.findChildViewById(rootView, id);
+      if (specCount == null) {
+        break missingId;
+      }
+
+      id = R.id.specHint;
+      TextView specHint = ViewBindings.findChildViewById(rootView, id);
+      if (specHint == null) {
+        break missingId;
+      }
+
+      id = R.id.specSheet;
+      LinearLayout specSheet = ViewBindings.findChildViewById(rootView, id);
+      if (specSheet == null) {
+        break missingId;
+      }
+
+      id = R.id.specTitle;
+      TextView specTitle = ViewBindings.findChildViewById(rootView, id);
+      if (specTitle == null) {
+        break missingId;
+      }
+
       id = R.id.title;
       TextView title = ViewBindings.findChildViewById(rootView, id);
       if (title == null) {
         break missingId;
       }
 
-      return new ActivityProductDetailBinding((ScrollView) rootView, btnAdd, desc, price, title);
+      return new ActivityProductDetailBinding((RelativeLayout) rootView, btnAdd, btnBuy, btnShare,
+          btnSpecConfirm, btnSpecMinus, btnSpecPlus, buyBar, descList, gallery, intro, oldPrice,
+          price, rowSelected, scroll, selectedText, soldNum, specCount, specHint, specSheet,
+          specTitle, title);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

@@ -3093,6 +3093,7 @@ drawable abc_textfield_search_activated_mtrl_alpha
 drawable abc_textfield_search_default_mtrl_alpha
 drawable abc_textfield_search_material
 drawable abc_vector_test
+drawable arm
 drawable avd_hide_password
 drawable avd_show_password
 drawable bg_icon_circle
@@ -3338,6 +3339,7 @@ drawable product_img_3
 drawable product_img_4
 drawable product_img_5
 drawable product_img_6
+drawable red
 drawable splash_mascot
 drawable splash_mascot_img
 drawable stars_repeat
@@ -3347,9 +3349,11 @@ drawable tab_home
 drawable tab_message
 drawable tab_mine
 drawable tab_plus
+drawable team
 drawable test_level_drawable
 drawable tooltip_frame_dark
 drawable tooltip_frame_light
+drawable xibaopo
 font roboto_medium_numbers
 id ALT
 id BOTTOM_END
@@ -3446,6 +3450,7 @@ id auto
 id autoComplete
 id autoCompleteToEnd
 id autoCompleteToStart
+id avatar
 id axisRelative
 id banner
 id barrier
@@ -3454,6 +3459,7 @@ id beginOnFirstDraw
 id beginning
 id below
 id bestChoice
+id bg
 id blocking
 id bottom
 id bottom_nav
@@ -3462,6 +3468,13 @@ id bounceBoth
 id bounceEnd
 id bounceStart
 id btnAdd
+id btnBack
+id btnBuy
+id btnSettings
+id btnShare
+id btnSpecConfirm
+id btnSpecMinus
+id btnSpecPlus
 id btn_camera
 id btn_category
 id btn_home
@@ -3469,6 +3482,7 @@ id btn_message
 id btn_mine
 id btn_search
 id buttonPanel
+id buy_bar
 id cache_measures
 id callMeasure
 id cancel_action
@@ -3520,7 +3534,7 @@ id decor_content_parent
 id default_activity_button
 id deltaRelative
 id dependency_ordering
-id desc
+id descList
 id design_bottom_sheet
 id design_menu_item_action_area
 id design_menu_item_action_area_stub
@@ -3632,6 +3646,7 @@ id fragment_container
 id fragment_container_view_tag
 id frost
 id fullscreen_header
+id gallery
 id ghost_view
 id ghost_view_holder
 id gone
@@ -3667,6 +3682,7 @@ id immediateStop
 id included
 id indeterminate
 id info
+id intro
 id invisible
 id inward
 id ipv6
@@ -3768,6 +3784,7 @@ id navigation_header_container
 id never
 id neverCompleteToEnd
 id neverCompleteToStart
+id nickname
 id noScroll
 id noState
 id none
@@ -3777,6 +3794,7 @@ id notification_background
 id notification_main_column
 id notification_main_column_container
 id off
+id oldPrice
 id on
 id onInterceptTouchReturnSwipe
 id one
@@ -3794,6 +3812,11 @@ id open_search_view_search_prefix
 id open_search_view_status_bar_spacer
 id open_search_view_toolbar
 id open_search_view_toolbar_container
+id orderAll
+id orderGroup
+id orderWaitPay
+id orderWaitReceive
+id orderWaitShip
 id outline
 id outward
 id overshoot
@@ -3812,6 +3835,7 @@ id pin
 id pooling_container_listener_holder_tag
 id position
 id postLayout
+id posterImage
 id pressed
 id price
 id progress_circular
@@ -3826,6 +3850,7 @@ id rightToLeft
 id right_icon
 id right_side
 id rounded
+id rowSelected
 id row_index_key
 id save_non_transition_alpha
 id save_overlay_view
@@ -3858,6 +3883,7 @@ id section3_stars_row
 id section3_title
 id select_dialog_listview
 id selected
+id selectedText
 id selection_type
 id sharedValueSet
 id sharedValueUnset
@@ -3873,8 +3899,13 @@ id snackbar_action
 id snackbar_text
 id snap
 id snapMargins
+id soldNum
 id south
 id spacer
+id specCount
+id specHint
+id specSheet
+id specTitle
 id special_effects_controller_view_tag
 id spherical_gl_surface_view
 id spline
@@ -3891,15 +3922,21 @@ id start
 id startHorizontal
 id startToEnd
 id startVertical
+id statOrders
+id statPairs
+id statSupport
 id staticLayout
 id staticPostLayout
+id statsCard
 id status_bar_latest_event_content
 id stock
 id stop
+id storyEntry
 id stretch
 id sub
 id submenuarrow
 id submit_area
+id subtitle
 id supportScrollUp
 id surface_view
 id tabMode
@@ -3959,6 +3996,7 @@ id uniform
 id unlabeled
 id up
 id useLogo
+id versionText
 id vertical
 id vertical_only
 id video_decoder_gl_surface_view
@@ -4098,8 +4136,11 @@ layout abc_search_view
 layout abc_select_dialog_material
 layout abc_tooltip
 layout activity_main
+layout activity_online_sales
+layout activity_poster
 layout activity_product_detail
 layout activity_splash
+layout activity_xibaopo
 layout custom_dialog
 layout design_bottom_navigation_item
 layout design_bottom_sheet_dialog
@@ -4128,6 +4169,7 @@ layout exo_styled_sub_settings_list_item
 layout exo_track_selection_dialog
 layout fragment_category
 layout fragment_home
+layout fragment_mine
 layout fragment_simple
 layout ime_base_split_test_activity
 layout ime_secondary_split_test_activity

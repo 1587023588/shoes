@@ -117,7 +117,30 @@ class CategoryFragment : Fragment() {
             holder.icon.setImageResource(item.iconRes)
             holder.label.text = item.label
             view.setOnClickListener {
-                Toast.makeText(requireContext(), item.label, Toast.LENGTH_SHORT).show()
+                when {
+                    item.label.contains("线上销售") -> {
+                        startActivity(android.content.Intent(requireContext(), OnlineSalesActivity::class.java))
+                    }
+                    item.label.contains("西柏坡精神") -> {
+                        startActivity(android.content.Intent(requireContext(), XibaopoActivity::class.java))
+                    }
+                    item.label.contains("团结精神") -> {
+                        val posterIntent = android.content.Intent(requireContext(), PosterActivity::class.java)
+                        posterIntent.putExtra(PosterActivity.EXTRA_RES_ID, R.drawable.team)
+                        startActivity(posterIntent)
+                    }
+                    item.label.contains("拥军故事") -> {
+                        val posterIntent = android.content.Intent(requireContext(), PosterActivity::class.java)
+                        posterIntent.putExtra(PosterActivity.EXTRA_RES_ID, R.drawable.arm)
+                        startActivity(posterIntent)
+                    }
+                    item.label.contains("红色资源") -> {
+                        val posterIntent = android.content.Intent(requireContext(), PosterActivity::class.java)
+                        posterIntent.putExtra(PosterActivity.EXTRA_RES_ID, R.drawable.red)
+                        startActivity(posterIntent)
+                    }
+                    else -> Toast.makeText(requireContext(), item.label, Toast.LENGTH_SHORT).show()
+                }
             }
             return view
         }
