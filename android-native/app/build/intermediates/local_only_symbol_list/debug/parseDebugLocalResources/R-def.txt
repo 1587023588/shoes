@@ -42,6 +42,16 @@ drawable cat_6
 drawable cat_7
 drawable cat_8
 drawable cat_9
+drawable goods_1
+drawable goods_10
+drawable goods_2
+drawable goods_3
+drawable goods_4
+drawable goods_5
+drawable goods_6
+drawable goods_7
+drawable goods_8
+drawable goods_9
 drawable home_action_calendar
 drawable home_action_express
 drawable home_action_intangible
@@ -66,6 +76,7 @@ drawable product_img_5
 drawable product_img_6
 drawable splash_mascot
 drawable splash_mascot_img
+drawable stars_repeat
 drawable tab_cart
 drawable tab_category
 drawable tab_home
@@ -87,6 +98,9 @@ id btn_home
 id btn_message
 id btn_mine
 id btn_search
+id category_btn_search
+id category_et_search
+id category_header_icon
 id cover
 id desc
 id et_search
@@ -114,8 +128,14 @@ id nav_home
 id nav_message
 id nav_mine
 id price
+id section1_icon
+id section1_stars_row
 id section1_title
+id section2_icon
+id section2_stars_row
 id section2_title
+id section3_icon
+id section3_stars_row
 id section3_title
 id stock
 id sub
@@ -134,6 +154,7 @@ layout view_bottom_bar
 menu bottom_nav_menu
 mipmap ic_launcher
 mipmap ic_launcher_round
+raw shoes
 style BottomNavIndicator
 style BottomNavIndicator.None
 style Theme.ShoesNative

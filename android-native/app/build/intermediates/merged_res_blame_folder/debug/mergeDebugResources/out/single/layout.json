@@ -36,10 +36,6 @@
         "source": "C:\\Users\\gsy_666\\.gradle\\daemon\\9.0-milestone-1\\com.example.shoes.app-main-39:\\layout\\fragment_simple.xml"
     },
     {
-        "merged": "com.example.shoes.app-mergeDebugResources-36:/layout/item_category.xml",
-        "source": "com.example.shoes.app-main-39:/layout/item_category.xml"
-    },
-    {
         "merged": "C:\\Users\\gsy_666\\.gradle\\daemon\\9.0-milestone-1\\com.example.shoes.app-mergeDebugResources-36:\\layout\\activity_main.xml",
         "source": "C:\\Users\\gsy_666\\.gradle\\daemon\\9.0-milestone-1\\com.example.shoes.app-main-39:\\layout\\activity_main.xml"
     }

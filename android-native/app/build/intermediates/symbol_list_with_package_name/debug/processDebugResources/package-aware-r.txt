@@ -3215,6 +3215,16 @@ drawable exo_styled_controls_speed
 drawable exo_styled_controls_subtitle_off
 drawable exo_styled_controls_subtitle_on
 drawable exo_styled_controls_vr
+drawable goods_1
+drawable goods_10
+drawable goods_2
+drawable goods_3
+drawable goods_4
+drawable goods_5
+drawable goods_6
+drawable goods_7
+drawable goods_8
+drawable goods_9
 drawable home_action_calendar
 drawable home_action_express
 drawable home_action_intangible
@@ -3330,6 +3340,7 @@ drawable product_img_5
 drawable product_img_6
 drawable splash_mascot
 drawable splash_mascot_img
+drawable stars_repeat
 drawable tab_cart
 drawable tab_category
 drawable tab_home
@@ -3463,6 +3474,9 @@ id callMeasure
 id cancel_action
 id cancel_button
 id carryVelocity
+id category_btn_search
+id category_et_search
+id category_header_icon
 id center
 id centerCrop
 id centerInside
@@ -3833,8 +3847,14 @@ id search_mag_icon
 id search_plate
 id search_src_text
 id search_voice_btn
+id section1_icon
+id section1_stars_row
 id section1_title
+id section2_icon
+id section2_stars_row
 id section2_title
+id section3_icon
+id section3_stars_row
 id section3_title
 id select_dialog_listview
 id selected
@@ -4190,6 +4210,7 @@ mipmap ic_launcher_round
 plurals exo_controls_fastforward_by_amount_description
 plurals exo_controls_rewind_by_amount_description
 plurals mtrl_badge_content_description
+raw shoes
 string abc_action_bar_home_description
 string abc_action_bar_up_description
 string abc_action_menu_overflow_description

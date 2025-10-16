@@ -32,10 +32,11 @@ class HomeFragment : Fragment() {
             placeholder(R.drawable.tab_mine)
             error(R.drawable.tab_mine)
         }
-        // 播放首页视频（COS），使用 Media3 ExoPlayer 适配更多模拟器
+    // 播放首页视频（本地 raw 资源），使用 Media3 ExoPlayer 适配更多模拟器
         val player = ExoPlayer.Builder(requireContext()).build()
         binding.homeVideo.player = player
-        val item = MediaItem.fromUri(RemoteConfig.homeVideoUrl)
+    val localVideoUri = Uri.parse("android.resource://" + requireContext().packageName + "/" + R.raw.shoes)
+    val item = MediaItem.fromUri(localVideoUri)
         player.setMediaItem(item)
         player.repeatMode = Player.REPEAT_MODE_ONE
         player.prepare()

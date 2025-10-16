@@ -4,7 +4,10 @@ package com.example.shoes.databinding;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.EditText;
 import android.widget.GridView;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.ScrollView;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
@@ -21,6 +24,15 @@ public final class FragmentCategoryBinding implements ViewBinding {
   private final ScrollView rootView;
 
   @NonNull
+  public final TextView categoryBtnSearch;
+
+  @NonNull
+  public final EditText categoryEtSearch;
+
+  @NonNull
+  public final ImageView categoryHeaderIcon;
+
+  @NonNull
   public final GridView grid1;
 
   @NonNull
@@ -30,23 +42,55 @@ public final class FragmentCategoryBinding implements ViewBinding {
   public final GridView grid3;
 
   @NonNull
+  public final ImageView section1Icon;
+
+  @NonNull
+  public final LinearLayout section1StarsRow;
+
+  @NonNull
   public final TextView section1Title;
+
+  @NonNull
+  public final ImageView section2Icon;
+
+  @NonNull
+  public final LinearLayout section2StarsRow;
 
   @NonNull
   public final TextView section2Title;
 
   @NonNull
+  public final ImageView section3Icon;
+
+  @NonNull
+  public final LinearLayout section3StarsRow;
+
+  @NonNull
   public final TextView section3Title;
 
-  private FragmentCategoryBinding(@NonNull ScrollView rootView, @NonNull GridView grid1,
-      @NonNull GridView grid2, @NonNull GridView grid3, @NonNull TextView section1Title,
-      @NonNull TextView section2Title, @NonNull TextView section3Title) {
+  private FragmentCategoryBinding(@NonNull ScrollView rootView, @NonNull TextView categoryBtnSearch,
+      @NonNull EditText categoryEtSearch, @NonNull ImageView categoryHeaderIcon,
+      @NonNull GridView grid1, @NonNull GridView grid2, @NonNull GridView grid3,
+      @NonNull ImageView section1Icon, @NonNull LinearLayout section1StarsRow,
+      @NonNull TextView section1Title, @NonNull ImageView section2Icon,
+      @NonNull LinearLayout section2StarsRow, @NonNull TextView section2Title,
+      @NonNull ImageView section3Icon, @NonNull LinearLayout section3StarsRow,
+      @NonNull TextView section3Title) {
     this.rootView = rootView;
+    this.categoryBtnSearch = categoryBtnSearch;
+    this.categoryEtSearch = categoryEtSearch;
+    this.categoryHeaderIcon = categoryHeaderIcon;
     this.grid1 = grid1;
     this.grid2 = grid2;
     this.grid3 = grid3;
+    this.section1Icon = section1Icon;
+    this.section1StarsRow = section1StarsRow;
     this.section1Title = section1Title;
+    this.section2Icon = section2Icon;
+    this.section2StarsRow = section2StarsRow;
     this.section2Title = section2Title;
+    this.section3Icon = section3Icon;
+    this.section3StarsRow = section3StarsRow;
     this.section3Title = section3Title;
   }
 
@@ -77,6 +121,24 @@ public final class FragmentCategoryBinding implements ViewBinding {
     // This is done to optimize the compiled bytecode for size and performance.
     int id;
     missingId: {
+      id = R.id.category_btn_search;
+      TextView categoryBtnSearch = ViewBindings.findChildViewById(rootView, id);
+      if (categoryBtnSearch == null) {
+        break missingId;
+      }
+
+      id = R.id.category_et_search;
+      EditText categoryEtSearch = ViewBindings.findChildViewById(rootView, id);
+      if (categoryEtSearch == null) {
+        break missingId;
+      }
+
+      id = R.id.category_header_icon;
+      ImageView categoryHeaderIcon = ViewBindings.findChildViewById(rootView, id);
+      if (categoryHeaderIcon == null) {
+        break missingId;
+      }
+
       id = R.id.grid1;
       GridView grid1 = ViewBindings.findChildViewById(rootView, id);
       if (grid1 == null) {
@@ -95,9 +157,33 @@ public final class FragmentCategoryBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.section1_icon;
+      ImageView section1Icon = ViewBindings.findChildViewById(rootView, id);
+      if (section1Icon == null) {
+        break missingId;
+      }
+
+      id = R.id.section1_stars_row;
+      LinearLayout section1StarsRow = ViewBindings.findChildViewById(rootView, id);
+      if (section1StarsRow == null) {
+        break missingId;
+      }
+
       id = R.id.section1_title;
       TextView section1Title = ViewBindings.findChildViewById(rootView, id);
       if (section1Title == null) {
+        break missingId;
+      }
+
+      id = R.id.section2_icon;
+      ImageView section2Icon = ViewBindings.findChildViewById(rootView, id);
+      if (section2Icon == null) {
+        break missingId;
+      }
+
+      id = R.id.section2_stars_row;
+      LinearLayout section2StarsRow = ViewBindings.findChildViewById(rootView, id);
+      if (section2StarsRow == null) {
         break missingId;
       }
 
@@ -107,14 +193,28 @@ public final class FragmentCategoryBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.section3_icon;
+      ImageView section3Icon = ViewBindings.findChildViewById(rootView, id);
+      if (section3Icon == null) {
+        break missingId;
+      }
+
+      id = R.id.section3_stars_row;
+      LinearLayout section3StarsRow = ViewBindings.findChildViewById(rootView, id);
+      if (section3StarsRow == null) {
+        break missingId;
+      }
+
       id = R.id.section3_title;
       TextView section3Title = ViewBindings.findChildViewById(rootView, id);
       if (section3Title == null) {
         break missingId;
       }
 
-      return new FragmentCategoryBinding((ScrollView) rootView, grid1, grid2, grid3, section1Title,
-          section2Title, section3Title);
+      return new FragmentCategoryBinding((ScrollView) rootView, categoryBtnSearch, categoryEtSearch,
+          categoryHeaderIcon, grid1, grid2, grid3, section1Icon, section1StarsRow, section1Title,
+          section2Icon, section2StarsRow, section2Title, section3Icon, section3StarsRow,
+          section3Title);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));
