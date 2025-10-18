@@ -44,16 +44,16 @@
         "source": "C:\\Users\\gsy_666\\.gradle\\daemon\\9.0-milestone-1\\com.example.shoes.app-main-39:\\drawable\\ic_launcher_foreground.xml"
     },
     {
-        "merged": "C:\\Users\\gsy_666\\.gradle\\daemon\\9.0-milestone-1\\com.example.shoes.app-debug-37:\\drawable-nodpi_cat_5.png.flat",
-        "source": "C:\\Users\\gsy_666\\.gradle\\daemon\\9.0-milestone-1\\com.example.shoes.app-main-39:\\drawable-nodpi\\cat_5.png"
+        "merged": "C:\\Users\\gsy_666\\.gradle\\daemon\\9.0-milestone-1\\com.example.shoes.app-debug-37:\\drawable-nodpi_home_action_express.png.flat",
+        "source": "C:\\Users\\gsy_666\\.gradle\\daemon\\9.0-milestone-1\\com.example.shoes.app-main-39:\\drawable-nodpi\\home_action_express.png"
     },
     {
         "merged": "C:\\Users\\gsy_666\\.gradle\\daemon\\9.0-milestone-1\\com.example.shoes.app-debug-37:\\drawable-nodpi_home_action_scan.png.flat",
         "source": "C:\\Users\\gsy_666\\.gradle\\daemon\\9.0-milestone-1\\com.example.shoes.app-main-39:\\drawable-nodpi\\home_action_scan.png"
     },
     {
-        "merged": "C:\\Users\\gsy_666\\.gradle\\daemon\\9.0-milestone-1\\com.example.shoes.app-debug-37:\\drawable-nodpi_home_action_express.png.flat",
-        "source": "C:\\Users\\gsy_666\\.gradle\\daemon\\9.0-milestone-1\\com.example.shoes.app-main-39:\\drawable-nodpi\\home_action_express.png"
+        "merged": "C:\\Users\\gsy_666\\.gradle\\daemon\\9.0-milestone-1\\com.example.shoes.app-debug-37:\\drawable-nodpi_cat_5.png.flat",
+        "source": "C:\\Users\\gsy_666\\.gradle\\daemon\\9.0-milestone-1\\com.example.shoes.app-main-39:\\drawable-nodpi\\cat_5.png"
     },
     {
         "merged": "C:\\Users\\gsy_666\\.gradle\\daemon\\9.0-milestone-1\\com.example.shoes.app-debug-37:\\drawable-nodpi_cat_14.png.flat",
@@ -134,6 +134,10 @@
     {
         "merged": "C:\\Users\\gsy_666\\.gradle\\daemon\\9.0-milestone-1\\com.example.shoes.app-debug-37:\\drawable-nodpi_cat_12.png.flat",
         "source": "C:\\Users\\gsy_666\\.gradle\\daemon\\9.0-milestone-1\\com.example.shoes.app-main-39:\\drawable-nodpi\\cat_12.png"
+    },
+    {
+        "merged": "com.example.shoes.app-debug-37:/layout_activity_product_detail.xml.flat",
+        "source": "com.example.shoes.app-main-39:/layout/activity_product_detail.xml"
     },
     {
         "merged": "C:\\Users\\gsy_666\\.gradle\\daemon\\9.0-milestone-1\\com.example.shoes.app-debug-37:\\layout_item_category.xml.flat",
@@ -272,10 +276,6 @@
         "source": "C:\\Users\\gsy_666\\.gradle\\daemon\\9.0-milestone-1\\com.example.shoes.app-main-39:\\layout\\activity_splash.xml"
     },
     {
-        "merged": "com.example.shoes.app-debug-37:/layout_fragment_mine.xml.flat",
-        "source": "com.example.shoes.app-main-39:/layout/fragment_mine.xml"
-    },
-    {
         "merged": "C:\\Users\\gsy_666\\.gradle\\daemon\\9.0-milestone-1\\com.example.shoes.app-debug-37:\\raw_shoes.mp4.flat",
         "source": "C:\\Users\\gsy_666\\.gradle\\daemon\\9.0-milestone-1\\com.example.shoes.app-main-39:\\raw\\shoes.mp4"
     },
@@ -286,6 +286,10 @@
     {
         "merged": "C:\\Users\\gsy_666\\.gradle\\daemon\\9.0-milestone-1\\com.example.shoes.app-debug-37:\\drawable-nodpi_cat_10.png.flat",
         "source": "C:\\Users\\gsy_666\\.gradle\\daemon\\9.0-milestone-1\\com.example.shoes.app-main-39:\\drawable-nodpi\\cat_10.png"
+    },
+    {
+        "merged": "C:\\Users\\gsy_666\\.gradle\\daemon\\9.0-milestone-1\\com.example.shoes.app-debug-37:\\layout_activity_booking.xml.flat",
+        "source": "C:\\Users\\gsy_666\\.gradle\\daemon\\9.0-milestone-1\\com.example.shoes.app-main-39:\\layout\\activity_booking.xml"
     },
     {
         "merged": "C:\\Users\\gsy_666\\.gradle\\daemon\\9.0-milestone-1\\com.example.shoes.app-debug-37:\\drawable_tab_home.png.flat",
@@ -326,6 +330,10 @@
     {
         "merged": "C:\\Users\\gsy_666\\.gradle\\daemon\\9.0-milestone-1\\com.example.shoes.app-debug-37:\\drawable-nodpi_cat_6.png.flat",
         "source": "C:\\Users\\gsy_666\\.gradle\\daemon\\9.0-milestone-1\\com.example.shoes.app-main-39:\\drawable-nodpi\\cat_6.png"
+    },
+    {
+        "merged": "C:\\Users\\gsy_666\\.gradle\\daemon\\9.0-milestone-1\\com.example.shoes.app-debug-37:\\layout_activity_museum.xml.flat",
+        "source": "C:\\Users\\gsy_666\\.gradle\\daemon\\9.0-milestone-1\\com.example.shoes.app-main-39:\\layout\\activity_museum.xml"
     },
     {
         "merged": "C:\\Users\\gsy_666\\.gradle\\daemon\\9.0-milestone-1\\com.example.shoes.app-debug-37:\\drawable_product_3.xml.flat",

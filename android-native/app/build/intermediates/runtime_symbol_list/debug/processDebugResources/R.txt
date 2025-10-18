@@ -3468,7 +3468,11 @@ int id bounceEnd 0x7f0a006e
 int id bounceStart 0x7f0a006f
 int id btnAdd 0x7f0a0070
 int id btnBack 0x7f0a0071
+int id btnBooking 0x7f0a0298
 int id btnBuy 0x7f0a0072
+int id btnNext 0x7f0a0299
+int id btnPlayAudio 0x7f0a029a
+int id btnPrev 0x7f0a029b
 int id btnSettings 0x7f0a0073
 int id btnShare 0x7f0a0074
 int id btnSpecConfirm 0x7f0a0075
@@ -3646,6 +3650,7 @@ int id fragment_container_view_tag 0x7f0a0120
 int id frost 0x7f0a0121
 int id fullscreen_header 0x7f0a0122
 int id gallery 0x7f0a0123
+int id galleryScroll 0x7f0a02a4
 int id ghost_view 0x7f0a0124
 int id ghost_view_holder 0x7f0a0125
 int id gone 0x7f0a0126
@@ -3680,6 +3685,7 @@ int id img_plus 0x7f0a0142
 int id immediateStop 0x7f0a0143
 int id included 0x7f0a0144
 int id indeterminate 0x7f0a0145
+int id indicators 0x7f0a029c
 int id info 0x7f0a0146
 int id intro 0x7f0a0147
 int id invisible 0x7f0a0148
@@ -3999,6 +4005,7 @@ int id versionText 0x7f0a0281
 int id vertical 0x7f0a0282
 int id vertical_only 0x7f0a0283
 int id video_decoder_gl_surface_view 0x7f0a0284
+int id viewPager 0x7f0a029d
 int id view_offset_helper 0x7f0a0285
 int id view_transition 0x7f0a0286
 int id view_tree_lifecycle_owner 0x7f0a0287
@@ -4134,7 +4141,9 @@ int layout abc_search_dropdown_item_icons_2line 0x7f0d0018
 int layout abc_search_view 0x7f0d0019
 int layout abc_select_dialog_material 0x7f0d001a
 int layout abc_tooltip 0x7f0d001b
+int layout activity_booking 0x7f0d008b
 int layout activity_main 0x7f0d001c
+int layout activity_museum 0x7f0d008c
 int layout activity_online_sales 0x7f0d001d
 int layout activity_poster 0x7f0d001e
 int layout activity_product_detail 0x7f0d001f

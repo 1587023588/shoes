@@ -5,6 +5,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.HorizontalScrollView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.ScrollView;
@@ -50,6 +51,9 @@ public final class ActivityProductDetailBinding implements ViewBinding {
   public final LinearLayout gallery;
 
   @NonNull
+  public final HorizontalScrollView galleryScroll;
+
+  @NonNull
   public final TextView intro;
 
   @NonNull
@@ -88,7 +92,8 @@ public final class ActivityProductDetailBinding implements ViewBinding {
   private ActivityProductDetailBinding(@NonNull RelativeLayout rootView, @NonNull Button btnAdd,
       @NonNull Button btnBuy, @NonNull TextView btnShare, @NonNull Button btnSpecConfirm,
       @NonNull Button btnSpecMinus, @NonNull Button btnSpecPlus, @NonNull LinearLayout buyBar,
-      @NonNull LinearLayout descList, @NonNull LinearLayout gallery, @NonNull TextView intro,
+      @NonNull LinearLayout descList, @NonNull LinearLayout gallery,
+      @NonNull HorizontalScrollView galleryScroll, @NonNull TextView intro,
       @NonNull TextView oldPrice, @NonNull TextView price, @NonNull LinearLayout rowSelected,
       @NonNull ScrollView scroll, @NonNull TextView selectedText, @NonNull TextView soldNum,
       @NonNull TextView specCount, @NonNull TextView specHint, @NonNull LinearLayout specSheet,
@@ -103,6 +108,7 @@ public final class ActivityProductDetailBinding implements ViewBinding {
     this.buyBar = buyBar;
     this.descList = descList;
     this.gallery = gallery;
+    this.galleryScroll = galleryScroll;
     this.intro = intro;
     this.oldPrice = oldPrice;
     this.price = price;
@@ -198,6 +204,12 @@ public final class ActivityProductDetailBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.galleryScroll;
+      HorizontalScrollView galleryScroll = ViewBindings.findChildViewById(rootView, id);
+      if (galleryScroll == null) {
+        break missingId;
+      }
+
       id = R.id.intro;
       TextView intro = ViewBindings.findChildViewById(rootView, id);
       if (intro == null) {
@@ -271,9 +283,9 @@ public final class ActivityProductDetailBinding implements ViewBinding {
       }
 
       return new ActivityProductDetailBinding((RelativeLayout) rootView, btnAdd, btnBuy, btnShare,
-          btnSpecConfirm, btnSpecMinus, btnSpecPlus, buyBar, descList, gallery, intro, oldPrice,
-          price, rowSelected, scroll, selectedText, soldNum, specCount, specHint, specSheet,
-          specTitle, title);
+          btnSpecConfirm, btnSpecMinus, btnSpecPlus, buyBar, descList, gallery, galleryScroll,
+          intro, oldPrice, price, rowSelected, scroll, selectedText, soldNum, specCount, specHint,
+          specSheet, specTitle, title);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

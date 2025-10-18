@@ -17,6 +17,7 @@
 
             <!-- 图片轮播（简单横向ViewPager替代：用水平LinearLayout+固定高度，后续可换ViewPager2） -->
             <HorizontalScrollView
+                android:id="@+id/galleryScroll"
                 android:layout_width="match_parent"
                 android:layout_height="240dp"
                 android:overScrollMode="never"

@@ -121,6 +121,9 @@ class CategoryFragment : Fragment() {
                     item.label.contains("线上销售") -> {
                         startActivity(android.content.Intent(requireContext(), OnlineSalesActivity::class.java))
                     }
+                    item.label.contains("云上场馆") -> {
+                        startActivity(android.content.Intent(requireContext(), MuseumActivity::class.java))
+                    }
                     item.label.contains("西柏坡精神") -> {
                         startActivity(android.content.Intent(requireContext(), XibaopoActivity::class.java))
                     }

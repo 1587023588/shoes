@@ -8,12 +8,24 @@
         "source": "C:\\Users\\gsy_666\\.gradle\\daemon\\9.0-milestone-1\\com.example.shoes.app-main-39:\\layout\\fragment_home.xml"
     },
     {
+        "merged": "C:\\Users\\gsy_666\\.gradle\\daemon\\9.0-milestone-1\\com.example.shoes.app-mergeDebugResources-36:\\layout\\activity_booking.xml",
+        "source": "C:\\Users\\gsy_666\\.gradle\\daemon\\9.0-milestone-1\\com.example.shoes.app-main-39:\\layout\\activity_booking.xml"
+    },
+    {
         "merged": "C:\\Users\\gsy_666\\.gradle\\daemon\\9.0-milestone-1\\com.example.shoes.app-mergeDebugResources-36:\\layout\\activity_online_sales.xml",
         "source": "C:\\Users\\gsy_666\\.gradle\\daemon\\9.0-milestone-1\\com.example.shoes.app-main-39:\\layout\\activity_online_sales.xml"
     },
     {
+        "merged": "com.example.shoes.app-mergeDebugResources-36:/layout/activity_product_detail.xml",
+        "source": "com.example.shoes.app-main-39:/layout/activity_product_detail.xml"
+    },
+    {
         "merged": "C:\\Users\\gsy_666\\.gradle\\daemon\\9.0-milestone-1\\com.example.shoes.app-mergeDebugResources-36:\\layout\\activity_poster.xml",
         "source": "C:\\Users\\gsy_666\\.gradle\\daemon\\9.0-milestone-1\\com.example.shoes.app-main-39:\\layout\\activity_poster.xml"
+    },
+    {
+        "merged": "C:\\Users\\gsy_666\\.gradle\\daemon\\9.0-milestone-1\\com.example.shoes.app-mergeDebugResources-36:\\layout\\activity_museum.xml",
+        "source": "C:\\Users\\gsy_666\\.gradle\\daemon\\9.0-milestone-1\\com.example.shoes.app-main-39:\\layout\\activity_museum.xml"
     },
     {
         "merged": "C:\\Users\\gsy_666\\.gradle\\daemon\\9.0-milestone-1\\com.example.shoes.app-mergeDebugResources-36:\\layout\\fragment_category.xml",
@@ -26,10 +38,6 @@
     {
         "merged": "C:\\Users\\gsy_666\\.gradle\\daemon\\9.0-milestone-1\\com.example.shoes.app-mergeDebugResources-36:\\layout\\fragment_mine.xml",
         "source": "C:\\Users\\gsy_666\\.gradle\\daemon\\9.0-milestone-1\\com.example.shoes.app-main-39:\\layout\\fragment_mine.xml"
-    },
-    {
-        "merged": "com.example.shoes.app-mergeDebugResources-36:/layout/fragment_mine.xml",
-        "source": "com.example.shoes.app-main-39:/layout/fragment_mine.xml"
     },
     {
         "merged": "C:\\Users\\gsy_666\\.gradle\\daemon\\9.0-milestone-1\\com.example.shoes.app-mergeDebugResources-36:\\layout\\activity_product_detail.xml",

@@ -99,7 +99,11 @@ id bg
 id bottom_nav
 id btnAdd
 id btnBack
+id btnBooking
 id btnBuy
+id btnNext
+id btnPlayAudio
+id btnPrev
 id btnSettings
 id btnShare
 id btnSpecConfirm
@@ -120,6 +124,7 @@ id descList
 id et_search
 id fragment_container
 id gallery
+id galleryScroll
 id grid1
 id grid2
 id grid3
@@ -130,6 +135,7 @@ id icon_home
 id icon_message
 id icon_mine
 id img_plus
+id indicators
 id intro
 id ipv6
 id label
@@ -181,7 +187,10 @@ id title
 id tv_location
 id tv_weather
 id versionText
+id viewPager
+layout activity_booking
 layout activity_main
+layout activity_museum
 layout activity_online_sales
 layout activity_poster
 layout activity_product_detail

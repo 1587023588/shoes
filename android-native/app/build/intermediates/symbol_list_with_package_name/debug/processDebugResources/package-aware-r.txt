@@ -3469,7 +3469,11 @@ id bounceEnd
 id bounceStart
 id btnAdd
 id btnBack
+id btnBooking
 id btnBuy
+id btnNext
+id btnPlayAudio
+id btnPrev
 id btnSettings
 id btnShare
 id btnSpecConfirm
@@ -3647,6 +3651,7 @@ id fragment_container_view_tag
 id frost
 id fullscreen_header
 id gallery
+id galleryScroll
 id ghost_view
 id ghost_view_holder
 id gone
@@ -3681,6 +3686,7 @@ id img_plus
 id immediateStop
 id included
 id indeterminate
+id indicators
 id info
 id intro
 id invisible
@@ -4000,6 +4006,7 @@ id versionText
 id vertical
 id vertical_only
 id video_decoder_gl_surface_view
+id viewPager
 id view_offset_helper
 id view_transition
 id view_tree_lifecycle_owner
@@ -4135,7 +4142,9 @@ layout abc_search_dropdown_item_icons_2line
 layout abc_search_view
 layout abc_select_dialog_material
 layout abc_tooltip
+layout activity_booking
 layout activity_main
+layout activity_museum
 layout activity_online_sales
 layout activity_poster
 layout activity_product_detail

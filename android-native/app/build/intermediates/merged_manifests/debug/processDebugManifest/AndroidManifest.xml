@@ -45,6 +45,8 @@
         <activity android:name="com.example.shoes.XibaopoActivity" />
         <activity android:name="com.example.shoes.PosterActivity" />
         <activity android:name="com.example.shoes.OnlineSalesActivity" />
+        <activity android:name="com.example.shoes.MuseumActivity" />
+        <activity android:name="com.example.shoes.BookingActivity" />
 
         <provider
             android:name="androidx.startup.InitializationProvider"
