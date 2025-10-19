@@ -1,34 +1,66 @@
 [
     {
-        "merged": "C:\\Users\\gsy_666\\.gradle\\daemon\\9.0-milestone-1\\com.example.shoes.app-mergeDebugResources-33:\\layout\\activity_product_detail.xml",
-        "source": "C:\\Users\\gsy_666\\.gradle\\daemon\\9.0-milestone-1\\com.example.shoes.app-main-36:\\layout\\activity_product_detail.xml"
+        "merged": "C:\\Users\\gsy_666\\.gradle\\daemon\\9.0-milestone-1\\com.example.shoes.app-mergeDebugResources-36:\\layout\\item_product.xml",
+        "source": "C:\\Users\\gsy_666\\.gradle\\daemon\\9.0-milestone-1\\com.example.shoes.app-main-39:\\layout\\item_product.xml"
     },
     {
-        "merged": "C:\\Users\\gsy_666\\.gradle\\daemon\\9.0-milestone-1\\com.example.shoes.app-mergeDebugResources-33:\\layout\\item_product.xml",
-        "source": "C:\\Users\\gsy_666\\.gradle\\daemon\\9.0-milestone-1\\com.example.shoes.app-main-36:\\layout\\item_product.xml"
+        "merged": "C:\\Users\\gsy_666\\.gradle\\daemon\\9.0-milestone-1\\com.example.shoes.app-mergeDebugResources-36:\\layout\\fragment_home.xml",
+        "source": "C:\\Users\\gsy_666\\.gradle\\daemon\\9.0-milestone-1\\com.example.shoes.app-main-39:\\layout\\fragment_home.xml"
     },
     {
-        "merged": "C:\\Users\\gsy_666\\.gradle\\daemon\\9.0-milestone-1\\com.example.shoes.app-mergeDebugResources-33:\\layout\\activity_splash.xml",
-        "source": "C:\\Users\\gsy_666\\.gradle\\daemon\\9.0-milestone-1\\com.example.shoes.app-main-36:\\layout\\activity_splash.xml"
+        "merged": "C:\\Users\\gsy_666\\.gradle\\daemon\\9.0-milestone-1\\com.example.shoes.app-mergeDebugResources-36:\\layout\\activity_booking.xml",
+        "source": "C:\\Users\\gsy_666\\.gradle\\daemon\\9.0-milestone-1\\com.example.shoes.app-main-39:\\layout\\activity_booking.xml"
     },
     {
-        "merged": "com.example.shoes.app-mergeDebugResources-33:/layout/fragment_home.xml",
-        "source": "com.example.shoes.app-main-36:/layout/fragment_home.xml"
+        "merged": "C:\\Users\\gsy_666\\.gradle\\daemon\\9.0-milestone-1\\com.example.shoes.app-mergeDebugResources-36:\\layout\\activity_online_sales.xml",
+        "source": "C:\\Users\\gsy_666\\.gradle\\daemon\\9.0-milestone-1\\com.example.shoes.app-main-39:\\layout\\activity_online_sales.xml"
     },
     {
-        "merged": "C:\\Users\\gsy_666\\.gradle\\daemon\\9.0-milestone-1\\com.example.shoes.app-mergeDebugResources-33:\\layout\\fragment_home.xml",
-        "source": "C:\\Users\\gsy_666\\.gradle\\daemon\\9.0-milestone-1\\com.example.shoes.app-main-36:\\layout\\fragment_home.xml"
+        "merged": "com.example.shoes.app-mergeDebugResources-36:/layout/activity_product_detail.xml",
+        "source": "com.example.shoes.app-main-39:/layout/activity_product_detail.xml"
     },
     {
-        "merged": "C:\\Users\\gsy_666\\.gradle\\daemon\\9.0-milestone-1\\com.example.shoes.app-mergeDebugResources-33:\\layout\\fragment_simple.xml",
-        "source": "C:\\Users\\gsy_666\\.gradle\\daemon\\9.0-milestone-1\\com.example.shoes.app-main-36:\\layout\\fragment_simple.xml"
+        "merged": "C:\\Users\\gsy_666\\.gradle\\daemon\\9.0-milestone-1\\com.example.shoes.app-mergeDebugResources-36:\\layout\\activity_poster.xml",
+        "source": "C:\\Users\\gsy_666\\.gradle\\daemon\\9.0-milestone-1\\com.example.shoes.app-main-39:\\layout\\activity_poster.xml"
     },
     {
-        "merged": "C:\\Users\\gsy_666\\.gradle\\daemon\\9.0-milestone-1\\com.example.shoes.app-mergeDebugResources-33:\\layout\\view_bottom_bar.xml",
-        "source": "C:\\Users\\gsy_666\\.gradle\\daemon\\9.0-milestone-1\\com.example.shoes.app-main-36:\\layout\\view_bottom_bar.xml"
+        "merged": "C:\\Users\\gsy_666\\.gradle\\daemon\\9.0-milestone-1\\com.example.shoes.app-mergeDebugResources-36:\\layout\\activity_museum.xml",
+        "source": "C:\\Users\\gsy_666\\.gradle\\daemon\\9.0-milestone-1\\com.example.shoes.app-main-39:\\layout\\activity_museum.xml"
     },
     {
-        "merged": "C:\\Users\\gsy_666\\.gradle\\daemon\\9.0-milestone-1\\com.example.shoes.app-mergeDebugResources-33:\\layout\\activity_main.xml",
-        "source": "C:\\Users\\gsy_666\\.gradle\\daemon\\9.0-milestone-1\\com.example.shoes.app-main-36:\\layout\\activity_main.xml"
+        "merged": "C:\\Users\\gsy_666\\.gradle\\daemon\\9.0-milestone-1\\com.example.shoes.app-mergeDebugResources-36:\\layout\\fragment_category.xml",
+        "source": "C:\\Users\\gsy_666\\.gradle\\daemon\\9.0-milestone-1\\com.example.shoes.app-main-39:\\layout\\fragment_category.xml"
+    },
+    {
+        "merged": "C:\\Users\\gsy_666\\.gradle\\daemon\\9.0-milestone-1\\com.example.shoes.app-mergeDebugResources-36:\\layout\\item_category.xml",
+        "source": "C:\\Users\\gsy_666\\.gradle\\daemon\\9.0-milestone-1\\com.example.shoes.app-main-39:\\layout\\item_category.xml"
+    },
+    {
+        "merged": "C:\\Users\\gsy_666\\.gradle\\daemon\\9.0-milestone-1\\com.example.shoes.app-mergeDebugResources-36:\\layout\\fragment_mine.xml",
+        "source": "C:\\Users\\gsy_666\\.gradle\\daemon\\9.0-milestone-1\\com.example.shoes.app-main-39:\\layout\\fragment_mine.xml"
+    },
+    {
+        "merged": "C:\\Users\\gsy_666\\.gradle\\daemon\\9.0-milestone-1\\com.example.shoes.app-mergeDebugResources-36:\\layout\\activity_product_detail.xml",
+        "source": "C:\\Users\\gsy_666\\.gradle\\daemon\\9.0-milestone-1\\com.example.shoes.app-main-39:\\layout\\activity_product_detail.xml"
+    },
+    {
+        "merged": "C:\\Users\\gsy_666\\.gradle\\daemon\\9.0-milestone-1\\com.example.shoes.app-mergeDebugResources-36:\\layout\\view_bottom_bar.xml",
+        "source": "C:\\Users\\gsy_666\\.gradle\\daemon\\9.0-milestone-1\\com.example.shoes.app-main-39:\\layout\\view_bottom_bar.xml"
+    },
+    {
+        "merged": "C:\\Users\\gsy_666\\.gradle\\daemon\\9.0-milestone-1\\com.example.shoes.app-mergeDebugResources-36:\\layout\\fragment_simple.xml",
+        "source": "C:\\Users\\gsy_666\\.gradle\\daemon\\9.0-milestone-1\\com.example.shoes.app-main-39:\\layout\\fragment_simple.xml"
+    },
+    {
+        "merged": "C:\\Users\\gsy_666\\.gradle\\daemon\\9.0-milestone-1\\com.example.shoes.app-mergeDebugResources-36:\\layout\\activity_main.xml",
+        "source": "C:\\Users\\gsy_666\\.gradle\\daemon\\9.0-milestone-1\\com.example.shoes.app-main-39:\\layout\\activity_main.xml"
+    },
+    {
+        "merged": "C:\\Users\\gsy_666\\.gradle\\daemon\\9.0-milestone-1\\com.example.shoes.app-mergeDebugResources-36:\\layout\\activity_splash.xml",
+        "source": "C:\\Users\\gsy_666\\.gradle\\daemon\\9.0-milestone-1\\com.example.shoes.app-main-39:\\layout\\activity_splash.xml"
+    },
+    {
+        "merged": "C:\\Users\\gsy_666\\.gradle\\daemon\\9.0-milestone-1\\com.example.shoes.app-mergeDebugResources-36:\\layout\\activity_xibaopo.xml",
+        "source": "C:\\Users\\gsy_666\\.gradle\\daemon\\9.0-milestone-1\\com.example.shoes.app-main-39:\\layout\\activity_xibaopo.xml"
     }
 ]

@@ -34,7 +34,7 @@
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="40dp"
+                android:layout_height="@dimen/header_search_height"
                 android:orientation="horizontal"
                 android:gravity="center_vertical">
 
@@ -72,8 +72,8 @@
                 <!-- 相机按钮 -->
                 <ImageView
                     android:id="@+id/btn_camera"
-                    android:layout_width="36dp"
-                    android:layout_height="36dp"
+                    android:layout_width="@dimen/header_search_height"
+                    android:layout_height="@dimen/header_search_height"
                     android:layout_marginStart="10dp"
                     android:background="@drawable/bg_red_circle"
                     android:padding="6dp"
@@ -84,7 +84,7 @@
                 <TextView
                     android:id="@+id/btn_search"
                     android:layout_width="64dp"
-                    android:layout_height="36dp"
+                    android:layout_height="@dimen/header_search_height"
                     android:layout_marginStart="8dp"
                     android:gravity="center"
                     android:background="@drawable/bg_red_pill"
@@ -122,16 +122,25 @@
                     android:orientation="vertical"
                     android:padding="6dp">
                     <ImageView
-                        android:layout_width="40dp"
-                        android:layout_height="40dp"
+                        android:layout_width="@dimen/home_action_icon"
+                        android:layout_height="@dimen/home_action_icon"
                         android:src="@drawable/home_action_scan"/>
                     <TextView
-                        android:layout_width="wrap_content"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="扫一扫"
                         android:textSize="12sp"
                         android:textColor="#7A4B3A"
-                        android:layout_marginTop="4dp"/>
+                        android:layout_marginTop="4dp"
+                        android:includeFontPadding="false"
+                        android:gravity="center_horizontal"
+                        android:textAlignment="center"
+                        app:autoSizeTextType="uniform"
+                        app:autoSizeMinTextSize="10sp"
+                        app:autoSizeMaxTextSize="12sp"
+                        app:autoSizeStepGranularity="1sp"
+                        android:maxLines="1"
+                        android:ellipsize="end"/>
                 </LinearLayout>
 
                 <!-- 我的快递 -->
@@ -144,16 +153,25 @@
                     android:orientation="vertical"
                     android:padding="6dp">
                     <ImageView
-                        android:layout_width="40dp"
-                        android:layout_height="40dp"
+                        android:layout_width="@dimen/home_action_icon"
+                        android:layout_height="@dimen/home_action_icon"
                         android:src="@drawable/home_action_express"/>
                     <TextView
-                        android:layout_width="wrap_content"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="我的快递"
                         android:textSize="12sp"
                         android:textColor="#7A4B3A"
-                        android:layout_marginTop="4dp"/>
+                        android:layout_marginTop="4dp"
+                        android:includeFontPadding="false"
+                        android:gravity="center_horizontal"
+                        android:textAlignment="center"
+                        app:autoSizeTextType="uniform"
+                        app:autoSizeMinTextSize="9sp"
+                        app:autoSizeMaxTextSize="12sp"
+                        app:autoSizeStepGranularity="1sp"
+                        android:maxLines="1"
+                        android:ellipsize="end"/>
                 </LinearLayout>
 
                 <!-- 预约日历 -->
@@ -166,16 +184,25 @@
                     android:orientation="vertical"
                     android:padding="6dp">
                     <ImageView
-                        android:layout_width="40dp"
-                        android:layout_height="40dp"
+                        android:layout_width="@dimen/home_action_icon"
+                        android:layout_height="@dimen/home_action_icon"
                         android:src="@drawable/home_action_calendar"/>
                     <TextView
-                        android:layout_width="wrap_content"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="预约日历"
                         android:textSize="12sp"
                         android:textColor="#7A4B3A"
-                        android:layout_marginTop="4dp"/>
+                        android:layout_marginTop="4dp"
+                        android:includeFontPadding="false"
+                        android:gravity="center_horizontal"
+                        android:textAlignment="center"
+                        app:autoSizeTextType="uniform"
+                        app:autoSizeMinTextSize="9sp"
+                        app:autoSizeMaxTextSize="12sp"
+                        app:autoSizeStepGranularity="1sp"
+                        android:maxLines="1"
+                        android:ellipsize="end"/>
                 </LinearLayout>
 
                 <!-- 红色场馆 -->
@@ -269,17 +296,20 @@
             </LinearLayout>
         </LinearLayout>
 
-        <!-- Banner/视频区域：用 FrameLayout 包含 VideoView 和占位图 -->
+        <!-- Banner/视频区域：用 FrameLayout 包含 Media3 PlayerView 和占位图 -->
         <FrameLayout
             android:layout_width="match_parent"
             android:layout_height="200dp"
             android:layout_margin="12dp">
 
-            <VideoView
+            <androidx.media3.ui.PlayerView
                 android:id="@+id/homeVideo"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:keepScreenOn="true" />
+                android:keepScreenOn="true"
+                android:background="#000000"
+                app:show_buffering="when_playing"
+                app:use_controller="false" />
 
             <ImageView
                 android:id="@+id/banner"
