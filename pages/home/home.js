@@ -24,8 +24,11 @@ Page({
       { iconName: 'user', text: '非遗之窗', url: '/pages/heritage/index', iconUrl: 'https://shoes-1379330878.cos.ap-beijing.myqcloud.com/img/6.png' },
       { iconName: 'user-circle', text: '拥军记忆', url: '/pages/military/index', iconUrl: 'https://shoes-1379330878.cos.ap-beijing.myqcloud.com/img/7.png' },
       { iconName: 'usergroup-add', text: '布鞋展示', url: '/pages/show/index', iconUrl: 'https://shoes-1379330878.cos.ap-beijing.myqcloud.com/img/8.png' },
+      // 将“换装试玩”放在数组末尾，配合 .func-grid .func-item:last-child 的样式使其居中且更显眼
+      { iconName: 'skin', text: '换装试玩', url: '/pages/game/editor/index', iconUrl: 'https://shoes-1379330878.cos.ap-beijing.myqcloud.com/img/9.png' }
     ],
     // 资讯列表已移除
+    showDebug: false, // 开发时设为 true
   },
 
   // 兼容保留：如后续有分页需求可在此扩展

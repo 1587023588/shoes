@@ -1,0 +1,8 @@
+<view class="courses-list">
+  <block wx:for="{{courses}}" wx:key="{{item.id}}">
+    <view class="course-card" bindtap="openCourse" data-id="{{item.id}}">
+      <image src="{{item.cover}}" class="cover" mode="aspectFill" />
+      <view class="course-title">{{item.title}}</view>
+    </view>
+  </block>
+</view>

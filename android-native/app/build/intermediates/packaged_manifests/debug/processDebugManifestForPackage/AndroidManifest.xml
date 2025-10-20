@@ -5,10 +5,16 @@
     android:versionName="1.0" >
 
     <uses-sdk
-        android:minSdkVersion="21"
+        android:minSdkVersion="24"
         android:targetSdkVersion="34" />
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.CAMERA" />
+
+    <uses-feature
+        android:name="android.hardware.camera"
+        android:required="false" />
+
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
     <permission
@@ -17,11 +23,28 @@
 
     <uses-permission android:name="com.example.shoes.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION" />
 
+    <uses-feature
+        android:name="android.hardware.camera.front"
+        android:required="false" /> <!-- TODO replace above two with next line after Android 4.2 -->
+    <!-- <uses-feature android:name="android.hardware.camera.any"/> -->
+    <uses-feature
+        android:name="android.hardware.camera.autofocus"
+        android:required="false" />
+    <uses-feature
+        android:name="android.hardware.camera.flash"
+        android:required="false" />
+    <uses-feature
+        android:name="android.hardware.screen.landscape"
+        android:required="false" />
+    <uses-feature
+        android:name="android.hardware.wifi"
+        android:required="false" />
+
     <application
         android:allowBackup="true"
         android:appComponentFactory="androidx.core.app.CoreComponentFactory"
         android:debuggable="true"
-        android:extractNativeLibs="true"
+        android:extractNativeLibs="false"
         android:icon="@mipmap/ic_launcher"
         android:label="Shoes Native"
         android:roundIcon="@mipmap/ic_launcher_round"
@@ -45,8 +68,12 @@
         <activity android:name="com.example.shoes.XibaopoActivity" />
         <activity android:name="com.example.shoes.PosterActivity" />
         <activity android:name="com.example.shoes.OnlineSalesActivity" />
+        <activity android:name="com.example.shoes.BoutiqueShoesActivity" />
         <activity android:name="com.example.shoes.MuseumActivity" />
         <activity android:name="com.example.shoes.BookingActivity" />
+        <activity android:name="com.example.shoes.CouponActivity" />
+        <activity android:name="com.example.shoes.VillageActivitiesActivity" />
+        <activity android:name="com.example.shoes.ScanActivity" />
 
         <provider
             android:name="androidx.startup.InitializationProvider"
@@ -82,6 +109,14 @@
                 <action android:name="androidx.profileinstaller.action.BENCHMARK_OPERATION" />
             </intent-filter>
         </receiver>
+
+        <activity
+            android:name="com.journeyapps.barcodescanner.CaptureActivity"
+            android:clearTaskOnLaunch="true"
+            android:screenOrientation="sensorLandscape"
+            android:stateNotNeeded="true"
+            android:theme="@style/zxing_CaptureTheme"
+            android:windowSoftInputMode="stateAlwaysHidden" />
     </application>
 
 </manifest>

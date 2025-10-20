@@ -97,7 +97,7 @@ class ProductDetailActivity : AppCompatActivity() {
             android.util.Log.e("ProductDetail", "build gallery error", t)
             // 兜底：如果画廊容器找不到或异常，直接在详情列表顶部插入一张主图，避免空白
             try {
-                val parent = binding.scroll.findViewById<android.widget.LinearLayout>(android.R.id.content)
+                binding.scroll.findViewById<android.widget.LinearLayout>(android.R.id.content)
             } catch (_: Throwable) {}
         }
 

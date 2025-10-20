@@ -1,8 +1,25 @@
 {
     "logs": [
         {
-            "outputFile": "com.example.shoes.app-mergeDebugResources-35:/values-ko/values-ko.xml",
+            "outputFile": "com.example.shoes.app-mergeDebugResources-40:/values-ko/values-ko.xml",
             "map": [
+                {
+                    "source": "C:\\Users\\gsy_666\\.gradle\\caches\\9.0-milestone-1\\transforms\\0b3ae9fb0711eb58f5d4f2f65c54f5b8\\transformed\\jetified-zxing-android-embedded-4.3.0\\res\\values-ko\\values-ko.xml",
+                    "from": {
+                        "startLines": "2,3,4,5",
+                        "startColumns": "4,4,4,4",
+                        "startOffsets": "55,106,153,260",
+                        "endColumns": "50,46,106,71",
+                        "endOffsets": "101,148,255,327"
+                    },
+                    "to": {
+                        "startLines": "186,187,188,189",
+                        "startColumns": "4,4,4,4",
+                        "startOffsets": "13037,13088,13135,13242",
+                        "endColumns": "50,46,106,71",
+                        "endOffsets": "13083,13130,13237,13309"
+                    }
+                },
                 {
                     "source": "C:\\Users\\gsy_666\\.gradle\\caches\\9.0-milestone-1\\transforms\\49f9cdeaeeb6da9cb5a9248ce41b2cd3\\transformed\\core-1.13.1\\res\\values-ko\\values-ko.xml",
                     "from": {

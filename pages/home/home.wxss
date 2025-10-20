@@ -125,6 +125,44 @@ page {
   height: 112rpx;
 }
 
+/* 将最后一个图标（如“换装试玩”）放大并跨列居中显示 */
+.func-grid .func-item:last-child {
+  grid-column: 2 / span 2;
+  /* 占据中间两列 */
+}
+
+.func-grid .func-item:last-child .func-icon {
+  width: 132rpx;
+  height: 132rpx;
+  box-shadow: 0 10rpx 24rpx rgba(0, 0, 0, 0.18);
+}
+
+.func-grid .func-item:last-child .func-icon-label {
+  font-size: 24rpx;
+}
+
+/* 额外美化：让中心项略微上浮并带有高光环，增强点击诱导 */
+.func-grid .func-item:last-child {
+  transform: translateY(-10rpx);
+  z-index: 3;
+}
+
+.func-grid .func-item:last-child .func-icon::after {
+  content: '';
+  position: absolute;
+  left: -6rpx;
+  right: -6rpx;
+  top: -6rpx;
+  bottom: -6rpx;
+  border-radius: 50%;
+  background: radial-gradient(circle at 30% 30%, rgba(255, 255, 255, 0.12), rgba(255, 255, 255, 0) 40%);
+  pointer-events: none;
+}
+
+.func-grid .func-item:last-child .func-icon {
+  border: 2rpx solid rgba(255, 255, 255, 0.06);
+}
+
 .func-icon-img {
   width: 100%;
   height: 100%;
@@ -360,6 +398,22 @@ page {
 .rural-craft__step {
   flex: 1;
   text-align: center;
+}
+
+/* 开发调试面板样式（仅用于本地调试，可在发布前移除） */
+.home-debug-panel {
+  margin: 12rpx 24rpx;
+  padding: 12rpx;
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 8rpx;
+  box-shadow: 0 4rpx 12rpx rgba(0, 0, 0, 0.06);
+  color: #333;
+  font-size: 20rpx;
+}
+
+.home-debug-panel text {
+  display: block;
+  margin-bottom: 6rpx;
 }
 
 .rural-craft__step-name {

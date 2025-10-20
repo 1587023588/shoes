@@ -1,22 +1,8 @@
-<t-tab-bar
-  value="{{active}}"
-  bindchange="onChange"
-  split="{{false}}"
->
-  <t-tab-bar-item
-    wx:for="{{list}}"
-    wx:for-item="item"
-    wx:for-index="index"
-    wx:key="index"
-  >
+<t-tab-bar value="{{active}}" bindchange="onChange" split="{{false}}">
+  <t-tab-bar-item wx:for="{{list}}" wx:for-item="item" wx:for-index="index" wx:key="index">
     <view class="custom-tab-bar-wrapper">
       <!-- 使用image标签加载图片 -->
-      <image 
-        src="{{item.imgUrl}}" 
-        mode="widthFix" 
-        style="width: 48rpx; height: 48rpx;" 
-        alt="{{item.text}}图标"
-      />
+      <image class="custom-tab-bar-image" src="{{item.imgUrl}}" mode="widthFix" alt="{{item.text}}图标" />
       <view class="text">
         {{ item.text }}
         <!-- 购物车数量标记 -->
@@ -27,4 +13,3 @@
     </view>
   </t-tab-bar-item>
 </t-tab-bar>
-    

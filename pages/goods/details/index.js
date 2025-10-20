@@ -35,7 +35,22 @@ Page({
     activityList: [],
     recLeftImg,
     recRightImg,
-    details: {},
+    // Provide safe default structure to avoid template errors when data is loading
+    details: {
+      spuId: '',
+      title: '',
+      images: [],
+      desc: [],
+      specList: [],
+      skuList: [],
+      primaryImage: '',
+      intro: '',
+      minSalePrice: 0,
+      maxLinePrice: 0,
+      spuStockQuantity: 0,
+      available: true,
+      isPutOnSale: 1,
+    },
     goodsTabArray: [
       {
         name: '商品',
@@ -91,6 +106,11 @@ Page({
     intro: '',
     // 详情图加载失败时的兜底图
     descFallback: '/test.jpg',
+    submissions: [],
+    // debug helpers
+    debugStep: '',
+    debugMsg: '',
+    debugError: '',
   },
 
   handlePopupHide() {
@@ -350,8 +370,12 @@ Page({
   },
 
   getDetail(spuId) {
+    this.setData({ debugStep: 'fetching detail', debugMsg: `spuId=${spuId}` });
+    console.log('[detail] start fetch', spuId);
     Promise.all([fetchGood(spuId), fetchActivityList()]).then((res) => {
       const [details, activityList] = res;
+      console.log('[detail] fetch success', details);
+      this.setData({ debugStep: 'fetch success', debugMsg: `got details for ${details.spuId}` });
       const skuArray = [];
       const { skuList, primaryImage, isPutOnSale, minSalePrice, maxSalePrice, maxLinePrice, soldNum } = details;
       skuList.forEach((item) => {
@@ -383,6 +407,27 @@ Page({
         // 将简介写入 data，优先用详情里的 intro；没有则回落为标题
         intro: details.intro || details.title || '',
       });
+      // load related submissions (dynamic require to avoid runtime module-not-found crash)
+      try {
+        // eslint-disable-next-line global-require
+        const { fetchSubmissionsBySpuId } = require('../../../services/submission');
+        if (typeof fetchSubmissionsBySpuId === 'function') {
+          fetchSubmissionsBySpuId(details.spuId).then((subs) => {
+            this.setData({ submissions: subs || [] });
+          }).catch((err) => {
+            console.warn('fetchSubmissionsBySpuId failed:', err);
+            this.setData({ submissions: [] });
+          });
+        } else {
+          this.setData({ submissions: [] });
+        }
+      } catch (err) {
+        console.warn('require services/submission failed:', err);
+        this.setData({ submissions: [] });
+      }
+    }).catch((err) => {
+      console.error('[detail] fetch error', err);
+      this.setData({ debugStep: 'fetch error', debugError: String(err && err.message ? err.message : err) });
     });
   },
 
@@ -459,12 +504,25 @@ Page({
   },
 
   onLoad(query) {
-    const { spuId } = query;
-    this.setData({
-      spuId: spuId,
-    });
+    let { spuId, skuId } = query || {};
+    // 如果未传 spuId，但传了 skuId，允许兼容处理（mock fetchGood 支持 skuId->spu 映射）
+    if (!spuId && skuId) {
+      spuId = skuId;
+    }
+    if (!spuId) {
+      Toast({ context: this, selector: '#t-toast', message: '商品参数缺失，无法打开详情' });
+      // 防止空白页，稍后返回上一页
+      setTimeout(() => wx.navigateBack(), 800);
+      return;
+    }
+    this.setData({ spuId });
     this.getDetail(spuId);
     this.getCommentsList(spuId);
     this.getCommentsStatistics(spuId);
+  },
+
+  toSubmissionPage() {
+    const { spuId } = this.data;
+    wx.navigateTo({ url: `/pages/creative-submission/index?spuId=${spuId}` });
   },
 });

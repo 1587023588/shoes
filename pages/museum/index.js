@@ -42,7 +42,7 @@ Page({
       { id: 38, url: 'https://shoes-1379330878.cos.ap-beijing.myqcloud.com/%E4%BA%91%E6%B8%B8%E6%9D%91%E5%8F%B2%E9%A6%86/38.jpg' },
       { id: 39, url: 'https://shoes-1379330878.cos.ap-beijing.myqcloud.com/%E4%BA%91%E6%B8%B8%E6%9D%91%E5%8F%B2%E9%A6%86/39.jpg' }
     ],
-    
+
     // 轮播控制参数
     currentIndex: 0,
     transitionDuration: 500,
@@ -51,6 +51,11 @@ Page({
     autoplay: true,
     interval: 5000
   },
+
+  // audio context will be created on demand
+  audioCtx: null,
+  isPlaying: false,
+  currentAudioUrl: '',
 
   onLoad() {
     this.startAutoCarousel();
@@ -62,6 +67,32 @@ Page({
         this.nextSlide();
       }, this.data.interval);
     }
+  },
+
+  playAudioFor(index) {
+    const exhibitAudioMap = {
+      // sample mapping: photo index -> sample audio stored in COS (user said images are COS linked)
+      1: 'https://shoes-1379330878.cos.ap-beijing.myqcloud.com/audio/1.mp3',
+      2: 'https://shoes-1379330878.cos.ap-beijing.myqcloud.com/audio/2.mp3',
+    };
+    const audioUrl = exhibitAudioMap[index] || exhibitAudioMap[1];
+    if (!this.audioCtx) {
+      this.audioCtx = wx.createInnerAudioContext();
+      this.audioCtx.onError((err) => console.error('audio error', err));
+      this.audioCtx.onEnded(() => this.setData({ isPlaying: false }));
+    }
+    if (this.data.isPlaying && this.data.currentAudioUrl === audioUrl) {
+      this.audioCtx.pause();
+      this.setData({ isPlaying: false });
+      return;
+    }
+    this.audioCtx.src = audioUrl;
+    this.audioCtx.play();
+    this.setData({ isPlaying: true, currentAudioUrl: audioUrl });
+  },
+
+  goToBooking() {
+    wx.navigateTo({ url: '/pages/museum/booking/index' });
   },
 
   nextSlide() {

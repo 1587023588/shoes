@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "com.example.shoes.app-mergeDebugResources-35:/values-bs/values-bs.xml",
+            "outputFile": "com.example.shoes.app-mergeDebugResources-40:/values-bs/values-bs.xml",
             "map": [
                 {
                     "source": "C:\\Users\\gsy_666\\.gradle\\caches\\9.0-milestone-1\\transforms\\49f9cdeaeeb6da9cb5a9248ce41b2cd3\\transformed\\core-1.13.1\\res\\values-bs\\values-bs.xml",

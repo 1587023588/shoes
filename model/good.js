@@ -86,12 +86,12 @@ const baseGoodsMeta = [
   {
     spuId: '10001',
     title: '男款布鞋 手工真千层底 加棉加厚',
-      primaryImage: '/pages/images/test.jpg',
-      images: ['/pages/images/test.jpg'],
+    primaryImage: '/pages/images/test.jpg',
+    images: ['/pages/images/test.jpg'],
     // 商品简介（可自行修改）
     intro: '经典款式兼具传统工艺与保暖实用性',
     // 详情图（可替换为你的商品详情长图列表）
-      desc: ['/pages/images/test.jpg'],
+    desc: ['/pages/images/test.jpg'],
     salePrice: 12900,
     linePrice: 16900,
     soldNum: 1880,
@@ -100,10 +100,10 @@ const baseGoodsMeta = [
   {
     spuId: '10002',
     title: '女款布鞋 荷花印花浅口款式',
-      primaryImage: '/pages/images/test.jpg',
-      images: ['/pages/images/test.jpg'],
+    primaryImage: '/pages/images/test.jpg',
+    images: ['/pages/images/test.jpg'],
     intro: '传统工艺打造 尽显国风雅致',
-      desc: ['/pages/images/test.jpg'],
+    desc: ['/pages/images/test.jpg'],
     salePrice: 9900,
     linePrice: 13900,
     soldNum: 920,
@@ -112,10 +112,10 @@ const baseGoodsMeta = [
   {
     spuId: '10003',
     title: '孩童款布鞋 虎头刺绣搭系带设计',
-      primaryImage: '/pages/images/test.jpg',
-      images: ['/pages/images/test.jpg'],
+    primaryImage: '/pages/images/test.jpg',
+    images: ['/pages/images/test.jpg'],
     intro: '传统民俗元素融合童趣风格 尽显萌趣',
-      desc: ['/pages/images/test.jpg'],
+    desc: ['/pages/images/test.jpg'],
     salePrice: 15900,
     linePrice: 19900,
     soldNum: 610,
@@ -124,10 +124,10 @@ const baseGoodsMeta = [
   {
     spuId: '10004',
     title: '女款布鞋 亮黄色提花面料搭配棕色系带蝴蝶结设计',
-      primaryImage: '/pages/images/test.jpg',
-      images: ['/pages/images/test.jpg'],
+    primaryImage: '/pages/images/test.jpg',
+    images: ['/pages/images/test.jpg'],
     intro: '复古风格中尽显俏皮时尚 传统工艺融合个性穿搭感',
-      desc: ['/pages/images/test.jpg'],
+    desc: ['/pages/images/test.jpg'],
     salePrice: 8900,
     linePrice: 10900,
     soldNum: 420,
@@ -136,10 +136,10 @@ const baseGoodsMeta = [
   {
     spuId: '10005',
     title: '女款布鞋 网纱刺绣花卉搭配浅口设计',
-      primaryImage: '/pages/images/test.jpg',
-      images: ['/pages/images/test.jpg'],
+    primaryImage: '/pages/images/test.jpg',
+    images: ['/pages/images/test.jpg'],
     intro: '红饰点缀尽显婉约 传统工艺融合清新雅致风格',
-      desc: ['/pages/images/test.jpg'],
+    desc: ['/pages/images/test.jpg'],
     salePrice: 18900,
     linePrice: 22900,
     soldNum: 350,
@@ -148,10 +148,10 @@ const baseGoodsMeta = [
   {
     spuId: '10006',
     title: '女款布鞋 紫色布艺浅口款式',
-      primaryImage: '/pages/images/test.jpg',
-      images: ['/pages/images/test.jpg'],
+    primaryImage: '/pages/images/test.jpg',
+    images: ['/pages/images/test.jpg'],
     intro: '传统工艺打造 典雅舒适',
-      desc: ['/pages/images/test.jpg'],
+    desc: ['/pages/images/test.jpg'],
     salePrice: 18900,
     linePrice: 22900,
     soldNum: 350,
@@ -160,10 +160,10 @@ const baseGoodsMeta = [
   {
     spuId: '10007',
     title: '男款布鞋 经典黑色一脚蹬款式',
-      primaryImage: '/pages/images/test.jpg',
-      images: ['/pages/images/test.jpg'],
+    primaryImage: '/pages/images/test.jpg',
+    images: ['/pages/images/test.jpg'],
     intro: '尽显传统布鞋的简约大气与舒适质感',
-      desc: ['/pages/images/test.jpg'],
+    desc: ['/pages/images/test.jpg'],
     salePrice: 18900,
     linePrice: 22900,
     soldNum: 350,
@@ -172,10 +172,10 @@ const baseGoodsMeta = [
   {
     spuId: '10008',
     title: '女款布鞋 多色浅口传统款式',
-      primaryImage: '/pages/images/test.jpg',
-      images: ['/pages/images/test.jpg'],
+    primaryImage: '/pages/images/test.jpg',
+    images: ['/pages/images/test.jpg'],
     intro: '多样选择 便于搭配 传统工艺与丰富选择兼具',
-      desc: ['/pages/images/test.jpg'],
+    desc: ['/pages/images/test.jpg'],
     salePrice: 18900,
     linePrice: 22900,
     soldNum: 350,
@@ -265,5 +265,21 @@ export function genGood(id, available = 1) {
     desc,
     intro: item.intro || '',
   };
+}
+
+// 导出全部商品列表（用于调试/查找）
+export const allGoodsList = allGoods;
+
+// 根据 skuId 查找对应的 allGoods 索引（若未找到返回 -1）
+export function findSpuIndexBySkuId(skuId) {
+  if (!skuId) return -1;
+  for (let i = 0; i < allGoods.length; i += 1) {
+    const g = allGoods[i];
+    if (Array.isArray(g.skuList)) {
+      const found = g.skuList.find((s) => s && s.skuId === skuId);
+      if (found) return i;
+    }
+  }
+  return -1;
 }
 

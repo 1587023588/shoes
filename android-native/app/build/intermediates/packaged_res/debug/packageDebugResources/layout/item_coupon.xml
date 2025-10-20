@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="110dp"
+    android:orientation="horizontal"
+    android:padding="1dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        android:background="@drawable/bg_coupon_ticket">
+
+        <!-- 左侧金额区 -->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="2"
+            android:gravity="center"
+            android:orientation="vertical">
+            <TextView
+                android:id="@+id/tvAmount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="¥50"
+                android:textColor="#FF4D4F"
+                android:textStyle="bold"
+                android:textSize="28sp"/>
+            <TextView
+                android:id="@+id/tvThreshold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="满199可用"
+                android:textColor="#FF4D4F"
+                android:textSize="12sp"/>
+        </LinearLayout>
+
+        <!-- 中间虚线分隔（带上下圆形缺口的视觉效果由背景完成） -->
+        <FrameLayout
+            android:layout_width="24dp"
+            android:layout_height="match_parent">
+            <View
+                android:layout_width="1dp"
+                android:layout_height="match_parent"
+                android:layout_gravity="center_horizontal"
+                android:background="@drawable/bg_coupon_dash"/>
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/bg_coupon_notch"
+                android:scaleType="fitXY"/>
+        </FrameLayout>
+
+        <!-- 右侧详情区 -->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="3"
+            android:orientation="vertical"
+            android:padding="12dp">
+            <TextView
+                android:id="@+id/tvTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="新人专享神券"
+                android:textStyle="bold"
+                android:textColor="#111"
+                android:textSize="16sp"/>
+            <TextView
+                android:id="@+id/tvDesc"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="限指定款布鞋使用，叠加店铺满减"
+                android:textColor="#666"
+                android:textSize="12sp"
+                android:layout_marginTop="4dp"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="end"
+                android:layout_marginTop="8dp">
+                <TextView
+                    android:id="@+id/btnClaim"
+                    android:layout_width="88dp"
+                    android:layout_height="32dp"
+                    android:gravity="center"
+                    android:text="立即领取"
+                    android:textStyle="bold"
+                    android:textColor="#FFFFFF"
+                    android:background="@drawable/bg_coupon_button"/>
+            </LinearLayout>
+        </LinearLayout>
+
+    </LinearLayout>
+
+</LinearLayout>

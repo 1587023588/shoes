@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "com.example.shoes.app-mergeDebugResources-35:/values-ja/values-ja.xml",
+            "outputFile": "com.example.shoes.app-mergeDebugResources-40:/values-ja/values-ja.xml",
             "map": [
                 {
                     "source": "C:\\Users\\gsy_666\\.gradle\\caches\\9.0-milestone-1\\transforms\\e5b3b67f7f30e95895b4e427ea5e11dc\\transformed\\appcompat-1.7.0\\res\\values-ja\\values-ja.xml",
@@ -54,6 +54,23 @@
                         "endLines": "10,14,18,67,68,69,70,71,72,73,74,75,76,77,78,79,80,81,82,83,84,85,86,87,88,89,90,100,101,102,103,104,105,106,107,108,109,110,111,112,113,114,115,116,117,118",
                         "endColumns": "17,12,12,71,70,68,78,77,65,60,77,76,63,60,58,64,86,86,87,64,65,64,63,80,79,60,62,51,57,47,60,55,61,56,59,55,55,62,61,62,49,57,71,71,48,59",
                         "endOffsets": "371,534,694,4918,4989,5058,5137,5215,5281,5342,5420,5497,5561,5622,5681,5746,5833,5920,6008,6073,6139,6204,6268,6349,6429,6490,6553,7212,7270,7318,7379,7435,7497,7554,7614,7670,7726,7789,7851,7914,7964,8022,8094,8166,8215,8275"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\gsy_666\\.gradle\\caches\\9.0-milestone-1\\transforms\\0b3ae9fb0711eb58f5d4f2f65c54f5b8\\transformed\\jetified-zxing-android-embedded-4.3.0\\res\\values-ja\\values-ja.xml",
+                    "from": {
+                        "startLines": "2,3,4,5",
+                        "startColumns": "4,4,4,4",
+                        "startOffsets": "55,109,156,256",
+                        "endColumns": "53,46,99,81",
+                        "endOffsets": "104,151,251,333"
+                    },
+                    "to": {
+                        "startLines": "186,187,188,189",
+                        "startColumns": "4,4,4,4",
+                        "startOffsets": "13066,13120,13167,13267",
+                        "endColumns": "53,46,99,81",
+                        "endOffsets": "13115,13162,13262,13344"
                     }
                 },
                 {

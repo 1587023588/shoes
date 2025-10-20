@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "com.example.shoes.app-mergeDebugResources-35:/values-sw400dp-v13/values-sw400dp-v13.xml",
+            "outputFile": "com.example.shoes.app-mergeDebugResources-40:/values-sw400dp-v13/values-sw400dp-v13.xml",
             "map": [
                 {
                     "source": "C:\\Users\\gsy_666\\Desktop\\shoes_app\\android-native\\app\\src\\main\\res\\values-sw400dp\\dimens.xml",

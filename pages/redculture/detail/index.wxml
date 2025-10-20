@@ -1,0 +1,9 @@
+<view class="red-detail">
+  <image src="{{article.cover}}" class="cover" mode="widthFix" />
+  <view class="title">{{article.title}}</view>
+  <view class="actions">
+    <button bindtap="togglePlay">{{isPlaying ? '暂停朗读' : '播放朗读'}}</button>
+  </view>
+  <web-view src="data:text/html,{{article.content}}" wx:if="{{false}}"></web-view>
+  <view class="content" wx:html="{{article.content}}"></view>
+</view>

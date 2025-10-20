@@ -1,0 +1,8 @@
+<view class="red-list">
+  <block wx:for="{{articles}}" wx:key="{{item.id}}">
+    <view class="card" bindtap="openDetail" data-id="{{item.id}}">
+      <image src="{{item.cover}}" class="cover" mode="aspectFill" />
+      <view class="title">{{item.title}}</view>
+    </view>
+  </block>
+</view>

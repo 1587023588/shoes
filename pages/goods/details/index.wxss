@@ -1,6 +1,16 @@
 @import '../../../style/global.wxss';
+
 page {
   width: 100vw;
+}
+
+/* 临时调试面板样式 */
+.debug-panel {
+  background: rgba(255, 255, 255, 0.95);
+  padding: 12rpx 16rpx;
+  border-bottom: 1rpx solid #eee;
+  font-size: 20rpx;
+  color: #333;
 }
 
 .goods-detail-page .goods-info {
@@ -227,6 +237,95 @@ page {
   width: 100%;
   background-color: #fff;
   padding-bottom: env(safe-area-inset-bottom);
+}
+
+/* 美化左下角投稿/定制按钮，使其与底部购买栏协调 */
+.goods-bottom-operation .bottom-actions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14rpx 18rpx;
+  gap: 12rpx;
+}
+
+.goods-bottom-operation .submission-btn {
+  background: linear-gradient(180deg, #fff 0%, #fff 100%);
+  color: #333333;
+  border: 1rpx solid rgba(0, 0, 0, 0.06);
+  padding: 10rpx 14rpx;
+  border-radius: 18rpx;
+  min-width: 88rpx;
+  height: 56rpx;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 6rpx 14rpx rgba(0, 0, 0, 0.08);
+  font-size: 26rpx;
+}
+
+/* 让购买栏（buy-bar）占据右侧并统一高度 */
+.goods-bottom-operation buy-bar,
+.goods-bottom-operation .goods-details-card {
+  flex: 1 1 auto;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+/* 小屏时让 submission 模式缩小文字避免遮挡 */
+@media screen and (max-width: 360px) {
+  .goods-bottom-operation .submission-btn {
+    padding: 8rpx 10rpx;
+    font-size: 24rpx;
+    min-width: 72rpx;
+    height: 52rpx;
+  }
+}
+
+/* 悬浮圆形投稿按钮 + 文本标签 */
+.floating-submission {
+  display: flex;
+  align-items: center;
+  gap: 10rpx;
+  margin-right: auto;
+  /* 让浮动按钮靠左并在 buy-bar 左侧 */
+}
+
+.floating-btn {
+  width: 66rpx;
+  height: 66rpx;
+  border-radius: 50%;
+  background: linear-gradient(180deg, #ff6b6b 0%, #ff4d4f 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 12rpx 30rpx rgba(255, 77, 79, 0.18);
+}
+
+.floating-label {
+  background: rgba(255, 255, 255, 0.92);
+  padding: 8rpx 12rpx;
+  border-radius: 14rpx;
+  font-size: 24rpx;
+  color: #333;
+  box-shadow: 0 6rpx 12rpx rgba(0, 0, 0, 0.06);
+}
+
+/* 保证在小屏幕上浮动按钮不会被 buy-bar 覆盖，向上抬起一点 */
+.goods-bottom-operation {
+  padding-top: 10rpx;
+}
+
+@media screen and (max-width: 360px) {
+  .floating-btn {
+    width: 58rpx;
+    height: 58rpx;
+  }
+
+  .floating-label {
+    font-size: 22rpx;
+    padding: 6rpx 10rpx;
+  }
 }
 
 .popup-sku-header .popup-sku-header__goods-info .popup-sku__price {

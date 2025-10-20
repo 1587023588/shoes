@@ -3,6 +3,8 @@
     package="com.example.shoes">
 
     <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.CAMERA"/>
+    <uses-feature android:name="android.hardware.camera" android:required="false"/>
 
     <application
         android:allowBackup="true"
@@ -27,8 +29,12 @@
         <activity android:name=".XibaopoActivity" />
         <activity android:name=".PosterActivity" />
         <activity android:name=".OnlineSalesActivity" />
+    <activity android:name=".BoutiqueShoesActivity" />
         <activity android:name=".MuseumActivity" />
         <activity android:name=".BookingActivity" />
+        <activity android:name=".CouponActivity" />
+        <activity android:name=".VillageActivitiesActivity" />
+        <activity android:name=".ScanActivity" />
     </application>
 
 </manifest>

@@ -1,0 +1,20 @@
+.red-list {
+  padding: 12px
+}
+
+.card {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px
+}
+
+.cover {
+  width: 120px;
+  height: 80px;
+  border-radius: 6px;
+  margin-right: 8px
+}
+
+.title {
+  font-weight: 700
+}

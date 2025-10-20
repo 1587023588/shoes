@@ -10,7 +10,8 @@
   margin-top: 8rpx;
   font-size: 24rpx;
   position: relative;
-  color: inherit; /* 继承TabBar的文字颜色 */
+  color: inherit;
+  /* 继承TabBar的文字颜色 */
 }
 
 /* 购物车数量标记样式 */
@@ -30,44 +31,9 @@
   min-width: 28rpx;
 }
 
-/* 图片默认样式 */
-image {
+/* 图片默认样式（组件内需使用类选择器） */
+.custom-tab-bar-image {
   vertical-align: middle;
+  width: 48rpx;
+  height: 48rpx;
 }
-.custom-tab-bar-wrapper {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  padding: 8rpx 0;
-}
-
-.text {
-  margin-top: 8rpx;
-  font-size: 24rpx;
-  position: relative;
-  color: inherit; /* 继承TabBar的文字颜色 */
-}
-
-/* 购物车数量标记样式 */
-.cart-badge {
-  position: absolute;
-  top: -16rpx;
-  right: -24rpx;
-  background-color: #ff4d4f;
-  color: white;
-  font-size: 20rpx;
-  width: 28rpx;
-  height: 28rpx;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  min-width: 28rpx;
-}
-
-/* 图片默认样式 */
-image {
-  vertical-align: middle;
-}
-    

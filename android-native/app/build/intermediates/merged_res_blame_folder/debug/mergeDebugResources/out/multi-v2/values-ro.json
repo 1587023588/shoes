@@ -1,8 +1,25 @@
 {
     "logs": [
         {
-            "outputFile": "com.example.shoes.app-mergeDebugResources-35:/values-ro/values-ro.xml",
+            "outputFile": "com.example.shoes.app-mergeDebugResources-40:/values-ro/values-ro.xml",
             "map": [
+                {
+                    "source": "C:\\Users\\gsy_666\\.gradle\\caches\\9.0-milestone-1\\transforms\\0b3ae9fb0711eb58f5d4f2f65c54f5b8\\transformed\\jetified-zxing-android-embedded-4.3.0\\res\\values-ro\\values-ro.xml",
+                    "from": {
+                        "startLines": "2,3,4,5",
+                        "startColumns": "4,4,4,4",
+                        "startOffsets": "55,114,166,275",
+                        "endColumns": "58,51,108,116",
+                        "endOffsets": "109,161,270,387"
+                    },
+                    "to": {
+                        "startLines": "189,190,191,192",
+                        "startColumns": "4,4,4,4",
+                        "startOffsets": "14862,14921,14973,15082",
+                        "endColumns": "58,51,108,116",
+                        "endOffsets": "14916,14968,15077,15194"
+                    }
+                },
                 {
                     "source": "C:\\Users\\gsy_666\\.gradle\\caches\\9.0-milestone-1\\transforms\\4dd78aadbc05906a65a9a288fb756925\\transformed\\jetified-media3-exoplayer-1.3.1\\res\\values-ro\\values-ro.xml",
                     "from": {

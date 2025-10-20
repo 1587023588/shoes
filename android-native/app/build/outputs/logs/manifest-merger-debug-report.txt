@@ -1,9 +1,9 @@
 -- Merging decision tree log ---
 manifest
-ADDED from C:\Users\gsy_666\Desktop\shoes_app\android-native\app\src\main\AndroidManifest.xml:2:1-34:12
-INJECTED from C:\Users\gsy_666\Desktop\shoes_app\android-native\app\src\main\AndroidManifest.xml:2:1-34:12
-INJECTED from C:\Users\gsy_666\Desktop\shoes_app\android-native\app\src\main\AndroidManifest.xml:2:1-34:12
-INJECTED from C:\Users\gsy_666\Desktop\shoes_app\android-native\app\src\main\AndroidManifest.xml:2:1-34:12
+ADDED from C:\Users\gsy_666\Desktop\shoes_app\android-native\app\src\main\AndroidManifest.xml:2:1-40:12
+INJECTED from C:\Users\gsy_666\Desktop\shoes_app\android-native\app\src\main\AndroidManifest.xml:2:1-40:12
+INJECTED from C:\Users\gsy_666\Desktop\shoes_app\android-native\app\src\main\AndroidManifest.xml:2:1-40:12
+INJECTED from C:\Users\gsy_666\Desktop\shoes_app\android-native\app\src\main\AndroidManifest.xml:2:1-40:12
 MERGED from [androidx.databinding:viewbinding:8.13.0] C:\Users\gsy_666\.gradle\caches\9.0-milestone-1\transforms\f10a2ac193d1bb9a751a3d6acb0653ea\transformed\jetified-viewbinding-8.13.0\AndroidManifest.xml:2:1-7:12
 MERGED from [com.google.android.material:material:1.12.0] C:\Users\gsy_666\.gradle\caches\9.0-milestone-1\transforms\2288b8abd7ae68dbca688db275cb1305\transformed\material-1.12.0\AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.constraintlayout:constraintlayout:2.2.0] C:\Users\gsy_666\.gradle\caches\9.0-milestone-1\transforms\bab4ec993f45f3af94edf0b75394846e\transformed\constraintlayout-2.2.0\AndroidManifest.xml:2:1-9:12
@@ -19,14 +19,15 @@ MERGED from [androidx.media3:media3-decoder:1.3.1] C:\Users\gsy_666\.gradle\cach
 MERGED from [androidx.media3:media3-database:1.3.1] C:\Users\gsy_666\.gradle\caches\9.0-milestone-1\transforms\477be8b465534174b6fd2453aa4e4aa1\transformed\jetified-media3-database-1.3.1\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.media3:media3-common:1.3.1] C:\Users\gsy_666\.gradle\caches\9.0-milestone-1\transforms\fea7b36137ef7be8a41de2166f3e9b7d\transformed\jetified-media3-common-1.3.1\AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.media3:media3-ui:1.3.1] C:\Users\gsy_666\.gradle\caches\9.0-milestone-1\transforms\34a148bf2dba24a9598cd2092bce59e6\transformed\jetified-media3-ui-1.3.1\AndroidManifest.xml:17:1-22:12
-MERGED from [androidx.viewpager2:viewpager2:1.1.0-beta02] C:\Users\gsy_666\.gradle\caches\9.0-milestone-1\transforms\e26a13836fc8c7dff0abd6159b6ba732\transformed\jetified-viewpager2-1.1.0-beta02\AndroidManifest.xml:2:1-7:12
 MERGED from [androidx.recyclerview:recyclerview:1.3.2] C:\Users\gsy_666\.gradle\caches\9.0-milestone-1\transforms\e5d48347b3d89b70c3dab7ee43a3d85b\transformed\recyclerview-1.3.2\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.viewpager2:viewpager2:1.1.0-beta02] C:\Users\gsy_666\.gradle\caches\9.0-milestone-1\transforms\e26a13836fc8c7dff0abd6159b6ba732\transformed\jetified-viewpager2-1.1.0-beta02\AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.fragment:fragment:1.5.4] C:\Users\gsy_666\.gradle\caches\9.0-milestone-1\transforms\9eac8e55b4857e91ec00c5294ee94e52\transformed\fragment-1.5.4\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.activity:activity:1.9.2] C:\Users\gsy_666\.gradle\caches\9.0-milestone-1\transforms\68a26ca56488ed510560a91749fc2736\transformed\jetified-activity-1.9.2\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.activity:activity-ktx:1.9.2] C:\Users\gsy_666\.gradle\caches\9.0-milestone-1\transforms\e48c82b14d391eff3a5f3f950b2da185\transformed\jetified-activity-ktx-1.9.2\AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.coordinatorlayout:coordinatorlayout:1.2.0] C:\Users\gsy_666\.gradle\caches\9.0-milestone-1\transforms\9eef87acb5c43bf179e746cb323356e5\transformed\coordinatorlayout-1.2.0\AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.emoji2:emoji2-views-helper:1.3.0] C:\Users\gsy_666\.gradle\caches\9.0-milestone-1\transforms\522deb33cf2487222b1a47a881963f1a\transformed\jetified-emoji2-views-helper-1.3.0\AndroidManifest.xml:2:1-7:12
 MERGED from [androidx.emoji2:emoji2:1.3.0] C:\Users\gsy_666\.gradle\caches\9.0-milestone-1\transforms\f49dc47bf020a151c9ee09ab6df7fcd3\transformed\jetified-emoji2-1.3.0\AndroidManifest.xml:17:1-35:12
-MERGED from [androidx.fragment:fragment:1.5.4] C:\Users\gsy_666\.gradle\caches\9.0-milestone-1\transforms\9eac8e55b4857e91ec00c5294ee94e52\transformed\fragment-1.5.4\AndroidManifest.xml:17:1-24:12
-MERGED from [androidx.activity:activity:1.8.0] C:\Users\gsy_666\.gradle\caches\9.0-milestone-1\transforms\6b06eb35543dd7222a8423a277f6c4d4\transformed\jetified-activity-1.8.0\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.drawerlayout:drawerlayout:1.1.1] C:\Users\gsy_666\.gradle\caches\9.0-milestone-1\transforms\3056421d31e800a7357e1b1cd49dec0e\transformed\drawerlayout-1.1.1\AndroidManifest.xml:17:1-24:12
-MERGED from [androidx.coordinatorlayout:coordinatorlayout:1.1.0] C:\Users\gsy_666\.gradle\caches\9.0-milestone-1\transforms\2227146b21bdb781f1a089f0d38e18a0\transformed\coordinatorlayout-1.1.0\AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.transition:transition:1.5.0] C:\Users\gsy_666\.gradle\caches\9.0-milestone-1\transforms\f3501a2efa7abe7b905397d4b4a8a5fb\transformed\transition-1.5.0\AndroidManifest.xml:2:1-7:12
 MERGED from [androidx.dynamicanimation:dynamicanimation:1.0.0] C:\Users\gsy_666\.gradle\caches\9.0-milestone-1\transforms\8ee178727ee9ab5522ffd2745224d3a5\transformed\dynamicanimation-1.0.0\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.vectordrawable:vectordrawable-animated:1.1.0] C:\Users\gsy_666\.gradle\caches\9.0-milestone-1\transforms\66a80633ab1183922ebd0c569e2b83ef\transformed\vectordrawable-animated-1.1.0\AndroidManifest.xml:17:1-24:12
@@ -38,9 +39,12 @@ MERGED from [androidx.viewpager:viewpager:1.0.0] C:\Users\gsy_666\.gradle\caches
 MERGED from [androidx.customview:customview:1.1.0] C:\Users\gsy_666\.gradle\caches\9.0-milestone-1\transforms\f6929815769f6956bfaa4e041c4435fc\transformed\customview-1.1.0\AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.core:core:1.13.1] C:\Users\gsy_666\.gradle\caches\9.0-milestone-1\transforms\49f9cdeaeeb6da9cb5a9248ce41b2cd3\transformed\core-1.13.1\AndroidManifest.xml:17:1-30:12
 MERGED from [androidx.customview:customview-poolingcontainer:1.0.0] C:\Users\gsy_666\.gradle\caches\9.0-milestone-1\transforms\9c299c2ae52059649da0afec67e8e191\transformed\jetified-customview-poolingcontainer-1.0.0\AndroidManifest.xml:17:1-23:12
+MERGED from [androidx.savedstate:savedstate-ktx:1.2.1] C:\Users\gsy_666\.gradle\caches\9.0-milestone-1\transforms\ddf850dde5f39a129bc5eede80258827\transformed\jetified-savedstate-ktx-1.2.1\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.savedstate:savedstate:1.2.1] C:\Users\gsy_666\.gradle\caches\9.0-milestone-1\transforms\7c653acd7a48684875357b7f80d8d452\transformed\jetified-savedstate-1.2.1\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.lifecycle:lifecycle-livedata-core-ktx:2.7.0] C:\Users\gsy_666\.gradle\caches\9.0-milestone-1\transforms\a95e51cd43c118f53762738615a0057d\transformed\jetified-lifecycle-livedata-core-ktx-2.7.0\AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.lifecycle:lifecycle-viewmodel-ktx:2.7.0] C:\Users\gsy_666\.gradle\caches\9.0-milestone-1\transforms\75f9d39b730470bc882571a21eba8dd9\transformed\jetified-lifecycle-viewmodel-ktx-2.7.0\AndroidManifest.xml:2:1-7:12
 MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.7.0] C:\Users\gsy_666\.gradle\caches\9.0-milestone-1\transforms\669ff3c3c04966d646563996b192d2ba\transformed\lifecycle-viewmodel-2.7.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.lifecycle:lifecycle-runtime-ktx:2.7.0] C:\Users\gsy_666\.gradle\caches\9.0-milestone-1\transforms\2a197e9415c952f4bfab2e8817f92b83\transformed\jetified-lifecycle-runtime-ktx-2.7.0\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.lifecycle:lifecycle-process:2.7.0] C:\Users\gsy_666\.gradle\caches\9.0-milestone-1\transforms\b9589b0c0d93167bb04fd831f804d40d\transformed\jetified-lifecycle-process-2.7.0\AndroidManifest.xml:17:1-35:12
 MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.7.0] C:\Users\gsy_666\.gradle\caches\9.0-milestone-1\transforms\a8e541fede09eae3c5a934e095ff9f71\transformed\lifecycle-livedata-core-2.7.0\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.lifecycle:lifecycle-livedata:2.7.0] C:\Users\gsy_666\.gradle\caches\9.0-milestone-1\transforms\c9262988207399d152459fd32a5690a4\transformed\lifecycle-livedata-2.7.0\AndroidManifest.xml:17:1-22:12
@@ -60,6 +64,7 @@ MERGED from [androidx.documentfile:documentfile:1.0.0] C:\Users\gsy_666\.gradle\
 MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0] C:\Users\gsy_666\.gradle\caches\9.0-milestone-1\transforms\704a1a0bcf82e50693cc23261aeb29e7\transformed\localbroadcastmanager-1.0.0\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.print:print:1.0.0] C:\Users\gsy_666\.gradle\caches\9.0-milestone-1\transforms\ef7b6c5cd9d84f333c6cb6a2aa532f06\transformed\print-1.0.0\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.arch.core:core-runtime:2.2.0] C:\Users\gsy_666\.gradle\caches\9.0-milestone-1\transforms\c719021e58c072812c2a1f768ac42291\transformed\core-runtime-2.2.0\AndroidManifest.xml:17:1-22:12
+MERGED from [com.journeyapps:zxing-android-embedded:4.3.0] C:\Users\gsy_666\.gradle\caches\9.0-milestone-1\transforms\0b3ae9fb0711eb58f5d4f2f65c54f5b8\transformed\jetified-zxing-android-embedded-4.3.0\AndroidManifest.xml:17:1-56:12
 	package
 		ADDED from C:\Users\gsy_666\Desktop\shoes_app\android-native\app\src\main\AndroidManifest.xml:3:5-32
 		INJECTED from C:\Users\gsy_666\Desktop\shoes_app\android-native\app\src\main\AndroidManifest.xml
@@ -73,9 +78,23 @@ uses-permission#android.permission.INTERNET
 ADDED from C:\Users\gsy_666\Desktop\shoes_app\android-native\app\src\main\AndroidManifest.xml:5:5-66
 	android:name
 		ADDED from C:\Users\gsy_666\Desktop\shoes_app\android-native\app\src\main\AndroidManifest.xml:5:22-64
+uses-permission#android.permission.CAMERA
+ADDED from C:\Users\gsy_666\Desktop\shoes_app\android-native\app\src\main\AndroidManifest.xml:6:5-64
+MERGED from [com.journeyapps:zxing-android-embedded:4.3.0] C:\Users\gsy_666\.gradle\caches\9.0-milestone-1\transforms\0b3ae9fb0711eb58f5d4f2f65c54f5b8\transformed\jetified-zxing-android-embedded-4.3.0\AndroidManifest.xml:22:5-65
+MERGED from [com.journeyapps:zxing-android-embedded:4.3.0] C:\Users\gsy_666\.gradle\caches\9.0-milestone-1\transforms\0b3ae9fb0711eb58f5d4f2f65c54f5b8\transformed\jetified-zxing-android-embedded-4.3.0\AndroidManifest.xml:22:5-65
+	android:name
+		ADDED from C:\Users\gsy_666\Desktop\shoes_app\android-native\app\src\main\AndroidManifest.xml:6:22-62
+uses-feature#android.hardware.camera
+ADDED from C:\Users\gsy_666\Desktop\shoes_app\android-native\app\src\main\AndroidManifest.xml:7:5-84
+MERGED from [com.journeyapps:zxing-android-embedded:4.3.0] C:\Users\gsy_666\.gradle\caches\9.0-milestone-1\transforms\0b3ae9fb0711eb58f5d4f2f65c54f5b8\transformed\jetified-zxing-android-embedded-4.3.0\AndroidManifest.xml:25:5-27:36
+MERGED from [com.journeyapps:zxing-android-embedded:4.3.0] C:\Users\gsy_666\.gradle\caches\9.0-milestone-1\transforms\0b3ae9fb0711eb58f5d4f2f65c54f5b8\transformed\jetified-zxing-android-embedded-4.3.0\AndroidManifest.xml:25:5-27:36
+	android:required
+		ADDED from C:\Users\gsy_666\Desktop\shoes_app\android-native\app\src\main\AndroidManifest.xml:7:58-82
+	android:name
+		ADDED from C:\Users\gsy_666\Desktop\shoes_app\android-native\app\src\main\AndroidManifest.xml:7:19-57
 application
-ADDED from C:\Users\gsy_666\Desktop\shoes_app\android-native\app\src\main\AndroidManifest.xml:7:5-32:19
-INJECTED from C:\Users\gsy_666\Desktop\shoes_app\android-native\app\src\main\AndroidManifest.xml:7:5-32:19
+ADDED from C:\Users\gsy_666\Desktop\shoes_app\android-native\app\src\main\AndroidManifest.xml:9:5-38:19
+INJECTED from C:\Users\gsy_666\Desktop\shoes_app\android-native\app\src\main\AndroidManifest.xml:9:5-38:19
 MERGED from [com.google.android.material:material:1.12.0] C:\Users\gsy_666\.gradle\caches\9.0-milestone-1\transforms\2288b8abd7ae68dbca688db275cb1305\transformed\material-1.12.0\AndroidManifest.xml:22:5-20
 MERGED from [com.google.android.material:material:1.12.0] C:\Users\gsy_666\.gradle\caches\9.0-milestone-1\transforms\2288b8abd7ae68dbca688db275cb1305\transformed\material-1.12.0\AndroidManifest.xml:22:5-20
 MERGED from [androidx.constraintlayout:constraintlayout:2.2.0] C:\Users\gsy_666\.gradle\caches\9.0-milestone-1\transforms\bab4ec993f45f3af94edf0b75394846e\transformed\constraintlayout-2.2.0\AndroidManifest.xml:7:5-20
@@ -92,70 +111,88 @@ MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] C:\Users\gs
 MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] C:\Users\gsy_666\.gradle\caches\9.0-milestone-1\transforms\9768fcd1c978bf48128cdbf1e8eaa8d7\transformed\versionedparcelable-1.1.1\AndroidManifest.xml:24:5-25:19
 MERGED from [androidx.startup:startup-runtime:1.1.1] C:\Users\gsy_666\.gradle\caches\9.0-milestone-1\transforms\0576c7189ac786087d14fc7ffff9e621\transformed\jetified-startup-runtime-1.1.1\AndroidManifest.xml:25:5-31:19
 MERGED from [androidx.startup:startup-runtime:1.1.1] C:\Users\gsy_666\.gradle\caches\9.0-milestone-1\transforms\0576c7189ac786087d14fc7ffff9e621\transformed\jetified-startup-runtime-1.1.1\AndroidManifest.xml:25:5-31:19
+MERGED from [com.journeyapps:zxing-android-embedded:4.3.0] C:\Users\gsy_666\.gradle\caches\9.0-milestone-1\transforms\0b3ae9fb0711eb58f5d4f2f65c54f5b8\transformed\jetified-zxing-android-embedded-4.3.0\AndroidManifest.xml:46:5-54:19
+MERGED from [com.journeyapps:zxing-android-embedded:4.3.0] C:\Users\gsy_666\.gradle\caches\9.0-milestone-1\transforms\0b3ae9fb0711eb58f5d4f2f65c54f5b8\transformed\jetified-zxing-android-embedded-4.3.0\AndroidManifest.xml:46:5-54:19
 	android:extractNativeLibs
 		INJECTED from C:\Users\gsy_666\Desktop\shoes_app\android-native\app\src\main\AndroidManifest.xml
 	android:appComponentFactory
 		ADDED from [androidx.core:core:1.13.1] C:\Users\gsy_666\.gradle\caches\9.0-milestone-1\transforms\49f9cdeaeeb6da9cb5a9248ce41b2cd3\transformed\core-1.13.1\AndroidManifest.xml:28:18-86
 	android:supportsRtl
-		ADDED from C:\Users\gsy_666\Desktop\shoes_app\android-native\app\src\main\AndroidManifest.xml:12:9-35
+		ADDED from C:\Users\gsy_666\Desktop\shoes_app\android-native\app\src\main\AndroidManifest.xml:14:9-35
 	android:label
-		ADDED from C:\Users\gsy_666\Desktop\shoes_app\android-native\app\src\main\AndroidManifest.xml:10:9-37
+		ADDED from C:\Users\gsy_666\Desktop\shoes_app\android-native\app\src\main\AndroidManifest.xml:12:9-37
 	android:roundIcon
-		ADDED from C:\Users\gsy_666\Desktop\shoes_app\android-native\app\src\main\AndroidManifest.xml:11:9-54
+		ADDED from C:\Users\gsy_666\Desktop\shoes_app\android-native\app\src\main\AndroidManifest.xml:13:9-54
 	android:icon
-		ADDED from C:\Users\gsy_666\Desktop\shoes_app\android-native\app\src\main\AndroidManifest.xml:9:9-43
+		ADDED from C:\Users\gsy_666\Desktop\shoes_app\android-native\app\src\main\AndroidManifest.xml:11:9-43
 	android:allowBackup
-		ADDED from C:\Users\gsy_666\Desktop\shoes_app\android-native\app\src\main\AndroidManifest.xml:8:9-35
+		ADDED from C:\Users\gsy_666\Desktop\shoes_app\android-native\app\src\main\AndroidManifest.xml:10:9-35
 	android:theme
-		ADDED from C:\Users\gsy_666\Desktop\shoes_app\android-native\app\src\main\AndroidManifest.xml:13:9-49
+		ADDED from C:\Users\gsy_666\Desktop\shoes_app\android-native\app\src\main\AndroidManifest.xml:15:9-49
 activity#com.example.shoes.SplashActivity
-ADDED from C:\Users\gsy_666\Desktop\shoes_app\android-native\app\src\main\AndroidManifest.xml:14:9-22:20
+ADDED from C:\Users\gsy_666\Desktop\shoes_app\android-native\app\src\main\AndroidManifest.xml:16:9-24:20
 	android:exported
-		ADDED from C:\Users\gsy_666\Desktop\shoes_app\android-native\app\src\main\AndroidManifest.xml:16:13-36
+		ADDED from C:\Users\gsy_666\Desktop\shoes_app\android-native\app\src\main\AndroidManifest.xml:18:13-36
 	android:theme
-		ADDED from C:\Users\gsy_666\Desktop\shoes_app\android-native\app\src\main\AndroidManifest.xml:17:13-53
+		ADDED from C:\Users\gsy_666\Desktop\shoes_app\android-native\app\src\main\AndroidManifest.xml:19:13-53
 	android:name
-		ADDED from C:\Users\gsy_666\Desktop\shoes_app\android-native\app\src\main\AndroidManifest.xml:15:13-43
+		ADDED from C:\Users\gsy_666\Desktop\shoes_app\android-native\app\src\main\AndroidManifest.xml:17:13-43
 intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
-ADDED from C:\Users\gsy_666\Desktop\shoes_app\android-native\app\src\main\AndroidManifest.xml:18:13-21:29
+ADDED from C:\Users\gsy_666\Desktop\shoes_app\android-native\app\src\main\AndroidManifest.xml:20:13-23:29
 action#android.intent.action.MAIN
-ADDED from C:\Users\gsy_666\Desktop\shoes_app\android-native\app\src\main\AndroidManifest.xml:19:17-69
+ADDED from C:\Users\gsy_666\Desktop\shoes_app\android-native\app\src\main\AndroidManifest.xml:21:17-69
 	android:name
-		ADDED from C:\Users\gsy_666\Desktop\shoes_app\android-native\app\src\main\AndroidManifest.xml:19:25-66
+		ADDED from C:\Users\gsy_666\Desktop\shoes_app\android-native\app\src\main\AndroidManifest.xml:21:25-66
 category#android.intent.category.LAUNCHER
-ADDED from C:\Users\gsy_666\Desktop\shoes_app\android-native\app\src\main\AndroidManifest.xml:20:17-77
+ADDED from C:\Users\gsy_666\Desktop\shoes_app\android-native\app\src\main\AndroidManifest.xml:22:17-77
 	android:name
-		ADDED from C:\Users\gsy_666\Desktop\shoes_app\android-native\app\src\main\AndroidManifest.xml:20:27-74
+		ADDED from C:\Users\gsy_666\Desktop\shoes_app\android-native\app\src\main\AndroidManifest.xml:22:27-74
 activity#com.example.shoes.MainActivity
-ADDED from C:\Users\gsy_666\Desktop\shoes_app\android-native\app\src\main\AndroidManifest.xml:23:9-25:40
+ADDED from C:\Users\gsy_666\Desktop\shoes_app\android-native\app\src\main\AndroidManifest.xml:25:9-27:40
 	android:exported
-		ADDED from C:\Users\gsy_666\Desktop\shoes_app\android-native\app\src\main\AndroidManifest.xml:25:13-37
+		ADDED from C:\Users\gsy_666\Desktop\shoes_app\android-native\app\src\main\AndroidManifest.xml:27:13-37
 	android:name
-		ADDED from C:\Users\gsy_666\Desktop\shoes_app\android-native\app\src\main\AndroidManifest.xml:24:13-41
+		ADDED from C:\Users\gsy_666\Desktop\shoes_app\android-native\app\src\main\AndroidManifest.xml:26:13-41
 activity#com.example.shoes.ProductDetailActivity
-ADDED from C:\Users\gsy_666\Desktop\shoes_app\android-native\app\src\main\AndroidManifest.xml:26:9-59
+ADDED from C:\Users\gsy_666\Desktop\shoes_app\android-native\app\src\main\AndroidManifest.xml:28:9-59
 	android:name
-		ADDED from C:\Users\gsy_666\Desktop\shoes_app\android-native\app\src\main\AndroidManifest.xml:26:19-56
+		ADDED from C:\Users\gsy_666\Desktop\shoes_app\android-native\app\src\main\AndroidManifest.xml:28:19-56
 activity#com.example.shoes.XibaopoActivity
-ADDED from C:\Users\gsy_666\Desktop\shoes_app\android-native\app\src\main\AndroidManifest.xml:27:9-53
+ADDED from C:\Users\gsy_666\Desktop\shoes_app\android-native\app\src\main\AndroidManifest.xml:29:9-53
 	android:name
-		ADDED from C:\Users\gsy_666\Desktop\shoes_app\android-native\app\src\main\AndroidManifest.xml:27:19-50
+		ADDED from C:\Users\gsy_666\Desktop\shoes_app\android-native\app\src\main\AndroidManifest.xml:29:19-50
 activity#com.example.shoes.PosterActivity
-ADDED from C:\Users\gsy_666\Desktop\shoes_app\android-native\app\src\main\AndroidManifest.xml:28:9-52
-	android:name
-		ADDED from C:\Users\gsy_666\Desktop\shoes_app\android-native\app\src\main\AndroidManifest.xml:28:19-49
-activity#com.example.shoes.OnlineSalesActivity
-ADDED from C:\Users\gsy_666\Desktop\shoes_app\android-native\app\src\main\AndroidManifest.xml:29:9-57
-	android:name
-		ADDED from C:\Users\gsy_666\Desktop\shoes_app\android-native\app\src\main\AndroidManifest.xml:29:19-54
-activity#com.example.shoes.MuseumActivity
 ADDED from C:\Users\gsy_666\Desktop\shoes_app\android-native\app\src\main\AndroidManifest.xml:30:9-52
 	android:name
 		ADDED from C:\Users\gsy_666\Desktop\shoes_app\android-native\app\src\main\AndroidManifest.xml:30:19-49
-activity#com.example.shoes.BookingActivity
-ADDED from C:\Users\gsy_666\Desktop\shoes_app\android-native\app\src\main\AndroidManifest.xml:31:9-53
+activity#com.example.shoes.OnlineSalesActivity
+ADDED from C:\Users\gsy_666\Desktop\shoes_app\android-native\app\src\main\AndroidManifest.xml:31:9-57
 	android:name
-		ADDED from C:\Users\gsy_666\Desktop\shoes_app\android-native\app\src\main\AndroidManifest.xml:31:19-50
+		ADDED from C:\Users\gsy_666\Desktop\shoes_app\android-native\app\src\main\AndroidManifest.xml:31:19-54
+activity#com.example.shoes.BoutiqueShoesActivity
+ADDED from C:\Users\gsy_666\Desktop\shoes_app\android-native\app\src\main\AndroidManifest.xml:32:5-55
+	android:name
+		ADDED from C:\Users\gsy_666\Desktop\shoes_app\android-native\app\src\main\AndroidManifest.xml:32:15-52
+activity#com.example.shoes.MuseumActivity
+ADDED from C:\Users\gsy_666\Desktop\shoes_app\android-native\app\src\main\AndroidManifest.xml:33:9-52
+	android:name
+		ADDED from C:\Users\gsy_666\Desktop\shoes_app\android-native\app\src\main\AndroidManifest.xml:33:19-49
+activity#com.example.shoes.BookingActivity
+ADDED from C:\Users\gsy_666\Desktop\shoes_app\android-native\app\src\main\AndroidManifest.xml:34:9-53
+	android:name
+		ADDED from C:\Users\gsy_666\Desktop\shoes_app\android-native\app\src\main\AndroidManifest.xml:34:19-50
+activity#com.example.shoes.CouponActivity
+ADDED from C:\Users\gsy_666\Desktop\shoes_app\android-native\app\src\main\AndroidManifest.xml:35:9-52
+	android:name
+		ADDED from C:\Users\gsy_666\Desktop\shoes_app\android-native\app\src\main\AndroidManifest.xml:35:19-49
+activity#com.example.shoes.VillageActivitiesActivity
+ADDED from C:\Users\gsy_666\Desktop\shoes_app\android-native\app\src\main\AndroidManifest.xml:36:9-63
+	android:name
+		ADDED from C:\Users\gsy_666\Desktop\shoes_app\android-native\app\src\main\AndroidManifest.xml:36:19-60
+activity#com.example.shoes.ScanActivity
+ADDED from C:\Users\gsy_666\Desktop\shoes_app\android-native\app\src\main\AndroidManifest.xml:37:9-50
+	android:name
+		ADDED from C:\Users\gsy_666\Desktop\shoes_app\android-native\app\src\main\AndroidManifest.xml:37:19-47
 uses-sdk
 INJECTED from C:\Users\gsy_666\Desktop\shoes_app\android-native\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from C:\Users\gsy_666\Desktop\shoes_app\android-native\app\src\main\AndroidManifest.xml
@@ -190,22 +227,24 @@ MERGED from [androidx.media3:media3-common:1.3.1] C:\Users\gsy_666\.gradle\cache
 MERGED from [androidx.media3:media3-common:1.3.1] C:\Users\gsy_666\.gradle\caches\9.0-milestone-1\transforms\fea7b36137ef7be8a41de2166f3e9b7d\transformed\jetified-media3-common-1.3.1\AndroidManifest.xml:20:5-44
 MERGED from [androidx.media3:media3-ui:1.3.1] C:\Users\gsy_666\.gradle\caches\9.0-milestone-1\transforms\34a148bf2dba24a9598cd2092bce59e6\transformed\jetified-media3-ui-1.3.1\AndroidManifest.xml:20:5-44
 MERGED from [androidx.media3:media3-ui:1.3.1] C:\Users\gsy_666\.gradle\caches\9.0-milestone-1\transforms\34a148bf2dba24a9598cd2092bce59e6\transformed\jetified-media3-ui-1.3.1\AndroidManifest.xml:20:5-44
-MERGED from [androidx.viewpager2:viewpager2:1.1.0-beta02] C:\Users\gsy_666\.gradle\caches\9.0-milestone-1\transforms\e26a13836fc8c7dff0abd6159b6ba732\transformed\jetified-viewpager2-1.1.0-beta02\AndroidManifest.xml:5:5-44
-MERGED from [androidx.viewpager2:viewpager2:1.1.0-beta02] C:\Users\gsy_666\.gradle\caches\9.0-milestone-1\transforms\e26a13836fc8c7dff0abd6159b6ba732\transformed\jetified-viewpager2-1.1.0-beta02\AndroidManifest.xml:5:5-44
 MERGED from [androidx.recyclerview:recyclerview:1.3.2] C:\Users\gsy_666\.gradle\caches\9.0-milestone-1\transforms\e5d48347b3d89b70c3dab7ee43a3d85b\transformed\recyclerview-1.3.2\AndroidManifest.xml:20:5-44
 MERGED from [androidx.recyclerview:recyclerview:1.3.2] C:\Users\gsy_666\.gradle\caches\9.0-milestone-1\transforms\e5d48347b3d89b70c3dab7ee43a3d85b\transformed\recyclerview-1.3.2\AndroidManifest.xml:20:5-44
+MERGED from [androidx.viewpager2:viewpager2:1.1.0-beta02] C:\Users\gsy_666\.gradle\caches\9.0-milestone-1\transforms\e26a13836fc8c7dff0abd6159b6ba732\transformed\jetified-viewpager2-1.1.0-beta02\AndroidManifest.xml:5:5-44
+MERGED from [androidx.viewpager2:viewpager2:1.1.0-beta02] C:\Users\gsy_666\.gradle\caches\9.0-milestone-1\transforms\e26a13836fc8c7dff0abd6159b6ba732\transformed\jetified-viewpager2-1.1.0-beta02\AndroidManifest.xml:5:5-44
+MERGED from [androidx.fragment:fragment:1.5.4] C:\Users\gsy_666\.gradle\caches\9.0-milestone-1\transforms\9eac8e55b4857e91ec00c5294ee94e52\transformed\fragment-1.5.4\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.fragment:fragment:1.5.4] C:\Users\gsy_666\.gradle\caches\9.0-milestone-1\transforms\9eac8e55b4857e91ec00c5294ee94e52\transformed\fragment-1.5.4\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.activity:activity:1.9.2] C:\Users\gsy_666\.gradle\caches\9.0-milestone-1\transforms\68a26ca56488ed510560a91749fc2736\transformed\jetified-activity-1.9.2\AndroidManifest.xml:20:5-44
+MERGED from [androidx.activity:activity:1.9.2] C:\Users\gsy_666\.gradle\caches\9.0-milestone-1\transforms\68a26ca56488ed510560a91749fc2736\transformed\jetified-activity-1.9.2\AndroidManifest.xml:20:5-44
+MERGED from [androidx.activity:activity-ktx:1.9.2] C:\Users\gsy_666\.gradle\caches\9.0-milestone-1\transforms\e48c82b14d391eff3a5f3f950b2da185\transformed\jetified-activity-ktx-1.9.2\AndroidManifest.xml:5:5-44
+MERGED from [androidx.activity:activity-ktx:1.9.2] C:\Users\gsy_666\.gradle\caches\9.0-milestone-1\transforms\e48c82b14d391eff3a5f3f950b2da185\transformed\jetified-activity-ktx-1.9.2\AndroidManifest.xml:5:5-44
+MERGED from [androidx.coordinatorlayout:coordinatorlayout:1.2.0] C:\Users\gsy_666\.gradle\caches\9.0-milestone-1\transforms\9eef87acb5c43bf179e746cb323356e5\transformed\coordinatorlayout-1.2.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.coordinatorlayout:coordinatorlayout:1.2.0] C:\Users\gsy_666\.gradle\caches\9.0-milestone-1\transforms\9eef87acb5c43bf179e746cb323356e5\transformed\coordinatorlayout-1.2.0\AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.emoji2:emoji2-views-helper:1.3.0] C:\Users\gsy_666\.gradle\caches\9.0-milestone-1\transforms\522deb33cf2487222b1a47a881963f1a\transformed\jetified-emoji2-views-helper-1.3.0\AndroidManifest.xml:5:5-44
 MERGED from [androidx.emoji2:emoji2-views-helper:1.3.0] C:\Users\gsy_666\.gradle\caches\9.0-milestone-1\transforms\522deb33cf2487222b1a47a881963f1a\transformed\jetified-emoji2-views-helper-1.3.0\AndroidManifest.xml:5:5-44
 MERGED from [androidx.emoji2:emoji2:1.3.0] C:\Users\gsy_666\.gradle\caches\9.0-milestone-1\transforms\f49dc47bf020a151c9ee09ab6df7fcd3\transformed\jetified-emoji2-1.3.0\AndroidManifest.xml:21:5-44
 MERGED from [androidx.emoji2:emoji2:1.3.0] C:\Users\gsy_666\.gradle\caches\9.0-milestone-1\transforms\f49dc47bf020a151c9ee09ab6df7fcd3\transformed\jetified-emoji2-1.3.0\AndroidManifest.xml:21:5-44
-MERGED from [androidx.fragment:fragment:1.5.4] C:\Users\gsy_666\.gradle\caches\9.0-milestone-1\transforms\9eac8e55b4857e91ec00c5294ee94e52\transformed\fragment-1.5.4\AndroidManifest.xml:20:5-22:41
-MERGED from [androidx.fragment:fragment:1.5.4] C:\Users\gsy_666\.gradle\caches\9.0-milestone-1\transforms\9eac8e55b4857e91ec00c5294ee94e52\transformed\fragment-1.5.4\AndroidManifest.xml:20:5-22:41
-MERGED from [androidx.activity:activity:1.8.0] C:\Users\gsy_666\.gradle\caches\9.0-milestone-1\transforms\6b06eb35543dd7222a8423a277f6c4d4\transformed\jetified-activity-1.8.0\AndroidManifest.xml:20:5-44
-MERGED from [androidx.activity:activity:1.8.0] C:\Users\gsy_666\.gradle\caches\9.0-milestone-1\transforms\6b06eb35543dd7222a8423a277f6c4d4\transformed\jetified-activity-1.8.0\AndroidManifest.xml:20:5-44
 MERGED from [androidx.drawerlayout:drawerlayout:1.1.1] C:\Users\gsy_666\.gradle\caches\9.0-milestone-1\transforms\3056421d31e800a7357e1b1cd49dec0e\transformed\drawerlayout-1.1.1\AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.drawerlayout:drawerlayout:1.1.1] C:\Users\gsy_666\.gradle\caches\9.0-milestone-1\transforms\3056421d31e800a7357e1b1cd49dec0e\transformed\drawerlayout-1.1.1\AndroidManifest.xml:20:5-22:41
-MERGED from [androidx.coordinatorlayout:coordinatorlayout:1.1.0] C:\Users\gsy_666\.gradle\caches\9.0-milestone-1\transforms\2227146b21bdb781f1a089f0d38e18a0\transformed\coordinatorlayout-1.1.0\AndroidManifest.xml:20:5-22:41
-MERGED from [androidx.coordinatorlayout:coordinatorlayout:1.1.0] C:\Users\gsy_666\.gradle\caches\9.0-milestone-1\transforms\2227146b21bdb781f1a089f0d38e18a0\transformed\coordinatorlayout-1.1.0\AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.transition:transition:1.5.0] C:\Users\gsy_666\.gradle\caches\9.0-milestone-1\transforms\f3501a2efa7abe7b905397d4b4a8a5fb\transformed\transition-1.5.0\AndroidManifest.xml:5:5-44
 MERGED from [androidx.transition:transition:1.5.0] C:\Users\gsy_666\.gradle\caches\9.0-milestone-1\transforms\f3501a2efa7abe7b905397d4b4a8a5fb\transformed\transition-1.5.0\AndroidManifest.xml:5:5-44
 MERGED from [androidx.dynamicanimation:dynamicanimation:1.0.0] C:\Users\gsy_666\.gradle\caches\9.0-milestone-1\transforms\8ee178727ee9ab5522ffd2745224d3a5\transformed\dynamicanimation-1.0.0\AndroidManifest.xml:20:5-44
@@ -228,12 +267,18 @@ MERGED from [androidx.core:core:1.13.1] C:\Users\gsy_666\.gradle\caches\9.0-mile
 MERGED from [androidx.core:core:1.13.1] C:\Users\gsy_666\.gradle\caches\9.0-milestone-1\transforms\49f9cdeaeeb6da9cb5a9248ce41b2cd3\transformed\core-1.13.1\AndroidManifest.xml:20:5-44
 MERGED from [androidx.customview:customview-poolingcontainer:1.0.0] C:\Users\gsy_666\.gradle\caches\9.0-milestone-1\transforms\9c299c2ae52059649da0afec67e8e191\transformed\jetified-customview-poolingcontainer-1.0.0\AndroidManifest.xml:20:5-21:38
 MERGED from [androidx.customview:customview-poolingcontainer:1.0.0] C:\Users\gsy_666\.gradle\caches\9.0-milestone-1\transforms\9c299c2ae52059649da0afec67e8e191\transformed\jetified-customview-poolingcontainer-1.0.0\AndroidManifest.xml:20:5-21:38
+MERGED from [androidx.savedstate:savedstate-ktx:1.2.1] C:\Users\gsy_666\.gradle\caches\9.0-milestone-1\transforms\ddf850dde5f39a129bc5eede80258827\transformed\jetified-savedstate-ktx-1.2.1\AndroidManifest.xml:20:5-44
+MERGED from [androidx.savedstate:savedstate-ktx:1.2.1] C:\Users\gsy_666\.gradle\caches\9.0-milestone-1\transforms\ddf850dde5f39a129bc5eede80258827\transformed\jetified-savedstate-ktx-1.2.1\AndroidManifest.xml:20:5-44
 MERGED from [androidx.savedstate:savedstate:1.2.1] C:\Users\gsy_666\.gradle\caches\9.0-milestone-1\transforms\7c653acd7a48684875357b7f80d8d452\transformed\jetified-savedstate-1.2.1\AndroidManifest.xml:20:5-44
 MERGED from [androidx.savedstate:savedstate:1.2.1] C:\Users\gsy_666\.gradle\caches\9.0-milestone-1\transforms\7c653acd7a48684875357b7f80d8d452\transformed\jetified-savedstate-1.2.1\AndroidManifest.xml:20:5-44
 MERGED from [androidx.lifecycle:lifecycle-livedata-core-ktx:2.7.0] C:\Users\gsy_666\.gradle\caches\9.0-milestone-1\transforms\a95e51cd43c118f53762738615a0057d\transformed\jetified-lifecycle-livedata-core-ktx-2.7.0\AndroidManifest.xml:5:5-44
 MERGED from [androidx.lifecycle:lifecycle-livedata-core-ktx:2.7.0] C:\Users\gsy_666\.gradle\caches\9.0-milestone-1\transforms\a95e51cd43c118f53762738615a0057d\transformed\jetified-lifecycle-livedata-core-ktx-2.7.0\AndroidManifest.xml:5:5-44
+MERGED from [androidx.lifecycle:lifecycle-viewmodel-ktx:2.7.0] C:\Users\gsy_666\.gradle\caches\9.0-milestone-1\transforms\75f9d39b730470bc882571a21eba8dd9\transformed\jetified-lifecycle-viewmodel-ktx-2.7.0\AndroidManifest.xml:5:5-44
+MERGED from [androidx.lifecycle:lifecycle-viewmodel-ktx:2.7.0] C:\Users\gsy_666\.gradle\caches\9.0-milestone-1\transforms\75f9d39b730470bc882571a21eba8dd9\transformed\jetified-lifecycle-viewmodel-ktx-2.7.0\AndroidManifest.xml:5:5-44
 MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.7.0] C:\Users\gsy_666\.gradle\caches\9.0-milestone-1\transforms\669ff3c3c04966d646563996b192d2ba\transformed\lifecycle-viewmodel-2.7.0\AndroidManifest.xml:20:5-44
 MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.7.0] C:\Users\gsy_666\.gradle\caches\9.0-milestone-1\transforms\669ff3c3c04966d646563996b192d2ba\transformed\lifecycle-viewmodel-2.7.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-runtime-ktx:2.7.0] C:\Users\gsy_666\.gradle\caches\9.0-milestone-1\transforms\2a197e9415c952f4bfab2e8817f92b83\transformed\jetified-lifecycle-runtime-ktx-2.7.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-runtime-ktx:2.7.0] C:\Users\gsy_666\.gradle\caches\9.0-milestone-1\transforms\2a197e9415c952f4bfab2e8817f92b83\transformed\jetified-lifecycle-runtime-ktx-2.7.0\AndroidManifest.xml:20:5-44
 MERGED from [androidx.lifecycle:lifecycle-process:2.7.0] C:\Users\gsy_666\.gradle\caches\9.0-milestone-1\transforms\b9589b0c0d93167bb04fd831f804d40d\transformed\jetified-lifecycle-process-2.7.0\AndroidManifest.xml:21:5-44
 MERGED from [androidx.lifecycle:lifecycle-process:2.7.0] C:\Users\gsy_666\.gradle\caches\9.0-milestone-1\transforms\b9589b0c0d93167bb04fd831f804d40d\transformed\jetified-lifecycle-process-2.7.0\AndroidManifest.xml:21:5-44
 MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.7.0] C:\Users\gsy_666\.gradle\caches\9.0-milestone-1\transforms\a8e541fede09eae3c5a934e095ff9f71\transformed\lifecycle-livedata-core-2.7.0\AndroidManifest.xml:20:5-44
@@ -272,6 +317,8 @@ MERGED from [androidx.print:print:1.0.0] C:\Users\gsy_666\.gradle\caches\9.0-mil
 MERGED from [androidx.print:print:1.0.0] C:\Users\gsy_666\.gradle\caches\9.0-milestone-1\transforms\ef7b6c5cd9d84f333c6cb6a2aa532f06\transformed\print-1.0.0\AndroidManifest.xml:20:5-44
 MERGED from [androidx.arch.core:core-runtime:2.2.0] C:\Users\gsy_666\.gradle\caches\9.0-milestone-1\transforms\c719021e58c072812c2a1f768ac42291\transformed\core-runtime-2.2.0\AndroidManifest.xml:20:5-44
 MERGED from [androidx.arch.core:core-runtime:2.2.0] C:\Users\gsy_666\.gradle\caches\9.0-milestone-1\transforms\c719021e58c072812c2a1f768ac42291\transformed\core-runtime-2.2.0\AndroidManifest.xml:20:5-44
+MERGED from [com.journeyapps:zxing-android-embedded:4.3.0] C:\Users\gsy_666\.gradle\caches\9.0-milestone-1\transforms\0b3ae9fb0711eb58f5d4f2f65c54f5b8\transformed\jetified-zxing-android-embedded-4.3.0\AndroidManifest.xml:20:5-44
+MERGED from [com.journeyapps:zxing-android-embedded:4.3.0] C:\Users\gsy_666\.gradle\caches\9.0-milestone-1\transforms\0b3ae9fb0711eb58f5d4f2f65c54f5b8\transformed\jetified-zxing-android-embedded-4.3.0\AndroidManifest.xml:20:5-44
 	android:targetSdkVersion
 		INJECTED from C:\Users\gsy_666\Desktop\shoes_app\android-native\app\src\main\AndroidManifest.xml
 	android:minSdkVersion
@@ -372,3 +419,47 @@ action#androidx.profileinstaller.action.BENCHMARK_OPERATION
 ADDED from [androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\gsy_666\.gradle\caches\9.0-milestone-1\transforms\4dea180c161a09881a34db86fc757c50\transformed\jetified-profileinstaller-1.4.0\AndroidManifest.xml:50:17-95
 	android:name
 		ADDED from [androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\gsy_666\.gradle\caches\9.0-milestone-1\transforms\4dea180c161a09881a34db86fc757c50\transformed\jetified-profileinstaller-1.4.0\AndroidManifest.xml:50:25-92
+uses-feature#android.hardware.camera.front
+ADDED from [com.journeyapps:zxing-android-embedded:4.3.0] C:\Users\gsy_666\.gradle\caches\9.0-milestone-1\transforms\0b3ae9fb0711eb58f5d4f2f65c54f5b8\transformed\jetified-zxing-android-embedded-4.3.0\AndroidManifest.xml:28:5-30:36
+	android:required
+		ADDED from [com.journeyapps:zxing-android-embedded:4.3.0] C:\Users\gsy_666\.gradle\caches\9.0-milestone-1\transforms\0b3ae9fb0711eb58f5d4f2f65c54f5b8\transformed\jetified-zxing-android-embedded-4.3.0\AndroidManifest.xml:30:9-33
+	android:name
+		ADDED from [com.journeyapps:zxing-android-embedded:4.3.0] C:\Users\gsy_666\.gradle\caches\9.0-milestone-1\transforms\0b3ae9fb0711eb58f5d4f2f65c54f5b8\transformed\jetified-zxing-android-embedded-4.3.0\AndroidManifest.xml:29:9-53
+uses-feature#android.hardware.camera.autofocus
+ADDED from [com.journeyapps:zxing-android-embedded:4.3.0] C:\Users\gsy_666\.gradle\caches\9.0-milestone-1\transforms\0b3ae9fb0711eb58f5d4f2f65c54f5b8\transformed\jetified-zxing-android-embedded-4.3.0\AndroidManifest.xml:33:5-35:36
+	android:required
+		ADDED from [com.journeyapps:zxing-android-embedded:4.3.0] C:\Users\gsy_666\.gradle\caches\9.0-milestone-1\transforms\0b3ae9fb0711eb58f5d4f2f65c54f5b8\transformed\jetified-zxing-android-embedded-4.3.0\AndroidManifest.xml:35:9-33
+	android:name
+		ADDED from [com.journeyapps:zxing-android-embedded:4.3.0] C:\Users\gsy_666\.gradle\caches\9.0-milestone-1\transforms\0b3ae9fb0711eb58f5d4f2f65c54f5b8\transformed\jetified-zxing-android-embedded-4.3.0\AndroidManifest.xml:34:9-57
+uses-feature#android.hardware.camera.flash
+ADDED from [com.journeyapps:zxing-android-embedded:4.3.0] C:\Users\gsy_666\.gradle\caches\9.0-milestone-1\transforms\0b3ae9fb0711eb58f5d4f2f65c54f5b8\transformed\jetified-zxing-android-embedded-4.3.0\AndroidManifest.xml:36:5-38:36
+	android:required
+		ADDED from [com.journeyapps:zxing-android-embedded:4.3.0] C:\Users\gsy_666\.gradle\caches\9.0-milestone-1\transforms\0b3ae9fb0711eb58f5d4f2f65c54f5b8\transformed\jetified-zxing-android-embedded-4.3.0\AndroidManifest.xml:38:9-33
+	android:name
+		ADDED from [com.journeyapps:zxing-android-embedded:4.3.0] C:\Users\gsy_666\.gradle\caches\9.0-milestone-1\transforms\0b3ae9fb0711eb58f5d4f2f65c54f5b8\transformed\jetified-zxing-android-embedded-4.3.0\AndroidManifest.xml:37:9-53
+uses-feature#android.hardware.screen.landscape
+ADDED from [com.journeyapps:zxing-android-embedded:4.3.0] C:\Users\gsy_666\.gradle\caches\9.0-milestone-1\transforms\0b3ae9fb0711eb58f5d4f2f65c54f5b8\transformed\jetified-zxing-android-embedded-4.3.0\AndroidManifest.xml:39:5-41:36
+	android:required
+		ADDED from [com.journeyapps:zxing-android-embedded:4.3.0] C:\Users\gsy_666\.gradle\caches\9.0-milestone-1\transforms\0b3ae9fb0711eb58f5d4f2f65c54f5b8\transformed\jetified-zxing-android-embedded-4.3.0\AndroidManifest.xml:41:9-33
+	android:name
+		ADDED from [com.journeyapps:zxing-android-embedded:4.3.0] C:\Users\gsy_666\.gradle\caches\9.0-milestone-1\transforms\0b3ae9fb0711eb58f5d4f2f65c54f5b8\transformed\jetified-zxing-android-embedded-4.3.0\AndroidManifest.xml:40:9-57
+uses-feature#android.hardware.wifi
+ADDED from [com.journeyapps:zxing-android-embedded:4.3.0] C:\Users\gsy_666\.gradle\caches\9.0-milestone-1\transforms\0b3ae9fb0711eb58f5d4f2f65c54f5b8\transformed\jetified-zxing-android-embedded-4.3.0\AndroidManifest.xml:42:5-44:36
+	android:required
+		ADDED from [com.journeyapps:zxing-android-embedded:4.3.0] C:\Users\gsy_666\.gradle\caches\9.0-milestone-1\transforms\0b3ae9fb0711eb58f5d4f2f65c54f5b8\transformed\jetified-zxing-android-embedded-4.3.0\AndroidManifest.xml:44:9-33
+	android:name
+		ADDED from [com.journeyapps:zxing-android-embedded:4.3.0] C:\Users\gsy_666\.gradle\caches\9.0-milestone-1\transforms\0b3ae9fb0711eb58f5d4f2f65c54f5b8\transformed\jetified-zxing-android-embedded-4.3.0\AndroidManifest.xml:43:9-45
+activity#com.journeyapps.barcodescanner.CaptureActivity
+ADDED from [com.journeyapps:zxing-android-embedded:4.3.0] C:\Users\gsy_666\.gradle\caches\9.0-milestone-1\transforms\0b3ae9fb0711eb58f5d4f2f65c54f5b8\transformed\jetified-zxing-android-embedded-4.3.0\AndroidManifest.xml:47:9-53:63
+	android:screenOrientation
+		ADDED from [com.journeyapps:zxing-android-embedded:4.3.0] C:\Users\gsy_666\.gradle\caches\9.0-milestone-1\transforms\0b3ae9fb0711eb58f5d4f2f65c54f5b8\transformed\jetified-zxing-android-embedded-4.3.0\AndroidManifest.xml:50:13-56
+	android:clearTaskOnLaunch
+		ADDED from [com.journeyapps:zxing-android-embedded:4.3.0] C:\Users\gsy_666\.gradle\caches\9.0-milestone-1\transforms\0b3ae9fb0711eb58f5d4f2f65c54f5b8\transformed\jetified-zxing-android-embedded-4.3.0\AndroidManifest.xml:49:13-45
+	android:stateNotNeeded
+		ADDED from [com.journeyapps:zxing-android-embedded:4.3.0] C:\Users\gsy_666\.gradle\caches\9.0-milestone-1\transforms\0b3ae9fb0711eb58f5d4f2f65c54f5b8\transformed\jetified-zxing-android-embedded-4.3.0\AndroidManifest.xml:51:13-42
+	android:windowSoftInputMode
+		ADDED from [com.journeyapps:zxing-android-embedded:4.3.0] C:\Users\gsy_666\.gradle\caches\9.0-milestone-1\transforms\0b3ae9fb0711eb58f5d4f2f65c54f5b8\transformed\jetified-zxing-android-embedded-4.3.0\AndroidManifest.xml:53:13-60
+	android:theme
+		ADDED from [com.journeyapps:zxing-android-embedded:4.3.0] C:\Users\gsy_666\.gradle\caches\9.0-milestone-1\transforms\0b3ae9fb0711eb58f5d4f2f65c54f5b8\transformed\jetified-zxing-android-embedded-4.3.0\AndroidManifest.xml:52:13-54
+	android:name
+		ADDED from [com.journeyapps:zxing-android-embedded:4.3.0] C:\Users\gsy_666\.gradle\caches\9.0-milestone-1\transforms\0b3ae9fb0711eb58f5d4f2f65c54f5b8\transformed\jetified-zxing-android-embedded-4.3.0\AndroidManifest.xml:48:13-74

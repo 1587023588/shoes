@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "com.example.shoes.app-mergeDebugResources-35:/values-iw/values-iw.xml",
+            "outputFile": "com.example.shoes.app-mergeDebugResources-40:/values-iw/values-iw.xml",
             "map": [
                 {
                     "source": "C:\\Users\\gsy_666\\.gradle\\caches\\9.0-milestone-1\\transforms\\49f9cdeaeeb6da9cb5a9248ce41b2cd3\\transformed\\core-1.13.1\\res\\values-iw\\values-iw.xml",
@@ -71,6 +71,23 @@
                         "startOffsets": "7140,7205,7264,7331,7396,7470,7532,7612,7692",
                         "endColumns": "64,58,66,64,73,61,79,79,61",
                         "endOffsets": "7200,7259,7326,7391,7465,7527,7607,7687,7749"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\gsy_666\\.gradle\\caches\\9.0-milestone-1\\transforms\\0b3ae9fb0711eb58f5d4f2f65c54f5b8\\transformed\\jetified-zxing-android-embedded-4.3.0\\res\\values-iw\\values-iw.xml",
+                    "from": {
+                        "startLines": "2,3,4,5",
+                        "startColumns": "4,4,4,4",
+                        "startOffsets": "55,111,161,296",
+                        "endColumns": "55,49,134,89",
+                        "endOffsets": "106,156,291,381"
+                    },
+                    "to": {
+                        "startLines": "189,190,191,192",
+                        "startColumns": "4,4,4,4",
+                        "startOffsets": "14051,14107,14157,14292",
+                        "endColumns": "55,49,134,89",
+                        "endOffsets": "14102,14152,14287,14377"
                     }
                 },
                 {

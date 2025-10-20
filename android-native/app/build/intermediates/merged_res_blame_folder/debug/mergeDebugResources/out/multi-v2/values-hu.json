@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "com.example.shoes.app-mergeDebugResources-35:/values-hu/values-hu.xml",
+            "outputFile": "com.example.shoes.app-mergeDebugResources-40:/values-hu/values-hu.xml",
             "map": [
                 {
                     "source": "C:\\Users\\gsy_666\\.gradle\\caches\\9.0-milestone-1\\transforms\\e5b3b67f7f30e95895b4e427ea5e11dc\\transformed\\appcompat-1.7.0\\res\\values-hu\\values-hu.xml",
@@ -90,6 +90,23 @@
                         "endLines": "10,14,18,67,68,69,70,71,72,73,74,75,76,77,78,79,80,81,82,83,84,85,86,87,88,89,90,100,101,102,103,104,105,106,107,108,109,110,111,112,113,114,115,116,117,118",
                         "endColumns": "17,12,12,87,86,77,85,102,73,67,96,100,72,67,64,67,112,110,109,73,81,73,72,89,88,67,62,52,57,47,60,63,66,63,67,64,58,64,65,65,52,64,81,81,56,68",
                         "endOffsets": "375,580,782,5342,5429,5507,5593,5696,5770,5838,5935,6036,6109,6177,6242,6310,6423,6534,6644,6718,6800,6874,6947,7037,7126,7194,7257,8009,8067,8115,8176,8240,8307,8371,8439,8504,8563,8628,8694,8760,8813,8878,8960,9042,9099,9168"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\gsy_666\\.gradle\\caches\\9.0-milestone-1\\transforms\\0b3ae9fb0711eb58f5d4f2f65c54f5b8\\transformed\\jetified-zxing-android-embedded-4.3.0\\res\\values-hu\\values-hu.xml",
+                    "from": {
+                        "startLines": "2,3,4,5",
+                        "startColumns": "4,4,4,4",
+                        "startOffsets": "55,114,161,287",
+                        "endColumns": "58,46,125,115",
+                        "endOffsets": "109,156,282,398"
+                    },
+                    "to": {
+                        "startLines": "186,187,188,189",
+                        "startColumns": "4,4,4,4",
+                        "startOffsets": "14582,14641,14688,14814",
+                        "endColumns": "58,46,125,115",
+                        "endOffsets": "14636,14683,14809,14925"
                     }
                 }
             ]

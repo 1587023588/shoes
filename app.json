@@ -7,7 +7,11 @@
     "pages/museum/index",
     "pages/about/index",
     "pages/workshop/index",
-    "pages/heritage/index"
+    "pages/heritage/index",
+    "pages/creative-submission/index",
+    "pages/redculture/list/index",
+    "pages/courses/list/index",
+    "pages/game/editor/index"
   ],
   "subpackages": [
     {

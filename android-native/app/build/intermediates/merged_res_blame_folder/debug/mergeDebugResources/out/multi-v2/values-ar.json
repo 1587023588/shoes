@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "com.example.shoes.app-mergeDebugResources-35:/values-ar/values-ar.xml",
+            "outputFile": "com.example.shoes.app-mergeDebugResources-40:/values-ar/values-ar.xml",
             "map": [
                 {
                     "source": "C:\\Users\\gsy_666\\.gradle\\caches\\9.0-milestone-1\\transforms\\34a148bf2dba24a9598cd2092bce59e6\\transformed\\jetified-media3-ui-1.3.1\\res\\values-ar\\values-ar.xml",
@@ -90,6 +90,23 @@
                         "startOffsets": "1774,1882,1986,2093,2175,2276,2390,2470,2549,2640,2733,2825,2919,3019,3112,3207,3300,3391,3485,3564,3669,3767,3865,3973,4073,4176,4331,14772",
                         "endColumns": "107,103,106,81,100,113,79,78,90,92,91,93,99,92,94,92,90,93,78,104,97,97,107,99,102,154,96,81",
                         "endOffsets": "1877,1981,2088,2170,2271,2385,2465,2544,2635,2728,2820,2914,3014,3107,3202,3295,3386,3480,3559,3664,3762,3860,3968,4068,4171,4326,4423,14849"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\gsy_666\\.gradle\\caches\\9.0-milestone-1\\transforms\\0b3ae9fb0711eb58f5d4f2f65c54f5b8\\transformed\\jetified-zxing-android-embedded-4.3.0\\res\\values-ar\\values-ar.xml",
+                    "from": {
+                        "startLines": "2,3,4,5",
+                        "startColumns": "4,4,4,4",
+                        "startOffsets": "55,117,167,300",
+                        "endColumns": "61,49,132,109",
+                        "endOffsets": "112,162,295,405"
+                    },
+                    "to": {
+                        "startLines": "198,199,200,201",
+                        "startColumns": "4,4,4,4",
+                        "startOffsets": "15185,15247,15297,15430",
+                        "endColumns": "61,49,132,109",
+                        "endOffsets": "15242,15292,15425,15535"
                     }
                 }
             ]

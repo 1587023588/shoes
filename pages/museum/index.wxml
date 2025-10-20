@@ -1,28 +1,25 @@
 <view class="carousel-container" bindtap="toggleAutoplay">
   <!-- 轮播图片区域：平滑    注意：WXML中注释只能写在标签外，不能在标签属性后添加注释 -->
-  <view class="carousel-wrapper" 
-        style="transition-duration: {{transitionDuration}}ms; transform: translateX(-{{currentIndex * 100}}%)">
+  <view class="carousel-wrapper"
+    style="transition-duration: {{transitionDuration}}ms; transform: translateX(-{{currentIndex * 100}})">
     <view class="carousel-slide" wx:for="{{photos}}" wx:key="id">
-      <image 
-        src="{{item.url}}" 
-        mode="widthFix" 
-        class="slide-image"
-        lazy-load="true"
-      ></image>
+      <image src="{{item.url}}" mode="widthFix" class="slide-image" lazy-load="true"></image>
     </view>
   </view>
-  
+
   <!-- 底部指示器 -->
   <view class="indicators">
-    <view class="indicator" 
-          wx:for="{{photos}}" 
-          wx:key="id"
-          data-index="{{index}}"
-          bindtap="switchSlide"
-          class="{{index === currentIndex ? 'active' : ''}}"></view>
+    <view class="indicator" wx:for="{{photos}}" wx:key="id" data-index="{{index}}" bindtap="switchSlide"
+      class="{{index === currentIndex ? 'active' : ''}}"></view>
   </view>
-  
+
   <!-- 左右切换按钮 -->
   <view class="control-btn prev" bindtap="prevSlide">❮</view>
   <view class="control-btn next" bindtap="nextSlide">❯</view>
+
+  <!-- 音频播放与预约入口 -->
+  <view class="museum-actions" style="padding:12px;display:flex;gap:8px;justify-content:center;">
+    <button size="default" bindtap="playAudioFor" data-index="1">播放讲解</button>
+    <button size="default" bindtap="goToBooking">预约参观</button>
+  </view>
 </view>

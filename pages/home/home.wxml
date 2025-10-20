@@ -6,6 +6,14 @@
     loop="{{videoLoop}}" binderror="onVideoError"></video>
 </view>
 
+<!-- 开发调试面板：仅在 showDebug 为 true 时显示 -->
+<view class="home-debug-panel" wx:if="{{showDebug}}">
+  <text>funcList length: {{funcList.length}}</text>
+  <view wx:for="{{funcList}}" wx:key="index">
+    <text>{{index}}: {{item.text}}</text>
+  </view>
+</view>
+
 <!-- 英雄大图 -->
 <view class="hero">
   <image class="hero__img" src="{{heroImage}}" mode="aspectFill" />

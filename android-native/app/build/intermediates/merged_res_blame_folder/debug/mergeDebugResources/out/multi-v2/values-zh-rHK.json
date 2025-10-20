@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "com.example.shoes.app-mergeDebugResources-35:/values-zh-rHK/values-zh-rHK.xml",
+            "outputFile": "com.example.shoes.app-mergeDebugResources-40:/values-zh-rHK/values-zh-rHK.xml",
             "map": [
                 {
                     "source": "C:\\Users\\gsy_666\\.gradle\\caches\\9.0-milestone-1\\transforms\\49f9cdeaeeb6da9cb5a9248ce41b2cd3\\transformed\\core-1.13.1\\res\\values-zh-rHK\\values-zh-rHK.xml",
@@ -90,6 +90,23 @@
                         "endLines": "10,14,18,67,68,69,70,71,72,73,74,75,76,77,78,79,80,81,82,83,84,85,86,87,88,89,90,100,101,102,103,104,105,106,107,108,109,110,111,112,113,114,115,116,117,118",
                         "endColumns": "17,12,12,69,68,69,75,74,54,60,73,73,61,60,58,64,88,85,88,62,66,64,54,73,72,60,62,51,57,46,60,55,61,56,59,55,54,62,61,62,48,52,66,66,48,60",
                         "endOffsets": "371,534,692,4851,4920,4990,5066,5141,5196,5257,5331,5405,5467,5528,5587,5652,5741,5827,5916,5979,6046,6111,6166,6240,6313,6374,6437,7047,7105,7152,7213,7269,7331,7388,7448,7504,7559,7622,7684,7747,7796,7849,7916,7983,8032,8093"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\gsy_666\\.gradle\\caches\\9.0-milestone-1\\transforms\\0b3ae9fb0711eb58f5d4f2f65c54f5b8\\transformed\\jetified-zxing-android-embedded-4.3.0\\res\\values-zh-rHK\\values-zh-rHK.xml",
+                    "from": {
+                        "startLines": "2,3,4,5",
+                        "startColumns": "4,4,4,4",
+                        "startOffsets": "55,104,151,244",
+                        "endColumns": "48,46,92,69",
+                        "endOffsets": "99,146,239,309"
+                    },
+                    "to": {
+                        "startLines": "186,187,188,189",
+                        "startColumns": "4,4,4,4",
+                        "startOffsets": "12805,12854,12901,12994",
+                        "endColumns": "48,46,92,69",
+                        "endOffsets": "12849,12896,12989,13059"
                     }
                 }
             ]

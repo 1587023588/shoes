@@ -53,7 +53,7 @@ class CategoryFragment : Fragment() {
             CategoryItem(R.drawable.cat_7, "搭配时刻"),
             CategoryItem(R.drawable.cat_8, "文创周边"),
             CategoryItem(R.drawable.cat_9, "私人定制"),
-            CategoryItem(R.drawable.cat_10, "新品布鞋"),
+            CategoryItem(R.drawable.cat_10, "精品布鞋"),
             CategoryItem(R.drawable.cat_11, "优惠活动"),
             CategoryItem(R.drawable.cat_12, "更多")
         )
@@ -118,11 +118,23 @@ class CategoryFragment : Fragment() {
             holder.label.text = item.label
             view.setOnClickListener {
                 when {
+                    item.label.contains("精品布鞋") -> {
+                        startActivity(android.content.Intent(requireContext(), BoutiqueShoesActivity::class.java))
+                    }
+                    item.label.contains("优惠活动") -> {
+                        startActivity(android.content.Intent(requireContext(), CouponActivity::class.java))
+                    }
                     item.label.contains("线上销售") -> {
                         startActivity(android.content.Intent(requireContext(), OnlineSalesActivity::class.java))
                     }
                     item.label.contains("云上场馆") -> {
                         startActivity(android.content.Intent(requireContext(), MuseumActivity::class.java))
+                    }
+                        item.label.contains("村级活动") -> {
+                            startActivity(android.content.Intent(requireContext(), VillageActivitiesActivity::class.java))
+                        }
+                    item.label.contains("预约参观") -> {
+                        startActivity(android.content.Intent(requireContext(), BookingActivity::class.java))
                     }
                     item.label.contains("西柏坡精神") -> {
                         startActivity(android.content.Intent(requireContext(), XibaopoActivity::class.java))

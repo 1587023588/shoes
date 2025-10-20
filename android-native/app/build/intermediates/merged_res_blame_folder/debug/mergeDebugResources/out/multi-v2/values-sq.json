@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "com.example.shoes.app-mergeDebugResources-35:/values-sq/values-sq.xml",
+            "outputFile": "com.example.shoes.app-mergeDebugResources-40:/values-sq/values-sq.xml",
             "map": [
                 {
                     "source": "C:\\Users\\gsy_666\\.gradle\\caches\\9.0-milestone-1\\transforms\\34a148bf2dba24a9598cd2092bce59e6\\transformed\\jetified-media3-ui-1.3.1\\res\\values-sq\\values-sq.xml",

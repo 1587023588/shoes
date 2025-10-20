@@ -62,7 +62,19 @@ class HomeFragment : Fragment() {
             Toast.makeText(requireContext(), "搜索：$keyword", Toast.LENGTH_SHORT).show()
         }
         binding.btnCamera.setOnClickListener {
-            Toast.makeText(requireContext(), "打开相机", Toast.LENGTH_SHORT).show()
+            startActivity(android.content.Intent(requireContext(), ScanActivity::class.java))
+        }
+        // 预约日历：直接跳转预约参观页（固定 09:00-17:00）
+        binding.actionCalendar.setOnClickListener {
+            startActivity(android.content.Intent(requireContext(), BookingActivity::class.java))
+        }
+        // 红色场馆：跳转“云上场馆”页
+        binding.actionMuseum.setOnClickListener {
+            startActivity(android.content.Intent(requireContext(), MuseumActivity::class.java))
+        }
+        // 首页功能区的“扫一扫”入口
+        binding.actionScan.setOnClickListener {
+            startActivity(android.content.Intent(requireContext(), ScanActivity::class.java))
         }
         return binding.root
     }
