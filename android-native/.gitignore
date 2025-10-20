@@ -1,0 +1,33 @@
+# Android / Kotlin build outputs
+*.iml
+.gradle/
+/local.properties
+/.idea/
+.DS_Store
+/build/
+/captures/
+.externalNativeBuild/
+.cxx/
+app/build/
+app/kotlin/
+app/tmp/
+
+# VS Code / Codex artifacts
+.vscode/
+
+# Generated APK/AAB
+*.apk
+*.ap_*
+*.aab
+
+# Misc
+.idea_modules/
+*.log
+*.keystore
+*.jks
+*.orig
+*.rej
+
+# Mac / Windows
+Thumbs.db
+$RECYCLE.BIN/

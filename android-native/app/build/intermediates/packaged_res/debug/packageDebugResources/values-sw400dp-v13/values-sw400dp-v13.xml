@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<resources>
-    <dimen name="category_icon_size">68dp</dimen>
-    <dimen name="header_search_height">44dp</dimen>
-    <dimen name="home_action_icon">44dp</dimen>
-    <dimen name="padding_screen">18dp</dimen>
-</resources>
