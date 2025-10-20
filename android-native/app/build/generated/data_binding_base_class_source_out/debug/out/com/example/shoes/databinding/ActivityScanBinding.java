@@ -5,6 +5,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -24,7 +25,16 @@ public final class ActivityScanBinding implements ViewBinding {
   private final CoordinatorLayout rootView;
 
   @NonNull
+  public final LinearLayout actionsPanel;
+
+  @NonNull
   public final FrameLayout barcodeContainer;
+
+  @NonNull
+  public final MaterialButton btnPickFromGallery;
+
+  @NonNull
+  public final MaterialButton btnStartExternal;
 
   @NonNull
   public final MaterialButton btnTorch;
@@ -39,11 +49,15 @@ public final class ActivityScanBinding implements ViewBinding {
   public final MaterialToolbar toolbar;
 
   private ActivityScanBinding(@NonNull CoordinatorLayout rootView,
-      @NonNull FrameLayout barcodeContainer, @NonNull MaterialButton btnTorch,
-      @NonNull MaterialCardView resultCard, @NonNull TextView resultText,
-      @NonNull MaterialToolbar toolbar) {
+      @NonNull LinearLayout actionsPanel, @NonNull FrameLayout barcodeContainer,
+      @NonNull MaterialButton btnPickFromGallery, @NonNull MaterialButton btnStartExternal,
+      @NonNull MaterialButton btnTorch, @NonNull MaterialCardView resultCard,
+      @NonNull TextView resultText, @NonNull MaterialToolbar toolbar) {
     this.rootView = rootView;
+    this.actionsPanel = actionsPanel;
     this.barcodeContainer = barcodeContainer;
+    this.btnPickFromGallery = btnPickFromGallery;
+    this.btnStartExternal = btnStartExternal;
     this.btnTorch = btnTorch;
     this.resultCard = resultCard;
     this.resultText = resultText;
@@ -77,9 +91,27 @@ public final class ActivityScanBinding implements ViewBinding {
     // This is done to optimize the compiled bytecode for size and performance.
     int id;
     missingId: {
+      id = R.id.actionsPanel;
+      LinearLayout actionsPanel = ViewBindings.findChildViewById(rootView, id);
+      if (actionsPanel == null) {
+        break missingId;
+      }
+
       id = R.id.barcodeContainer;
       FrameLayout barcodeContainer = ViewBindings.findChildViewById(rootView, id);
       if (barcodeContainer == null) {
+        break missingId;
+      }
+
+      id = R.id.btnPickFromGallery;
+      MaterialButton btnPickFromGallery = ViewBindings.findChildViewById(rootView, id);
+      if (btnPickFromGallery == null) {
+        break missingId;
+      }
+
+      id = R.id.btnStartExternal;
+      MaterialButton btnStartExternal = ViewBindings.findChildViewById(rootView, id);
+      if (btnStartExternal == null) {
         break missingId;
       }
 
@@ -107,8 +139,8 @@ public final class ActivityScanBinding implements ViewBinding {
         break missingId;
       }
 
-      return new ActivityScanBinding((CoordinatorLayout) rootView, barcodeContainer, btnTorch,
-          resultCard, resultText, toolbar);
+      return new ActivityScanBinding((CoordinatorLayout) rootView, actionsPanel, barcodeContainer,
+          btnPickFromGallery, btnStartExternal, btnTorch, resultCard, resultText, toolbar);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

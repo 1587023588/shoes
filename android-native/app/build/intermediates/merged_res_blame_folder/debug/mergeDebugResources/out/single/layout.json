@@ -92,6 +92,10 @@
         "source": "C:\\Users\\gsy_666\\.gradle\\daemon\\9.0-milestone-1\\com.example.shoes.app-main-44:\\layout\\activity_poster.xml"
     },
     {
+        "merged": "C:\\Users\\gsy_666\\.gradle\\daemon\\9.0-milestone-1\\com.example.shoes.app-mergeDebugResources-41:\\layout\\activity_logs.xml",
+        "source": "C:\\Users\\gsy_666\\.gradle\\daemon\\9.0-milestone-1\\com.example.shoes.app-main-44:\\layout\\activity_logs.xml"
+    },
+    {
         "merged": "C:\\Users\\gsy_666\\.gradle\\daemon\\9.0-milestone-1\\com.example.shoes.app-mergeDebugResources-41:\\layout\\activity_product_detail.xml",
         "source": "C:\\Users\\gsy_666\\.gradle\\daemon\\9.0-milestone-1\\com.example.shoes.app-main-44:\\layout\\activity_product_detail.xml"
     }

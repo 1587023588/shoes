@@ -1,9 +1,9 @@
 -- Merging decision tree log ---
 manifest
-ADDED from C:\Users\gsy_666\Desktop\shoes_app\android-native\app\src\main\AndroidManifest.xml:2:1-40:12
-INJECTED from C:\Users\gsy_666\Desktop\shoes_app\android-native\app\src\main\AndroidManifest.xml:2:1-40:12
-INJECTED from C:\Users\gsy_666\Desktop\shoes_app\android-native\app\src\main\AndroidManifest.xml:2:1-40:12
-INJECTED from C:\Users\gsy_666\Desktop\shoes_app\android-native\app\src\main\AndroidManifest.xml:2:1-40:12
+ADDED from C:\Users\gsy_666\Desktop\shoes_app\android-native\app\src\main\AndroidManifest.xml:2:1-42:12
+INJECTED from C:\Users\gsy_666\Desktop\shoes_app\android-native\app\src\main\AndroidManifest.xml:2:1-42:12
+INJECTED from C:\Users\gsy_666\Desktop\shoes_app\android-native\app\src\main\AndroidManifest.xml:2:1-42:12
+INJECTED from C:\Users\gsy_666\Desktop\shoes_app\android-native\app\src\main\AndroidManifest.xml:2:1-42:12
 MERGED from [androidx.databinding:viewbinding:8.13.0] C:\Users\gsy_666\.gradle\caches\9.0-milestone-1\transforms\f10a2ac193d1bb9a751a3d6acb0653ea\transformed\jetified-viewbinding-8.13.0\AndroidManifest.xml:2:1-7:12
 MERGED from [com.google.android.material:material:1.12.0] C:\Users\gsy_666\.gradle\caches\9.0-milestone-1\transforms\2288b8abd7ae68dbca688db275cb1305\transformed\material-1.12.0\AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.constraintlayout:constraintlayout:2.2.0] C:\Users\gsy_666\.gradle\caches\9.0-milestone-1\transforms\bab4ec993f45f3af94edf0b75394846e\transformed\constraintlayout-2.2.0\AndroidManifest.xml:2:1-9:12
@@ -93,8 +93,8 @@ MERGED from [com.journeyapps:zxing-android-embedded:4.3.0] C:\Users\gsy_666\.gra
 	android:name
 		ADDED from C:\Users\gsy_666\Desktop\shoes_app\android-native\app\src\main\AndroidManifest.xml:7:19-57
 application
-ADDED from C:\Users\gsy_666\Desktop\shoes_app\android-native\app\src\main\AndroidManifest.xml:9:5-38:19
-INJECTED from C:\Users\gsy_666\Desktop\shoes_app\android-native\app\src\main\AndroidManifest.xml:9:5-38:19
+ADDED from C:\Users\gsy_666\Desktop\shoes_app\android-native\app\src\main\AndroidManifest.xml:9:5-40:19
+INJECTED from C:\Users\gsy_666\Desktop\shoes_app\android-native\app\src\main\AndroidManifest.xml:9:5-40:19
 MERGED from [com.google.android.material:material:1.12.0] C:\Users\gsy_666\.gradle\caches\9.0-milestone-1\transforms\2288b8abd7ae68dbca688db275cb1305\transformed\material-1.12.0\AndroidManifest.xml:22:5-20
 MERGED from [com.google.android.material:material:1.12.0] C:\Users\gsy_666\.gradle\caches\9.0-milestone-1\transforms\2288b8abd7ae68dbca688db275cb1305\transformed\material-1.12.0\AndroidManifest.xml:22:5-20
 MERGED from [androidx.constraintlayout:constraintlayout:2.2.0] C:\Users\gsy_666\.gradle\caches\9.0-milestone-1\transforms\bab4ec993f45f3af94edf0b75394846e\transformed\constraintlayout-2.2.0\AndroidManifest.xml:7:5-20
@@ -118,81 +118,87 @@ MERGED from [com.journeyapps:zxing-android-embedded:4.3.0] C:\Users\gsy_666\.gra
 	android:appComponentFactory
 		ADDED from [androidx.core:core:1.13.1] C:\Users\gsy_666\.gradle\caches\9.0-milestone-1\transforms\49f9cdeaeeb6da9cb5a9248ce41b2cd3\transformed\core-1.13.1\AndroidManifest.xml:28:18-86
 	android:supportsRtl
-		ADDED from C:\Users\gsy_666\Desktop\shoes_app\android-native\app\src\main\AndroidManifest.xml:14:9-35
+		ADDED from C:\Users\gsy_666\Desktop\shoes_app\android-native\app\src\main\AndroidManifest.xml:15:9-35
 	android:label
-		ADDED from C:\Users\gsy_666\Desktop\shoes_app\android-native\app\src\main\AndroidManifest.xml:12:9-37
+		ADDED from C:\Users\gsy_666\Desktop\shoes_app\android-native\app\src\main\AndroidManifest.xml:13:9-37
 	android:roundIcon
-		ADDED from C:\Users\gsy_666\Desktop\shoes_app\android-native\app\src\main\AndroidManifest.xml:13:9-54
+		ADDED from C:\Users\gsy_666\Desktop\shoes_app\android-native\app\src\main\AndroidManifest.xml:14:9-54
 	android:icon
-		ADDED from C:\Users\gsy_666\Desktop\shoes_app\android-native\app\src\main\AndroidManifest.xml:11:9-43
+		ADDED from C:\Users\gsy_666\Desktop\shoes_app\android-native\app\src\main\AndroidManifest.xml:12:9-43
 	android:allowBackup
-		ADDED from C:\Users\gsy_666\Desktop\shoes_app\android-native\app\src\main\AndroidManifest.xml:10:9-35
+		ADDED from C:\Users\gsy_666\Desktop\shoes_app\android-native\app\src\main\AndroidManifest.xml:11:9-35
 	android:theme
-		ADDED from C:\Users\gsy_666\Desktop\shoes_app\android-native\app\src\main\AndroidManifest.xml:15:9-49
+		ADDED from C:\Users\gsy_666\Desktop\shoes_app\android-native\app\src\main\AndroidManifest.xml:16:9-49
+	android:name
+		ADDED from C:\Users\gsy_666\Desktop\shoes_app\android-native\app\src\main\AndroidManifest.xml:10:9-28
 activity#com.example.shoes.SplashActivity
-ADDED from C:\Users\gsy_666\Desktop\shoes_app\android-native\app\src\main\AndroidManifest.xml:16:9-24:20
+ADDED from C:\Users\gsy_666\Desktop\shoes_app\android-native\app\src\main\AndroidManifest.xml:17:9-25:20
 	android:exported
-		ADDED from C:\Users\gsy_666\Desktop\shoes_app\android-native\app\src\main\AndroidManifest.xml:18:13-36
+		ADDED from C:\Users\gsy_666\Desktop\shoes_app\android-native\app\src\main\AndroidManifest.xml:19:13-36
 	android:theme
-		ADDED from C:\Users\gsy_666\Desktop\shoes_app\android-native\app\src\main\AndroidManifest.xml:19:13-53
+		ADDED from C:\Users\gsy_666\Desktop\shoes_app\android-native\app\src\main\AndroidManifest.xml:20:13-53
 	android:name
-		ADDED from C:\Users\gsy_666\Desktop\shoes_app\android-native\app\src\main\AndroidManifest.xml:17:13-43
+		ADDED from C:\Users\gsy_666\Desktop\shoes_app\android-native\app\src\main\AndroidManifest.xml:18:13-43
 intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
-ADDED from C:\Users\gsy_666\Desktop\shoes_app\android-native\app\src\main\AndroidManifest.xml:20:13-23:29
+ADDED from C:\Users\gsy_666\Desktop\shoes_app\android-native\app\src\main\AndroidManifest.xml:21:13-24:29
 action#android.intent.action.MAIN
-ADDED from C:\Users\gsy_666\Desktop\shoes_app\android-native\app\src\main\AndroidManifest.xml:21:17-69
+ADDED from C:\Users\gsy_666\Desktop\shoes_app\android-native\app\src\main\AndroidManifest.xml:22:17-69
 	android:name
-		ADDED from C:\Users\gsy_666\Desktop\shoes_app\android-native\app\src\main\AndroidManifest.xml:21:25-66
+		ADDED from C:\Users\gsy_666\Desktop\shoes_app\android-native\app\src\main\AndroidManifest.xml:22:25-66
 category#android.intent.category.LAUNCHER
-ADDED from C:\Users\gsy_666\Desktop\shoes_app\android-native\app\src\main\AndroidManifest.xml:22:17-77
+ADDED from C:\Users\gsy_666\Desktop\shoes_app\android-native\app\src\main\AndroidManifest.xml:23:17-77
 	android:name
-		ADDED from C:\Users\gsy_666\Desktop\shoes_app\android-native\app\src\main\AndroidManifest.xml:22:27-74
+		ADDED from C:\Users\gsy_666\Desktop\shoes_app\android-native\app\src\main\AndroidManifest.xml:23:27-74
 activity#com.example.shoes.MainActivity
-ADDED from C:\Users\gsy_666\Desktop\shoes_app\android-native\app\src\main\AndroidManifest.xml:25:9-27:40
+ADDED from C:\Users\gsy_666\Desktop\shoes_app\android-native\app\src\main\AndroidManifest.xml:26:9-28:40
 	android:exported
-		ADDED from C:\Users\gsy_666\Desktop\shoes_app\android-native\app\src\main\AndroidManifest.xml:27:13-37
+		ADDED from C:\Users\gsy_666\Desktop\shoes_app\android-native\app\src\main\AndroidManifest.xml:28:13-37
 	android:name
-		ADDED from C:\Users\gsy_666\Desktop\shoes_app\android-native\app\src\main\AndroidManifest.xml:26:13-41
+		ADDED from C:\Users\gsy_666\Desktop\shoes_app\android-native\app\src\main\AndroidManifest.xml:27:13-41
 activity#com.example.shoes.ProductDetailActivity
-ADDED from C:\Users\gsy_666\Desktop\shoes_app\android-native\app\src\main\AndroidManifest.xml:28:9-59
+ADDED from C:\Users\gsy_666\Desktop\shoes_app\android-native\app\src\main\AndroidManifest.xml:29:9-59
 	android:name
-		ADDED from C:\Users\gsy_666\Desktop\shoes_app\android-native\app\src\main\AndroidManifest.xml:28:19-56
+		ADDED from C:\Users\gsy_666\Desktop\shoes_app\android-native\app\src\main\AndroidManifest.xml:29:19-56
 activity#com.example.shoes.XibaopoActivity
-ADDED from C:\Users\gsy_666\Desktop\shoes_app\android-native\app\src\main\AndroidManifest.xml:29:9-53
+ADDED from C:\Users\gsy_666\Desktop\shoes_app\android-native\app\src\main\AndroidManifest.xml:30:9-53
 	android:name
-		ADDED from C:\Users\gsy_666\Desktop\shoes_app\android-native\app\src\main\AndroidManifest.xml:29:19-50
+		ADDED from C:\Users\gsy_666\Desktop\shoes_app\android-native\app\src\main\AndroidManifest.xml:30:19-50
 activity#com.example.shoes.PosterActivity
-ADDED from C:\Users\gsy_666\Desktop\shoes_app\android-native\app\src\main\AndroidManifest.xml:30:9-52
+ADDED from C:\Users\gsy_666\Desktop\shoes_app\android-native\app\src\main\AndroidManifest.xml:31:9-52
 	android:name
-		ADDED from C:\Users\gsy_666\Desktop\shoes_app\android-native\app\src\main\AndroidManifest.xml:30:19-49
+		ADDED from C:\Users\gsy_666\Desktop\shoes_app\android-native\app\src\main\AndroidManifest.xml:31:19-49
 activity#com.example.shoes.OnlineSalesActivity
-ADDED from C:\Users\gsy_666\Desktop\shoes_app\android-native\app\src\main\AndroidManifest.xml:31:9-57
+ADDED from C:\Users\gsy_666\Desktop\shoes_app\android-native\app\src\main\AndroidManifest.xml:32:9-57
 	android:name
-		ADDED from C:\Users\gsy_666\Desktop\shoes_app\android-native\app\src\main\AndroidManifest.xml:31:19-54
+		ADDED from C:\Users\gsy_666\Desktop\shoes_app\android-native\app\src\main\AndroidManifest.xml:32:19-54
 activity#com.example.shoes.BoutiqueShoesActivity
-ADDED from C:\Users\gsy_666\Desktop\shoes_app\android-native\app\src\main\AndroidManifest.xml:32:5-55
+ADDED from C:\Users\gsy_666\Desktop\shoes_app\android-native\app\src\main\AndroidManifest.xml:33:5-55
 	android:name
-		ADDED from C:\Users\gsy_666\Desktop\shoes_app\android-native\app\src\main\AndroidManifest.xml:32:15-52
+		ADDED from C:\Users\gsy_666\Desktop\shoes_app\android-native\app\src\main\AndroidManifest.xml:33:15-52
 activity#com.example.shoes.MuseumActivity
-ADDED from C:\Users\gsy_666\Desktop\shoes_app\android-native\app\src\main\AndroidManifest.xml:33:9-52
+ADDED from C:\Users\gsy_666\Desktop\shoes_app\android-native\app\src\main\AndroidManifest.xml:34:9-52
 	android:name
-		ADDED from C:\Users\gsy_666\Desktop\shoes_app\android-native\app\src\main\AndroidManifest.xml:33:19-49
+		ADDED from C:\Users\gsy_666\Desktop\shoes_app\android-native\app\src\main\AndroidManifest.xml:34:19-49
 activity#com.example.shoes.BookingActivity
-ADDED from C:\Users\gsy_666\Desktop\shoes_app\android-native\app\src\main\AndroidManifest.xml:34:9-53
+ADDED from C:\Users\gsy_666\Desktop\shoes_app\android-native\app\src\main\AndroidManifest.xml:35:9-53
 	android:name
-		ADDED from C:\Users\gsy_666\Desktop\shoes_app\android-native\app\src\main\AndroidManifest.xml:34:19-50
+		ADDED from C:\Users\gsy_666\Desktop\shoes_app\android-native\app\src\main\AndroidManifest.xml:35:19-50
 activity#com.example.shoes.CouponActivity
-ADDED from C:\Users\gsy_666\Desktop\shoes_app\android-native\app\src\main\AndroidManifest.xml:35:9-52
+ADDED from C:\Users\gsy_666\Desktop\shoes_app\android-native\app\src\main\AndroidManifest.xml:36:9-52
 	android:name
-		ADDED from C:\Users\gsy_666\Desktop\shoes_app\android-native\app\src\main\AndroidManifest.xml:35:19-49
+		ADDED from C:\Users\gsy_666\Desktop\shoes_app\android-native\app\src\main\AndroidManifest.xml:36:19-49
 activity#com.example.shoes.VillageActivitiesActivity
-ADDED from C:\Users\gsy_666\Desktop\shoes_app\android-native\app\src\main\AndroidManifest.xml:36:9-63
+ADDED from C:\Users\gsy_666\Desktop\shoes_app\android-native\app\src\main\AndroidManifest.xml:37:9-63
 	android:name
-		ADDED from C:\Users\gsy_666\Desktop\shoes_app\android-native\app\src\main\AndroidManifest.xml:36:19-60
+		ADDED from C:\Users\gsy_666\Desktop\shoes_app\android-native\app\src\main\AndroidManifest.xml:37:19-60
 activity#com.example.shoes.ScanActivity
-ADDED from C:\Users\gsy_666\Desktop\shoes_app\android-native\app\src\main\AndroidManifest.xml:37:9-50
+ADDED from C:\Users\gsy_666\Desktop\shoes_app\android-native\app\src\main\AndroidManifest.xml:38:9-50
 	android:name
-		ADDED from C:\Users\gsy_666\Desktop\shoes_app\android-native\app\src\main\AndroidManifest.xml:37:19-47
+		ADDED from C:\Users\gsy_666\Desktop\shoes_app\android-native\app\src\main\AndroidManifest.xml:38:19-47
+activity#com.example.shoes.LogsActivity
+ADDED from C:\Users\gsy_666\Desktop\shoes_app\android-native\app\src\main\AndroidManifest.xml:39:9-50
+	android:name
+		ADDED from C:\Users\gsy_666\Desktop\shoes_app\android-native\app\src\main\AndroidManifest.xml:39:19-47
 uses-sdk
 INJECTED from C:\Users\gsy_666\Desktop\shoes_app\android-native\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from C:\Users\gsy_666\Desktop\shoes_app\android-native\app\src\main\AndroidManifest.xml

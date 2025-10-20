@@ -99,6 +99,7 @@ id action_intangible
 id action_match
 id action_museum
 id action_scan
+id actionsPanel
 id avatar
 id banner
 id bannerViewPager
@@ -111,13 +112,16 @@ id btnBooking
 id btnBuy
 id btnClaim
 id btnNext
+id btnPickFromGallery
 id btnPlayAudio
 id btnPrev
+id btnRefresh
 id btnSettings
 id btnShare
 id btnSpecConfirm
 id btnSpecMinus
 id btnSpecPlus
+id btnStartExternal
 id btnSubmit
 id btnTorch
 id btn_camera
@@ -159,6 +163,8 @@ id label_message
 id label_mine
 id list
 id mascot
+id menu_logs
+id menu_pick
 id nav_category
 id nav_home
 id nav_message
@@ -202,7 +208,9 @@ id subtitle
 id title
 id toolbar
 id tvAmount
+id tvBreadcrumb
 id tvBrief
+id tvCrash
 id tvDate
 id tvDesc
 id tvLocation
@@ -218,6 +226,7 @@ id viewPager
 layout activity_booking
 layout activity_boutique_shoes
 layout activity_coupon
+layout activity_logs
 layout activity_main
 layout activity_museum
 layout activity_online_sales
@@ -239,6 +248,7 @@ layout item_village_activity
 layout view_bottom_bar
 layout zxing_barcode_scanner
 menu bottom_nav_menu
+menu menu_scan
 mipmap ic_launcher
 mipmap ic_launcher_round
 raw shoes

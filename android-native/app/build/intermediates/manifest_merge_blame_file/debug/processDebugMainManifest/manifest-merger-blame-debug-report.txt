@@ -70,160 +70,165 @@
 41-->[com.journeyapps:zxing-android-embedded:4.3.0] C:\Users\gsy_666\.gradle\caches\9.0-milestone-1\transforms\0b3ae9fb0711eb58f5d4f2f65c54f5b8\transformed\jetified-zxing-android-embedded-4.3.0\AndroidManifest.xml:44:9-33
 42
 43    <application
-43-->C:\Users\gsy_666\Desktop\shoes_app\android-native\app\src\main\AndroidManifest.xml:9:5-38:19
-44        android:allowBackup="true"
-44-->C:\Users\gsy_666\Desktop\shoes_app\android-native\app\src\main\AndroidManifest.xml:10:9-35
-45        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
-45-->[androidx.core:core:1.13.1] C:\Users\gsy_666\.gradle\caches\9.0-milestone-1\transforms\49f9cdeaeeb6da9cb5a9248ce41b2cd3\transformed\core-1.13.1\AndroidManifest.xml:28:18-86
-46        android:debuggable="true"
-47        android:extractNativeLibs="false"
-48        android:icon="@mipmap/ic_launcher"
-48-->C:\Users\gsy_666\Desktop\shoes_app\android-native\app\src\main\AndroidManifest.xml:11:9-43
-49        android:label="Shoes Native"
-49-->C:\Users\gsy_666\Desktop\shoes_app\android-native\app\src\main\AndroidManifest.xml:12:9-37
-50        android:roundIcon="@mipmap/ic_launcher_round"
-50-->C:\Users\gsy_666\Desktop\shoes_app\android-native\app\src\main\AndroidManifest.xml:13:9-54
-51        android:supportsRtl="true"
-51-->C:\Users\gsy_666\Desktop\shoes_app\android-native\app\src\main\AndroidManifest.xml:14:9-35
-52        android:testOnly="true"
-53        android:theme="@style/Theme.ShoesNative" >
-53-->C:\Users\gsy_666\Desktop\shoes_app\android-native\app\src\main\AndroidManifest.xml:15:9-49
-54        <activity
-54-->C:\Users\gsy_666\Desktop\shoes_app\android-native\app\src\main\AndroidManifest.xml:16:9-24:20
-55            android:name="com.example.shoes.SplashActivity"
-55-->C:\Users\gsy_666\Desktop\shoes_app\android-native\app\src\main\AndroidManifest.xml:17:13-43
-56            android:exported="true"
-56-->C:\Users\gsy_666\Desktop\shoes_app\android-native\app\src\main\AndroidManifest.xml:18:13-36
-57            android:theme="@style/Theme.ShoesNative" >
-57-->C:\Users\gsy_666\Desktop\shoes_app\android-native\app\src\main\AndroidManifest.xml:19:13-53
-58            <intent-filter>
-58-->C:\Users\gsy_666\Desktop\shoes_app\android-native\app\src\main\AndroidManifest.xml:20:13-23:29
-59                <action android:name="android.intent.action.MAIN" />
-59-->C:\Users\gsy_666\Desktop\shoes_app\android-native\app\src\main\AndroidManifest.xml:21:17-69
-59-->C:\Users\gsy_666\Desktop\shoes_app\android-native\app\src\main\AndroidManifest.xml:21:25-66
-60
-61                <category android:name="android.intent.category.LAUNCHER" />
-61-->C:\Users\gsy_666\Desktop\shoes_app\android-native\app\src\main\AndroidManifest.xml:22:17-77
-61-->C:\Users\gsy_666\Desktop\shoes_app\android-native\app\src\main\AndroidManifest.xml:22:27-74
-62            </intent-filter>
-63        </activity>
-64        <activity
-64-->C:\Users\gsy_666\Desktop\shoes_app\android-native\app\src\main\AndroidManifest.xml:25:9-27:40
-65            android:name="com.example.shoes.MainActivity"
-65-->C:\Users\gsy_666\Desktop\shoes_app\android-native\app\src\main\AndroidManifest.xml:26:13-41
-66            android:exported="false" />
-66-->C:\Users\gsy_666\Desktop\shoes_app\android-native\app\src\main\AndroidManifest.xml:27:13-37
-67        <activity android:name="com.example.shoes.ProductDetailActivity" />
-67-->C:\Users\gsy_666\Desktop\shoes_app\android-native\app\src\main\AndroidManifest.xml:28:9-59
-67-->C:\Users\gsy_666\Desktop\shoes_app\android-native\app\src\main\AndroidManifest.xml:28:19-56
-68        <activity android:name="com.example.shoes.XibaopoActivity" />
-68-->C:\Users\gsy_666\Desktop\shoes_app\android-native\app\src\main\AndroidManifest.xml:29:9-53
-68-->C:\Users\gsy_666\Desktop\shoes_app\android-native\app\src\main\AndroidManifest.xml:29:19-50
-69        <activity android:name="com.example.shoes.PosterActivity" />
-69-->C:\Users\gsy_666\Desktop\shoes_app\android-native\app\src\main\AndroidManifest.xml:30:9-52
-69-->C:\Users\gsy_666\Desktop\shoes_app\android-native\app\src\main\AndroidManifest.xml:30:19-49
-70        <activity android:name="com.example.shoes.OnlineSalesActivity" />
-70-->C:\Users\gsy_666\Desktop\shoes_app\android-native\app\src\main\AndroidManifest.xml:31:9-57
-70-->C:\Users\gsy_666\Desktop\shoes_app\android-native\app\src\main\AndroidManifest.xml:31:19-54
-71        <activity android:name="com.example.shoes.BoutiqueShoesActivity" />
-71-->C:\Users\gsy_666\Desktop\shoes_app\android-native\app\src\main\AndroidManifest.xml:32:5-55
-71-->C:\Users\gsy_666\Desktop\shoes_app\android-native\app\src\main\AndroidManifest.xml:32:15-52
-72        <activity android:name="com.example.shoes.MuseumActivity" />
-72-->C:\Users\gsy_666\Desktop\shoes_app\android-native\app\src\main\AndroidManifest.xml:33:9-52
-72-->C:\Users\gsy_666\Desktop\shoes_app\android-native\app\src\main\AndroidManifest.xml:33:19-49
-73        <activity android:name="com.example.shoes.BookingActivity" />
-73-->C:\Users\gsy_666\Desktop\shoes_app\android-native\app\src\main\AndroidManifest.xml:34:9-53
-73-->C:\Users\gsy_666\Desktop\shoes_app\android-native\app\src\main\AndroidManifest.xml:34:19-50
-74        <activity android:name="com.example.shoes.CouponActivity" />
-74-->C:\Users\gsy_666\Desktop\shoes_app\android-native\app\src\main\AndroidManifest.xml:35:9-52
-74-->C:\Users\gsy_666\Desktop\shoes_app\android-native\app\src\main\AndroidManifest.xml:35:19-49
-75        <activity android:name="com.example.shoes.VillageActivitiesActivity" />
-75-->C:\Users\gsy_666\Desktop\shoes_app\android-native\app\src\main\AndroidManifest.xml:36:9-63
-75-->C:\Users\gsy_666\Desktop\shoes_app\android-native\app\src\main\AndroidManifest.xml:36:19-60
-76        <activity android:name="com.example.shoes.ScanActivity" />
-76-->C:\Users\gsy_666\Desktop\shoes_app\android-native\app\src\main\AndroidManifest.xml:37:9-50
-76-->C:\Users\gsy_666\Desktop\shoes_app\android-native\app\src\main\AndroidManifest.xml:37:19-47
-77
-78        <provider
-78-->[androidx.emoji2:emoji2:1.3.0] C:\Users\gsy_666\.gradle\caches\9.0-milestone-1\transforms\f49dc47bf020a151c9ee09ab6df7fcd3\transformed\jetified-emoji2-1.3.0\AndroidManifest.xml:24:9-32:20
-79            android:name="androidx.startup.InitializationProvider"
-79-->[androidx.emoji2:emoji2:1.3.0] C:\Users\gsy_666\.gradle\caches\9.0-milestone-1\transforms\f49dc47bf020a151c9ee09ab6df7fcd3\transformed\jetified-emoji2-1.3.0\AndroidManifest.xml:25:13-67
-80            android:authorities="com.example.shoes.androidx-startup"
-80-->[androidx.emoji2:emoji2:1.3.0] C:\Users\gsy_666\.gradle\caches\9.0-milestone-1\transforms\f49dc47bf020a151c9ee09ab6df7fcd3\transformed\jetified-emoji2-1.3.0\AndroidManifest.xml:26:13-68
-81            android:exported="false" >
-81-->[androidx.emoji2:emoji2:1.3.0] C:\Users\gsy_666\.gradle\caches\9.0-milestone-1\transforms\f49dc47bf020a151c9ee09ab6df7fcd3\transformed\jetified-emoji2-1.3.0\AndroidManifest.xml:27:13-37
-82            <meta-data
-82-->[androidx.emoji2:emoji2:1.3.0] C:\Users\gsy_666\.gradle\caches\9.0-milestone-1\transforms\f49dc47bf020a151c9ee09ab6df7fcd3\transformed\jetified-emoji2-1.3.0\AndroidManifest.xml:29:13-31:52
-83                android:name="androidx.emoji2.text.EmojiCompatInitializer"
-83-->[androidx.emoji2:emoji2:1.3.0] C:\Users\gsy_666\.gradle\caches\9.0-milestone-1\transforms\f49dc47bf020a151c9ee09ab6df7fcd3\transformed\jetified-emoji2-1.3.0\AndroidManifest.xml:30:17-75
-84                android:value="androidx.startup" />
-84-->[androidx.emoji2:emoji2:1.3.0] C:\Users\gsy_666\.gradle\caches\9.0-milestone-1\transforms\f49dc47bf020a151c9ee09ab6df7fcd3\transformed\jetified-emoji2-1.3.0\AndroidManifest.xml:31:17-49
-85            <meta-data
-85-->[androidx.lifecycle:lifecycle-process:2.7.0] C:\Users\gsy_666\.gradle\caches\9.0-milestone-1\transforms\b9589b0c0d93167bb04fd831f804d40d\transformed\jetified-lifecycle-process-2.7.0\AndroidManifest.xml:29:13-31:52
-86                android:name="androidx.lifecycle.ProcessLifecycleInitializer"
-86-->[androidx.lifecycle:lifecycle-process:2.7.0] C:\Users\gsy_666\.gradle\caches\9.0-milestone-1\transforms\b9589b0c0d93167bb04fd831f804d40d\transformed\jetified-lifecycle-process-2.7.0\AndroidManifest.xml:30:17-78
-87                android:value="androidx.startup" />
-87-->[androidx.lifecycle:lifecycle-process:2.7.0] C:\Users\gsy_666\.gradle\caches\9.0-milestone-1\transforms\b9589b0c0d93167bb04fd831f804d40d\transformed\jetified-lifecycle-process-2.7.0\AndroidManifest.xml:31:17-49
-88            <meta-data
-88-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\gsy_666\.gradle\caches\9.0-milestone-1\transforms\4dea180c161a09881a34db86fc757c50\transformed\jetified-profileinstaller-1.4.0\AndroidManifest.xml:29:13-31:52
-89                android:name="androidx.profileinstaller.ProfileInstallerInitializer"
-89-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\gsy_666\.gradle\caches\9.0-milestone-1\transforms\4dea180c161a09881a34db86fc757c50\transformed\jetified-profileinstaller-1.4.0\AndroidManifest.xml:30:17-85
-90                android:value="androidx.startup" />
-90-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\gsy_666\.gradle\caches\9.0-milestone-1\transforms\4dea180c161a09881a34db86fc757c50\transformed\jetified-profileinstaller-1.4.0\AndroidManifest.xml:31:17-49
-91        </provider>
-92
-93        <receiver
-93-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\gsy_666\.gradle\caches\9.0-milestone-1\transforms\4dea180c161a09881a34db86fc757c50\transformed\jetified-profileinstaller-1.4.0\AndroidManifest.xml:34:9-52:20
-94            android:name="androidx.profileinstaller.ProfileInstallReceiver"
-94-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\gsy_666\.gradle\caches\9.0-milestone-1\transforms\4dea180c161a09881a34db86fc757c50\transformed\jetified-profileinstaller-1.4.0\AndroidManifest.xml:35:13-76
-95            android:directBootAware="false"
-95-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\gsy_666\.gradle\caches\9.0-milestone-1\transforms\4dea180c161a09881a34db86fc757c50\transformed\jetified-profileinstaller-1.4.0\AndroidManifest.xml:36:13-44
-96            android:enabled="true"
-96-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\gsy_666\.gradle\caches\9.0-milestone-1\transforms\4dea180c161a09881a34db86fc757c50\transformed\jetified-profileinstaller-1.4.0\AndroidManifest.xml:37:13-35
-97            android:exported="true"
-97-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\gsy_666\.gradle\caches\9.0-milestone-1\transforms\4dea180c161a09881a34db86fc757c50\transformed\jetified-profileinstaller-1.4.0\AndroidManifest.xml:38:13-36
-98            android:permission="android.permission.DUMP" >
-98-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\gsy_666\.gradle\caches\9.0-milestone-1\transforms\4dea180c161a09881a34db86fc757c50\transformed\jetified-profileinstaller-1.4.0\AndroidManifest.xml:39:13-57
-99            <intent-filter>
-99-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\gsy_666\.gradle\caches\9.0-milestone-1\transforms\4dea180c161a09881a34db86fc757c50\transformed\jetified-profileinstaller-1.4.0\AndroidManifest.xml:40:13-42:29
-100                <action android:name="androidx.profileinstaller.action.INSTALL_PROFILE" />
-100-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\gsy_666\.gradle\caches\9.0-milestone-1\transforms\4dea180c161a09881a34db86fc757c50\transformed\jetified-profileinstaller-1.4.0\AndroidManifest.xml:41:17-91
-100-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\gsy_666\.gradle\caches\9.0-milestone-1\transforms\4dea180c161a09881a34db86fc757c50\transformed\jetified-profileinstaller-1.4.0\AndroidManifest.xml:41:25-88
-101            </intent-filter>
-102            <intent-filter>
-102-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\gsy_666\.gradle\caches\9.0-milestone-1\transforms\4dea180c161a09881a34db86fc757c50\transformed\jetified-profileinstaller-1.4.0\AndroidManifest.xml:43:13-45:29
-103                <action android:name="androidx.profileinstaller.action.SKIP_FILE" />
-103-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\gsy_666\.gradle\caches\9.0-milestone-1\transforms\4dea180c161a09881a34db86fc757c50\transformed\jetified-profileinstaller-1.4.0\AndroidManifest.xml:44:17-85
-103-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\gsy_666\.gradle\caches\9.0-milestone-1\transforms\4dea180c161a09881a34db86fc757c50\transformed\jetified-profileinstaller-1.4.0\AndroidManifest.xml:44:25-82
-104            </intent-filter>
-105            <intent-filter>
-105-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\gsy_666\.gradle\caches\9.0-milestone-1\transforms\4dea180c161a09881a34db86fc757c50\transformed\jetified-profileinstaller-1.4.0\AndroidManifest.xml:46:13-48:29
-106                <action android:name="androidx.profileinstaller.action.SAVE_PROFILE" />
-106-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\gsy_666\.gradle\caches\9.0-milestone-1\transforms\4dea180c161a09881a34db86fc757c50\transformed\jetified-profileinstaller-1.4.0\AndroidManifest.xml:47:17-88
-106-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\gsy_666\.gradle\caches\9.0-milestone-1\transforms\4dea180c161a09881a34db86fc757c50\transformed\jetified-profileinstaller-1.4.0\AndroidManifest.xml:47:25-85
-107            </intent-filter>
-108            <intent-filter>
-108-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\gsy_666\.gradle\caches\9.0-milestone-1\transforms\4dea180c161a09881a34db86fc757c50\transformed\jetified-profileinstaller-1.4.0\AndroidManifest.xml:49:13-51:29
-109                <action android:name="androidx.profileinstaller.action.BENCHMARK_OPERATION" />
-109-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\gsy_666\.gradle\caches\9.0-milestone-1\transforms\4dea180c161a09881a34db86fc757c50\transformed\jetified-profileinstaller-1.4.0\AndroidManifest.xml:50:17-95
-109-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\gsy_666\.gradle\caches\9.0-milestone-1\transforms\4dea180c161a09881a34db86fc757c50\transformed\jetified-profileinstaller-1.4.0\AndroidManifest.xml:50:25-92
-110            </intent-filter>
-111        </receiver>
-112
-113        <activity
-113-->[com.journeyapps:zxing-android-embedded:4.3.0] C:\Users\gsy_666\.gradle\caches\9.0-milestone-1\transforms\0b3ae9fb0711eb58f5d4f2f65c54f5b8\transformed\jetified-zxing-android-embedded-4.3.0\AndroidManifest.xml:47:9-53:63
-114            android:name="com.journeyapps.barcodescanner.CaptureActivity"
-114-->[com.journeyapps:zxing-android-embedded:4.3.0] C:\Users\gsy_666\.gradle\caches\9.0-milestone-1\transforms\0b3ae9fb0711eb58f5d4f2f65c54f5b8\transformed\jetified-zxing-android-embedded-4.3.0\AndroidManifest.xml:48:13-74
-115            android:clearTaskOnLaunch="true"
-115-->[com.journeyapps:zxing-android-embedded:4.3.0] C:\Users\gsy_666\.gradle\caches\9.0-milestone-1\transforms\0b3ae9fb0711eb58f5d4f2f65c54f5b8\transformed\jetified-zxing-android-embedded-4.3.0\AndroidManifest.xml:49:13-45
-116            android:screenOrientation="sensorLandscape"
-116-->[com.journeyapps:zxing-android-embedded:4.3.0] C:\Users\gsy_666\.gradle\caches\9.0-milestone-1\transforms\0b3ae9fb0711eb58f5d4f2f65c54f5b8\transformed\jetified-zxing-android-embedded-4.3.0\AndroidManifest.xml:50:13-56
-117            android:stateNotNeeded="true"
-117-->[com.journeyapps:zxing-android-embedded:4.3.0] C:\Users\gsy_666\.gradle\caches\9.0-milestone-1\transforms\0b3ae9fb0711eb58f5d4f2f65c54f5b8\transformed\jetified-zxing-android-embedded-4.3.0\AndroidManifest.xml:51:13-42
-118            android:theme="@style/zxing_CaptureTheme"
-118-->[com.journeyapps:zxing-android-embedded:4.3.0] C:\Users\gsy_666\.gradle\caches\9.0-milestone-1\transforms\0b3ae9fb0711eb58f5d4f2f65c54f5b8\transformed\jetified-zxing-android-embedded-4.3.0\AndroidManifest.xml:52:13-54
-119            android:windowSoftInputMode="stateAlwaysHidden" />
-119-->[com.journeyapps:zxing-android-embedded:4.3.0] C:\Users\gsy_666\.gradle\caches\9.0-milestone-1\transforms\0b3ae9fb0711eb58f5d4f2f65c54f5b8\transformed\jetified-zxing-android-embedded-4.3.0\AndroidManifest.xml:53:13-60
-120    </application>
-121
-122</manifest>
+43-->C:\Users\gsy_666\Desktop\shoes_app\android-native\app\src\main\AndroidManifest.xml:9:5-40:19
+44        android:name="com.example.shoes.App"
+44-->C:\Users\gsy_666\Desktop\shoes_app\android-native\app\src\main\AndroidManifest.xml:10:9-28
+45        android:allowBackup="true"
+45-->C:\Users\gsy_666\Desktop\shoes_app\android-native\app\src\main\AndroidManifest.xml:11:9-35
+46        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+46-->[androidx.core:core:1.13.1] C:\Users\gsy_666\.gradle\caches\9.0-milestone-1\transforms\49f9cdeaeeb6da9cb5a9248ce41b2cd3\transformed\core-1.13.1\AndroidManifest.xml:28:18-86
+47        android:debuggable="true"
+48        android:extractNativeLibs="false"
+49        android:icon="@mipmap/ic_launcher"
+49-->C:\Users\gsy_666\Desktop\shoes_app\android-native\app\src\main\AndroidManifest.xml:12:9-43
+50        android:label="Shoes Native"
+50-->C:\Users\gsy_666\Desktop\shoes_app\android-native\app\src\main\AndroidManifest.xml:13:9-37
+51        android:roundIcon="@mipmap/ic_launcher_round"
+51-->C:\Users\gsy_666\Desktop\shoes_app\android-native\app\src\main\AndroidManifest.xml:14:9-54
+52        android:supportsRtl="true"
+52-->C:\Users\gsy_666\Desktop\shoes_app\android-native\app\src\main\AndroidManifest.xml:15:9-35
+53        android:testOnly="true"
+54        android:theme="@style/Theme.ShoesNative" >
+54-->C:\Users\gsy_666\Desktop\shoes_app\android-native\app\src\main\AndroidManifest.xml:16:9-49
+55        <activity
+55-->C:\Users\gsy_666\Desktop\shoes_app\android-native\app\src\main\AndroidManifest.xml:17:9-25:20
+56            android:name="com.example.shoes.SplashActivity"
+56-->C:\Users\gsy_666\Desktop\shoes_app\android-native\app\src\main\AndroidManifest.xml:18:13-43
+57            android:exported="true"
+57-->C:\Users\gsy_666\Desktop\shoes_app\android-native\app\src\main\AndroidManifest.xml:19:13-36
+58            android:theme="@style/Theme.ShoesNative" >
+58-->C:\Users\gsy_666\Desktop\shoes_app\android-native\app\src\main\AndroidManifest.xml:20:13-53
+59            <intent-filter>
+59-->C:\Users\gsy_666\Desktop\shoes_app\android-native\app\src\main\AndroidManifest.xml:21:13-24:29
+60                <action android:name="android.intent.action.MAIN" />
+60-->C:\Users\gsy_666\Desktop\shoes_app\android-native\app\src\main\AndroidManifest.xml:22:17-69
+60-->C:\Users\gsy_666\Desktop\shoes_app\android-native\app\src\main\AndroidManifest.xml:22:25-66
+61
+62                <category android:name="android.intent.category.LAUNCHER" />
+62-->C:\Users\gsy_666\Desktop\shoes_app\android-native\app\src\main\AndroidManifest.xml:23:17-77
+62-->C:\Users\gsy_666\Desktop\shoes_app\android-native\app\src\main\AndroidManifest.xml:23:27-74
+63            </intent-filter>
+64        </activity>
+65        <activity
+65-->C:\Users\gsy_666\Desktop\shoes_app\android-native\app\src\main\AndroidManifest.xml:26:9-28:40
+66            android:name="com.example.shoes.MainActivity"
+66-->C:\Users\gsy_666\Desktop\shoes_app\android-native\app\src\main\AndroidManifest.xml:27:13-41
+67            android:exported="false" />
+67-->C:\Users\gsy_666\Desktop\shoes_app\android-native\app\src\main\AndroidManifest.xml:28:13-37
+68        <activity android:name="com.example.shoes.ProductDetailActivity" />
+68-->C:\Users\gsy_666\Desktop\shoes_app\android-native\app\src\main\AndroidManifest.xml:29:9-59
+68-->C:\Users\gsy_666\Desktop\shoes_app\android-native\app\src\main\AndroidManifest.xml:29:19-56
+69        <activity android:name="com.example.shoes.XibaopoActivity" />
+69-->C:\Users\gsy_666\Desktop\shoes_app\android-native\app\src\main\AndroidManifest.xml:30:9-53
+69-->C:\Users\gsy_666\Desktop\shoes_app\android-native\app\src\main\AndroidManifest.xml:30:19-50
+70        <activity android:name="com.example.shoes.PosterActivity" />
+70-->C:\Users\gsy_666\Desktop\shoes_app\android-native\app\src\main\AndroidManifest.xml:31:9-52
+70-->C:\Users\gsy_666\Desktop\shoes_app\android-native\app\src\main\AndroidManifest.xml:31:19-49
+71        <activity android:name="com.example.shoes.OnlineSalesActivity" />
+71-->C:\Users\gsy_666\Desktop\shoes_app\android-native\app\src\main\AndroidManifest.xml:32:9-57
+71-->C:\Users\gsy_666\Desktop\shoes_app\android-native\app\src\main\AndroidManifest.xml:32:19-54
+72        <activity android:name="com.example.shoes.BoutiqueShoesActivity" />
+72-->C:\Users\gsy_666\Desktop\shoes_app\android-native\app\src\main\AndroidManifest.xml:33:5-55
+72-->C:\Users\gsy_666\Desktop\shoes_app\android-native\app\src\main\AndroidManifest.xml:33:15-52
+73        <activity android:name="com.example.shoes.MuseumActivity" />
+73-->C:\Users\gsy_666\Desktop\shoes_app\android-native\app\src\main\AndroidManifest.xml:34:9-52
+73-->C:\Users\gsy_666\Desktop\shoes_app\android-native\app\src\main\AndroidManifest.xml:34:19-49
+74        <activity android:name="com.example.shoes.BookingActivity" />
+74-->C:\Users\gsy_666\Desktop\shoes_app\android-native\app\src\main\AndroidManifest.xml:35:9-53
+74-->C:\Users\gsy_666\Desktop\shoes_app\android-native\app\src\main\AndroidManifest.xml:35:19-50
+75        <activity android:name="com.example.shoes.CouponActivity" />
+75-->C:\Users\gsy_666\Desktop\shoes_app\android-native\app\src\main\AndroidManifest.xml:36:9-52
+75-->C:\Users\gsy_666\Desktop\shoes_app\android-native\app\src\main\AndroidManifest.xml:36:19-49
+76        <activity android:name="com.example.shoes.VillageActivitiesActivity" />
+76-->C:\Users\gsy_666\Desktop\shoes_app\android-native\app\src\main\AndroidManifest.xml:37:9-63
+76-->C:\Users\gsy_666\Desktop\shoes_app\android-native\app\src\main\AndroidManifest.xml:37:19-60
+77        <activity android:name="com.example.shoes.ScanActivity" />
+77-->C:\Users\gsy_666\Desktop\shoes_app\android-native\app\src\main\AndroidManifest.xml:38:9-50
+77-->C:\Users\gsy_666\Desktop\shoes_app\android-native\app\src\main\AndroidManifest.xml:38:19-47
+78        <activity android:name="com.example.shoes.LogsActivity" />
+78-->C:\Users\gsy_666\Desktop\shoes_app\android-native\app\src\main\AndroidManifest.xml:39:9-50
+78-->C:\Users\gsy_666\Desktop\shoes_app\android-native\app\src\main\AndroidManifest.xml:39:19-47
+79
+80        <provider
+80-->[androidx.emoji2:emoji2:1.3.0] C:\Users\gsy_666\.gradle\caches\9.0-milestone-1\transforms\f49dc47bf020a151c9ee09ab6df7fcd3\transformed\jetified-emoji2-1.3.0\AndroidManifest.xml:24:9-32:20
+81            android:name="androidx.startup.InitializationProvider"
+81-->[androidx.emoji2:emoji2:1.3.0] C:\Users\gsy_666\.gradle\caches\9.0-milestone-1\transforms\f49dc47bf020a151c9ee09ab6df7fcd3\transformed\jetified-emoji2-1.3.0\AndroidManifest.xml:25:13-67
+82            android:authorities="com.example.shoes.androidx-startup"
+82-->[androidx.emoji2:emoji2:1.3.0] C:\Users\gsy_666\.gradle\caches\9.0-milestone-1\transforms\f49dc47bf020a151c9ee09ab6df7fcd3\transformed\jetified-emoji2-1.3.0\AndroidManifest.xml:26:13-68
+83            android:exported="false" >
+83-->[androidx.emoji2:emoji2:1.3.0] C:\Users\gsy_666\.gradle\caches\9.0-milestone-1\transforms\f49dc47bf020a151c9ee09ab6df7fcd3\transformed\jetified-emoji2-1.3.0\AndroidManifest.xml:27:13-37
+84            <meta-data
+84-->[androidx.emoji2:emoji2:1.3.0] C:\Users\gsy_666\.gradle\caches\9.0-milestone-1\transforms\f49dc47bf020a151c9ee09ab6df7fcd3\transformed\jetified-emoji2-1.3.0\AndroidManifest.xml:29:13-31:52
+85                android:name="androidx.emoji2.text.EmojiCompatInitializer"
+85-->[androidx.emoji2:emoji2:1.3.0] C:\Users\gsy_666\.gradle\caches\9.0-milestone-1\transforms\f49dc47bf020a151c9ee09ab6df7fcd3\transformed\jetified-emoji2-1.3.0\AndroidManifest.xml:30:17-75
+86                android:value="androidx.startup" />
+86-->[androidx.emoji2:emoji2:1.3.0] C:\Users\gsy_666\.gradle\caches\9.0-milestone-1\transforms\f49dc47bf020a151c9ee09ab6df7fcd3\transformed\jetified-emoji2-1.3.0\AndroidManifest.xml:31:17-49
+87            <meta-data
+87-->[androidx.lifecycle:lifecycle-process:2.7.0] C:\Users\gsy_666\.gradle\caches\9.0-milestone-1\transforms\b9589b0c0d93167bb04fd831f804d40d\transformed\jetified-lifecycle-process-2.7.0\AndroidManifest.xml:29:13-31:52
+88                android:name="androidx.lifecycle.ProcessLifecycleInitializer"
+88-->[androidx.lifecycle:lifecycle-process:2.7.0] C:\Users\gsy_666\.gradle\caches\9.0-milestone-1\transforms\b9589b0c0d93167bb04fd831f804d40d\transformed\jetified-lifecycle-process-2.7.0\AndroidManifest.xml:30:17-78
+89                android:value="androidx.startup" />
+89-->[androidx.lifecycle:lifecycle-process:2.7.0] C:\Users\gsy_666\.gradle\caches\9.0-milestone-1\transforms\b9589b0c0d93167bb04fd831f804d40d\transformed\jetified-lifecycle-process-2.7.0\AndroidManifest.xml:31:17-49
+90            <meta-data
+90-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\gsy_666\.gradle\caches\9.0-milestone-1\transforms\4dea180c161a09881a34db86fc757c50\transformed\jetified-profileinstaller-1.4.0\AndroidManifest.xml:29:13-31:52
+91                android:name="androidx.profileinstaller.ProfileInstallerInitializer"
+91-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\gsy_666\.gradle\caches\9.0-milestone-1\transforms\4dea180c161a09881a34db86fc757c50\transformed\jetified-profileinstaller-1.4.0\AndroidManifest.xml:30:17-85
+92                android:value="androidx.startup" />
+92-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\gsy_666\.gradle\caches\9.0-milestone-1\transforms\4dea180c161a09881a34db86fc757c50\transformed\jetified-profileinstaller-1.4.0\AndroidManifest.xml:31:17-49
+93        </provider>
+94
+95        <receiver
+95-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\gsy_666\.gradle\caches\9.0-milestone-1\transforms\4dea180c161a09881a34db86fc757c50\transformed\jetified-profileinstaller-1.4.0\AndroidManifest.xml:34:9-52:20
+96            android:name="androidx.profileinstaller.ProfileInstallReceiver"
+96-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\gsy_666\.gradle\caches\9.0-milestone-1\transforms\4dea180c161a09881a34db86fc757c50\transformed\jetified-profileinstaller-1.4.0\AndroidManifest.xml:35:13-76
+97            android:directBootAware="false"
+97-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\gsy_666\.gradle\caches\9.0-milestone-1\transforms\4dea180c161a09881a34db86fc757c50\transformed\jetified-profileinstaller-1.4.0\AndroidManifest.xml:36:13-44
+98            android:enabled="true"
+98-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\gsy_666\.gradle\caches\9.0-milestone-1\transforms\4dea180c161a09881a34db86fc757c50\transformed\jetified-profileinstaller-1.4.0\AndroidManifest.xml:37:13-35
+99            android:exported="true"
+99-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\gsy_666\.gradle\caches\9.0-milestone-1\transforms\4dea180c161a09881a34db86fc757c50\transformed\jetified-profileinstaller-1.4.0\AndroidManifest.xml:38:13-36
+100            android:permission="android.permission.DUMP" >
+100-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\gsy_666\.gradle\caches\9.0-milestone-1\transforms\4dea180c161a09881a34db86fc757c50\transformed\jetified-profileinstaller-1.4.0\AndroidManifest.xml:39:13-57
+101            <intent-filter>
+101-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\gsy_666\.gradle\caches\9.0-milestone-1\transforms\4dea180c161a09881a34db86fc757c50\transformed\jetified-profileinstaller-1.4.0\AndroidManifest.xml:40:13-42:29
+102                <action android:name="androidx.profileinstaller.action.INSTALL_PROFILE" />
+102-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\gsy_666\.gradle\caches\9.0-milestone-1\transforms\4dea180c161a09881a34db86fc757c50\transformed\jetified-profileinstaller-1.4.0\AndroidManifest.xml:41:17-91
+102-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\gsy_666\.gradle\caches\9.0-milestone-1\transforms\4dea180c161a09881a34db86fc757c50\transformed\jetified-profileinstaller-1.4.0\AndroidManifest.xml:41:25-88
+103            </intent-filter>
+104            <intent-filter>
+104-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\gsy_666\.gradle\caches\9.0-milestone-1\transforms\4dea180c161a09881a34db86fc757c50\transformed\jetified-profileinstaller-1.4.0\AndroidManifest.xml:43:13-45:29
+105                <action android:name="androidx.profileinstaller.action.SKIP_FILE" />
+105-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\gsy_666\.gradle\caches\9.0-milestone-1\transforms\4dea180c161a09881a34db86fc757c50\transformed\jetified-profileinstaller-1.4.0\AndroidManifest.xml:44:17-85
+105-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\gsy_666\.gradle\caches\9.0-milestone-1\transforms\4dea180c161a09881a34db86fc757c50\transformed\jetified-profileinstaller-1.4.0\AndroidManifest.xml:44:25-82
+106            </intent-filter>
+107            <intent-filter>
+107-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\gsy_666\.gradle\caches\9.0-milestone-1\transforms\4dea180c161a09881a34db86fc757c50\transformed\jetified-profileinstaller-1.4.0\AndroidManifest.xml:46:13-48:29
+108                <action android:name="androidx.profileinstaller.action.SAVE_PROFILE" />
+108-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\gsy_666\.gradle\caches\9.0-milestone-1\transforms\4dea180c161a09881a34db86fc757c50\transformed\jetified-profileinstaller-1.4.0\AndroidManifest.xml:47:17-88
+108-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\gsy_666\.gradle\caches\9.0-milestone-1\transforms\4dea180c161a09881a34db86fc757c50\transformed\jetified-profileinstaller-1.4.0\AndroidManifest.xml:47:25-85
+109            </intent-filter>
+110            <intent-filter>
+110-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\gsy_666\.gradle\caches\9.0-milestone-1\transforms\4dea180c161a09881a34db86fc757c50\transformed\jetified-profileinstaller-1.4.0\AndroidManifest.xml:49:13-51:29
+111                <action android:name="androidx.profileinstaller.action.BENCHMARK_OPERATION" />
+111-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\gsy_666\.gradle\caches\9.0-milestone-1\transforms\4dea180c161a09881a34db86fc757c50\transformed\jetified-profileinstaller-1.4.0\AndroidManifest.xml:50:17-95
+111-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\gsy_666\.gradle\caches\9.0-milestone-1\transforms\4dea180c161a09881a34db86fc757c50\transformed\jetified-profileinstaller-1.4.0\AndroidManifest.xml:50:25-92
+112            </intent-filter>
+113        </receiver>
+114
+115        <activity
+115-->[com.journeyapps:zxing-android-embedded:4.3.0] C:\Users\gsy_666\.gradle\caches\9.0-milestone-1\transforms\0b3ae9fb0711eb58f5d4f2f65c54f5b8\transformed\jetified-zxing-android-embedded-4.3.0\AndroidManifest.xml:47:9-53:63
+116            android:name="com.journeyapps.barcodescanner.CaptureActivity"
+116-->[com.journeyapps:zxing-android-embedded:4.3.0] C:\Users\gsy_666\.gradle\caches\9.0-milestone-1\transforms\0b3ae9fb0711eb58f5d4f2f65c54f5b8\transformed\jetified-zxing-android-embedded-4.3.0\AndroidManifest.xml:48:13-74
+117            android:clearTaskOnLaunch="true"
+117-->[com.journeyapps:zxing-android-embedded:4.3.0] C:\Users\gsy_666\.gradle\caches\9.0-milestone-1\transforms\0b3ae9fb0711eb58f5d4f2f65c54f5b8\transformed\jetified-zxing-android-embedded-4.3.0\AndroidManifest.xml:49:13-45
+118            android:screenOrientation="sensorLandscape"
+118-->[com.journeyapps:zxing-android-embedded:4.3.0] C:\Users\gsy_666\.gradle\caches\9.0-milestone-1\transforms\0b3ae9fb0711eb58f5d4f2f65c54f5b8\transformed\jetified-zxing-android-embedded-4.3.0\AndroidManifest.xml:50:13-56
+119            android:stateNotNeeded="true"
+119-->[com.journeyapps:zxing-android-embedded:4.3.0] C:\Users\gsy_666\.gradle\caches\9.0-milestone-1\transforms\0b3ae9fb0711eb58f5d4f2f65c54f5b8\transformed\jetified-zxing-android-embedded-4.3.0\AndroidManifest.xml:51:13-42
+120            android:theme="@style/zxing_CaptureTheme"
+120-->[com.journeyapps:zxing-android-embedded:4.3.0] C:\Users\gsy_666\.gradle\caches\9.0-milestone-1\transforms\0b3ae9fb0711eb58f5d4f2f65c54f5b8\transformed\jetified-zxing-android-embedded-4.3.0\AndroidManifest.xml:52:13-54
+121            android:windowSoftInputMode="stateAlwaysHidden" />
+121-->[com.journeyapps:zxing-android-embedded:4.3.0] C:\Users\gsy_666\.gradle\caches\9.0-milestone-1\transforms\0b3ae9fb0711eb58f5d4f2f65c54f5b8\transformed\jetified-zxing-android-embedded-4.3.0\AndroidManifest.xml:53:13-60
+122    </application>
+123
+124</manifest>

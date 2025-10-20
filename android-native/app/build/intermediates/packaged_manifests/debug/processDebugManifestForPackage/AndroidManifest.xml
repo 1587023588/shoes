@@ -41,6 +41,7 @@
         android:required="false" />
 
     <application
+        android:name="com.example.shoes.App"
         android:allowBackup="true"
         android:appComponentFactory="androidx.core.app.CoreComponentFactory"
         android:debuggable="true"
@@ -74,6 +75,7 @@
         <activity android:name="com.example.shoes.CouponActivity" />
         <activity android:name="com.example.shoes.VillageActivitiesActivity" />
         <activity android:name="com.example.shoes.ScanActivity" />
+        <activity android:name="com.example.shoes.LogsActivity" />
 
         <provider
             android:name="androidx.startup.InitializationProvider"
