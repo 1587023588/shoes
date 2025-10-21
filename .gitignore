@@ -24,6 +24,25 @@ Thumbs.db
 /dist/
 /tmp/
 
+# --- Android global ignores (ensure even if module .gitignore missing) ---
+android-native/.gradle/
+android-native/local.properties
+android-native/**/build/
+android-native/**/captures/
+android-native/**/.externalNativeBuild/
+android-native/**/.cxx/
+android-native/**/outputs/
+android-native/**/intermediates/
+android-native/**/tmp/
+android-native/**/*.iml
+*.apk
+*.ap_*
+*.aab
+
+# --- Backend (Maven) build ---
+shoes_houduan/target/
+shoes_houduan/**/target/
+
 # Env
 .env.local
 .env.*.local

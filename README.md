@@ -1,3 +1,24 @@
+<!-- Project quick start appended by tooling -->
+
+## 快速开始（本仓库定制）
+
+运行后端（Spring Boot + MySQL）
+- 数据库：在本地创建 `shoes` 数据库，并在 `shoes_houduan/src/main/resources/application.yml` 配置用户名/密码
+- 启动：在 IDE 运行 `org.example.shoes.ShoesApplication`
+- 首次启动会插入：用户 `test/123456` 与两条商品
+
+运行 Android（android-native 模块）
+- 使用 Android Studio/IDE 打开 `android-native`
+- 设备：Android 模拟器（或真机），App 会访问 `http://10.0.2.2:8080`
+- 登录：在“我的”页点击登录，使用 `test/123456`
+
+Git 提交流程建议
+- 不提交构建产物：已在根 `.gitignore` 加了全局忽略（含 android-native/.gradle、app/build、local.properties、后端 target）
+- 提交前执行：`git status` 确认仅源代码被跟踪
+- 同步远端：`git pull --ff-only`，必要时 `git rebase origin/master` 再 `git push`
+
+---
+
 <p align="center">
   <a href="https://tdesign.tencent.com/" target="_blank">
     <img alt="TDesign Logo" width="200" src="https://tdesign.gtimg.com/site/TDesign.png">
