@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- 全局间距与控件尺寸（默认，约 360dp 屏宽） -->
+    <dimen name="padding_screen">16dp</dimen>
+    <dimen name="header_search_height">40dp</dimen>
+    <dimen name="home_action_icon">40dp</dimen>
+    <dimen name="category_icon_size">64dp</dimen>
+    <dimen name="category_grid_hspace">8dp</dimen>
+    <dimen name="category_grid_vspace">8dp</dimen>
+</resources>

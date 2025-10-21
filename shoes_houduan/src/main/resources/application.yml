@@ -1,0 +1,30 @@
+server:
+  port: 8080
+
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/shoes?useUnicode=true&characterEncoding=utf-8&useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=Asia/Shanghai
+    username: root
+    password: 123456
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+
+# 允许跨域（开发阶段）
+app:
+  cors:
+    allowed-origins: "*"
+    allowed-methods: "GET,POST,PUT,PATCH,DELETE,OPTIONS"
+    allowed-headers: "*"
+  jwt:
+    secret: "change-this-secret-to-a-long-random-string"
+    expires-minutes: 1440
+  auth:
+    dev:
+      enabled: false          # 关闭开发模式，启用真实数据库登录
+      accept-any-password: false
+      fixed-password: ""

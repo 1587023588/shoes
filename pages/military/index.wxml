@@ -1,0 +1,29 @@
+<view class="video-container">
+  <!-- 视频播放器：与“北庄宣传片”同款结构 -->
+  <video
+    id="video-player"
+    class="video-player"
+    src="{{videoUrl}}"
+    poster="{{posterUrl}}"
+    controls="{{true}}"
+    autoplay="{{false}}"
+    loop="{{false}}"
+    show-center-play-btn="{{true}}"
+    enable-progress-gesture="{{true}}"
+    binderror="onVideoError"
+    bindloadedmetadata="onVideoLoaded"
+  ></video>
+
+  <!-- 加载中提示 -->
+  <view class="loading" wx:if="{{isLoading}}">
+    <view class="loading-icon"></view>
+    <view class="loading-text">加载中...</view>
+  </view>
+
+  <!-- 错误提示 -->
+  <view class="error" wx:if="{{isError}}">
+    <view class="error-icon">⚠️</view>
+    <view class="error-text">{{errorMsg}}</view>
+    <button class="reload-btn" bindtap="reloadVideo">重新加载</button>
+  </view>
+</view>

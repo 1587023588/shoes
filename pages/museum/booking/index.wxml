@@ -1,0 +1,35 @@
+<view class="booking-page">
+  <view class="section">
+    <view class="label">请选择参观日期</view>
+    <picker mode="date" value="{{date}}" bindchange="onDateChange">
+      <view class="picker">{{date || '请选择日期'}}</view>
+    </picker>
+  </view>
+
+  <view class="section">
+    <view class="label">请选择时段</view>
+    <picker mode="selector" range="{{timeSlots}}" bindchange="onTimeChange">
+      <view class="picker">{{selectedTime || '请选择时段'}}</view>
+    </picker>
+  </view>
+
+  <view class="section">
+    <view class="label">联系方式</view>
+    <input placeholder="姓名/电话" bindinput="onContactInput" value="{{contact}}" />
+  </view>
+
+  <view class="actions">
+    <button bindtap="submitBooking">提交预约</button>
+  </view>
+
+  <view class="section">
+    <view class="label">我的预约</view>
+    <block wx:for="{{bookings}}" wx:key="{{item.id}}">
+      <view class="booking-item">
+        <view>{{item.date}} {{item.time}}</view>
+        <view>{{item.contact}}</view>
+        <view>状态：{{item.status}}</view>
+      </view>
+    </block>
+  </view>
+</view>

@@ -1,33 +1,36 @@
-# Android / Kotlin build outputs
+## Android/Kotlin module ignores (android-native)
+
+# IDE/Project
 *.iml
-.gradle/
-/local.properties
-/.idea/
+.idea/
 .DS_Store
+.vscode/
+Thumbs.db
+$RECYCLE.BIN/
+
+# Gradle/Local
+.gradle/
+local.properties
+
+# Build outputs
 /build/
 /captures/
 .externalNativeBuild/
 .cxx/
 app/build/
-app/kotlin/
+app/intermediates/
 app/tmp/
+app/kotlin/
 
-# VS Code / Codex artifacts
-.vscode/
-
-# Generated APK/AAB
+# Packages
 *.apk
 *.ap_*
 *.aab
 
-# Misc
-.idea_modules/
-*.log
+# Keys & logs
 *.keystore
 *.jks
 *.orig
 *.rej
+*.log
 
-# Mac / Windows
-Thumbs.db
-$RECYCLE.BIN/

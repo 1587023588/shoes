@@ -1,0 +1,35 @@
+<view class="container">
+  <!-- 页面标题 -->
+  <view class="page-title">红色精神介绍</view>
+  
+  <!-- 标签页组件（用于切换不同精神） -->
+  <t-tabs 
+    value="{{activeTab}}" 
+    bindchange="onTabChange" 
+    class="tabs-container"
+  >
+    <!-- 标签项：西柏坡精神、团结精神、北庄故事、拥军记忆 -->
+    <t-tab-panel label="西柏坡精神" value="xibaipo" />
+    <t-tab-panel label="团结精神" value="unity" />
+    <t-tab-panel label="北庄故事" value="beizhuang" />
+    <t-tab-panel label="拥军记忆" value="support-army" />
+  </t-tabs>
+  
+  <!-- 内容区域：根据选中的标签显示对应精神的介绍 -->
+  <view class="spirit-card">
+    <!-- 精神标题 -->
+    <view class="spirit-title">{{spiritDetails[activeTab].title}}</view>
+    
+    <!-- 精神摘要 -->
+    <view class="spirit-desc">{{spiritDetails[activeTab].desc}}</view>
+    
+    <!-- 历史背景 -->
+    <view class="content-title">历史背景</view>
+    <view class="content-text">{{spiritDetails[activeTab].background}}</view>
+    
+    <!-- 精神内涵 -->
+    <view class="content-title">精神内涵</view>
+    <view class="content-text">{{spiritDetails[activeTab].content}}</view>
+  </view>
+</view>
+    

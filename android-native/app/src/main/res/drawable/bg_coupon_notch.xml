@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- 上下两个白色圆，模拟票券缺口（需叠加到分隔线位置） -->
+    <item android:gravity="top|center_horizontal" android:top="-6dp">
+        <shape android:shape="oval">
+            <size android:width="16dp" android:height="16dp"/>
+            <solid android:color="#F7F8FA"/>
+            <stroke android:width="1dp" android:color="#FFE1E1"/>
+        </shape>
+    </item>
+    <item android:gravity="bottom|center_horizontal" android:bottom="-6dp">
+        <shape android:shape="oval">
+            <size android:width="16dp" android:height="16dp"/>
+            <solid android:color="#F7F8FA"/>
+            <stroke android:width="1dp" android:color="#FFE1E1"/>
+        </shape>
+    </item>
+</layer-list>

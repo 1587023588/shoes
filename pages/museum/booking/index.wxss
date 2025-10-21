@@ -1,0 +1,28 @@
+.booking-page {
+  padding: 12px
+}
+
+.section {
+  margin-bottom: 12px
+}
+
+.label {
+  font-weight: 700;
+  margin-bottom: 6px
+}
+
+.picker {
+  padding: 8px;
+  border: 1px solid #eee;
+  border-radius: 6px
+}
+
+.actions {
+  margin-top: 12px
+}
+
+.booking-item {
+  border-top: 1px solid #f0f0f0;
+  padding-top: 8px;
+  margin-top: 8px
+}

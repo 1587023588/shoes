@@ -6,7 +6,7 @@
 - 简单 Fragment 占位布局，便于你逐步把小程序页面重写为 Android 原生布局 XML
 
 ## 如何打开
-1. 打开 Android Studio -> Open -> 选择 `shoes_app/android-native`。
+1. 打开 Android Studio -> Open -> 选择 `shoes-app/android-native`。
 2. 首次会自动下载 Gradle 依赖，等待 Sync 完成。
 3. 选择一个模拟器或插上安卓手机，点击 Run ▶️ 即可。
 
@@ -23,6 +23,17 @@
   - activity_main.xml：主界面布局（Fragment 容器 + BottomNavigationView）
   - fragment_simple.xml：片段通用占位布局
 - app/src/main/res/menu/bottom_nav_menu.xml：底部导航菜单
+
+## 群聊（社群）快速体验
+- 主界面底部“消息”按钮或“+”按钮，均可进入群聊 `ChatActivity`。
+- 群聊会连接后端 WebSocket：`ws://10.0.2.2:8080/ws/chat?room=public&user=你的昵称`（模拟器访问宿主机）。
+- 需要先启动后端（见下文“后端启动”）。
+
+## 后端启动（Spring Boot）
+- 推荐使用 JDK 21；在 `shoes_houduan` 目录运行：
+  - `mvn -DskipTests clean package`
+  - `java -jar target/shoes_houduan-1.0.0.jar --spring.profiles.active=chat`
+- `chat` profile 会禁用数据源/JPA，便于只体验群聊功能。
 
 ## 下一步：把页面重写为原生
 - 在 res/layout 下新增你的页面 XML（如 `fragment_home.xml`），使用 ConstraintLayout/RecyclerView 等组件。

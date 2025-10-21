@@ -1,0 +1,65 @@
+{
+  "pages": [
+    {
+      "path": "pages/home/home",
+      "style": {
+        "navigationBarTitleText": "首页"
+      }
+    },
+    {
+      "path": "pages/category/index",
+      "style": {
+        "navigationBarTitleText": "精神谱系"
+      }
+    },
+    {
+      "path": "pages/cart/index",
+      "style": {
+        "navigationBarTitleText": "购物车"
+      }
+    },
+    {
+      "path": "pages/usercenter/index",
+      "style": {
+        "navigationBarTitleText": "我的"
+      }
+    }
+  ],
+  "tabBar": {
+    "color": "#666666",
+    "selectedColor": "#FF5F15",
+    "backgroundColor": "#ffffff",
+    "list": [
+      {
+        "pagePath": "pages/home/home",
+        "text": "首页",
+        "iconPath": "static/tabbar/首页.png",
+        "selectedIconPath": "static/tabbar/首页.png"
+      },
+      {
+        "pagePath": "pages/category/index",
+        "text": "精神谱系",
+        "iconPath": "static/tabbar/帆布鞋-copy.png",
+        "selectedIconPath": "static/tabbar/帆布鞋-copy.png"
+      },
+      {
+        "pagePath": "pages/cart/index",
+        "text": "购物车",
+        "iconPath": "static/tabbar/购物车.png",
+        "selectedIconPath": "static/tabbar/购物车.png"
+      },
+      {
+        "pagePath": "pages/usercenter/index",
+        "text": "我的",
+        "iconPath": "static/tabbar/用户中心-copy.png",
+        "selectedIconPath": "static/tabbar/用户中心-copy.png"
+      }
+    ]
+  },
+  "window": {
+    "navigationBarBackgroundColor": "#ffffff",
+    "navigationBarTextStyle": "black",
+    "navigationBarTitleText": "北庄布鞋 · 乡村振兴",
+    "backgroundTextStyle": "light"
+  }
+}

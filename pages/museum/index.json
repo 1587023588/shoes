@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "云游村史馆", 
+  "navigationBarBackgroundColor": "#8B0000", 
+  "navigationBarTextStyle": "white", 
+  "usingComponents": {}, 
+  "disableScroll": true 
+}

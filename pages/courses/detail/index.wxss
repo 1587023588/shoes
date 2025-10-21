@@ -1,0 +1,24 @@
+.course-detail {
+  padding: 12px
+}
+
+.course-title {
+  font-weight: 700
+}
+
+.lesson-item {
+  padding: 8px;
+  border-bottom: 1px solid #f0f0f0
+}
+
+.material-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 8px
+}
+
+.mat-thumb {
+  width: 60px;
+  height: 60px;
+  margin-right: 8px
+}
