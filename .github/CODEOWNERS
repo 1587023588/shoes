@@ -1,0 +1,7 @@
+# 默认代码所有者（评审人），请替换为你的团队成员 GitHub 账号
+# 示例：@1587023588 为仓库所有者
+* @1587023588
+
+# 可按路径精细化所有者
+# /android-native/ @android-dev1 @android-dev2
+# /shoes_houduan/ @java-dev1 @java-dev2
