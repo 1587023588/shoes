@@ -1,5 +1,6 @@
 package com.example.shoes
 
+import android.annotation.SuppressLint
 import android.os.Bundle
 import android.net.Uri
 import android.view.LayoutInflater
@@ -21,6 +22,7 @@ class HomeFragment : Fragment() {
     private var _binding: FragmentHomeBinding? = null
     private val binding get() = _binding!!
 
+    @SuppressLint("SuspiciousIndentation")
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
