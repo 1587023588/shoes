@@ -13,12 +13,16 @@
 
         <!-- 顶部用户卡片 -->
         <LinearLayout
+            android:id="@+id/userCard"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
             android:gravity="center_vertical"
             android:padding="16dp"
-            android:background="#FFFFFF">
+            android:background="#FFFFFF"
+            android:clickable="true"
+            android:focusable="true"
+            android:foreground="?attr/selectableItemBackground">
 
             <ImageView
                 android:id="@+id/avatar"

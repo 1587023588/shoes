@@ -3500,6 +3500,8 @@ id btnBack
 id btnBooking
 id btnBuy
 id btnClaim
+id btnClose
+id btnLogin
 id btnNext
 id btnPlayAudio
 id btnPrev
@@ -3597,6 +3599,8 @@ id easeInOut
 id easeOut
 id east
 id edge
+id editPassword
+id editUsername
 id edit_query
 id edit_text_id
 id elastic
@@ -3877,6 +3881,7 @@ id postLayout
 id posterImage
 id pressed
 id price
+id progress
 id progress_circular
 id progress_horizontal
 id radio
@@ -4048,6 +4053,7 @@ id uniform
 id unlabeled
 id up
 id useLogo
+id userCard
 id versionText
 id vertical
 id vertical_only
@@ -4204,6 +4210,7 @@ layout abc_tooltip
 layout activity_booking
 layout activity_boutique_shoes
 layout activity_coupon
+layout activity_login
 layout activity_main
 layout activity_museum
 layout activity_online_sales
@@ -5895,3 +5902,4 @@ styleable include constraintSet
 styleable zxing_camera_preview zxing_framing_rect_height zxing_framing_rect_width zxing_preview_scaling_strategy zxing_use_texture_view
 styleable zxing_finder zxing_possible_result_points zxing_result_view zxing_viewfinder_laser zxing_viewfinder_laser_visibility zxing_viewfinder_mask
 styleable zxing_view zxing_scanner_layout
+xml network_security_config

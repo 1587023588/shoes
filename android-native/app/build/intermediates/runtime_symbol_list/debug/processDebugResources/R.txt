@@ -3499,6 +3499,8 @@ int id btnBack 0x7f0a0073
 int id btnBooking 0x7f0a0074
 int id btnBuy 0x7f0a0075
 int id btnClaim 0x7f0a0076
+int id btnClose 0x7f0a02c0
+int id btnLogin 0x7f0a02c1
 int id btnNext 0x7f0a0077
 int id btnPlayAudio 0x7f0a0078
 int id btnPrev 0x7f0a0079
@@ -3596,6 +3598,8 @@ int id easeInOut 0x7f0a00d4
 int id easeOut 0x7f0a00d5
 int id east 0x7f0a00d6
 int id edge 0x7f0a00d7
+int id editPassword 0x7f0a02c2
+int id editUsername 0x7f0a02c3
 int id edit_query 0x7f0a00d8
 int id edit_text_id 0x7f0a00d9
 int id elastic 0x7f0a00da
@@ -3876,6 +3880,7 @@ int id postLayout 0x7f0a01ec
 int id posterImage 0x7f0a01ed
 int id pressed 0x7f0a01ee
 int id price 0x7f0a01ef
+int id progress 0x7f0a02c4
 int id progress_circular 0x7f0a01f0
 int id progress_horizontal 0x7f0a01f1
 int id radio 0x7f0a01f2
@@ -4047,6 +4052,7 @@ int id uniform 0x7f0a0297
 int id unlabeled 0x7f0a0298
 int id up 0x7f0a0299
 int id useLogo 0x7f0a029a
+int id userCard 0x7f0a02c5
 int id versionText 0x7f0a029b
 int id vertical 0x7f0a029c
 int id vertical_only 0x7f0a029d
@@ -4203,6 +4209,7 @@ int layout abc_tooltip 0x7f0d001b
 int layout activity_booking 0x7f0d001c
 int layout activity_boutique_shoes 0x7f0d001d
 int layout activity_coupon 0x7f0d001e
+int layout activity_login 0x7f0d0096
 int layout activity_main 0x7f0d001f
 int layout activity_museum 0x7f0d0020
 int layout activity_online_sales 0x7f0d0021
@@ -7946,3 +7953,4 @@ int styleable zxing_finder_zxing_viewfinder_laser_visibility 3
 int styleable zxing_finder_zxing_viewfinder_mask 4
 int[] styleable zxing_view { 0x7f040518 }
 int styleable zxing_view_zxing_scanner_layout 0
+int xml network_security_config 0x7f160000

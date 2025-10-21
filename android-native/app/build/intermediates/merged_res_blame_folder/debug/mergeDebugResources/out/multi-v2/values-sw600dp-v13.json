@@ -4,7 +4,24 @@
             "outputFile": "com.example.shoes.app-mergeDebugResources-40:/values-sw600dp-v13/values-sw600dp-v13.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\gsy_666\\.gradle\\caches\\9.0-milestone-1\\transforms\\2288b8abd7ae68dbca688db275cb1305\\transformed\\material-1.12.0\\res\\values-sw600dp-v13\\values-sw600dp-v13.xml",
+                    "source": "C:\\Users\\15870\\Documents\\workspace-spring-tools-for-eclipse-4.31.0.RELEASE\\shoes\\android-native\\app\\src\\main\\res\\values-sw600dp\\dimens.xml",
+                    "from": {
+                        "startLines": "6,4,5,3",
+                        "startColumns": "4,4,4,4",
+                        "startOffsets": "232,130,183,83",
+                        "endColumns": "49,51,47,45",
+                        "endOffsets": "277,177,226,124"
+                    },
+                    "to": {
+                        "startLines": "10,20,21,24",
+                        "startColumns": "4,4,4,4",
+                        "startOffsets": "611,1223,1275,1438",
+                        "endColumns": "49,51,47,45",
+                        "endOffsets": "656,1270,1318,1479"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\15870\\.gradle\\caches\\9.0-milestone-1\\transforms\\2288b8abd7ae68dbca688db275cb1305\\transformed\\material-1.12.0\\res\\values-sw600dp-v13\\values-sw600dp-v13.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,10,11,12,13,14",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4",
@@ -23,24 +40,7 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\gsy_666\\Desktop\\shoes_app\\android-native\\app\\src\\main\\res\\values-sw600dp\\dimens.xml",
-                    "from": {
-                        "startLines": "6,4,5,3",
-                        "startColumns": "4,4,4,4",
-                        "startOffsets": "232,130,183,83",
-                        "endColumns": "49,51,47,45",
-                        "endOffsets": "277,177,226,124"
-                    },
-                    "to": {
-                        "startLines": "10,20,21,24",
-                        "startColumns": "4,4,4,4",
-                        "startOffsets": "611,1223,1275,1438",
-                        "endColumns": "49,51,47,45",
-                        "endOffsets": "656,1270,1318,1479"
-                    }
-                },
-                {
-                    "source": "C:\\Users\\gsy_666\\.gradle\\caches\\9.0-milestone-1\\transforms\\e5b3b67f7f30e95895b4e427ea5e11dc\\transformed\\appcompat-1.7.0\\res\\values-sw600dp-v13\\values-sw600dp-v13.xml",
+                    "source": "C:\\Users\\15870\\.gradle\\caches\\9.0-milestone-1\\transforms\\e5b3b67f7f30e95895b4e427ea5e11dc\\transformed\\appcompat-1.7.0\\res\\values-sw600dp-v13\\values-sw600dp-v13.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9",
                         "startColumns": "4,4,4,4,4,4,4,4",

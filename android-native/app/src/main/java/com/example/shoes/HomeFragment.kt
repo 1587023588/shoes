@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.GridLayoutManager
+import androidx.lifecycle.lifecycleScope
 import com.example.shoes.data.ProductRepository
 import coil.load
 import com.example.shoes.databinding.FragmentHomeBinding
@@ -80,10 +81,21 @@ class HomeFragment : Fragment() {
     }
 
     private fun setupList() {
-        val products = ProductRepository.list()
         binding.list.layoutManager = GridLayoutManager(requireContext(), 2)
-        binding.list.adapter = ProductAdapter(products) { product ->
-            startActivity(ProductDetailActivity.intent(requireContext(), product.id))
+        lifecycleScope.launchWhenStarted {
+            try {
+                val remote = com.example.shoes.data.RemoteRepository().products()
+                binding.list.adapter = ProductAdapter(remote) { product ->
+                    startActivity(ProductDetailActivity.intent(requireContext(), product.id))
+                }
+            } catch (e: Exception) {
+                // 回退到本地假数据
+                val local = ProductRepository.list()
+                binding.list.adapter = ProductAdapter(local) { product ->
+                    startActivity(ProductDetailActivity.intent(requireContext(), product.id))
+                }
+                Toast.makeText(requireContext(), "使用本地数据（原因：${e.message})", Toast.LENGTH_SHORT).show()
+            }
         }
     }
 

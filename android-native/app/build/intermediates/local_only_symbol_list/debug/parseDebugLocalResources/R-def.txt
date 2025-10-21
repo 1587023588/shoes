@@ -110,6 +110,8 @@ id btnBack
 id btnBooking
 id btnBuy
 id btnClaim
+id btnClose
+id btnLogin
 id btnNext
 id btnPlayAudio
 id btnPrev
@@ -132,6 +134,8 @@ id category_et_search
 id category_header_icon
 id cover
 id descList
+id editPassword
+id editUsername
 id etName
 id etPhone
 id et_search
@@ -172,6 +176,7 @@ id orderWaitReceive
 id orderWaitShip
 id posterImage
 id price
+id progress
 id resultCard
 id resultText
 id rowSelected
@@ -213,11 +218,13 @@ id tvTime
 id tvTitle
 id tv_location
 id tv_weather
+id userCard
 id versionText
 id viewPager
 layout activity_booking
 layout activity_boutique_shoes
 layout activity_coupon
+layout activity_login
 layout activity_main
 layout activity_museum
 layout activity_online_sales
@@ -245,3 +252,4 @@ raw shoes
 style BottomNavIndicator
 style BottomNavIndicator.None
 style Theme.ShoesNative
+xml network_security_config
