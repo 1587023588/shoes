@@ -1,0 +1,29 @@
+<view class="editor-page">
+  <view class="canvas-wrap">
+    <canvas id="editorCanvas" canvas-id="editorCanvas" type="2d"
+      style="width:300px;height:300px;border:1px solid #eee;background:#fff" bindtouchstart="onTouchStart"
+      bindtouchmove="onTouchMove" bindtouchend="onTouchEnd"></canvas>
+  </view>
+
+  <view class="toolbar">
+    <view class="templates">
+      <text>鞋体</text>
+      <block wx:for="{{templates}}" wx:key="id" wx:for-index="idx">
+        <image src="{{item.image}}" class="tpl-thumb" bindtap="selectTemplate" data-src="{{item.image}}"
+          data-collection="templates" data-index="{{idx}}" binderror="onAssetError" />
+      </block>
+    </view>
+
+    <view class="stickers">
+      <text>贴图</text>
+      <block wx:for="{{stickers}}" wx:key="id" wx:for-index="idx">
+        <image src="{{item.image}}" class="sticker-thumb" bindtap="addSticker" data-src="{{item.image}}"
+          data-collection="stickers" data-index="{{idx}}" binderror="onAssetError" />
+      </block>
+    </view>
+  </view>
+
+  <view class="actions">
+    <button bindtap="exportImage">导出并保存为稿件</button>
+  </view>
+</view>

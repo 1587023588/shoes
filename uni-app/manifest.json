@@ -1,0 +1,46 @@
+{
+  "name": "Shoes App",
+  "appid": "__UNI__SHOES",
+  "description": "Converted from WeChat Mini Program to uni-app",
+  "versionName": "0.1.0",
+  "versionCode": "10",
+  "transformPx": true,
+  "app-plus": {
+    "usingComponents": true,
+    "splashscreen": {
+      "alwaysShowBeforeRender": true,
+      "waiting": true,
+      "autoclose": true,
+      "delay": 0
+    },
+    "modules": {},
+    "distribute": {
+      "android": {
+        "permissions": [
+          "INTERNET",
+          "ACCESS_NETWORK_STATE",
+          "ACCESS_WIFI_STATE",
+          "WRITE_EXTERNAL_STORAGE",
+          "READ_PHONE_STATE",
+          "ACCESS_FINE_LOCATION"
+        ],
+        "minSdkVersion": 21,
+        "targetSdkVersion": 34,
+        "abiFilters": [
+          "armeabi-v7a",
+          "arm64-v8a"
+        ]
+      },
+      "ios": {
+        "UIBackgroundModes": [
+          "fetch"
+        ],
+        "NSLocationWhenInUseUsageDescription": "用于定位功能"
+      },
+      "icons": {},
+      "splashscreen": {}
+    }
+  },
+  "mp-weixin": {},
+  "h5": {}
+}

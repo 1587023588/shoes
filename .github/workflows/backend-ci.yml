@@ -1,0 +1,6 @@
+name: disabled-backend-ci
+
+on:
+  workflow_dispatch:
+
+jobs: {}

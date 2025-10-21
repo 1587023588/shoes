@@ -1,0 +1,28 @@
+<view class="video-container">
+  <!-- 视频播放器：核心组件，支持自动播放、全屏等 -->
+  <video
+    class="video-player"
+    src="{{videoUrl}}"
+    poster="{{posterUrl}}"
+    controls="{{true}}"
+    autoplay="{{false}}"
+    loop="{{false}}"
+    show-center-play-btn="{{true}}"
+    enable-progress-gesture="{{true}}"
+    binderror="onVideoError"
+    bindloadedmetadata="onVideoLoaded"
+  ></video>
+
+  <!-- 加载中提示（视频未加载完成时显示） -->
+  <view class="loading" wx:if="{{isLoading}}">
+    <view class="loading-icon"></view>
+    <view class="loading-text">加载中...</view>
+  </view>
+
+  <!-- 错误提示（视频加载失败时显示） -->
+  <view class="error" wx:if="{{isError}}">
+    <view class="error-icon">⚠️</view>
+    <view class="error-text">{{errorMsg}}</view>
+    <button class="reload-btn" bindtap="reloadVideo">重新加载</button>
+  </view>
+</view>

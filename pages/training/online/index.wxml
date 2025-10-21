@@ -1,0 +1,43 @@
+<view class="online-wrap">
+  <!-- 唯一背景图（文档中指定的online.jpg） -->
+  <image class="bg-img" src="/pages/training/online/online.jpg" mode="cover"></image>
+  
+  <!-- 半透明遮罩：确保音频文字清晰 -->
+  <view class="bg-mask"></view>
+
+  <!-- 三段音频列表 -->
+  <view class="audio-list">
+    <!-- 音频1 -->
+    <view class="audio-item" bindtap="toggleAudio" data-index="0">
+      <icon 
+        type="{{currentIndex === 0 && isPlaying ? 'pause' : 'play'}}" 
+        size="36rpx" 
+        color="#fff"
+      ></icon>
+      <view class="audio-title">讲解1</view>
+      <view class="audio-time">{{currentIndex === 0 ? playTime : '00:00'}}</view>
+    </view>
+
+    <!-- 音频2 -->
+    <view class="audio-item" bindtap="toggleAudio" data-index="1">
+      <icon 
+        type="{{currentIndex === 1 && isPlaying ? 'pause' : 'play'}}" 
+        size="36rpx" 
+        color="#fff"
+      ></icon>
+      <view class="audio-title">讲解2</view>
+      <view class="audio-time">{{currentIndex === 1 ? playTime : '00:00'}}</view>
+    </view>
+
+    <!-- 音频3 -->
+    <view class="audio-item" bindtap="toggleAudio" data-index="2">
+      <icon 
+        type="{{currentIndex === 2 && isPlaying ? 'pause' : 'play'}}" 
+        size="36rpx" 
+        color="#fff"
+      ></icon>
+      <view class="audio-title">讲解3</view>
+      <view class="audio-time">{{currentIndex === 2 ? playTime : '00:00'}}</view>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,39 @@
+.page {
+  padding: 16px
+}
+
+.section {
+  margin-bottom: 16px
+}
+
+.label {
+  font-weight: 700;
+  margin-bottom: 8px
+}
+
+.thumb {
+  width: 120px;
+  height: 120px;
+  border-radius: 6px
+}
+
+.img-wrap {
+  display: inline-block;
+  margin-right: 8px
+}
+
+.actions {
+  margin-top: 12px
+}
+
+.submission {
+  border-top: 1px solid #eee;
+  padding-top: 8px;
+  margin-top: 8px
+}
+
+.sub-thumb {
+  width: 60px;
+  height: 60px;
+  margin-right: 6px
+}

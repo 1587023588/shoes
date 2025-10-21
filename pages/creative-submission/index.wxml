@@ -1,0 +1,44 @@
+<view class="page">
+  <view class="section">
+    <view class="label">关联商品</view>
+    <view>{{spuId || '未指定'}}</view>
+  </view>
+
+  <view class="section">
+    <view class="label">设计图片</view>
+    <view class="images">
+      <block wx:for="{{images}}" wx:key="{{index}}">
+        <view class="img-wrap">
+          <image src="{{item}}" mode="aspectFill" class="thumb"></image>
+          <button data-index="{{index}}" bindtap="removeImage">删除</button>
+        </view>
+      </block>
+      <button bindtap="chooseImage">添加图片</button>
+    </view>
+  </view>
+
+  <view class="section">
+    <view class="label">设计说明</view>
+    <textarea bindinput="onDescriptionInput" value="{{description}}" placeholder="写下你的设计说明"></textarea>
+  </view>
+
+  <view class="actions">
+    <button bindtap="submit">提交投稿</button>
+  </view>
+
+  <view class="section">
+    <view class="label">我的投稿</view>
+    <block wx:for="{{submissions}}" wx:key="{{item.id}}">
+      <view class="submission">
+        <view>id: {{item.id}}</view>
+        <view>状态: {{item.status}}</view>
+        <view>说明: {{item.description}}</view>
+        <view class="sub-images">
+          <block wx:for="{{item.images}}" wx:key="{{index}}">
+            <image src="{{item}}" class="sub-thumb"></image>
+          </block>
+        </view>
+      </view>
+    </block>
+  </view>
+</view>

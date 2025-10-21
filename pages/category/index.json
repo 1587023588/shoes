@@ -1,0 +1,11 @@
+{
+  "navigationBarTitleText": "西柏坡精神",
+  "navigationBarBackgroundColor": "#b31217",
+  "navigationBarTextStyle": "white",
+  "usingComponents": {
+    "t-tabs": "../../miniprogram_npm/tdesign-miniprogram/tabs/tabs",
+    "t-toast": "../../miniprogram_npm/tdesign-miniprogram/toast/toast"
+  },
+  "backgroundColor": "#fdf7f7",
+  "backgroundTextStyle": "dark"
+}
