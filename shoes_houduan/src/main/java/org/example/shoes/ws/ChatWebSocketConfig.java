@@ -8,7 +8,7 @@ import org.springframework.web.socket.config.annotation.WebSocketHandlerRegistry
 
 @Configuration
 @EnableWebSocket
-@Profile("ws_disabled")
+@Profile("chat")
 public class ChatWebSocketConfig implements WebSocketConfigurer {
 
   private final ChatWebSocketHandler handler;

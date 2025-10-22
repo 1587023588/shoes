@@ -21,8 +21,8 @@ class ConversationsActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-    binding = ActivityConversationsBinding.inflate(layoutInflater)
-    setContentView(binding.root)
+        binding = ActivityConversationsBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
         supportActionBar?.title = "我的会话"
 
@@ -228,6 +228,8 @@ class ConversationsActivity : AppCompatActivity() {
             } catch (e: Exception) {
                 kotlinx.coroutines.withContext(kotlinx.coroutines.Dispatchers.Main) {
                     Toast.makeText(this@ConversationsActivity, e.message ?: "加载失败", Toast.LENGTH_SHORT).show()
+                    // 出错也展示空态，避免整页纯白
+                    binding.empty.visibility = View.VISIBLE
                 }
             } finally {
                 kotlinx.coroutines.withContext(kotlinx.coroutines.Dispatchers.Main) {

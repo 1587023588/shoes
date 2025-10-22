@@ -13,7 +13,7 @@ import java.util.Set;
 import java.util.concurrent.ConcurrentHashMap;
 
 @Component
-@Profile("ws_disabled")
+@Profile("chat")
 public class ChatWebSocketHandler extends TextWebSocketHandler {
   private static final Logger log = LoggerFactory.getLogger(ChatWebSocketHandler.class);
   private final Set<WebSocketSession> sessions = ConcurrentHashMap.newKeySet();

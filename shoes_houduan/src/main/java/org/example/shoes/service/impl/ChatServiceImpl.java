@@ -17,18 +17,20 @@ import org.example.shoes.repository.ChatConversationRepository;
 import org.example.shoes.repository.ChatMessageRepository;
 import org.example.shoes.service.ChatService;
 import org.springframework.data.domain.PageRequest;
+import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 @Service
+@Profile("!chat")
 public class ChatServiceImpl implements ChatService {
     private final ChatConversationRepository convRepo;
     private final ChatConversationMemberRepository memberRepo;
     private final ChatMessageRepository msgRepo;
 
     public ChatServiceImpl(ChatConversationRepository convRepo,
-                           ChatConversationMemberRepository memberRepo,
-                           ChatMessageRepository msgRepo) {
+            ChatConversationMemberRepository memberRepo,
+            ChatMessageRepository msgRepo) {
         this.convRepo = convRepo;
         this.memberRepo = memberRepo;
         this.msgRepo = msgRepo;
@@ -40,7 +42,8 @@ public class ChatServiceImpl implements ChatService {
         // 查找是否存在双方都是成员且类型为 DM 的会话；简单实现：扫描 userId1 的会话找与 userId2 共有的 DM
         List<ChatConversationMember> m1 = memberRepo.findByUserId(userId1);
         Set<Long> convIds = new HashSet<>();
-        for (ChatConversationMember m : m1) convIds.add(m.getConversationId());
+        for (ChatConversationMember m : m1)
+            convIds.add(m.getConversationId());
         for (Long cid : convIds) {
             Optional<ChatConversation> copt = convRepo.findById(cid);
             if (copt.isPresent() && copt.get().getType() == ChatConversation.Type.DM) {
@@ -76,12 +79,14 @@ public class ChatServiceImpl implements ChatService {
         // 所有成员 + owner
         Set<Long> all = new LinkedHashSet<>();
         all.add(ownerId);
-        if (memberIds != null) all.addAll(memberIds);
+        if (memberIds != null)
+            all.addAll(memberIds);
         for (Long uid : all) {
             ChatConversationMember m = new ChatConversationMember();
             m.setConversationId(c.getId());
             m.setUserId(uid);
-            m.setRole(Objects.equals(uid, ownerId) ? ChatConversationMember.Role.OWNER : ChatConversationMember.Role.MEMBER);
+            m.setRole(Objects.equals(uid, ownerId) ? ChatConversationMember.Role.OWNER
+                    : ChatConversationMember.Role.MEMBER);
             memberRepo.save(m);
         }
         return c.getId();
@@ -105,7 +110,8 @@ public class ChatServiceImpl implements ChatService {
     @Override
     public List<ChatMessage> getMessages(Long conversationId, Instant before, int size) {
         if (before != null) {
-            return msgRepo.findByConversationIdAndCreatedAtBeforeOrderByCreatedAtDesc(conversationId, before, PageRequest.of(0, size));
+            return msgRepo.findByConversationIdAndCreatedAtBeforeOrderByCreatedAtDesc(conversationId, before,
+                    PageRequest.of(0, size));
         }
         return msgRepo.findByConversationIdOrderByCreatedAtDesc(conversationId, PageRequest.of(0, size));
     }
@@ -140,7 +146,8 @@ public class ChatServiceImpl implements ChatService {
                 .orElseThrow(() -> new IllegalArgumentException("conversation not found"));
         ChatConversationMember cm = memberRepo.findByConversationIdAndUserId(conversationId, operatorUserId)
                 .orElseThrow(() -> new org.springframework.security.access.AccessDeniedException("not member"));
-        if (conversation.getType() != ChatConversation.Type.GROUP || cm.getRole() != ChatConversationMember.Role.OWNER) {
+        if (conversation.getType() != ChatConversation.Type.GROUP
+                || cm.getRole() != ChatConversationMember.Role.OWNER) {
             throw new org.springframework.security.access.AccessDeniedException("only owner can delete group");
         }
         // 物理删除：消息->成员->会话
