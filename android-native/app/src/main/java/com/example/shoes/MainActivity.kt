@@ -19,7 +19,7 @@ class MainActivity : AppCompatActivity() {
         val bottom = binding.bottomNav
         bottom.btnHome.setOnClickListener { switchTo(HomeFragment()); setSelectedTab(0) }
         bottom.btnCategory.setOnClickListener { switchTo(CategoryFragment()); setSelectedTab(1) }
-        bottom.btnMessage.setOnClickListener { switchTo(CartFragment()); setSelectedTab(2) }
+    bottom.btnMessage.setOnClickListener { switchTo(MessageFragment()); setSelectedTab(2) }
         bottom.btnMine.setOnClickListener { switchTo(MineFragment()); setSelectedTab(3) }
         // 默认首页
         switchTo(HomeFragment()); setSelectedTab(0)

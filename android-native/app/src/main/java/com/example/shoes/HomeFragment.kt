@@ -21,6 +21,7 @@ import androidx.media3.exoplayer.ExoPlayer
 class HomeFragment : Fragment() {
     private var _binding: FragmentHomeBinding? = null
     private val binding get() = _binding!!
+    private var triedRemoteFallback = false
 
     @SuppressLint("SuspiciousIndentation")
     override fun onCreateView(
@@ -35,7 +36,7 @@ class HomeFragment : Fragment() {
             placeholder(R.drawable.tab_mine)
             error(R.drawable.tab_mine)
         }
-    // 播放首页视频（本地 raw 资源），使用 Media3 ExoPlayer 适配更多模拟器
+    // 播放首页视频（先尝试本地 raw 资源），使用 Media3 ExoPlayer 适配更多模拟器
         val player = ExoPlayer.Builder(requireContext()).build()
         binding.homeVideo.player = player
     val localVideoUri = Uri.parse("android.resource://" + requireContext().packageName + "/" + R.raw.shoes)
@@ -53,6 +54,18 @@ class HomeFragment : Fragment() {
                 }
             }
             override fun onPlayerError(error: androidx.media3.common.PlaybackException) {
+                // 本地资源出错时回退到远程 URL 再试一次
+                if (!triedRemoteFallback) {
+                    triedRemoteFallback = true
+                    try {
+                        val remoteItem = MediaItem.fromUri(RemoteConfig.homeVideoUrl)
+                        player.setMediaItem(remoteItem)
+                        player.prepare()
+                        player.playWhenReady = true
+                        Toast.makeText(requireContext(), "本地视频失败，尝试在线播放…", Toast.LENGTH_SHORT).show()
+                        return
+                    } catch (_: Throwable) { /* ignore and保持提示 */ }
+                }
                 Toast.makeText(requireContext(), "视频播放失败：" + error.errorCodeName, Toast.LENGTH_SHORT).show()
                 binding.banner.alpha = 1f
             }
