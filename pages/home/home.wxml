@@ -1,7 +1,6 @@
 <!-- 顶部：视频播放区块 -->
 <view class="home-video-wrap">
-  <video id="home-top-video" class="home-video"
-    src="https://shoes-1379330878.cos.ap-beijing.myqcloud.com/9%E6%9C%8820%E6%97%A5.mp4" object-fit="cover" controls
+  <video id="home-top-video" class="home-video" src="{{videoSrc}}" object-fit="cover" poster="{{heroImage}}" controls
     show-center-play-btn enable-progress-gesture autoplay="{{videoAutoplay}}" muted="{{videoMuted}}"
     loop="{{videoLoop}}" binderror="onVideoError"></video>
 </view>

@@ -7,8 +7,10 @@ Page({
     pageLoading: false,
     loadError: false,
     errorMsg: '',
-    // 顶部视频（改为使用 HTTPS 远程资源，避免本地大文件冲突）
-    videoSrc: 'https://shoes-1379330878.cos.ap-beijing.myqcloud.com/shoes.mp4',
+    // 顶部视频（HTTPS 远程资源）
+    // 注意：需确保该域名已纳入小程序「downloadFile 合法域名」白名单
+    // 与 WXML 中保持一致，默认使用已存在的 COS 资源（文件名含中文，已 URL 编码）
+    videoSrc: 'https://shoes-1379330878.cos.ap-beijing.myqcloud.com/9%E6%9C%8820%E6%97%A5.mp4',
     videoAutoplay: true,
     videoMuted: true,
     videoLoop: true,
@@ -172,6 +174,7 @@ Page({
     // 出错时回退为不自动播放，避免反复报错（可选）
     this.setData({ videoAutoplay: false });
     // 如果资源不支持，给出提示
-    Toast({ context: this, selector: '#t-toast', message: '视频加载失败，稍后重试' });
+    const msg = (e && e.detail && e.detail.errMsg) ? e.detail.errMsg : '视频加载失败，稍后重试';
+    Toast({ context: this, selector: '#t-toast', message: msg });
   },
 });

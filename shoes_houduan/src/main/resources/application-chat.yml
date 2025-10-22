@@ -15,3 +15,10 @@ app:
   auth:
     dev:
       enabled: true
+      accept-any-password: true
+      fixed-password: ""
+  jwt:
+    # 至少 256 位（32 字节）密钥；以下为示例随机密钥，可按需更换。
+    secret: "Yg3uXKp9mJ7qT2sZ4vNc8QwR1tHb6LdP0aF2sG5kM8nC1xE4rV7zB0yU3wQ6eZ9N"
+    # 令牌有效期（分钟）
+    expires-minutes: 1440
