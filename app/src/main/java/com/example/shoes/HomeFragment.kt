@@ -35,15 +35,22 @@ class HomeFragment : Fragment() {
             placeholder(R.drawable.tab_mine)
             error(R.drawable.tab_mine)
         }
-    // 播放首页视频（本地 raw 资源），使用 Media3 ExoPlayer 适配更多模拟器
+        // 播放首页视频（优先本地 raw 资源，失败时自动切换到远程 MP4）
         val player = ExoPlayer.Builder(requireContext()).build()
         binding.homeVideo.player = player
-    val localVideoUri = Uri.parse("android.resource://" + requireContext().packageName + "/" + R.raw.shoes)
-    val item = MediaItem.fromUri(localVideoUri)
-        player.setMediaItem(item)
-        player.repeatMode = Player.REPEAT_MODE_ONE
-        player.prepare()
-        player.playWhenReady = true
+
+        val localVideoUri = Uri.parse("android.resource://" + requireContext().packageName + "/" + R.raw.shoes)
+        val localItem = MediaItem.fromUri(localVideoUri)
+
+        fun play(mediaItem: MediaItem) {
+            player.setMediaItem(mediaItem)
+            player.repeatMode = Player.REPEAT_MODE_ONE
+            player.prepare()
+            player.playWhenReady = true
+        }
+
+        // 先尝试播放本地
+        play(localItem)
 
         // 缓冲完成后淡出海报；错误时保留海报并提示
         player.addListener(object : Player.Listener {
@@ -53,6 +60,15 @@ class HomeFragment : Fragment() {
                 }
             }
             override fun onPlayerError(error: androidx.media3.common.PlaybackException) {
+                // 如果是容器不支持，尝试切换到远程 MP4
+                if (error.errorCodeName == "ERROR_CODE_PARSING_CONTAINER_UNSUPPORTED") {
+                    try {
+                        val remoteItem = MediaItem.fromUri(RemoteConfig.homeVideoUrl)
+                        play(remoteItem)
+                        Toast.makeText(requireContext(), "切换为在线播放…", Toast.LENGTH_SHORT).show()
+                        return
+                    } catch (_: Throwable) { /* ignore */ }
+                }
                 Toast.makeText(requireContext(), "视频播放失败：" + error.errorCodeName, Toast.LENGTH_SHORT).show()
                 binding.banner.alpha = 1f
             }
