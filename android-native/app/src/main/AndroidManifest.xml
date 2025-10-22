@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.shoes">
+
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.CAMERA"/>
+    <uses-feature android:name="android.hardware.camera" android:required="false"/>
+
+    <application
+        android:name=".App"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="Shoes Native"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.ShoesNative"
+        android:usesCleartextTraffic="true"
+        android:networkSecurityConfig="@xml/network_security_config">
+        <activity
+            android:name=".SplashActivity"
+            android:exported="true"
+            android:theme="@style/Theme.ShoesNative">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".MainActivity"
+            android:exported="false" />
+        <activity
+            android:name=".LoginActivity"
+            android:exported="false" />
+        <activity android:name=".ProductDetailActivity" />
+        <activity android:name=".XibaopoActivity" />
+        <activity android:name=".PosterActivity" />
+        <activity android:name=".OnlineSalesActivity" />
+    <activity android:name=".BoutiqueShoesActivity" />
+        <activity android:name=".MuseumActivity" />
+        <activity android:name=".BookingActivity" />
+        <activity android:name=".CouponActivity" />
+        <activity android:name=".VillageActivitiesActivity" />
+        <activity android:name=".ScanActivity" />
+        <activity android:name=".LogsActivity" />
+    </application>
+
+</manifest>

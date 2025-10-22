@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- 平板等更宽屏进一步放大 -->
+    <dimen name="padding_screen">22dp</dimen>
+    <dimen name="header_search_height">48dp</dimen>
+    <dimen name="home_action_icon">48dp</dimen>
+    <dimen name="category_icon_size">76dp</dimen>
+</resources>

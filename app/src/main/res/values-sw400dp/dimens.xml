@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- 略宽屏（>=400dp）稍微放大 -->
+    <dimen name="padding_screen">18dp</dimen>
+    <dimen name="header_search_height">44dp</dimen>
+    <dimen name="home_action_icon">44dp</dimen>
+    <dimen name="category_icon_size">68dp</dimen>
+</resources>

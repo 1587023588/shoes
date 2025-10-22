@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Ignore nested duplicate project under pages/images
 pages/images/*
 !pages/images/test.jpg
@@ -35,10 +36,38 @@ android-native/**/outputs/
 android-native/**/intermediates/
 android-native/**/tmp/
 android-native/**/*.iml
+=======
+## Android/Kotlin module ignores (android-native)
+
+# IDE/Project
+*.iml
+.idea/
+.DS_Store
+.vscode/
+Thumbs.db
+$RECYCLE.BIN/
+
+# Gradle/Local
+.gradle/
+local.properties
+
+# Build outputs
+/build/
+/captures/
+.externalNativeBuild/
+.cxx/
+app/build/
+app/intermediates/
+app/tmp/
+app/kotlin/
+
+# Packages
+>>>>>>> fe7c71a1076f5e699278a45d09d983b4089747e4
 *.apk
 *.ap_*
 *.aab
 
+<<<<<<< HEAD
 # --- Backend (Maven) build ---
 shoes_houduan/target/
 shoes_houduan/**/target/
@@ -46,3 +75,12 @@ shoes_houduan/**/target/
 # Env
 .env.local
 .env.*.local
+=======
+# Keys & logs
+*.keystore
+*.jks
+*.orig
+*.rej
+*.log
+
+>>>>>>> fe7c71a1076f5e699278a45d09d983b4089747e4

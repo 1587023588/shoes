@@ -11,6 +11,7 @@ Page({
     // 注意：需确保该域名已纳入小程序「downloadFile 合法域名」白名单
     // 与 WXML 中保持一致，默认使用已存在的 COS 资源（文件名含中文，已 URL 编码）
     videoSrc: 'https://shoes-1379330878.cos.ap-beijing.myqcloud.com/9%E6%9C%8820%E6%97%A5.mp4',
+
     videoAutoplay: true,
     videoMuted: true,
     videoLoop: true,

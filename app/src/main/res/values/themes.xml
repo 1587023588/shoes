@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <style name="Theme.ShoesNative" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <item name="colorPrimary">@color/primary</item>
+        <item name="android:statusBarColor" tools:targetApi="l">@color/primary</item>
+    </style>
+        <!-- 关闭 BottomNavigationView 选中高亮块（使用 Material 属性） -->
+        <style name="BottomNavIndicator.None">
+            <item name="color">@android:color/transparent</item>
+        </style>
+        <!-- 兜底：若有引用 @style/BottomNavIndicator 则提供透明样式以满足资源链接 -->
+        <style name="BottomNavIndicator">
+            <item name="color">@android:color/transparent</item>
+        </style>
+</resources>
