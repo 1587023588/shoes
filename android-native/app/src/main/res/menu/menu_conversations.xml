@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/action_create_group"
+        android:title="创建群组"
+        android:showAsAction="never" />
+    <item
+        android:id="@+id/action_create_dm"
+        android:title="发起私聊"
+        android:showAsAction="never" />
+</menu>

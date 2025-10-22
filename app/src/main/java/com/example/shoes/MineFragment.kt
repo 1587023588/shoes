@@ -23,8 +23,14 @@ class MineFragment : Fragment() {
     ): View {
         _binding = FragmentMineBinding.inflate(inflater, container, false)
 
-    // 占位交互
-    binding.btnSettings.setOnClickListener { Toast.makeText(requireContext(), "打开设置", Toast.LENGTH_SHORT).show() }
+    // 设置按钮：临时作为“我的会话”入口
+    binding.btnSettings.setOnClickListener {
+        if (Session.token == null) {
+            startActivityForResult(Intent(requireContext(), LoginActivity::class.java), reqLogin)
+        } else {
+            startActivity(Intent(requireContext(), ConversationsActivity::class.java))
+        }
+    }
 
         // 订单分组点击
         binding.orderWaitPay.setOnClickListener { Toast.makeText(requireContext(), "待付款订单", Toast.LENGTH_SHORT).show() }
@@ -38,6 +44,24 @@ class MineFragment : Fragment() {
                 startActivityForResult(Intent(requireContext(), LoginActivity::class.java), reqLogin)
             } else {
                 Toast.makeText(requireContext(), "已登录", Toast.LENGTH_SHORT).show()
+            }
+        }
+
+        // 社群 · 私聊 入口
+        binding.btnChat.setOnClickListener {
+            if (Session.token == null) {
+                startActivityForResult(Intent(requireContext(), LoginActivity::class.java), reqLogin)
+            } else {
+                startActivity(Intent(requireContext(), ConversationsActivity::class.java))
+            }
+        }
+
+        // 社群聊天入口
+        binding.btnChat.setOnClickListener {
+            if (Session.token.isNullOrEmpty()) {
+                startActivityForResult(Intent(requireContext(), LoginActivity::class.java), reqLogin)
+            } else {
+                startActivity(Intent(requireContext(), ConversationsActivity::class.java))
             }
         }
 

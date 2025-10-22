@@ -10,7 +10,6 @@ import okio.ByteString
 import org.json.JSONObject
 import java.net.URLEncoder
 import java.nio.charset.StandardCharsets
-import java.util.*
 import java.util.concurrent.TimeUnit
 
 class ChatActivity : AppCompatActivity() {
@@ -28,7 +27,7 @@ class ChatActivity : AppCompatActivity() {
     private var isShuttingDown = false
 
     private val room: String by lazy { intent.getStringExtra("room") ?: "public" }
-    private val username: String by lazy { intent.getStringExtra("user") ?: defaultUserName() }
+    private val username: String by lazy { resolveUsername() }
     private val convName: String? by lazy { intent.getStringExtra("convName") }
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -36,7 +35,7 @@ class ChatActivity : AppCompatActivity() {
         binding = ActivityChatBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-    supportActionBar?.title = convName?.let { it } ?: "群聊：$room"
+        supportActionBar?.title = convName?.let { it } ?: "群聊：$room"
 
         adapter = ChatAdapter()
         binding.recyclerView.layoutManager = LinearLayoutManager(this).apply { stackFromEnd = true }
@@ -61,14 +60,14 @@ class ChatActivity : AppCompatActivity() {
 
     private fun connectWebSocket() {
         if (isShuttingDown) return
-        // 使用 Android 模拟器访问宿主机后端
-        val baseWs = "ws://10.0.2.2:8080/ws/chat"
+        val baseWs = com.example.shoes.RemoteConfig.chatWsUrl
         val token = com.example.shoes.net.Session.token
+        val userForWs = username
         val sb = StringBuilder(baseWs)
             .append("?room=")
             .append(URLEncoder.encode(room, StandardCharsets.UTF_8))
             .append("&user=")
-            .append(URLEncoder.encode(username, StandardCharsets.UTF_8))
+            .append(URLEncoder.encode(userForWs, StandardCharsets.UTF_8))
         if (!token.isNullOrEmpty()) {
             sb.append("&token=").append(URLEncoder.encode(token, StandardCharsets.UTF_8))
         }
@@ -117,7 +116,6 @@ class ChatActivity : AppCompatActivity() {
         reconnectAttempts++
         val delay = (backoffBaseMillis shl (reconnectAttempts - 1)).coerceAtMost(10_000L)
         runOnUiThread { adapter.addSystem("尝试重连($reconnectAttempts/$maxReconnectAttempts)… ${delay}ms") }
-        // 使用视图的消息队列调度延迟重连
         binding.root.postDelayed({ connectWebSocket() }, delay)
     }
 
@@ -129,9 +127,8 @@ class ChatActivity : AppCompatActivity() {
             put("content", text)
         }
         if (webSocket?.send(json.toString()) == true) {
-            adapter.addMessage(ChatMessage(username, text))
+            // 不进行本地乐观追加，避免与服务端广播造成重复显示，等服务端回显后再更新UI。
             binding.editMessage.text?.clear()
-            binding.recyclerView.scrollToPosition(adapter.itemCount - 1)
         } else {
             adapter.addSystem("尚未连接，无法发送")
         }
@@ -140,5 +137,17 @@ class ChatActivity : AppCompatActivity() {
     private fun defaultUserName(): String {
         val suffix = (1000..9999).random()
         return "User$suffix"
+    }
+
+    private fun resolveUsername(): String {
+        // 优先从 JWT 提取，保证与后端身份一致，避免出现“两个身份”。
+        val token = com.example.shoes.net.Session.token
+        val fromJwt = com.example.shoes.net.JwtUtils.extractUsername(token)
+        if (!fromJwt.isNullOrBlank()) return fromJwt
+        // 其次采用上个页面传来的显示名
+        val fromIntent = intent.getStringExtra("user")
+        if (!fromIntent.isNullOrBlank()) return fromIntent
+        // 兜底随机名
+        return defaultUserName()
     }
 }

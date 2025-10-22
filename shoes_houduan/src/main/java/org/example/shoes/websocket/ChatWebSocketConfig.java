@@ -1,5 +1,8 @@
 package org.example.shoes.websocket;
 
+import org.example.shoes.repository.UserRepository;
+import org.example.shoes.security.JwtUtil;
+import org.example.shoes.service.ChatService;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.lang.NonNull;
@@ -12,6 +15,16 @@ import org.springframework.web.socket.config.annotation.WebSocketHandlerRegistry
 @EnableWebSocket
 public class ChatWebSocketConfig implements WebSocketConfigurer {
 
+  private final JwtUtil jwtUtil;
+  private final UserRepository userRepository;
+  private final ChatService chatService;
+
+  public ChatWebSocketConfig(JwtUtil jwtUtil, UserRepository userRepository, ChatService chatService) {
+    this.jwtUtil = jwtUtil;
+    this.userRepository = userRepository;
+    this.chatService = chatService;
+  }
+
   @Override
   public void registerWebSocketHandlers(@NonNull WebSocketHandlerRegistry registry) {
     registry.addHandler(chatWebSocketHandler(), "/ws/chat")
@@ -20,6 +33,6 @@ public class ChatWebSocketConfig implements WebSocketConfigurer {
 
   @Bean
   public WebSocketHandler chatWebSocketHandler() {
-    return new ChatWebSocketHandler();
+    return new ChatWebSocketHandler(jwtUtil, userRepository, chatService);
   }
 }

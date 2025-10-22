@@ -175,6 +175,16 @@
             </LinearLayout>
         </LinearLayout>
 
+        <!-- 社群聊天入口 -->
+        <Button
+            android:id="@+id/btnChat"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="社群 · 私聊"
+            android:layout_marginTop="12dp"
+            android:backgroundTint="@color/brand_red"
+            android:textColor="#FFFFFF"/>
+
         <!-- 我的订单 -->
         <TextView
             android:layout_width="match_parent"

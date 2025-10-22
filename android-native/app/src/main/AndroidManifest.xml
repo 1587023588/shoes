@@ -41,6 +41,8 @@
         <activity android:name=".VillageActivitiesActivity" />
         <activity android:name=".ScanActivity" />
         <activity android:name=".LogsActivity" />
+        <activity android:name=".ChatActivity" />
+        <activity android:name=".ConversationsActivity" />
     </application>
 
 </manifest>

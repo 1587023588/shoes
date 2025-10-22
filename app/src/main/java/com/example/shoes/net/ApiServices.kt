@@ -77,3 +77,39 @@ interface OrderApi {
     @POST("api/orders/{id}/pay")
     suspend fun pay(@Path("id") id: Long): OrderDto
 }
+
+// Chat DTOs & APIs
+data class ChatConversationDto(
+    val id: Long,
+    val type: String?, // GROUP or DM
+    val name: String?,
+)
+
+data class EnsureDmRequest(val userId: Long)
+data class CreateGroupRequest(val name: String, val memberIds: List<Long>)
+
+data class ChatMessageDto(
+    val id: Long?,
+    val conversationId: Long?,
+    val senderId: Long?,
+    val content: String?,
+    val createdAt: String?
+)
+
+interface ChatApi {
+    @GET("api/chat/conversations")
+    suspend fun listConversations(): List<ChatConversationDto>
+
+    @POST("api/chat/conversations/dm")
+    suspend fun ensureDm(@Body req: EnsureDmRequest): ChatConversationDto
+
+    @POST("api/chat/conversations/group")
+    suspend fun createGroup(@Body req: CreateGroupRequest): ChatConversationDto
+
+    @GET("api/chat/conversations/{id}/messages")
+    suspend fun getMessages(
+        @Path("id") id: Long,
+        @Query("size") size: Int? = 20,
+        @Query("before") before: String? = null
+    ): List<ChatMessageDto>
+}

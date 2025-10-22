@@ -20,9 +20,8 @@ class MainActivity : AppCompatActivity() {
         bottom.btnHome.setOnClickListener { switchTo(HomeFragment()); setSelectedTab(0) }
         bottom.btnCategory.setOnClickListener { switchTo(CategoryFragment()); setSelectedTab(1) }
         bottom.btnMessage.setOnClickListener {
-            // 消息页直接进入群聊
-            val intent = android.content.Intent(this, ChatActivity::class.java)
-            intent.putExtra("room", "public")
+            // 消息页进入“我的会话”
+            val intent = android.content.Intent(this, ConversationsActivity::class.java)
             startActivity(intent)
             setSelectedTab(2)
         }
@@ -31,9 +30,8 @@ class MainActivity : AppCompatActivity() {
         switchTo(HomeFragment()); setSelectedTab(0)
 
         binding.imgPlus.setOnClickListener {
-            // 快捷进入群聊
-            val intent = android.content.Intent(this, ChatActivity::class.java)
-            intent.putExtra("room", "public")
+            // 快捷进入我的会话
+            val intent = android.content.Intent(this, ConversationsActivity::class.java)
             startActivity(intent)
         }
     }
