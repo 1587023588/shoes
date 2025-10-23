@@ -41,7 +41,7 @@ class ChatActivity : AppCompatActivity() {
         binding.recyclerView.layoutManager = LinearLayoutManager(this).apply { stackFromEnd = true }
         binding.recyclerView.adapter = adapter
 
-        binding.btnSend.setOnClickListener { sendCurrentText() }
+    binding.btnSend.setOnClickListener { sendCurrentText() }
         binding.editMessage.setOnEditorActionListener { _, actionId, _ ->
             if (actionId == EditorInfo.IME_ACTION_SEND) {
                 sendCurrentText(); true
@@ -87,7 +87,9 @@ class ChatActivity : AppCompatActivity() {
                     "message" -> runOnUiThread {
                         val user = obj.optString("user", "?")
                         val content = obj.optString("content", "")
-                        adapter.addMessage(ChatMessage(user, content))
+                        val ts = obj.optString("timestamp", null)
+                        val isSelf = user == username
+                        adapter.addMessage(ChatMessage(user = user, content = content, isSelf = isSelf, timestamp = ts))
                         binding.recyclerView.scrollToPosition(adapter.itemCount - 1)
                     }
                     else -> runOnUiThread { adapter.addSystem(text) }
