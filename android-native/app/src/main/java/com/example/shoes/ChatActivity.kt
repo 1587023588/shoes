@@ -87,7 +87,9 @@ class ChatActivity : AppCompatActivity() {
                     "message" -> runOnUiThread {
                         val user = obj.optString("user", "?")
                         val content = obj.optString("content", "")
-                        val ts = obj.optString("timestamp", null)
+                        // org.json 的 optString 第二个参数要求 String，不能传 null，这里用空串兜底再转为可空
+                        val tsRaw = obj.optString("timestamp", "")
+                        val ts = tsRaw.takeIf { it.isNotBlank() }
                         val isSelf = user == username
                         adapter.addMessage(ChatMessage(user = user, content = content, isSelf = isSelf, timestamp = ts))
                         binding.recyclerView.scrollToPosition(adapter.itemCount - 1)
