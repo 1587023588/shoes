@@ -16,3 +16,5 @@ dependencyResolutionManagement {
 
 rootProject.name = "ShoesNative"
 include(":app")
+// 指定 app 模块的真实路径（在 android-native/app 下），避免从仓库根目录打开时找不到模块
+project(":app").projectDir = file("android-native/app")
