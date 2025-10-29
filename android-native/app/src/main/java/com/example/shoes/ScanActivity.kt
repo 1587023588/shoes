@@ -44,20 +44,20 @@ class ScanActivity : AppCompatActivity() {
             val contents = it.contents
             if (contents != null) {
                 if (!initialized) {
-                    Toast.makeText(this, "结果：$contents", Toast.LENGTH_LONG).show()
+                    ToastUtils.show(this, "结果：$contents", Toast.LENGTH_LONG)
                 } else {
                     binding.resultText.text = contents
                     binding.resultCard.visibility = View.VISIBLE
                 }
             } else {
-                Toast.makeText(this, "已取消", Toast.LENGTH_SHORT).show()
+                ToastUtils.show(this, "已取消", Toast.LENGTH_SHORT)
             }
         }
     }
 
     private val cameraPermissionLauncher =
         registerForActivityResult(ActivityResultContracts.RequestPermission()) { granted ->
-            if (granted) startScanning() else Toast.makeText(this, "需要相机权限才能扫码", Toast.LENGTH_SHORT).show()
+            if (granted) startScanning() else ToastUtils.show(this, "需要相机权限才能扫码", Toast.LENGTH_SHORT)
         }
 
     // 从相册选择图片
@@ -72,14 +72,14 @@ class ScanActivity : AppCompatActivity() {
             // 1) 设备是否具备相机（模拟器常见为不具备）
             val hasCameraAny = packageManager.hasSystemFeature(PackageManager.FEATURE_CAMERA_ANY)
             if (!hasCameraAny) {
-                Toast.makeText(this, "当前设备不支持相机（可能是模拟器），请使用真机扫码。", Toast.LENGTH_LONG).show()
+                ToastUtils.show(this, "当前设备不支持相机（可能是模拟器），请使用真机扫码。", Toast.LENGTH_LONG)
                 finish()
                 return
             }
 
             // 进一步检测是否真的存在可用的 cameraId（部分模拟器错误报告支持相机）
             if (!hasUsableCamera()) {
-                Toast.makeText(this, "未检测到可用的相机（多见于模拟器），请用真机扫码。", Toast.LENGTH_LONG).show()
+                ToastUtils.show(this, "未检测到可用的相机（多见于模拟器），请用真机扫码。", Toast.LENGTH_LONG)
                 finish()
                 return
             }
@@ -88,7 +88,7 @@ class ScanActivity : AppCompatActivity() {
             runCatching { Class.forName("com.journeyapps.barcodescanner.DecoratedBarcodeView") }
                 .onFailure {
                     Log.e(TAG, "ZXing DecoratedBarcodeView not found", it)
-                    Toast.makeText(this, "扫一扫组件未就绪，请重新安装最新构建。", Toast.LENGTH_LONG).show()
+                    ToastUtils.show(this, "扫一扫组件未就绪，请重新安装最新构建。", Toast.LENGTH_LONG)
                     finish()
                     return
                 }
@@ -171,7 +171,7 @@ class ScanActivity : AppCompatActivity() {
             breadcrumb("onCreate-exception-${t.javaClass.simpleName}")
             // 一律尝试使用 ZXing 内置 CaptureActivity 作为兜底（包括 IllegalArgumentException 等）
             // 注意：不能在 onCreate 尚未 RESUMED 时直接 launch，需延迟到 onResume
-            Toast.makeText(this, "扫一扫组件出现异常（${t.javaClass.simpleName}），已切换内置扫码页。", Toast.LENGTH_LONG).show()
+            ToastUtils.show(this, "扫一扫组件出现异常（${t.javaClass.simpleName}），已切换内置扫码页。", Toast.LENGTH_LONG)
             scheduleExternalScannerLaunch()
             return
         }
@@ -214,7 +214,7 @@ class ScanActivity : AppCompatActivity() {
             // 某些设备在打开相机时会抛 IllegalArgumentException，此时自动转到兜底扫描页
             Log.e(TAG, "Start scanning failed: ${e.message}", e)
             breadcrumb("startScanning-IAE")
-            Toast.makeText(this, "相机初始化异常，已切换内置扫码页。", Toast.LENGTH_SHORT).show()
+            ToastUtils.show(this, "相机初始化异常，已切换内置扫码页。", Toast.LENGTH_SHORT)
             cleanupAndFallback()
         } catch (e: IllegalStateException) {
             // LifecycleOwner 未处于 RESUMED 状态时发起，会抛此异常；改为延迟到 onResume
@@ -224,7 +224,7 @@ class ScanActivity : AppCompatActivity() {
         } catch (e: Throwable) {
             Log.e(TAG, "Start scanning unexpected error: ${e.message}", e)
             breadcrumb("startScanning-OTHER-${e.javaClass.simpleName}")
-            Toast.makeText(this, "相机初始化失败（${e.javaClass.simpleName}）", Toast.LENGTH_SHORT).show()
+            ToastUtils.show(this, "相机初始化失败（${e.javaClass.simpleName}）", Toast.LENGTH_SHORT)
         }
     }
 
@@ -275,7 +275,7 @@ class ScanActivity : AppCompatActivity() {
             }.onFailure {
                 Log.e(TAG, "Launch external scanner failed", it)
                 breadcrumb("scheduleExternalScannerLaunch-fail-${it.javaClass.simpleName}")
-                Toast.makeText(this, "内置扫码页启动失败", Toast.LENGTH_SHORT).show()
+                ToastUtils.show(this, "内置扫码页启动失败", Toast.LENGTH_SHORT)
             }
         }
     }
@@ -291,7 +291,7 @@ class ScanActivity : AppCompatActivity() {
         }.onFailure {
             Log.e(TAG, "Pending external scanner launch failed", it)
             breadcrumb("pendingExternalScanner-fail-${it.javaClass.simpleName}")
-            Toast.makeText(this, "内置扫码页启动失败", Toast.LENGTH_SHORT).show()
+            ToastUtils.show(this, "内置扫码页启动失败", Toast.LENGTH_SHORT)
         }
     }
 
@@ -330,13 +330,13 @@ class ScanActivity : AppCompatActivity() {
             if (resultText != null) {
                 binding.resultText.text = resultText
                 binding.resultCard.visibility = View.VISIBLE
-                Toast.makeText(this, "识别成功", Toast.LENGTH_SHORT).show()
+                ToastUtils.show(this, "识别成功", Toast.LENGTH_SHORT)
             } else {
-                Toast.makeText(this, "未识别到二维码/条码", Toast.LENGTH_SHORT).show()
+                ToastUtils.show(this, "未识别到二维码/条码", Toast.LENGTH_SHORT)
             }
         }.onFailure {
             Log.e(TAG, "Pick image decode failed", it)
-            Toast.makeText(this, "图片识别失败", Toast.LENGTH_SHORT).show()
+            ToastUtils.show(this, "图片识别失败", Toast.LENGTH_SHORT)
         }
     }
 

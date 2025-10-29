@@ -44,6 +44,9 @@
         <activity android:name=".LogsActivity" />
         <activity android:name=".ChatActivity" />
         <activity android:name=".ConversationsActivity" />
+        <!-- 购买流程 -->
+        <activity android:name=".order.OrderConfirmActivity" />
+        <activity android:name=".order.OrderDetailActivity" />
     </application>
 
 </manifest>

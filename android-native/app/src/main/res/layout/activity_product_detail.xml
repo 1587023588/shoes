@@ -194,6 +194,19 @@
             android:layout_height="wrap_content"
             android:text="尺码：35-44"
             android:layout_marginTop="8dp" />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="请选择尺码"
+            android:textColor="#666666"
+            android:layout_marginTop="8dp" />
+        <GridLayout
+            android:id="@+id/sizeGrid"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:columnCount="4"
+            android:useDefaultMargins="true"
+            android:layout_marginTop="8dp" />
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

@@ -160,8 +160,8 @@ class ProductDetailActivity : AppCompatActivity() {
             binding.btnAdd.text = "已加入"
         }
         binding.btnBuy.setOnClickListener {
-            ShoppingCart.add(product.id, selectedCount)
-            // 可跳转到订单确认页（暂空）
+            // 直接进入订单确认页
+            startActivity(com.example.shoes.order.OrderConfirmActivity.intent(this, product.id, selectedCount))
         }
     }
 

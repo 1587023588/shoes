@@ -13,6 +13,8 @@ import coil.load
 class ProductDetailActivity : AppCompatActivity() {
     private lateinit var binding: ActivityProductDetailBinding
     private var selectedCount = 1
+    private var selectedSize: String? = null
+    private var isFromBuy: Boolean = false
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -137,8 +139,9 @@ class ProductDetailActivity : AppCompatActivity() {
             android.util.Log.e("ProductDetail", "build desc error", t)
         }
 
-        // 已选/规格面板
+        // 规格面板：点击“已选”仅用于查看/选择规格，不跳转
         binding.rowSelected.setOnClickListener {
+            isFromBuy = false
             toggleSpecSheet(true, product)
         }
         binding.btnSpecMinus.setOnClickListener {
@@ -150,8 +153,18 @@ class ProductDetailActivity : AppCompatActivity() {
             binding.specCount.text = selectedCount.toString()
         }
         binding.btnSpecConfirm.setOnClickListener {
-            binding.selectedText.text = "${selectedCount}件  尺码:${product.sizeRange ?: "-"}"
+            if (selectedSize.isNullOrEmpty()) {
+                ToastUtils.show(this, "请选择尺码")
+                return@setOnClickListener
+            }
+            binding.selectedText.text = "${selectedCount}件  尺码:${selectedSize}"
+            val size = selectedSize
+            val count = selectedCount
             toggleSpecSheet(false, product)
+            if (isFromBuy && size != null) {
+                // 小程序样式：在浮窗选择后，点击确定再跳转订单确认
+                startActivity(com.example.shoes.order.OrderConfirmActivity.intent(this, product.id, count, size))
+            }
         }
 
         // 购买栏
@@ -160,15 +173,60 @@ class ProductDetailActivity : AppCompatActivity() {
             binding.btnAdd.text = "已加入"
         }
         binding.btnBuy.setOnClickListener {
-            ShoppingCart.add(product.id, selectedCount)
-            // 可跳转到订单确认页（暂空）
+            // 打开规格选择浮窗，用户选择尺码后点确定再跳转
+            isFromBuy = true
+            toggleSpecSheet(true, product)
         }
     }
 
     private fun toggleSpecSheet(show: Boolean, product: com.example.shoes.model.Product) {
         binding.specTitle.text = "选择规格"
         binding.specHint.text = "尺码：${product.sizeRange ?: "-"}"
+        buildSizeGrid(product)
         binding.specSheet.visibility = if (show) View.VISIBLE else View.GONE
+    }
+
+    private fun buildSizeGrid(product: com.example.shoes.model.Product) {
+        val grid = findViewById<android.widget.GridLayout>(R.id.sizeGrid) ?: return
+        grid.removeAllViews()
+        val sizes: List<String> = parseSizes(product.sizeRange) ?: listOf("38","39","40","41","42","43","44","45")
+        val dm = resources.displayMetrics
+        val col = if (grid.columnCount > 0) grid.columnCount else 4
+        val screenW = resources.displayMetrics.widthPixels
+        val horizontalPadding = (16 * dm.density * 2).toInt() // 与布局左右 padding 对齐
+        val spacing = (dm.density * 8).toInt()
+        val available = (screenW - horizontalPadding - (col - 1) * spacing).coerceAtLeast(col * 40) // 兜底最小宽度
+        val itemW = (available / col).coerceAtLeast((48 * dm.density).toInt())
+        sizes.forEach { s ->
+            val tv = android.widget.TextView(this)
+            tv.text = s
+            tv.gravity = android.view.Gravity.CENTER
+            tv.setPadding(0, (8 * dm.density).toInt(), 0, (8 * dm.density).toInt())
+            tv.setBackgroundResource(if (s == selectedSize) R.drawable.bg_size_selected else R.drawable.bg_size_unselected)
+            tv.setTextColor(if (s == selectedSize) 0xFFFFFFFF.toInt() else 0xFF333333.toInt())
+            val lp = android.widget.GridLayout.LayoutParams()
+            lp.width = itemW
+            lp.height = android.widget.LinearLayout.LayoutParams.WRAP_CONTENT
+            lp.setMargins(spacing / 2, spacing / 2, spacing / 2, spacing / 2)
+            tv.layoutParams = lp
+            tv.setOnClickListener {
+                selectedSize = s
+                // 重新刷新外观
+                buildSizeGrid(product)
+            }
+            grid.addView(tv)
+        }
+    }
+
+    private fun parseSizes(range: String?): List<String>? {
+        if (range.isNullOrBlank()) return null
+        // 支持 "35-44" 或 "35,36,37,38" 两种格式
+        return if (range.contains('-')) {
+            val parts = range.split('-').mapNotNull { it.trim().toIntOrNull() }
+            if (parts.size == 2 && parts[0] <= parts[1]) (parts[0]..parts[1]).map { it.toString() } else null
+        } else if (range.contains(',')) {
+            range.split(',').map { it.trim() }.filter { it.isNotEmpty() }
+        } else null
     }
 
     companion object {

@@ -7,6 +7,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.activity.result.contract.ActivityResultContracts
 import androidx.fragment.app.Fragment
 import com.example.shoes.databinding.FragmentMineBinding
 import com.example.shoes.net.Session
@@ -14,7 +15,11 @@ import com.example.shoes.net.Session
 class MineFragment : Fragment() {
     private var _binding: FragmentMineBinding? = null
     private val binding get() = _binding!!
-    private val reqLogin = 1001
+    private val loginLauncher = registerForActivityResult(ActivityResultContracts.StartActivityForResult()) { result ->
+        if (result.resultCode == Activity.RESULT_OK) {
+            renderLoginState()
+        }
+    }
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -26,16 +31,16 @@ class MineFragment : Fragment() {
     // 占位交互
     binding.btnSettings.setOnClickListener { Toast.makeText(requireContext(), "打开设置", Toast.LENGTH_SHORT).show() }
 
-        // 订单分组点击
-        binding.orderWaitPay.setOnClickListener { Toast.makeText(requireContext(), "待付款订单", Toast.LENGTH_SHORT).show() }
-        binding.orderWaitShip.setOnClickListener { Toast.makeText(requireContext(), "待发货订单", Toast.LENGTH_SHORT).show() }
-        binding.orderWaitReceive.setOnClickListener { Toast.makeText(requireContext(), "待收货订单", Toast.LENGTH_SHORT).show() }
-        binding.orderAll.setOnClickListener { Toast.makeText(requireContext(), "全部订单", Toast.LENGTH_SHORT).show() }
+    // 订单分组点击
+    binding.orderWaitPay.setOnClickListener { startActivity(Intent(requireContext(), com.example.shoes.order.OrderListActivity::class.java).apply { putExtra(com.example.shoes.order.OrderListActivity.EXTRA_STATUS, "paid") }) }
+    binding.orderWaitShip.setOnClickListener { startActivity(Intent(requireContext(), com.example.shoes.order.OrderListActivity::class.java).apply { putExtra(com.example.shoes.order.OrderListActivity.EXTRA_STATUS, "shipped") }) }
+    binding.orderWaitReceive.setOnClickListener { startActivity(Intent(requireContext(), com.example.shoes.order.OrderListActivity::class.java).apply { putExtra(com.example.shoes.order.OrderListActivity.EXTRA_STATUS, "completed") }) }
+    binding.orderAll.setOnClickListener { startActivity(Intent(requireContext(), com.example.shoes.order.OrderListActivity::class.java)) }
 
         // 用户卡片点击 -> 去登录
         binding.userCard.setOnClickListener {
             if (Session.token == null) {
-                startActivityForResult(Intent(requireContext(), LoginActivity::class.java), reqLogin)
+                loginLauncher.launch(Intent(requireContext(), LoginActivity::class.java))
             } else {
                 Toast.makeText(requireContext(), "已登录", Toast.LENGTH_SHORT).show()
             }
@@ -69,12 +74,7 @@ class MineFragment : Fragment() {
         }
     }
 
-    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
-        super.onActivityResult(requestCode, resultCode, data)
-        if (requestCode == reqLogin && resultCode == Activity.RESULT_OK) {
-            renderLoginState()
-        }
-    }
+    // 已迁移至 Activity Result API，无需重写 onActivityResult
 
     override fun onDestroyView() {
         super.onDestroyView()

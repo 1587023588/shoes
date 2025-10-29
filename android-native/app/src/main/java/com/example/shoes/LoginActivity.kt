@@ -29,12 +29,19 @@ class LoginActivity : AppCompatActivity() {
             binding.btnLogin.isEnabled = false
             lifecycleScope.launch {
                 try {
-                    repo.login(u, p)
+                    // 避免网络不通时长时间无响应，增加 5s 超时
+                    kotlinx.coroutines.withTimeout(5000L) {
+                        repo.login(u, p)
+                    }
                     Toast.makeText(this@LoginActivity, "登录成功", Toast.LENGTH_SHORT).show()
                     setResult(RESULT_OK)
                     finish()
                 } catch (e: Exception) {
-                    Toast.makeText(this@LoginActivity, e.message ?: "登录失败", Toast.LENGTH_SHORT).show()
+                    val msg = when (e) {
+                        is kotlinx.coroutines.TimeoutCancellationException -> "服务器连接超时，请稍后再试"
+                        else -> e.message ?: "登录失败"
+                    }
+                    Toast.makeText(this@LoginActivity, msg, Toast.LENGTH_SHORT).show()
                 } finally {
                     binding.progress.visibility = View.GONE
                     binding.btnLogin.isEnabled = true
