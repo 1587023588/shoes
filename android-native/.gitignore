@@ -31,3 +31,6 @@ app/tmp/
 # Mac / Windows
 Thumbs.db
 $RECYCLE.BIN/
+
+# Backup of accidentally created nested Git repo
+.git.bak-*/
