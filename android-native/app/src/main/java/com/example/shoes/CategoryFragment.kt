@@ -4,7 +4,6 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.BaseAdapter
 import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
@@ -25,6 +24,9 @@ import android.graphics.PorterDuff
 import android.graphics.PorterDuffColorFilter
 import android.graphics.drawable.GradientDrawable
 import androidx.core.content.ContextCompat
+import androidx.recyclerview.widget.GridLayoutManager
+import androidx.recyclerview.widget.ItemTouchHelper
+import androidx.recyclerview.widget.RecyclerView
 import kotlin.math.cos
 import kotlin.math.sin
 import kotlin.math.PI
@@ -37,6 +39,8 @@ private class CatViewHolder(val icon: ImageView, val label: TextView)
 class CategoryFragment : Fragment() {
     private var _binding: FragmentCategoryBinding? = null
     private val binding get() = _binding!!
+    // 缓存不同尺寸的星星位图，避免每次布局都重新生成，提升滑动流畅度
+    private val starBitmapCache = mutableMapOf<Int, Bitmap>()
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -74,9 +78,10 @@ class CategoryFragment : Fragment() {
             CategoryItem(R.drawable.cat_19, "红色资源")
         )
 
-        binding.grid1.adapter = CategoryAdapter(group1)
-        binding.grid2.adapter = CategoryAdapter(group2)
-        binding.grid3.adapter = CategoryAdapter(group3)
+    // 三组网格替换为 RecyclerView + ItemTouchHelper 支持拖拽排序（同组内）
+    setupDragGrid(binding.grid1, group1.toMutableList())
+    setupDragGrid(binding.grid2, group2.toMutableList())
+    setupDragGrid(binding.grid3, group3.toMutableList())
 
     // 将顶部与三组标题左侧图标的白底抠除（把接近白色的像素置为透明）
     tryRemoveWhiteBackground(binding.categoryHeaderIcon)
@@ -97,67 +102,72 @@ class CategoryFragment : Fragment() {
         _binding = null
     }
 
-    inner class CategoryAdapter(private val items: List<CategoryItem>) : BaseAdapter() {
-        override fun getCount() = items.size
-        override fun getItem(position: Int) = items[position]
-        override fun getItemId(position: Int) = position.toLong()
-        override fun getView(position: Int, convertView: View?, parent: ViewGroup?): View {
-            val holder: CatViewHolder
-            val view: View
-            if (convertView == null) {
-                val vb = ItemCategoryBinding.inflate(layoutInflater, parent, false)
-                view = vb.root
-                holder = CatViewHolder(vb.icon, vb.label)
-                view.tag = holder
-            } else {
-                view = convertView
-                holder = convertView.tag as CatViewHolder
+    private fun setupDragGrid(recycler: RecyclerView, items: MutableList<CategoryItem>) {
+        recycler.layoutManager = GridLayoutManager(requireContext(), 4)
+        // 放在 NestedScrollView 中，关闭自身嵌套滚动，由外层负责滚动，避免底部被遮挡
+        recycler.isNestedScrollingEnabled = false
+        val adapter = CategoryDragAdapter(items) { item -> onCategoryClick(item) }
+        recycler.adapter = adapter
+
+        val callback = object : ItemTouchHelper.SimpleCallback(
+            ItemTouchHelper.UP or ItemTouchHelper.DOWN or ItemTouchHelper.LEFT or ItemTouchHelper.RIGHT,
+            0
+        ) {
+            override fun onMove(
+                recyclerView: RecyclerView,
+                viewHolder: RecyclerView.ViewHolder,
+                target: RecyclerView.ViewHolder
+            ): Boolean {
+                val from = viewHolder.bindingAdapterPosition
+                val to = target.bindingAdapterPosition
+                adapter.swap(from, to)
+                return true
             }
-            val item = getItem(position)
-            holder.icon.setImageResource(item.iconRes)
-            holder.label.text = item.label
-            view.setOnClickListener {
-                when {
-                    item.label.contains("精品布鞋") -> {
-                        startActivity(android.content.Intent(requireContext(), BoutiqueShoesActivity::class.java))
-                    }
-                    item.label.contains("优惠活动") -> {
-                        startActivity(android.content.Intent(requireContext(), CouponActivity::class.java))
-                    }
-                    item.label.contains("线上销售") -> {
-                        startActivity(android.content.Intent(requireContext(), OnlineSalesActivity::class.java))
-                    }
-                    item.label.contains("云上场馆") -> {
-                        startActivity(android.content.Intent(requireContext(), MuseumActivity::class.java))
-                    }
-                        item.label.contains("村级活动") -> {
-                            startActivity(android.content.Intent(requireContext(), VillageActivitiesActivity::class.java))
-                        }
-                    item.label.contains("预约参观") -> {
-                        startActivity(android.content.Intent(requireContext(), BookingActivity::class.java))
-                    }
-                    item.label.contains("西柏坡精神") -> {
-                        startActivity(android.content.Intent(requireContext(), XibaopoActivity::class.java))
-                    }
-                    item.label.contains("团结精神") -> {
-                        val posterIntent = android.content.Intent(requireContext(), PosterActivity::class.java)
-                        posterIntent.putExtra(PosterActivity.EXTRA_RES_ID, R.drawable.team)
-                        startActivity(posterIntent)
-                    }
-                    item.label.contains("拥军故事") -> {
-                        val posterIntent = android.content.Intent(requireContext(), PosterActivity::class.java)
-                        posterIntent.putExtra(PosterActivity.EXTRA_RES_ID, R.drawable.arm)
-                        startActivity(posterIntent)
-                    }
-                    item.label.contains("红色资源") -> {
-                        val posterIntent = android.content.Intent(requireContext(), PosterActivity::class.java)
-                        posterIntent.putExtra(PosterActivity.EXTRA_RES_ID, R.drawable.red)
-                        startActivity(posterIntent)
-                    }
-                    else -> Toast.makeText(requireContext(), item.label, Toast.LENGTH_SHORT).show()
-                }
+            override fun onSwiped(viewHolder: RecyclerView.ViewHolder, direction: Int) { /* no-op */ }
+            override fun isLongPressDragEnabled(): Boolean = true
+        }
+        ItemTouchHelper(callback).attachToRecyclerView(recycler)
+    }
+
+    private fun onCategoryClick(item: CategoryItem) {
+        when {
+            item.label.contains("精品布鞋") -> {
+                startActivity(android.content.Intent(requireContext(), BoutiqueShoesActivity::class.java))
             }
-            return view
+            item.label.contains("优惠活动") -> {
+                startActivity(android.content.Intent(requireContext(), CouponActivity::class.java))
+            }
+            item.label.contains("线上销售") -> {
+                startActivity(android.content.Intent(requireContext(), OnlineSalesActivity::class.java))
+            }
+            item.label.contains("云上场馆") -> {
+                startActivity(android.content.Intent(requireContext(), MuseumActivity::class.java))
+            }
+            item.label.contains("村级活动") -> {
+                startActivity(android.content.Intent(requireContext(), VillageActivitiesActivity::class.java))
+            }
+            item.label.contains("预约参观") -> {
+                startActivity(android.content.Intent(requireContext(), BookingActivity::class.java))
+            }
+            item.label.contains("西柏坡精神") -> {
+                startActivity(android.content.Intent(requireContext(), XibaopoActivity::class.java))
+            }
+            item.label.contains("团结精神") -> {
+                val posterIntent = android.content.Intent(requireContext(), PosterActivity::class.java)
+                posterIntent.putExtra(PosterActivity.EXTRA_RES_ID, R.drawable.team)
+                startActivity(posterIntent)
+            }
+            item.label.contains("拥军故事") -> {
+                val posterIntent = android.content.Intent(requireContext(), PosterActivity::class.java)
+                posterIntent.putExtra(PosterActivity.EXTRA_RES_ID, R.drawable.arm)
+                startActivity(posterIntent)
+            }
+            item.label.contains("红色资源") -> {
+                val posterIntent = android.content.Intent(requireContext(), PosterActivity::class.java)
+                posterIntent.putExtra(PosterActivity.EXTRA_RES_ID, R.drawable.red)
+                startActivity(posterIntent)
+            }
+            else -> Toast.makeText(requireContext(), item.label, Toast.LENGTH_SHORT).show()
         }
     }
 
@@ -167,6 +177,9 @@ class CategoryFragment : Fragment() {
      */
     private fun tryRemoveWhiteBackground(target: ImageView?, threshold: Int = 245) {
         if (target == null) return
+        // 避免重复处理同一 ImageView，提高性能
+        val processedTag = target.getTag(R.id.tag_processed_white_bg)
+        if (processedTag == true) return
         val d: Drawable = target.drawable ?: return
         // 计算位图尺寸：按视图大小渲染，若不可用则退回 intrinsic 尺寸
         val width = if (target.width > 0) target.width else (d.intrinsicWidth.takeIf { it > 0 } ?: 72)
@@ -204,6 +217,8 @@ class CategoryFragment : Fragment() {
 
         bmp.setPixels(pixels, 0, width, 0, 0, width, height)
         target.setImageDrawable(BitmapDrawable(resources, bmp))
+        // 标记为已处理
+        target.setTag(R.id.tag_processed_white_bg, true)
     }
 
     // 在一行里按可用宽度添加星星，固定大小与间距，确保在同一基线
@@ -216,8 +231,8 @@ class CategoryFragment : Fragment() {
                 val starSizePx = (starSizeDp * density).toInt()
                 val spacingPx = (spacingDp * density).toInt()
                 val width = container.width
-                // 生成“真实五角星”位图，避免依赖外部资源导致显示为方块
-                val starBmp = createTealStarBitmap(starSizePx)
+                // 使用缓存的“真实五角星”位图，避免重复创建
+                val starBmp = starBitmapCache.getOrPut(starSizePx) { createTealStarBitmap(starSizePx) }
                 container.removeAllViews()
 
                 if (width <= 0) {

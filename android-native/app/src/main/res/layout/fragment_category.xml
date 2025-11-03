@@ -1,15 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:fillViewport="true">
+    android:fillViewport="true"
+    android:clipToPadding="false">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:background="@color/top_bg">
+        android:background="@color/top_bg"
+        android:paddingBottom="88dp">
 
         <!-- 顶部：头像 + 搜索框（与首页一致风格） -->
         <LinearLayout
@@ -105,14 +107,10 @@
                     android:clipToPadding="false"/>
             </LinearLayout>
 
-            <GridView
+            <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/grid1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:numColumns="4"
-                android:horizontalSpacing="@dimen/category_grid_hspace"
-                android:verticalSpacing="@dimen/category_grid_vspace"
-                android:stretchMode="columnWidth"
                 android:paddingTop="8dp"
                 android:paddingBottom="8dp"/>
         </LinearLayout>
@@ -157,14 +155,10 @@
                     android:clipToPadding="false"/>
             </LinearLayout>
 
-            <GridView
+            <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/grid2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:numColumns="4"
-                android:horizontalSpacing="@dimen/category_grid_hspace"
-                android:verticalSpacing="@dimen/category_grid_vspace"
-                android:stretchMode="columnWidth"
                 android:paddingTop="8dp"
                 android:paddingBottom="8dp"/>
         </LinearLayout>
@@ -209,17 +203,13 @@
                     android:clipToPadding="false"/>
             </LinearLayout>
 
-            <GridView
+            <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/grid3"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:numColumns="4"
-                android:horizontalSpacing="@dimen/category_grid_hspace"
-                android:verticalSpacing="@dimen/category_grid_vspace"
-                android:stretchMode="columnWidth"
                 android:paddingTop="8dp"
                 android:paddingBottom="12dp"/>
         </LinearLayout>
 
     </LinearLayout>
-</ScrollView>
+</androidx.core.widget.NestedScrollView>

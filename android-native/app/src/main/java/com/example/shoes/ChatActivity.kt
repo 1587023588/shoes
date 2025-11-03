@@ -9,7 +9,6 @@ import okhttp3.*
 import okio.ByteString
 import org.json.JSONObject
 import java.net.URLEncoder
-import java.nio.charset.StandardCharsets
 import java.util.concurrent.TimeUnit
 
 class ChatActivity : AppCompatActivity() {
@@ -32,23 +31,52 @@ class ChatActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = ActivityChatBinding.inflate(layoutInflater)
-        setContentView(binding.root)
+        try {
+            binding = ActivityChatBinding.inflate(layoutInflater)
+            setContentView(binding.root)
 
-        supportActionBar?.title = convName?.let { it } ?: "群聊：$room"
+            if (room.isBlank()) {
+                android.widget.Toast.makeText(this, "会话ID缺失，无法进入聊天", android.widget.Toast.LENGTH_SHORT).show()
+                finish(); return
+            }
 
-        adapter = ChatAdapter()
-        binding.recyclerView.layoutManager = LinearLayoutManager(this).apply { stackFromEnd = true }
-        binding.recyclerView.adapter = adapter
+            // 若进入的是具体会话ID（纯数字），后端要求登录鉴权；未登录则直接提示并返回，避免无意义重连
+            val isNumericRoom = room.all { it.isDigit() }
+            if (isNumericRoom && com.example.shoes.net.Session.token.isNullOrEmpty()) {
+                android.widget.Toast.makeText(this, "请先登录后再进入群聊", android.widget.Toast.LENGTH_SHORT).show()
+                finish(); return
+            }
 
-    binding.btnSend.setOnClickListener { sendCurrentText() }
-        binding.editMessage.setOnEditorActionListener { _, actionId, _ ->
-            if (actionId == EditorInfo.IME_ACTION_SEND) {
-                sendCurrentText(); true
-            } else false
+            supportActionBar?.title = convName?.let { it } ?: "群聊：$room"
+
+            adapter = ChatAdapter()
+            binding.recyclerView.layoutManager = LinearLayoutManager(this).apply { stackFromEnd = true }
+            binding.recyclerView.adapter = adapter
+
+            binding.btnSend.setOnClickListener { sendCurrentText() }
+            binding.editMessage.setOnEditorActionListener { _, actionId, _ ->
+                if (actionId == EditorInfo.IME_ACTION_SEND) {
+                    sendCurrentText(); true
+                } else false
+            }
+
+            connectWebSocket()
+        } catch (e: Throwable) {
+            // 兜底防护：任何初始化异常均提示并结束，避免“点击即闪退”无反馈
+            try {
+                // 将错误和入参记录到内部日志，便于排查真机问题
+                val sb = StringBuilder()
+                sb.appendLine("room=" + intent?.getStringExtra("room"))
+                sb.appendLine("convName=" + intent?.getStringExtra("convName"))
+                sb.appendLine("msg=" + (e.message ?: e::class.java.name))
+                sb.appendLine(e.stackTraceToString())
+                val dir = java.io.File(filesDir, "logs").apply { mkdirs() }
+                java.io.File(dir, "chat_last_error.txt").writeText(sb.toString())
+                android.util.Log.e("ChatActivity", "init failed", e)
+                android.widget.Toast.makeText(this, "进入聊天失败：" + (e.message ?: "未知错误"), android.widget.Toast.LENGTH_LONG).show()
+            } catch (_: Throwable) {}
+            finish()
         }
-
-        connectWebSocket()
     }
 
     override fun onDestroy() {
@@ -60,20 +88,21 @@ class ChatActivity : AppCompatActivity() {
 
     private fun connectWebSocket() {
         if (isShuttingDown) return
-        val baseWs = com.example.shoes.RemoteConfig.chatWsUrl
-        val token = com.example.shoes.net.Session.token
-        val userForWs = username
-        val sb = StringBuilder(baseWs)
-            .append("?room=")
-            .append(URLEncoder.encode(room, StandardCharsets.UTF_8))
-            .append("&user=")
-            .append(URLEncoder.encode(userForWs, StandardCharsets.UTF_8))
-        if (!token.isNullOrEmpty()) {
-            sb.append("&token=").append(URLEncoder.encode(token, StandardCharsets.UTF_8))
-        }
-        val url = sb.toString()
-        val request = Request.Builder().url(url).build()
-        webSocket = client.newWebSocket(request, object : WebSocketListener() {
+        try {
+            val baseWs = com.example.shoes.RemoteConfig.chatWsUrl
+            val token = com.example.shoes.net.Session.token
+            val userForWs = username.ifBlank { defaultUserName() }
+            val sb = StringBuilder(baseWs)
+                .append("?room=")
+                .append(URLEncoder.encode(room.ifBlank { "public" }, "UTF-8"))
+                .append("&user=")
+                .append(URLEncoder.encode(userForWs, "UTF-8"))
+            if (!token.isNullOrEmpty()) {
+                sb.append("&token=").append(URLEncoder.encode(token, "UTF-8"))
+            }
+            val url = sb.toString()
+            val request = Request.Builder().url(url).build()
+            webSocket = client.newWebSocket(request, object : WebSocketListener() {
             override fun onOpen(webSocket: WebSocket, response: Response) {
                 reconnectAttempts = 0
                 runOnUiThread { adapter.addSystem("已连接到房间：$room 作为 $username") }
@@ -104,14 +133,31 @@ class ChatActivity : AppCompatActivity() {
 
             override fun onClosing(webSocket: WebSocket, code: Int, reason: String) {
                 runOnUiThread { adapter.addSystem("连接关闭：$reason ($code)") }
-                scheduleReconnect()
+                // 策略：权限问题或成员校验失败不再重连，直接给出指引
+                if (code == 1008 || reason == "AUTH_REQUIRED" || reason == "NOT_MEMBER") {
+                    isShuttingDown = true
+                    val hint = when (reason) {
+                        "AUTH_REQUIRED" -> "该群聊需要登录，请先登录"
+                        "NOT_MEMBER" -> "你不在该群聊成员列表中"
+                        else -> ""
+                    }
+                    if (hint.isNotEmpty()) runOnUiThread { android.widget.Toast.makeText(this@ChatActivity, hint, android.widget.Toast.LENGTH_LONG).show() }
+                } else {
+                    scheduleReconnect()
+                }
             }
 
             override fun onFailure(webSocket: WebSocket, t: Throwable, response: Response?) {
                 runOnUiThread { adapter.addSystem("连接失败：${t.message}") }
                 scheduleReconnect()
             }
-        })
+            })
+        } catch (e: Exception) {
+            runOnUiThread {
+                adapter.addSystem("创建连接失败：${e.message ?: "未知错误"}")
+                android.widget.Toast.makeText(this, e.message ?: "连接创建失败", android.widget.Toast.LENGTH_SHORT).show()
+            }
+        }
     }
 
     private fun scheduleReconnect() {

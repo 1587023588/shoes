@@ -14,6 +14,12 @@ class RemoteRepository {
         return token
     }
 
+    suspend fun register(username: String, password: String): String {
+        val token = authApi.register(RegisterRequest(username, password)).token
+        Session.token = token
+        return token
+    }
+
     suspend fun products(): List<Product> = productApi.list().map {
         Product(
             id = it.id.toString(),

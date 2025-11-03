@@ -12,12 +12,15 @@ object ApiClient {
     private fun baseUrl(): String = "http://${NetEnv.hostForLocalBackend()}:8080/"
 
     @Volatile private var retrofit: Retrofit? = null
+    @Volatile private var lastBaseUrl: String? = null
 
     fun get(tokenProvider: () -> String?): Retrofit {
         val currentBase = baseUrl()
         val existing = retrofit
-        if (existing != null) return existing
+        // 如果已有实例且 base 未变化，直接复用；否则重建，解决从模拟器切到真机(或反之)后无法访问的问题
+        if (existing != null && lastBaseUrl == currentBase) return existing
         return synchronized(this) {
+            if (retrofit != null && lastBaseUrl == currentBase) return@synchronized retrofit!!
             val logging = HttpLoggingInterceptor().apply { level = HttpLoggingInterceptor.Level.BODY }
             val auth = Interceptor { chain ->
                 val reqBuilder = chain.request().newBuilder()
@@ -34,7 +37,15 @@ object ApiClient {
                 .addConverterFactory(GsonConverterFactory.create())
                 .build()
             retrofit = instance
+            lastBaseUrl = currentBase
             instance
+        }
+    }
+
+    fun invalidate() {
+        synchronized(this) {
+            retrofit = null
+            lastBaseUrl = null
         }
     }
 }

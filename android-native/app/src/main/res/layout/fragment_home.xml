@@ -1,14 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:fillViewport="true">
+    android:fillViewport="true"
+    android:clipToPadding="false">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:paddingBottom="88dp">
 
         <!-- 顶部区域：浅绿背景、位置天气 + 红描边搜索框 + 相机 + 搜索按钮 -->
         <LinearLayout
@@ -322,10 +324,40 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="精选布鞋"
+            android:text="全部商品"
             android:textStyle="bold"
             android:textSize="18sp"
             android:padding="12dp" />
+
+        <!-- 未登录提示条：引导去登录后查看全部商品 -->
+        <LinearLayout
+            android:id="@+id/login_hint_container"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:paddingStart="12dp"
+            android:paddingEnd="12dp"
+            android:paddingTop="8dp"
+            android:paddingBottom="8dp"
+            android:visibility="gone">
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="未登录，仅展示示例 A/B；登录后可查看全部商品"
+                android:textColor="#7A4B3A"
+                android:textSize="13sp"/>
+            <TextView
+                android:id="@+id/btn_go_login"
+                android:layout_width="88dp"
+                android:layout_height="36dp"
+                android:gravity="center"
+                android:background="@drawable/bg_red_pill"
+                android:text="去登录"
+                android:textColor="@android:color/white"
+                android:textStyle="bold"/>
+        </LinearLayout>
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/list"
@@ -333,4 +365,4 @@
             android:layout_height="wrap_content" />
 
     </LinearLayout>
-</ScrollView>
+</androidx.core.widget.NestedScrollView>

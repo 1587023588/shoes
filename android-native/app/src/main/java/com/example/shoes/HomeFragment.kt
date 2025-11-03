@@ -13,6 +13,7 @@ import com.example.shoes.data.ProductRepository
 import coil.load
 import com.example.shoes.databinding.FragmentHomeBinding
 import com.example.shoes.ui.home.ProductAdapter
+import com.example.shoes.net.Session
 import android.widget.Toast
 import androidx.media3.common.MediaItem
 import androidx.media3.common.Player
@@ -92,24 +93,46 @@ class HomeFragment : Fragment() {
         binding.actionScan.setOnClickListener {
             startActivity(android.content.Intent(requireContext(), ScanActivity::class.java))
         }
+
+        // 未登录提示：去登录
+        binding.btnGoLogin.setOnClickListener {
+            startActivity(android.content.Intent(requireContext(), LoginActivity::class.java))
+        }
         return binding.root
     }
 
     private fun setupList() {
         binding.list.layoutManager = GridLayoutManager(requireContext(), 2)
-        lifecycleScope.launchWhenStarted {
+        // 放在 NestedScrollView 中，由外层负责滚动
+        binding.list.isNestedScrollingEnabled = false
+        // 优先从内存取；若为空则尝试从 SharedPreferences 恢复
+        var token = Session.token
+        if (token.isNullOrEmpty()) {
             try {
-                val remote = com.example.shoes.data.RemoteRepository().products()
-                binding.list.adapter = ProductAdapter(remote) { product ->
-                    startActivity(ProductDetailActivity.intent(requireContext(), product.id))
+                val sp = requireContext().getSharedPreferences("session", android.content.Context.MODE_PRIVATE)
+                val saved = sp.getString("auth_token", null)
+                if (!saved.isNullOrEmpty()) {
+                    Session.token = saved
+                    token = saved
                 }
-            } catch (e: Exception) {
-                // 回退到本地假数据
-                val local = ProductRepository.list()
-                binding.list.adapter = ProductAdapter(local) { product ->
-                    startActivity(ProductDetailActivity.intent(requireContext(), product.id))
-                }
-                Toast.makeText(requireContext(), "使用本地数据（原因：${e.message})", Toast.LENGTH_SHORT).show()
+            } catch (_: Throwable) {}
+        }
+        if (token.isNullOrEmpty()) {
+            binding.loginHintContainer.visibility = View.VISIBLE
+            // 未登录：仅展示示例 A/B（本地前两条）
+            val samples = ProductRepository.list().take(2)
+            binding.list.adapter = ProductAdapter(samples) { product ->
+                // 可允许查看详情，也可在此处引导登录；先保留查看详情
+                startActivity(ProductDetailActivity.intent(requireContext(), product.id))
+            }
+            // 轻提示
+            Toast.makeText(requireContext(), "登录后可查看全部商品", Toast.LENGTH_SHORT).show()
+        } else {
+            binding.loginHintContainer.visibility = View.GONE
+            // 已登录：与“线上销售”页保持一致，直接使用本地完整商品库（带完善图片与介绍）
+            val all = ProductRepository.list()
+            binding.list.adapter = ProductAdapter(all) { product ->
+                startActivity(ProductDetailActivity.intent(requireContext(), product.id))
             }
         }
     }
@@ -123,5 +146,11 @@ class HomeFragment : Fragment() {
             binding.homeVideo.player = null
         } catch (_: Throwable) {}
         _binding = null
+    }
+
+    override fun onResume() {
+        super.onResume()
+        // 登录状态可能在其他页面发生变化，这里刷新商品列表
+        try { setupList() } catch (_: Throwable) {}
     }
 }

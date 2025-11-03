@@ -30,10 +30,14 @@ class ConversationsActivity : AppCompatActivity() {
         binding.recycler.layoutManager = lm
         binding.recycler.addItemDecoration(DividerItemDecoration(this, RecyclerView.VERTICAL))
         val adapter = ConversationsAdapter({ conv ->
-            val it = Intent(this, ChatActivity::class.java)
-            it.putExtra("room", conv.id.toString())
-            it.putExtra("convName", conv.name ?: (conv.type ?: "会话") + "#" + conv.id)
-            startActivity(it)
+            try {
+                val it = Intent(this, ChatActivity::class.java)
+                it.putExtra("room", conv.id.toString())
+                it.putExtra("convName", conv.name ?: (conv.type ?: "会话") + "#" + conv.id)
+                startActivity(it)
+            } catch (e: Throwable) {
+                Toast.makeText(this, e.message ?: "打开聊天失败", Toast.LENGTH_SHORT).show()
+            }
         }, { conv ->
             // 长按：退出/删除会话
             val options = arrayOf("退出/删除会话", "强制删除(群主)")
