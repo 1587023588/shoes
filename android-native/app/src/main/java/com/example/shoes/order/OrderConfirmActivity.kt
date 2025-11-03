@@ -30,7 +30,7 @@ class OrderConfirmActivity : AppCompatActivity() {
         binding.price.text = "¥${product.price}"
         binding.count.text = count.toString()
     // 显示选择的尺码（如有）
-    binding.size?.text = if (!size.isNullOrEmpty()) "尺码：$size" else ""
+    binding.size.text = if (!size.isNullOrEmpty()) "尺码：$size" else ""
         val imgUrl = product.primaryImageUrl ?: product.imagesUrls.firstOrNull()
         if (imgUrl != null) binding.thumb.load(imgUrl) else if (product.images.isNotEmpty()) binding.thumb.setImageResource(product.images.first())
 

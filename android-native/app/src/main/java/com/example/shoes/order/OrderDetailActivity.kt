@@ -18,12 +18,10 @@ class OrderDetailActivity : AppCompatActivity() {
         val orderNo = intent.getStringExtra(KEY_ORDER_NO) ?: run { finish(); return }
         val order = LocalOrderStore.get(this).get(orderNo) ?: run { finish(); return }
 
-        // 收货信息
-        try {
-            binding.consignee?.text = "收货人：" + (order.consigneeName ?: "-")
-            binding.phone?.text = "电话：" + (order.consigneePhone ?: "-")
-            binding.address?.text = "地址：" + (order.address ?: "-")
-        } catch (_: Throwable) {}
+        // 收货信息（ViewBinding 下为非空视图，直接赋值即可）
+        binding.consignee.text = "收货人：" + (order.consigneeName ?: "-")
+        binding.phone.text = "电话：" + (order.consigneePhone ?: "-")
+        binding.address.text = "地址：" + (order.address ?: "-")
 
         binding.orderNo.text = order.orderNo
         binding.createTime.text = java.text.SimpleDateFormat("yyyy-MM-dd HH:mm", java.util.Locale.getDefault())
@@ -40,7 +38,7 @@ class OrderDetailActivity : AppCompatActivity() {
         if (first != null) {
             binding.title.text = first.title
             // 显示尺码（如有）
-            try { binding.spec?.text = if (!first.size.isNullOrEmpty()) "尺码：${first.size}" else "" } catch (_: Throwable) {}
+            binding.spec.text = if (!first.size.isNullOrEmpty()) "尺码：${first.size}" else ""
             binding.price.text = "¥${first.price} x ${first.quantity}"
             if (!first.imageUrl.isNullOrEmpty()) binding.thumb.load(first.imageUrl)
         }
