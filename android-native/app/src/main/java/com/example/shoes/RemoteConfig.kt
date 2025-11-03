@@ -15,7 +15,8 @@ object RemoteConfig {
     const val tabMessage: String = "https://shoes-1379330878.cos.ap-beijing.myqcloud.com/img/3.png"
     const val tabMine: String = "https://shoes-1379330878.cos.ap-beijing.myqcloud.com/img/4.png"
 
-    // 聊天 WebSocket 地址（本地开发：Android 模拟器连宿主机用 10.0.2.2）
-    // 生产环境请改为 wss://your-domain/ws/chat 并在网络安全策略中放行。
-    const val chatWsUrl: String = "ws://10.0.2.2:8080/ws/chat"
+    // 聊天 WebSocket：模拟器 10.0.2.2，真机 127.0.0.1（需 adb reverse tcp:8080 tcp:8080）
+    // 生产请改为 wss://your-domain/ws/chat
+    val chatWsUrl: String
+        get() = "ws://${NetEnv.hostForLocalBackend()}:8080/ws/chat"
 }

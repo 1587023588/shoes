@@ -5,15 +5,19 @@ import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
+import com.example.shoes.NetEnv
 
 object ApiClient {
-    // 模拟器访问宿主机：10.0.2.2
-    private const val BASE_URL = "http://10.0.2.2:8080/"
+    // 根据运行环境自动选择：模拟器 10.0.2.2 / 真机 127.0.0.1（需 adb reverse）
+    private fun baseUrl(): String = "http://${NetEnv.hostForLocalBackend()}:8080/"
 
     @Volatile private var retrofit: Retrofit? = null
 
     fun get(tokenProvider: () -> String?): Retrofit {
-        return retrofit ?: synchronized(this) {
+        val currentBase = baseUrl()
+        val existing = retrofit
+        if (existing != null) return existing
+        return synchronized(this) {
             val logging = HttpLoggingInterceptor().apply { level = HttpLoggingInterceptor.Level.BODY }
             val auth = Interceptor { chain ->
                 val reqBuilder = chain.request().newBuilder()
@@ -25,7 +29,7 @@ object ApiClient {
                 .addInterceptor(logging)
                 .build()
             val instance = Retrofit.Builder()
-                .baseUrl(BASE_URL)
+                .baseUrl(currentBase)
                 .client(client)
                 .addConverterFactory(GsonConverterFactory.create())
                 .build()
