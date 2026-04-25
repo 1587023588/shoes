@@ -33,14 +33,17 @@
     <!-- 高级数字指示器 -->
     <view class="custom-indicator">
       <text class="current-num">{{currentIndex < 9 ? '0' + (currentIndex + 1) : currentIndex + 1}}</text>
-      <text class="divider">/</text>
-      <text class="total-num">{{photos.length}}</text>
+          <text class="divider">/</text>
+          <text class="total-num">{{photos.length}}</text>
     </view>
 
     <!-- 音频与预约按钮（毛玻璃质感） -->
     <view class="action-group">
-      <view class="action-btn btn-audio {{isPlaying ? 'playing' : ''}}" bindtap="playAudioFor" data-index="{{currentIndex + 1}}">
-        <view class="icon-audio"><view class="bar"></view></view>
+      <view class="action-btn btn-audio {{isPlaying ? 'playing' : ''}}" bindtap="playAudioFor"
+        data-index="{{currentIndex + 1}}">
+        <view class="icon-audio">
+          <view class="bar"></view>
+        </view>
         <text>{{isPlaying ? '暂停讲解' : '播放讲解'}}</text>
       </view>
       <view class="action-btn btn-booking" bindtap="goToBooking">

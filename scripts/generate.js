@@ -55,7 +55,7 @@ names_and_res.forEach((item, idx) => {
     let price = prices[idx % prices.length];
     let stock = stocks[idx % stocks.length];
     out_str.push(`        Product(
-            id = "${idx+1}",
+            id = "${idx + 1}",
             name = "${name}",
             price = ${price.toFixed(1)},
             oldPrice = ${(price + 50.0).toFixed(1)},
