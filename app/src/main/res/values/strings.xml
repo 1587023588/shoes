@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="attribution_media3_playback">Homepage media playback</string>
+    <string name="attribution_exoplayer">ExoPlayer runtime</string>
+</resources>

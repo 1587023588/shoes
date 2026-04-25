@@ -33,3 +33,10 @@
 </view>
 
 <t-toast id="t-toast" />
+
+<!-- 智能体吉祥物悬浮窗 -->
+<movable-area class="mascot-area">
+  <movable-view class="mascot-view" direction="all" x="240" y="420" bindtap="onMascotTap">
+    <image class="mascot-image" src="../../img/mascot.png" mode="aspectFit" />
+  </movable-view>
+</movable-area>

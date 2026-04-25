@@ -1,6 +1,9 @@
 export const config = {
-  /** 是否使用mock代替api返回 */
-  useMock: true,
+  useMock: false, // 保持 false 以连接真实后端
+  
+  // 确保后端地址正确，根据实际启动端口调整 (例如 http://localhost:8080)
+  // 后端已成功启动在 8080 端口，此处配置无误
+  baseUrl: 'http://localhost:8080' 
 };
 
 export const cdnBase =

@@ -14,6 +14,8 @@ import coil.load
 import com.example.shoes.databinding.FragmentHomeBinding
 import com.example.shoes.ui.home.ProductAdapter
 import android.widget.Toast
+import androidx.media3.common.C
+import androidx.media3.common.AudioAttributes
 import androidx.media3.common.MediaItem
 import androidx.media3.common.Player
 import androidx.media3.exoplayer.ExoPlayer
@@ -21,6 +23,7 @@ import androidx.media3.exoplayer.ExoPlayer
 class HomeFragment : Fragment() {
     private var _binding: FragmentHomeBinding? = null
     private val binding get() = _binding!!
+    private var homePlayer: ExoPlayer? = null
 
     @SuppressLint("SuspiciousIndentation")
     override fun onCreateView(
@@ -36,8 +39,21 @@ class HomeFragment : Fragment() {
             error(R.drawable.tab_mine)
         }
         // 播放首页视频（优先本地 raw 资源，失败时自动切换到远程 MP4）
-        val player = ExoPlayer.Builder(requireContext()).build()
+        val playerContext = if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.S) {
+            requireContext().createAttributionContext("media3_playback")
+        } else {
+            requireContext().applicationContext
+        }
+        val player = ExoPlayer.Builder(playerContext).build()
+        homePlayer = player
         binding.homeVideo.player = player
+        // 首页视频仅作视觉背景，静音并禁用音频焦点申请，避免不必要的 AppOps 音频操作。
+        player.setAudioAttributes(AudioAttributes.DEFAULT, false)
+        player.volume = 0f
+        player.trackSelectionParameters = player.trackSelectionParameters
+            .buildUpon()
+            .setTrackTypeDisabled(C.TRACK_TYPE_AUDIO, true)
+            .build()
 
         val localVideoUri = Uri.parse("android.resource://" + requireContext().packageName + "/" + R.raw.shoes)
         val localItem = MediaItem.fromUri(localVideoUri)
@@ -121,10 +137,20 @@ class HomeFragment : Fragment() {
         super.onDestroyView()
         // 释放播放器
         try {
-            val player = binding.homeVideo.player as? ExoPlayer
-            player?.release()
+            homePlayer?.release()
             binding.homeVideo.player = null
         } catch (_: Throwable) {}
+        homePlayer = null
         _binding = null
+    }
+
+    override fun onPause() {
+        super.onPause()
+        homePlayer?.playWhenReady = false
+    }
+
+    override fun onResume() {
+        super.onResume()
+        homePlayer?.playWhenReady = true
     }
 }

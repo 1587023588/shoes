@@ -507,3 +507,35 @@ page {
 
 /* 调试辅助：开发时可打开描边方便观察 block 范围（完成后删除或注释） */
 /* .rural-debug-outline > * { outline:1px dashed rgba(200,120,40,.4); } */
+ 
+ 
+
+/* 智能体吉祥物悬浮窗 */
+.mascot-area {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 999999;
+  pointer-events: none; /* 穿透点击，不影响底层内容 */
+}
+
+.mascot-view {
+  width: 160rpx;
+  height: 160rpx;
+  pointer-events: auto; /* 恢复自身的点击和拖动事件 */
+  border-radius: 50%;
+  box-shadow: 0 8rpx 24rpx rgba(0, 0, 0, 0.3);
+  background-color: rgba(255, 255, 255, 0.95);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.mascot-image {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+}
+

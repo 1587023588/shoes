@@ -178,4 +178,12 @@ Page({
     const msg = (e && e.detail && e.detail.errMsg) ? e.detail.errMsg : '视频加载失败，稍后重试';
     Toast({ context: this, selector: '#t-toast', message: msg });
   },
+
+  onMascotTap() {
+    Toast({
+      context: this,
+      selector: '#t-toast',
+      message: '你好！我是智能体助手~',
+    });
+  }
 });

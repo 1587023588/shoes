@@ -15,6 +15,8 @@ import com.example.shoes.databinding.FragmentHomeBinding
 import com.example.shoes.ui.home.ProductAdapter
 import com.example.shoes.net.Session
 import android.widget.Toast
+import androidx.media3.common.C
+import androidx.media3.common.AudioAttributes
 import androidx.media3.common.MediaItem
 import androidx.media3.common.Player
 import androidx.media3.exoplayer.ExoPlayer
@@ -22,6 +24,7 @@ import androidx.media3.exoplayer.ExoPlayer
 class HomeFragment : Fragment() {
     private var _binding: FragmentHomeBinding? = null
     private val binding get() = _binding!!
+    private var homePlayer: ExoPlayer? = null
     private var triedRemoteFallback = false
 
     @SuppressLint("SuspiciousIndentation")
@@ -37,9 +40,22 @@ class HomeFragment : Fragment() {
             placeholder(R.drawable.tab_mine)
             error(R.drawable.tab_mine)
         }
-    // 播放首页视频（先尝试本地 raw 资源），使用 Media3 ExoPlayer 适配更多模拟器
-        val player = ExoPlayer.Builder(requireContext()).build()
+        // 播放首页视频（先尝试本地 raw 资源），使用声明过 attribution 的 Context 以减少系统告警
+        val playerContext = if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.S) {
+            requireContext().createAttributionContext("media3_playback")
+        } else {
+            requireContext().applicationContext
+        }
+        val player = ExoPlayer.Builder(playerContext).build()
+        homePlayer = player
         binding.homeVideo.player = player
+        // 首页视频仅作视觉背景，静音并禁用音频焦点申请，避免不必要的 AppOps 音频操作。
+        player.setAudioAttributes(AudioAttributes.DEFAULT, false)
+        player.volume = 0f
+        player.trackSelectionParameters = player.trackSelectionParameters
+            .buildUpon()
+            .setTrackTypeDisabled(C.TRACK_TYPE_AUDIO, true)
+            .build()
     val localVideoUri = Uri.parse("android.resource://" + requireContext().packageName + "/" + R.raw.shoes)
     val item = MediaItem.fromUri(localVideoUri)
         player.setMediaItem(item)
@@ -98,6 +114,39 @@ class HomeFragment : Fragment() {
         binding.btnGoLogin.setOnClickListener {
             startActivity(android.content.Intent(requireContext(), LoginActivity::class.java))
         }
+
+        // 吉祥物拖拽与点击
+        var dX = 0f
+        var dY = 0f
+        var lastActionDownX = 0f
+        var lastActionDownY = 0f
+        binding.mascotView.setOnTouchListener { view, event ->
+            when (event.actionMasked) {
+                android.view.MotionEvent.ACTION_DOWN -> {
+                    dX = view.x - event.rawX
+                    dY = view.y - event.rawY
+                    lastActionDownX = event.rawX
+                    lastActionDownY = event.rawY
+                    true
+                }
+                android.view.MotionEvent.ACTION_MOVE -> {
+                    view.y = event.rawY + dY
+                    view.x = event.rawX + dX
+                    true
+                }
+                android.view.MotionEvent.ACTION_UP -> {
+                    if (kotlin.math.abs(event.rawX - lastActionDownX) < 10 && kotlin.math.abs(event.rawY - lastActionDownY) < 10) {
+                        view.performClick()
+                    }
+                    true
+                }
+                else -> false
+            }
+        }
+        binding.mascotView.setOnClickListener {
+            Toast.makeText(requireContext(), "你好！我是智能体助手~", Toast.LENGTH_SHORT).show()
+        }
+
         return binding.root
     }
 
@@ -141,15 +190,21 @@ class HomeFragment : Fragment() {
         super.onDestroyView()
         // 释放播放器
         try {
-            val player = binding.homeVideo.player as? ExoPlayer
-            player?.release()
+            homePlayer?.release()
             binding.homeVideo.player = null
         } catch (_: Throwable) {}
+        homePlayer = null
         _binding = null
+    }
+
+    override fun onPause() {
+        super.onPause()
+        homePlayer?.playWhenReady = false
     }
 
     override fun onResume() {
         super.onResume()
+        homePlayer?.playWhenReady = true
         // 登录状态可能在其他页面发生变化，这里刷新商品列表
         try { setupList() } catch (_: Throwable) {}
     }

@@ -5,7 +5,7 @@ object RemoteConfig {
     // 首页海报（也作为视频封面兜底）
     const val bannerUrl: String = "https://shoes-1379330878.cos.ap-beijing.myqcloud.com/hero.jpg"
     // 首页视频
-    const val homeVideoUrl: String = "https://shoes-1379330878.cos.ap-beijing.myqcloud.com/shoes.mp4"
+    const val homeVideoUrl: String = "android.resource://com.example.shoes/raw/shoes"
     // 首页视频海报
     const val homeVideoPoster: String = "https://shoes-1379330878.cos.ap-beijing.myqcloud.com/hero.jpg"
 

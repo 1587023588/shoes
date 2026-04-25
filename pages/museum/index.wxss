@@ -1,94 +1,292 @@
-/* 全屏容器：黑色背景突出图片，避免白边 */
-.carousel-container {
+/* 基础重置 */
+page {
+  background-color: #050505;
+  height: 100%;
+}
+
+.museum-container {
   position: relative;
-  width: 100%;
-  height: 100vh; /* 占满屏幕高度 */
+  width: 100vw;
+  height: 100vh; /* 满屏比例 */
   overflow: hidden;
   background-color: #000;
 }
 
-/* 轮播 wrapper：flex布局实现横向排列，过渡动画确保平滑切换 */
-.carousel-wrapper {
-  display: flex;
-  height: 100%;
-  transition-property: transform;
-  will-change: transform; /* 开启硬件加速，减少卡顿 */
-}
-
-/* 单张图片容器：占满屏幕宽度，不缩放 */
-.carousel-slide {
-  width: 100%;
-  flex-shrink: 0;
-  height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-/* 图片样式：保持比例完整显示，避免拉伸变形 */
-.slide-image {
-  max-width: 100%;
-  max-height: 100%;
-  object-fit: contain; /* 关键：图片完整显示，不裁剪 */
-}
-
-/* 底部指示器：小圆圈样式，当前图片对应指示器高亮 */
-.indicators {
+/* 动态模糊背景 */
+.bg-blur {
   position: absolute;
-  bottom: 30rpx; /* 距离底部30rpx，适配小程序单位 */
-  left: 0;
-  right: 0;
-  display: flex;
-  justify-content: center;
-  gap: 8rpx; /* 指示器间距 */
-  z-index: 10; /* 确保在图片上方显示 */
-}
-
-.indicator {
-  width: 10rpx;
-  height: 10rpx;
-  border-radius: 50%;
-  background-color: rgba(255, 255, 255, 0.4); /* 未选中：半透明白色 */
-  transition: all 0.3s ease; /* 切换时的过渡动画 */
-}
-
-.indicator.active {
-  background-color: #fff; /* 选中：纯白色 */
-  width: 30rpx; /* 选中时变宽，提升辨识度 */
-  border-radius: 5rpx; /* 变宽后改为圆角矩形 */
-}
-
-/* 左右切换按钮：半透明黑色背景，hover时加深 */
-.control-btn {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%); /* 垂直居中 */
-  width: 80rpx;
-  height: 80rpx;
-  color: #fff;
-  background-color: rgba(0, 0, 0, 0.3);
-  border-radius: 50%; /* 圆形按钮 */
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 36rpx;
+  top: -10%;
+  left: -10%;
+  width: 120%;
+  height: 120%;
+  filter: blur(40px) brightness(0.4);
   opacity: 0.7;
-  transition: opacity 0.3s, background-color 0.3s;
+  z-index: 1;
+  transition: all 0.6s ease;
+}
+
+.bg-mask {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to bottom, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0.1) 30%, rgba(0,0,0,0.8) 100%);
+  z-index: 2;
+  pointer-events: none;
+}
+
+/* 顶部标题区 */
+.header {
+  position: absolute;
+  top: 100rpx; /* 根据状态栏可微调 */
+  left: 0;
+  width: 100%;
+  text-align: center;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  pointer-events: none;
+}
+
+.title {
+  color: #ffffff;
+  font-size: 48rpx;
+  font-weight: 600;
+  letter-spacing: 8rpx;
+  text-shadow: 0 4rpx 12rpx rgba(0,0,0,0.8);
+}
+
+.subtitle {
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 20rpx;
+  letter-spacing: 10rpx;
+  margin-top: 12rpx;
+  text-transform: uppercase;
+}
+
+/* 轮播主体 */
+.carousel-wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  height: 100%;
+  z-index: 5;
+  will-change: transform;
+}
+
+.carousel-slide {
+  width: 100vw;
+  height: 100vh;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 220rpx 50rpx 280rpx 50rpx; /* 上下留白，避免遮挡 */
+  box-sizing: border-box;
+}
+
+/* 内部图片容器：带有高级阴影和圆角 */
+.image-box {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border-radius: 32rpx;
+  box-shadow: 0 24rpx 48rpx rgba(0,0,0,0.6);
+  overflow: hidden;
+  background-color: rgba(200, 200, 200, 0.05); /* 图片未加载出时的低调占位 */
+}
+
+.slide-image {
+  width: 100%;
+  height: 100%;
+  object-fit: contain; 
+}
+
+/* 商品标题文字说明 */
+.photo-title {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  color: #fff;
+  font-size: 28rpx;
+  text-align: center;
+  padding: 24rpx 20rpx;
+  box-sizing: border-box;
+  font-weight: 300;
+  letter-spacing: 2rpx;
   z-index: 10;
 }
 
-/* 鼠标悬浮时按钮更明显 */
-.control-btn:hover {
-  opacity: 1;
-  background-color: rgba(0, 0, 0, 0.5);
+/* 极简左右箭头图标 */
+.control-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 100rpx;
+  height: 160rpx;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-/* 左按钮位置：距离左侧20rpx */
-.prev {
-  left: 20rpx;
+.control-btn.prev {
+  left: 0;
 }
 
-/* 右按钮位置：距离右侧20rpx */
-.next {
-  right: 20rpx;
+.control-btn.next {
+  right: 0;
+}
+
+.arrow {
+  width: 26rpx;
+  height: 26rpx;
+  border-top: 4rpx solid rgba(255,255,255,0.3);
+  border-right: 4rpx solid rgba(255,255,255,0.3);
+  transition: all 0.3s ease;
+}
+
+.control-btn:active .arrow {
+  border-color: #fff;
+}
+
+.arrow.left {
+  transform: rotate(-135deg);
+  margin-left: 20rpx;
+}
+
+.arrow.right {
+  transform: rotate(45deg);
+  margin-right: 20rpx;
+}
+
+/* 底部区域 */
+.footer {
+  position: absolute;
+  bottom: 80rpx;
+  left: 0;
+  width: 100%;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0 60rpx;
+  box-sizing: border-box;
+}
+
+/* 高级数字指示器 */
+.custom-indicator {
+  font-family: inherit;
+  margin-bottom: 50rpx;
+  display: flex;
+  align-items: baseline;
+  gap: 16rpx;
+  text-shadow: 0 2rpx 8rpx rgba(0,0,0,0.5);
+}
+
+.current-num {
+  font-size: 52rpx;
+  font-weight: 300;
+  color: #fff;
+}
+
+.divider {
+  font-size: 30rpx;
+  color: rgba(255,255,255,0.3);
+}
+
+.total-num {
+  font-size: 30rpx;
+  font-weight: 300;
+  color: rgba(255,255,255,0.5);
+}
+
+/* 动作按钮组 */
+.action-group {
+  display: flex;
+  gap: 40rpx;
+  width: 100%;
+  justify-content: center;
+}
+
+.action-btn {
+  flex: 1;
+  max-width: 320rpx;
+  height: 96rpx;
+  border-radius: 48rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 30rpx;
+  font-weight: 500;
+  backdrop-filter: blur(25px);
+  -webkit-backdrop-filter: blur(25px);
+  transition: all 0.3s;
+}
+
+/* 讲解按钮（毛玻璃半透明） */
+.btn-audio {
+  background: rgba(255, 255, 255, 0.15);
+  color: #fff;
+  border: 1rpx solid rgba(255, 255, 255, 0.25);
+  box-shadow: 0 8rpx 20rpx rgba(0,0,0,0.2);
+}
+
+.btn-audio.playing {
+  background: rgba(255, 255, 255, 0.25);
+  border-color: rgba(255, 255, 255, 0.5);
+}
+
+/* 预约按钮（高端烫金渐变） */
+.btn-booking {
+  background: linear-gradient(135deg, #ebd197 0%, #b48a44 100%);
+  color: #2b2b2b;
+  font-weight: 600;
+  box-shadow: 0 8rpx 24rpx rgba(180, 138, 68, 0.4);
+}
+
+.action-btn:active {
+  transform: scale(0.95);
+  opacity: 0.9;
+}
+
+/* 播放跳动图标 CSS 实现 */
+.icon-audio {
+  width: 26rpx;
+  height: 26rpx;
+  margin-right: 14rpx;
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+}
+
+.icon-audio::before,
+.icon-audio::after,
+.icon-audio .bar {
+  content: '';
+  width: 4rpx;
+  background-color: #fff;
+  border-radius: 2rpx;
+  animation: none;
+  height: 8rpx;
+}
+
+.icon-audio::before { height: 12rpx; }
+.icon-audio .bar { height: 26rpx; }
+.icon-audio::after { height: 16rpx; }
+
+/* 加上.playing类时执行律动动画 */
+.playing .icon-audio::before { animation: bounce 0.8s infinite ease-in-out alternate; }
+.playing .icon-audio .bar { animation: bounce 0.8s infinite ease-in-out alternate 0.2s; }
+.playing .icon-audio::after { animation: bounce 0.8s infinite ease-in-out alternate 0.4s; }
+
+@keyframes bounce {
+  0% { height: 8rpx; }
+  100% { height: 26rpx; }
 }

@@ -118,7 +118,7 @@ class ProductDetailActivity : AppCompatActivity() {
                     )
                     p.topMargin = (8 * resources.displayMetrics.density).toInt()
                     descList.addView(iv, p)
-                }
+                }   
             } else {
                 product.descImages.forEach { resId ->
                     val iv = ImageView(this)

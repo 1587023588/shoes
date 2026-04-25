@@ -1,8 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <shape xmlns:android="http://schemas.android.com/apk/res/android"
     android:shape="rectangle">
-    <!-- WeChat-like green -->
-    <solid android:color="#95EC69"/>
-    <corners android:radius="14dp"/>
-    <padding android:left="12dp" android:top="8dp" android:right="12dp" android:bottom="8dp"/>
+    <!-- Premium Gradient Orange/Red for the brand -->
+    <gradient
+        android:startColor="#FF7A00"
+        android:endColor="#FF5000"
+        android:angle="0"/>
+    <corners 
+        android:topLeftRadius="20dp"
+        android:topRightRadius="4dp"
+        android:bottomLeftRadius="20dp"
+        android:bottomRightRadius="20dp" />
+    <padding android:left="16dp" android:top="12dp" android:right="16dp" android:bottom="12dp"/>
 </shape>
